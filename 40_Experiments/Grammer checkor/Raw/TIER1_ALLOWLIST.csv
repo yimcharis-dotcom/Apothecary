@@ -1,0 +1,27 @@
+Error Type,Minimal Pair,Label,Runtime Behaviour,Justification,Cantonese Source,Source
+Null Subject (Weather/State),Is raining. → It is raining.,[Prescriptive],Flag Only (Casual) / Flag + Explain (Formal),C1s know dummy 'it' is required but omit in chat. Self-evident fix.,落緊雨 (no 'it' needed),Table1_Borderline
+Null Subject (Opinion),Is very difficult. → It is very difficult.,[Prescriptive],Flag Only (Casual) / Flag + Explain (Formal),Same as above; code-switching in casual contexts.,好難 (no 'it' needed),Table1_Borderline
+Missing Subject Pronoun,Don't know what to do. → I don't know what to do.,[Prescriptive],Flag Only (Casual) / Flag + Explain (Formal),Very common in WhatsApp/chat. Self-evident once flagged.,唔知點做 (no 'I' required),Table1_Borderline
+Redundant Subject (Topic-Comment),My brother he is tall. → My brother is tall.,[Naturalness],Flag Only (Casual) / Flag + Explain (Formal),Acceptable emphasis in speech; annoying in formal writing. Simple deletion.,我阿哥佢好高 (topic + comment structure),Table1_Borderline
+Informal Contraction (Email),The report doesn't show... → The report does not show...,[Descriptive],Ignore (Casual/Semi-Formal) / Flag Only (Academic),C1s know when to expand. Flagging in business emails is annoying; most companies accept contractions.,"N/A (register choice, not transfer)",Table2_OverFlagged
+Wrong participle form,It was write → It was written,[Prescriptive],Flag Only,Basic morphology; C1 knows past participle.,,Category10_Passive_Voice
+Wrong form after preposition,Interested in to learn → Interested in learning,[Prescriptive],Flag Only,Preposition + gerund rule is basic; self-evident.,有興趣學... (no distinction),Category11_Gerund_Infinitive
+Wrong quantifier (countable),Much people → Many people,[Prescriptive],Flag Only,Basic for C1; self-evident.,好多人 (single quantifier 多),Category12_Countability
+Wrong quantifier (uncountable),Many money → Much money,[Prescriptive],Flag Only,Basic; self-evident.,好多錢 (single quantifier 多),Category12_Countability
+Double comparative,More better → Better,[Prescriptive],Flag Only,Self-evident deletion; C1 knows.,更好 (single marker 更),Category13_Comparatives
+Missing 'than',Taller from me → Taller than me,[Prescriptive],Flag Only,Simple substitution.,高過我 (single marker 過),Category13_Comparatives
+Wrong superlative form,The most good → The best,[Prescriptive],Flag Only,Irregular form; C1 knows.,最好 (最 + good),Category13_Comparatives
+Missing apostrophe in possessive,The students books → The students' books,[Prescriptive],Flag Only,Basic; self-evident.,學生啲書 (possessive particle 啲),Category17_Punctuation
+Its vs it's,Its raining → It's raining,[Prescriptive],Flag Only,Common typo/confusion but self-evident fix.,,Category17_Punctuation
+Possessive vs possessive pronoun,That book is my → That book is mine,[Prescriptive],Flag Only,Basic; self-evident.,嗰本書係我嘅 (single form 我嘅),Category18_Pronouns
+Article with proper nouns,The Hong Kong is busy. → Hong Kong is busy.,[Prescriptive],Flag Only,Self-evident for C1; just delete 'the'.,香港好繁忙 (no article),Category1_Articles
+Missing plural -s,Three book → Three books,[Prescriptive],Flag Only,Very basic for C1; self-evident with numeral.,三本書 (no plural marking),Category2_Plural_Marking
+Irregular plural,Two childs → Two children,[Prescriptive],Flag Only,Basic morphology; C1 knows irregular forms.,兩個小朋友 (no plural marking),Category2_Plural_Marking
+Third person -s missing,She work here. → She works here.,[Prescriptive],Flag Only,Very common slip; self-evident for C1.,佢喺度做嘢 (no agreement marking),Category3_SVA
+Double modals,Will can you help? → Can you help?,[Prescriptive],Flag Only,Self-evident; just delete one modal.,你可唔可以幫手? (single modal),Category5_Modal_Verbs
+Modal + infinitive with 'to',You should to go. → You should go.,[Prescriptive],Flag Only,Self-evident deletion; C1 knows this.,你應該去 (no 'to'),Category5_Modal_Verbs
+Wrong preposition (time),In Monday → On Monday,[Prescriptive],Flag Only,Basic for C1; self-evident fix.,星期一 (no preposition),Category6_Prepositions
+Wrong dependent preposition,Depend of → Depend on,[Prescriptive],Flag Only,Fixed collocation; C1 knows once flagged.,依賴... (no preposition),Category6_Prepositions
+Missing preposition,Listen the music → Listen to the music,[Prescriptive],Flag Only,Self-evident insertion.,聽音樂 (no preposition),Category6_Prepositions
+Unnecessary preposition,Discuss about → Discuss,[Prescriptive],Flag Only,Self-evident deletion.,討論... (no preposition),Category6_Prepositions
+Wrong relative pronoun,The place who I visited → The place that I visited,[Prescriptive],Flag Only,Simple substitution; C1 knows 'who' is for people.,我去過嗰度 (single 嗰 for all),Category9_Relative_Clauses

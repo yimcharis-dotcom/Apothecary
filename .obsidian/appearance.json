@@ -1,0 +1,29 @@
+{
+  "cssTheme": "FastPpuccin",
+  "accentColor": "",
+  "theme": "moonstone",
+  "nativeMenus": false,
+  "enabledCssSnippets": [
+    "New Text Document",
+    "PLN",
+    "Shout out",
+    "Senior Editor High-Contrast Palette.",
+    "Senior Editor High-Contrast Palette",
+    "Prisum",
+    "Anu custom (2)",
+    "LIGHT MODE Dark Slate Code Blocks",
+    "mininal nord",
+    "PLN remove banner",
+    "Anu custom",
+    "Enhanced CSS Pure White Light Mode for Obsidian",
+    "Anu",
+    "obsidian"
+  ],
+  "baseFontSizeAction": true,
+  "baseFontSize": 18,
+  "monospaceFontFamily": "Franklin Gothic Book,Agency FB,Algerian",
+  "interfaceFontFamily": "Lucida Sans Unicode",
+  "textFontFamily": "Cambria",
+  "showRibbon": true,
+  "showViewHeader": true
+}

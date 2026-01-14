@@ -1,0 +1,5 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Sentence fragment,Because I was tired. → I left early because I was tired.,2,[Prescriptive],Flag + Explain,Needs explanation of subordinate vs independent clauses.,因為我攰 (acceptable fragment in Cantonese)
+Comma splice,"I was tired, I went home → I was tired, so I went home",2,[Prescriptive],Flag + Explain,Needs explanation of clause linking.,"我攰咗,我返屋企 (comma acceptable)"
+Run-on sentence,I went home I was tired → I went home because I was tired,2,[Prescriptive],Flag + Explain,Needs explanation of clause boundaries.,我返屋企我攰 (juxtaposition OK)
+Dangling modifier,"Walking down the street, the trees were beautiful → Walking down the street, I saw beautiful trees",2,[Prescriptive],Flag + Explain,Complex; needs explanation of subject match.,"行落街,啲樹好靚 (topic acceptable)"

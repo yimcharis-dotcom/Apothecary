@@ -1,0 +1,25 @@
+Error Type,,Minimal Pair,Label,Runtime Behaviour,Justification,Cantonese Source,SourceFile
+Double comparative,Double comparative marker,More better → Better,[Prescriptive],Flag Only,Self-evident deletion; C1 knows.,更好 (single marker 更),13_Comparatives
+Double modals,Double modal verbs,Will can you help? → Can you help?,[Prescriptive],Flag Only,Self-evident; just delete one modal.,你可唔可以幫手? (single modal),5_Modal_Verbs
+Contraction,Missing apostrophe in contraction,Its raining → It's raining,[Prescriptive],Flag Only,Common typo/confusion but self-evident fix.,,17_Punctuation
+Null Subject (Weather/State),Null subject (weather/state predicate),Is burning. → It is burning.,[Prescriptive],Flag Only (Casual) / Flag + Explain (Formal),C1s know dummy 'it' is required but omit in chat. Self-evident fix.,落緊雨 (no 'it' needed),Table1_Borderline_Cantonese_Transfer
+Null Subject (Opinion),Null subject (opinion predicate),Is very difficult. → It is very difficult.,[Prescriptive],Flag Only (Casual) / Flag + Explain (Formal),Same as above; code-switching in casual contexts.,好難 (no 'it' needed),Table1_Borderline_Cantonese_Transfer
+Missing Personal Nomintive Pronoun,Missing subject pronoun (nominative),Don't know what to do. → I don't know what to do.,[Prescriptive],Flag Only (Casual) / Flag + Explain (Formal),Very common in WhatsApp/chat. Self-evident once flagged.,唔知點做 (no 'I' required),Table1_Borderline_Cantonese_Transfer
+Missing 'than',Missing complementizer �than�,Taller from me → Taller than me,[Prescriptive],Flag Only,Simple substitution.,高過我 (single marker 過),13_Comparatives
+Missing apostrophe in possessive,Missing apostrophe in possessive,The students books → The students' books,[Prescriptive],Flag Only,Basic; self-evident.,學生啲書 (possessive particle 啲),17_Punctuation
+Missing plural -s,Missing regular plural -s,Three book → Three books,[Prescriptive],Flag Only,Very basic for C1; self-evident with numeral.,三本書 (no plural marking),2_Plural_Marking
+Modal + infinitive with 'to',Modal verb + �to� infinitive misuse,You should to go. → You should go.,[Prescriptive],Flag Only,Self-evident deletion; C1 knows this.,你應該去 (no 'to'),5_Modal_Verbs
+Wrong form after preposition,�to� infinitive misuse after preposition,Interested in to learn → Interested in learning,[Prescriptive],Flag Only,Preposition + gerund rule is basic; self-evident.,有興趣學... (no distinction),11_Gerund_Infinitive
+Possessive vs possessive pronoun,Possessive determiner vs pronoun confusion,That book is my → That book is mine,[Prescriptive],Flag Only,Basic; self-evident.,嗰本書係我嘅 (single form 我嘅),18_Pronouns
+Redundant Subject (Topic-Comment),Redundant subject (topic�comment transfer),My brother he is tall. → My brother is tall.,[Naturalness],Flag Only (Casual) / Flag + Explain (Formal),Acceptable emphasis in speech; annoying in formal writing. Simple deletion.,我阿哥佢好高 (topic + comment structure),Table1_Borderline_Cantonese_Transfer
+Third person -s missing,Missing third-person singular -s,She work here. → She works here.,[Prescriptive],Flag Only,Very common slip; self-evident for C1.,佢喺度做嘢 (no agreement marking),3_SVA
+Wrong participle form,Incorrect participle form,It was write → It was written,[Prescriptive],Flag Only,Basic morphology; C1 knows past participle.,,10_Passive_Voice
+Wrong relative pronoun,Incorrect relative pronoun,The place who I visited → The place that I visited,[Prescriptive],Flag Only,Simple substitution; C1 knows 'who' is for people.,我去過嗰度 (single 嗰 for all),9_Relative_Clauses
+Wrong superlative form,Incorrect superlative form,The most good → The best,[Prescriptive],Flag Only,Irregular form; C1 knows.,最好 (最 + good),13_Comparatives
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+Irregular plural,Irregular plural form error,Two childs → Two children,[Prescriptive],Flag Only,Basic morphology; C1 knows irregular forms.,兩個小朋友 (no plural marking),2_Plural_Marking
+Missing preposition,Missing required preposition,Listen the music → Listen to the music,[Prescriptive],Flag Only,Self-evident insertion.,聽音樂 (no preposition),6_Prepositions
+Unnecessary preposition,Redundant preposition,Discuss about → Discuss,[Prescriptive],Flag Only,Self-evident deletion.,討論... (no preposition),6_Prepositions

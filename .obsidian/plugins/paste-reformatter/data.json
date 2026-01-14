@@ -1,0 +1,17 @@
+{
+  "pasteOverride": false,
+  "maxHeadingLevel": 1,
+  "removeEmptyElements": false,
+  "cascadeHeadingLevels": true,
+  "contextualCascade": false,
+  "stripLineBreaks": false,
+  "convertToSingleSpaced": true,
+  "removeEmptyLines": true,
+  "htmlRegexReplacements": [],
+  "markdownRegexReplacements": [
+    {
+      "pattern": "<span style=\"display:none\">(?:\\[\\^[\\w_]+\\])+</span>|\\[\\^[\\w_]+\\]:\\s*[^\\n]+|(?:\\[\\^[\\w_]+\\])+",
+      "replacement": ""
+    }
+  ]
+}

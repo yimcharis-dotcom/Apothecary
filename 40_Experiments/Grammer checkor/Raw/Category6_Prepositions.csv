@@ -1,0 +1,6 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Wrong preposition (time),In Monday → On Monday,1,[Prescriptive],Flag Only,Basic for C1; self-evident fix.,星期一 (no preposition)
+Wrong preposition (place),In the bus → On the bus,2,[Prescriptive],Flag + Explain,Vehicle prepositions are idiomatic; needs explanation.,喺架巴士度 (single locative 喺)
+Wrong dependent preposition,Depend of → Depend on,1,[Prescriptive],Flag Only,Fixed collocation; C1 knows once flagged.,依賴... (no preposition)
+Missing preposition,Listen the music → Listen to the music,1,[Prescriptive],Flag Only,Self-evident insertion.,聽音樂 (no preposition)
+Unnecessary preposition,Discuss about → Discuss,1,[Prescriptive],Flag Only,Self-evident deletion.,討論... (no preposition)

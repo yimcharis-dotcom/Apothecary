@@ -1,0 +1,15 @@
+espanso_trigger,command,description,example_output
+:olls,ollama list,List all downloaded models,"Shows model names, IDs, sizes"
+:ollps,ollama ps,List currently running/loaded models,"Shows NAME, ID, SIZE, PROCESSOR, UNTIL"
+:ollrun,ollama run <model>,Start interactive chat with a model,ollama run llama2
+:ollprompt,"ollama run <model> ""<prompt>""",Single-shot prompt to a model,"ollama run llama2 ""Write a haiku"""
+:ollpull,ollama pull <model>,Download/update a model from registry,ollama pull mistral
+:ollstop,ollama stop <model>,Stop/unload a running model from memory,ollama stop llama2
+:ollrm,ollama rm <model>,Delete a downloaded model,ollama rm llama2
+:ollserve,ollama serve,Start the Ollama server (runs in foreground),Starts API on localhost:11434
+:ollcreate,ollama create <name> -f <Modelfile>,Create custom model from Modelfile,ollama create mymodel -f ./Modelfile
+:ollshow,ollama show <model>,"Show info about a model (Modelfile, parameters)",ollama show llama2
+:ollcp,ollama cp <source> <dest>,Copy a model (rename),ollama cp llama2 llama2-backup
+:ollkill,Get-Process ollama* | Stop-Process -Force,[PowerShell] Force-stop all Ollama processes,Kills ollama.exe and ollama app.exe
+:ollport,netstat -ano | findstr :11434,[Windows] Check if Ollama API port is open,Shows PID if something is listening on 11434
+:ollapi,curl http://localhost:11434/api/tags,List models via API (JSON),Returns JSON with model list

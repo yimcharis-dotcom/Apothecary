@@ -1,0 +1,4 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Resumptive pronoun,The person who I met him → The person who I met,2,[Prescriptive],Flag + Explain,Classic Cantonese transfer; needs explanation of English relative clause structure.,我見過嗰個人佢... (resumptive chain)
+Wrong relative pronoun,The place who I visited → The place that I visited,1,[Prescriptive],Flag Only,Simple substitution; C1 knows 'who' is for people.,我去過嗰度 (single 嗰 for all)
+Missing relative with resumptive,The book I bought it → The book I bought,2,[Prescriptive],Flag + Explain,Compound error; needs explanation of both issues.,我買嗰本書佢... (topic chain)

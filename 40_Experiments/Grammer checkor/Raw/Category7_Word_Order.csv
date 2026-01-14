@@ -1,0 +1,5 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Adverb placement,He drives carefully always. → He always drives carefully.,2,[Prescriptive],Flag + Explain,Adverb placement rules complex; needs explanation.,佢成日小心咁揸車 (always at start)
+Adjective order,A wooden old table → An old wooden table,2,[Naturalness],Flag + Explain,OSASCOMP order is arbitrary; needs memorization.,一張舊木枱 (age before material)
+Question word order,Where you went? → Where did you go?,2,[Prescriptive],Flag + Explain,Inversion rule needs explanation; common transfer error.,你去咗邊? (no inversion)
+Indirect question word order,I wonder where is he. → I wonder where he is.,2,[Prescriptive],Flag + Explain,Embedded question rules need explanation.,我想知佢喺邊 (no inversion)

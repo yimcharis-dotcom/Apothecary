@@ -1,0 +1,5 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Missing inversion after negative,Never I have seen → Never have I seen,2,[Prescriptive],Flag + Explain,Inversion rules complex and formal; needs explanation.,我從來未見過 (no inversion)
+Wrong tag question,"You like it, isn't it? → You like it, don't you?",2,[Prescive],Flag + Explain,Tag formation needs explanation; Cantonese uses single tag.,"你鍾意,係唔係? (係唔係 for all)"
+Parallel structure error,"I like reading, to swim and jogging → I like reading, swimming and jogging",2,[Prescriptive],Flag + Explain,Parallelism rule needs explanation.,我鍾意睇書、游水同跑步 (all same form)
+-ing vs -ed confusion,I am boring → I am bored,2,[Prescriptive],Flag + Explain,Participial adjective distinction needs explanation.,我好悶 (no distinction)

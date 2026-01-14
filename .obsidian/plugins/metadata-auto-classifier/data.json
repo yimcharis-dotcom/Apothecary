@@ -1,0 +1,147 @@
+{
+  "providers": [
+    {
+      "name": "Ollama",
+      "apiKey": "http://localhost:11434/api/chat",
+      "baseUrl": "http://localhost:11434/api/chat",
+      "models": [
+        {
+          "id": "gemma2:2b",
+          "name": "gemma2:2b"
+        },
+        {
+          "id": "qwen2.5:3b",
+          "name": "qwen2.5:3b"
+        },
+        {
+          "id": "phi4-safe:latest",
+          "name": "phi4-safe:latest"
+        },
+        {
+          "id": "phi3-local:latest",
+          "name": "phi3-local:latest"
+        },
+        {
+          "id": "llama3.2:latest",
+          "name": "llama3.2:latest"
+        },
+        {
+          "id": "gemma2:9b",
+          "name": "gemma2:9b"
+        },
+        {
+          "id": "qwen2.5:7b-instruct",
+          "name": "qwen2.5:7b-instruct"
+        },
+        {
+          "id": "llama3_1:latest",
+          "name": "llama3_1:latest"
+        },
+        {
+          "id": "mistral-4k:latest",
+          "name": "mistral-4k:latest"
+        }
+      ],
+      "temperature": 0.7
+    }
+  ],
+  "selectedProvider": "Ollama",
+  "selectedModel": "gemma2:2b",
+  "frontmatter": [
+    {
+      "name": "tags",
+      "count": {
+        "min": 1,
+        "max": 3
+      },
+      "refs": [
+        "#image-to-text",
+        "#ai/local-ai",
+        "#llm",
+        "#guide",
+        "#obsidian",
+        "#perplexity",
+        "#prompt",
+        "#workflow-management",
+        "#setup",
+        "#plugin",
+        "#ai",
+        "#chatbot",
+        "#perplexed-plugin",
+        "#obsidian-plugin",
+        "#formatting",
+        "#templates",
+        "#Iteratation",
+        "#status/review",
+        "#ai/output",
+        "#AI",
+        "#Audit",
+        "#Accounting",
+        "#audit",
+        "#Prompt",
+        "#prompt/prompt-engineering",
+        "#prompt/prompt-system",
+        "#domain/ai",
+        "#ai/ml",
+        "#ai/nlp",
+        "#ai/computer-vision",
+        "#domain/audit",
+        "#audit/financial",
+        "#audit/operational",
+        "#audit/compliance",
+        "#type/",
+        "#type/concept",
+        "#type/project",
+        "#type/reference",
+        "#type/meeting",
+        "#status/",
+        "#status/active",
+        "#status/on-hold",
+        "#status/completed",
+        "#status/needs-review",
+        "#priority/",
+        "#priority/p1-urgent",
+        "#priority/p2-important",
+        "#priority/p3-normal",
+        "#source/",
+        "#source/book",
+        "#source/article",
+        "#source/course",
+        "#source/meeting",
+        "#audit-space-instructions",
+        "#pkpm-setup",
+        "#resources",
+        "#runbook",
+        "#hkicpa",
+        "#ai/automation",
+        "#python",
+        "#learning",
+        "#beginner",
+        "#code",
+        "#status/draft",
+        "#Grok",
+        "#ai/tasks",
+        "#ai/models",
+        "#ai/best",
+        "#ai/strategy",
+        "#ollama",
+        "#cleanup",
+        "#llm/models",
+        "#ai/integration",
+        "#openai",
+        "#deepseek",
+        "#knowledge-management",
+        "#system-infrastructure",
+        "#deployment/deployment-checklist",
+        "#deployment/Deployment-checklist",
+        "#Templates",
+        "#Workflow-management"
+      ],
+      "overwrite": false,
+      "linkType": "Normal",
+      "customQuery": "Generate 3-5 tags from this note using the following categories:\n\nchoose from the vault's existing\n\nSTATUS (if applicable):\n- draft, tested, active, archived\n\nPRIORITY (if task-like):\n- p1-urgent, p2-important, p3-normal\n\nAlways include a parent tag. Use hierarchical format: etc domain/subdomain.\nFor prompts, add model tag: gpt-4, claude, etc.\nFor audit notes, add client name if mentioned.\nFor status, use status/draft, status/tested, etc\n\nIf uncertain, use fewer tags rather than guessing\nUse lowercase only, no spaces in tags\n",
+      "id": 0
+    }
+  ],
+  "classificationRule": "<task>\nClassify the following content using the provided reference categories.\n</task>\n\n<instructions>\n1. Select only from the reference categories listed.\n2. Preserve the exact formatting of the reference categories, including brackets.\n3. Assign a \"reliability\" score between 0 and 1 to each selected category, indicating confidence in the classification.\n4. Maintain the full hierarchical structure for nested categories. (e.g. category/subcategory)\n</instructions>\n\n<plain_example>\n{\n\t\"output\": [\"machine learning\", \"natural language processing\"],\n\t\"reliability\": 0.87\n}\n</plain_example>\t\n<wikilink_example>\n{\n\t\"output\": [\"[[Large Language Model]]\", \"[[Prompt Engineering]]\"],\n\t\"reliability\": 0.92\n}\n</wikilink_example>\n"
+}

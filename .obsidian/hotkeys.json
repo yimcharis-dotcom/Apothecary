@@ -1,0 +1,236 @@
+{
+  "app:open-help": [],
+  "editor:toggle-strikethrough": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "5"
+    }
+  ],
+  "theme:toggle-light-dark": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "\\"
+    }
+  ],
+  "editor:toggle-comments": [],
+  "workspace:goto-tab-5": [],
+  "editor:toggle-checklist-status": [],
+  "editor:rename-heading": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "F2"
+    }
+  ],
+  "markdown:add-metadata-property": [],
+  "editor:delete-paragraph": [],
+  "workspace:goto-last-tab": [],
+  "workspace:goto-tab-1": [],
+  "workspace:goto-tab-2": [],
+  "workspace:goto-tab-3": [],
+  "workspace:goto-tab-4": [],
+  "workspace:goto-tab-6": [],
+  "workspace:goto-tab-7": [],
+  "workspace:goto-tab-8": [],
+  "graph:open": [],
+  "workspace:open-in-new-window": [
+    {
+      "modifiers": [],
+      "key": "F9"
+    }
+  ],
+  "workspace:new-window": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "N"
+    }
+  ],
+  "file-explorer:new-file": [],
+  "workspace:new-tab": [],
+  "editor:insert-footnote": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "6"
+    }
+  ],
+  "workspace:move-to-new-window": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "F9"
+    }
+  ],
+  "editor:toggle-highlight": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "="
+    }
+  ],
+  "window:zoom-in": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "="
+    }
+  ],
+  "window:zoom-out": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "-"
+    }
+  ],
+  "easy-typing-obsidian:easy-typing-insert-codeblock": [],
+  "file-explorer:new-file-in-new-pane": [],
+  "easy-typing-obsidian:easy-typing-goto-new-line-after-cur-line": [],
+  "better-plugins-manager:manager-view": [],
+  "easy-typing-obsidian:easy-typing-format-switch": [],
+  "easy-typing-obsidian:easy-typing-toggle-comment": [],
+  "editor:indent-list": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "."
+    }
+  ],
+  "editor:unindent-list": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": ","
+    }
+  ],
+  "editing-toolbar:fullscreen-focus": [],
+  "vault-ai:toggle-vaultai-chat": [],
+  "editor:toggle-code": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "`"
+    }
+  ],
+  "editor:insert-codeblock": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "1"
+    }
+  ],
+  "editor:toggle-numbered-list": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "3"
+    }
+  ],
+  "editor:toggle-bullet-list": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "4"
+    }
+  ],
+  "darlal-switcher-plus:switcher-plus:open": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "["
+    }
+  ],
+  "workspace:split-vertical": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "ArrowRight"
+    }
+  ],
+  "app:go-back": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "ArrowLeft"
+    }
+  ],
+  "app:go-forward": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "ArrowRight"
+    }
+  ],
+  "editor:toggle-blockquote": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "2"
+    }
+  ],
+  "easy-typing-obsidian:easy-typing-paste-without-format": [],
+  "obsidian-auto-link-title:enhance-url-with-title": [],
+  "obsidian-auto-link-title:auto-link-title-normal-paste": [],
+  "workspace:close-window": [],
+  "app:delete-file": [
+    {
+      "modifiers": [
+        "Shift"
+      ],
+      "key": "Delete"
+    }
+  ],
+  "easy-typing-obsidian:easy-typing-delete-blank-line": [],
+  "easy-typing-obsidian:easy-typing-format-article": [],
+  "easy-typing-obsidian:easy-typing-format-selection": [],
+  "editing-toolbar:workplace-fullscreen-focus": [],
+  "obsidian-excel-to-markdown-table:excel-to-markdown-table": [],
+  "workspace:next-tab": [
+    {
+      "modifiers": [
+        "Ctrl"
+      ],
+      "key": "PageDown"
+    }
+  ],
+  "workspace:previous-tab": [
+    {
+      "modifiers": [
+        "Ctrl"
+      ],
+      "key": "PageUp"
+    }
+  ],
+  "app:open-settings": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": ";"
+    }
+  ]
+}

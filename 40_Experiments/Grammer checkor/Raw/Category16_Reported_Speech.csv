@@ -1,0 +1,4 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Wrong tense backshift,He said he is tired → He said he was tired,2,[Prescriptive],Flag + Explain,Backshift rules need explanation; not intuitive.,佢話佢攰 (no backshift)
+No change in time adverbials,She said she would come tomorrow → She said she would come the next day,2,[Prescriptive],Flag + Explain,Deictic shift needs explanation.,佢話佢聽日會嚟 (no shift)
+Question form in reported question,He asked where is she → He asked where she was,2,[Prescriptive],Flag + Explain,Embedded question word order needs explanation.,佢問佢喺邊 (no inversion)

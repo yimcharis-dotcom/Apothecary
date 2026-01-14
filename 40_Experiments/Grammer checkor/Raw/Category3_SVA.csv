@@ -1,0 +1,5 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Third person -s missing,She work here. → She works here.,1,[Prescriptive],Flag Only,Very common slip; self-evident for C1.,佢喺度做嘢 (no agreement marking)
+Agreement with quantifiers,Each of them have. → Each of them has.,2,[Prescriptive],Flag + Explain,Complex; needs explanation of 'each' as singular.,佢哋每個人都有 (no agreement)
+Existential 'there' agreement,There is many reasons. → There are many reasons.,2,[Prescriptive],Flag + Explain,Common error; needs explanation of post-verbal subject agreement.,有好多原因 (no agreement)
+Collective noun agreement,The team are ready. → The team is ready.,—,[Descriptive],Do Not Flag,Dialect variation (BrE/AmE); spec says don't mark.,N/A

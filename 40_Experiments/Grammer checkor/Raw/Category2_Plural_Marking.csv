@@ -1,0 +1,4 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Missing plural -s,Three book → Three books,1,[Prescriptive],Flag Only,Very basic for C1; self-evident with numeral.,三本書 (no plural marking)
+Irregular plural,Two childs → Two children,1,[Prescriptive],Flag Only,Basic morphology; C1 knows irregular forms.,兩個小朋友 (no plural marking)
+Double plural marking,Many peoples → Many people,2,[Prescriptive],Flag + Explain,Needs explanation that 'people' is already plural.,好多人 (no plural marking)

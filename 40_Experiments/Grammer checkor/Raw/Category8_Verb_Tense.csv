@@ -1,0 +1,5 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Missing past tense marker,Yesterday I go. → Yesterday I went.,2,[Prescriptive],Flag + Explain,Core tense-aspect system difference; needs explanation.,"尋日我去咗 (aspect marker 咗, not tense)"
+Present perfect misuse,I am living here for 5 years. → I have lived here for 5 years.,2,[Prescriptive],Flag + Explain,Aspect system transfer; needs explanation of duration + perfect.,我住咗呢度五年 (completive 咗)
+Past vs present perfect,Did you eat lunch yet? → Have you eaten lunch yet?,2,[Prescriptive],Flag + Explain,'Yet' signals perfect in standard English; needs explanation.,你食咗飯未? (completive 咗 + 未)
+Future with present tense,Tomorrow I go. → Tomorrow I will go.,2,[Prescriptive],Flag + Explain,Tense required even with time adverb; transfer from context-based future in Cantonese.,聽日我去 (no future marker needed)

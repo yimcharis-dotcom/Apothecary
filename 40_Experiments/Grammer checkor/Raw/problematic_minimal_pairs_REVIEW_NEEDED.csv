@@ -1,0 +1,11 @@
+Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,mp_word_count,mp_change_count,mp_issues,Source,Justification
+'Already' Aspect Marker,I finish already. → I already finished. / I have finished.,2.0,[Prescriptive],Flag + Explain,3,6,multiple_changes,Table1_Borderline,Aspect marker transfer affecting tense. Needs explanation of English aspect/tense system.
+Question Tag (Fixed 'isn't it'),"You like it, isn't it? → You like it, don't you?",2.0,[Prescriptive],Flag + Explain,5,4,multiple_changes,Table3_KeepFlag,Wrong grammar pattern; confusing to readers. Needs tag question rule explanation.
+Uncountable as countable,An advice → A piece of advice / Some advice,2.0,[Prescriptive],Flag + Explain,2,6,"multiple_changes, very_short",Category12_Countability,English countability is arbitrary; needs memorization + partitive.
+No change in time adverbials,She said she would come tomorrow → She said she would come the next day,2.0,[Prescriptive],Flag + Explain,6,4,multiple_changes,Category16_Reported_Speech,Deictic shift needs explanation.
+Missing comma in non-restrictive,"My brother who lives in London → My brother, who lives in London,",2.0,[Prescriptive],Flag + Explain,6,4,multiple_changes,Category17_Punctuation,Restrictive vs non-restrictive distinction affects meaning; needs explanation.
+Wrong tag question,"You like it, isn't it? → You like it, don't you?",2.0,[Prescive],Flag + Explain,5,4,multiple_changes,Category19_Advanced_Structures,Tag formation needs explanation; Cantonese uses single tag.
+Adverb placement,He drives carefully always. → He always drives carefully.,2.0,[Prescriptive],Flag + Explain,4,4,multiple_changes,Category7_Word_Order,Adverb placement rules complex; needs explanation.
+Indirect question word order,I wonder where is he. → I wonder where he is.,2.0,[Prescriptive],Flag + Explain,5,4,multiple_changes,Category7_Word_Order,Embedded question rules need explanation.
+Present perfect misuse,I am living here for 5 years. → I have lived here for 5 years.,2.0,[Prescriptive],Flag + Explain,7,4,multiple_changes,Category8_Verb_Tense,Aspect system transfer; needs explanation of duration + perfect.
+Past vs present perfect,Did you eat lunch yet? → Have you eaten lunch yet?,2.0,[Prescriptive],Flag + Explain,5,4,multiple_changes,Category8_Verb_Tense,'Yet' signals perfect in standard English; needs explanation.

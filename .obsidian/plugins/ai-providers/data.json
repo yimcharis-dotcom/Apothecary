@@ -1,0 +1,188 @@
+{
+  "_version": 1,
+  "debugLogging": true,
+  "useNativeFetch": true,
+  "providers": [
+    {
+      "id": "id-1766636383883",
+      "name": "Ollama q2.53b",
+      "apiKey": "",
+      "url": "http://127.0.0.1:11434",
+      "type": "ollama",
+      "model": "qwen2.5:3b",
+      "availableModels": [
+        "bge-m3:latest",
+        "gemma2:9b",
+        "qwen2.5:3b",
+        "gemma2:2b",
+        "nomic-embed-text:latest",
+        "llama3.2:latest",
+        "llama3_1:latest",
+        "qwen2.5:7b-instruct",
+        "mistral-4k:latest",
+        "phi4-safe:latest",
+        "phi3-local:latest"
+      ]
+    },
+    {
+      "id": "id-1766636915296",
+      "name": "xAI",
+      "apiKey": "xai-ap3FR5Oo56oqBOAapUvEmH6XUKwL3bBysMNu5POmqRvkZedTDMMGdUs2KelXRQT43TD0nxRnZeaxRDMk",
+      "url": "https://api.x.ai/v1",
+      "type": "openai",
+      "model": "grok-3",
+      "availableModels": [
+        "grok-2-1212",
+        "grok-2-vision-1212",
+        "grok-3",
+        "grok-3-mini",
+        "grok-4-0709",
+        "grok-4-1-fast-non-reasoning",
+        "grok-4-1-fast-reasoning",
+        "grok-4-fast-non-reasoning",
+        "grok-4-fast-reasoning",
+        "grok-code-fast-1",
+        "grok-2-image-1212"
+      ]
+    },
+    {
+      "id": "id-1766894525432",
+      "name": "Ollama L3.1",
+      "apiKey": "",
+      "url": "http://127.0.0.1:11434",
+      "type": "ollama",
+      "model": "llama3.1:8b-instruct-q5_K_M",
+      "availableModels": [
+        "llava-llama3:latest",
+        "qwen2.5:latest",
+        "qwen2.5:7b-instruct",
+        "llama3.1:8b-instruct-q5_K_M",
+        "mistral-4k:latest",
+        "phi4-safe:latest",
+        "phi3-local:latest"
+      ]
+    },
+    {
+      "id": "id-1766894548155",
+      "name": "Ollama m4k",
+      "apiKey": "",
+      "url": "http://127.0.0.1:11434",
+      "type": "ollama",
+      "model": "mistral-4k:latest",
+      "availableModels": [
+        "llava-llama3:latest",
+        "qwen2.5:latest",
+        "qwen2.5:7b-instruct",
+        "llama3.1:8b-instruct-q5_K_M",
+        "mistral-4k:latest",
+        "phi4-safe:latest",
+        "phi3-local:latest"
+      ]
+    },
+    {
+      "id": "id-1766894565288",
+      "name": "Ollama p4",
+      "apiKey": "",
+      "url": "http://127.0.0.1:11434",
+      "type": "ollama",
+      "model": "phi4-safe:latest",
+      "availableModels": [
+        "llava-llama3:latest",
+        "qwen2.5:latest",
+        "qwen2.5:7b-instruct",
+        "llama3.1:8b-instruct-q5_K_M",
+        "mistral-4k:latest",
+        "phi4-safe:latest",
+        "phi3-local:latest"
+      ]
+    },
+    {
+      "id": "id-1766894581824",
+      "name": "Ollama p3",
+      "apiKey": "",
+      "url": "http://127.0.0.1:11434",
+      "type": "ollama",
+      "model": "phi3-local:latest",
+      "availableModels": [
+        "llava-llama3:latest",
+        "qwen2.5:latest",
+        "qwen2.5:7b-instruct",
+        "llama3.1:8b-instruct-q5_K_M",
+        "mistral-4k:latest",
+        "phi4-safe:latest",
+        "phi3-local:latest"
+      ]
+    },
+    {
+      "id": "id-1767019976806",
+      "name": "Ollama L3.23b",
+      "apiKey": "",
+      "url": "http://127.0.0.1:11434",
+      "type": "ollama",
+      "model": "llama3.2:latest",
+      "availableModels": [
+        "bge-m3:latest",
+        "gemma2:9b",
+        "qwen2.5:3b",
+        "gemma2:2b",
+        "nomic-embed-text:latest",
+        "llama3.2:latest",
+        "llama3_1:latest",
+        "qwen2.5:7b-instruct",
+        "mistral-4k:latest",
+        "phi4-safe:latest",
+        "phi3-local:latest"
+      ]
+    },
+    {
+      "id": "id-1767022667616",
+      "name": "Perplexity",
+      "apiKey": "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",
+      "url": "https://api.perplexity.ai",
+      "type": "openai",
+      "model": "sonar"
+    },
+    {
+      "id": "id-1767432406148",
+      "name": "Ollama - nomic",
+      "apiKey": "",
+      "url": "http://127.0.0.1:11434",
+      "type": "ollama",
+      "model": "nomic-embed-text:latest",
+      "availableModels": [
+        "bge-m3:latest",
+        "gemma2:9b",
+        "qwen2.5:3b",
+        "gemma2:2b",
+        "nomic-embed-text:latest",
+        "llama3.2:latest",
+        "llama3_1:latest",
+        "qwen2.5:7b-instruct",
+        "mistral-4k:latest",
+        "phi4-safe:latest",
+        "phi3-local:latest"
+      ]
+    },
+    {
+      "id": "id-1767432533537",
+      "name": "Ollama bge",
+      "apiKey": "",
+      "url": "http://127.0.0.1:11434",
+      "type": "ollama",
+      "model": "bge-m3:latest",
+      "availableModels": [
+        "bge-m3:latest",
+        "gemma2:9b",
+        "qwen2.5:3b",
+        "gemma2:2b",
+        "nomic-embed-text:latest",
+        "llama3.2:latest",
+        "llama3_1:latest",
+        "qwen2.5:7b-instruct",
+        "mistral-4k:latest",
+        "phi4-safe:latest",
+        "phi3-local:latest"
+      ]
+    }
+  ]
+}

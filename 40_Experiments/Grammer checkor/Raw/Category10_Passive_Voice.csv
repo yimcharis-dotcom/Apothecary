@@ -1,0 +1,4 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Missing 'be' in passive,The house built in 1990 → The house was built in 1990,2,[Prescriptive],Flag + Explain,Passive structure different; needs explanation.,間屋1990年起嘅 (no auxiliary)
+Passive with intransitive,The accident was happened → The accident happened,2,[Prescriptive],Flag + Explain,Transitivity needs explanation; confusing because both are past.,意外發生咗 (no passive)
+Wrong participle form,It was write → It was written,1,[Prescriptive],Flag Only,Basic morphology; C1 knows past participle.,N/A

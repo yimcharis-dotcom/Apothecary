@@ -1,0 +1,51 @@
+{
+  "livePreview": false,
+  "strictLineBreaks": true,
+  "showLineNumber": true,
+  "tabSize": 2,
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": true,
+  "trashOption": "local",
+  "uriCallbacks": true,
+  "defaultViewMode": "source",
+  "showInlineTitle": true,
+  "readableLineLength": true,
+  "propertiesInDocument": "source",
+  "promptDelete": false,
+  "userIgnoreFilters": [
+    "copilot*",
+    "__Templetes/"
+  ],
+  "rightToLeft": false,
+  "focusNewTab": false,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "mobileToolbarCommands": [
+    "editor:undo",
+    "editor:redo",
+    "editor:toggle-numbered-list",
+    "editor:attach-file",
+    "editor:toggle-bold",
+    "editor:toggle-italics",
+    "editor:toggle-highlight",
+    "editor:toggle-strikethrough",
+    "editor:swap-line-up",
+    "editor:swap-line-down",
+    "editor:toggle-code",
+    "editor:toggle-blockquote",
+    "editor:insert-link",
+    "editor:toggle-bullet-list",
+    "editor:toggle-checklist-status",
+    "editor:indent-list",
+    "editor:unindent-list",
+    "insert-current-date",
+    "insert-current-time",
+    "editor:configure-toolbar"
+  ],
+  "showIndentGuide": true
+}

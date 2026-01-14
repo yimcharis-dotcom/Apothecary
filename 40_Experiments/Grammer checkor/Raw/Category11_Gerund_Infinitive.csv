@@ -1,0 +1,4 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Wrong form after verb,I enjoy to read → I enjoy reading,2,[Prescriptive],Flag + Explain,Verb complementation pattern; needs explicit list/rule.,我鍾意睇書 (single verb form)
+Wrong form after preposition,Interested in to learn → Interested in learning,1,[Prescriptive],Flag Only,Preposition + gerund rule is basic; self-evident.,有興趣學... (no distinction)
+Wrong form with causatives,I made him to go → I made him go,2,[Prescriptive],Flag + Explain,Causative pattern needs explanation.,我叫佢去 (single form)

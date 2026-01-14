@@ -1,0 +1,3 @@
+Error Type,Minimal Pair,Label,Runtime Behaviour,Justification,Cantonese Source,Source
+Collective Noun Agreement,The team are ready. → The team is ready.,[Descriptive],Do Not Flag,Both BrE and AmE valid. Your spec says don't flag dialect variants.,N/A (not Cantonese-specific),Table2_OverFlagged
+Collective noun agreement,The team are ready. → The team is ready.,[Descriptive],Do Not Flag,Dialect variation (BrE/AmE); spec says don't mark.,,Category3_SVA

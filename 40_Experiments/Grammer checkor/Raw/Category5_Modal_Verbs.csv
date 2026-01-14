@@ -1,0 +1,4 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Double modals,Will can you help? → Can you help?,1,[Prescriptive],Flag Only,Self-evident; just delete one modal.,你可唔可以幫手? (single modal)
+Modal + infinitive with 'to',You should to go. → You should go.,1,[Prescriptive],Flag Only,Self-evident deletion; C1 knows this.,你應該去 (no 'to')
+Past modal formation,You should went. → You should have gone.,2,[Prescriptive],Flag + Explain,Complex structure; needs explanation of modal + perfect infinitive.,你應該去咗 (should + completive)

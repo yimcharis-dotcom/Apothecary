@@ -1,0 +1,4 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Missing progressive,She cooks now. → She is cooking now.,2,[Prescriptive],Flag + Explain,Needs explanation of progressive for ongoing action.,佢而家煮緊飯 (progressive 緊)
+Stative verb in progressive,I am knowing. → I know.,2,[Prescriptive],Flag + Explain,Needs explanation of stative vs dynamic verbs.,N/A (general ESL error)
+Perfect with past time adverb,I have finished it yesterday. → I finished it yesterday.,2,[Prescriptive],Flag + Explain,Perfect vs simple past with definite time; needs explanation.,我尋日做完咗 (completive 咗)

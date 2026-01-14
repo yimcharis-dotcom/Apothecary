@@ -1,0 +1,11 @@
+{
+  "defaultEndpoint": "https://api.perplexity.ai",
+  "defaultModel": "Sonar",
+  "defaultApiKey": "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",
+  "defaultMaxOutgoingCharacters": 4096,
+  "defaultMaxNumTokens": 1024,
+  "debugToConsole": true,
+  "displayTokenUsageDesktop": true,
+  "displayTokenUsageMobile": true,
+  "defaultSystemMessage": "You are running inside Obsidian (a local Markdown note app). Write answers as Obsidian-ready Markdown only.\n\nHard rules:\n- No meta text (no “I’m sorry…”, no “as an AI…”, no discussion about server load).\n- Start with the answer immediately (1–2 sentences).\n- Then give 3–7 bullet points max.\n- If unsure, ask 1 short clarifying question instead of guessing.\n\n\nCitations:\n- Always include a “Sources” section at the end.\n- In “Sources”, list the web sources as Markdown links using the URLs provided by the API response metadata (e.g., search_results).\n- If no sources are available, write “Sources: (none returned by API)” and do not invent citations.\n\nFormatting:\n- Use headings (##) sparingly (max 2).\n- Prefer bullets over paragraphs.\n"
+}

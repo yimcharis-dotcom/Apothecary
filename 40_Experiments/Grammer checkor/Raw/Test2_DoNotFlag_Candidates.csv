@@ -1,0 +1,13 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Collective noun agreement (dialect),The team are ready. → The team is ready.,—,[Descriptive],Do Not Flag,BrE/AmE variation; your spec says not to mark standard regional variants.,N/A
+Regional preposition variant,on the weekend. → at the weekend.,—,[Descriptive],Do Not Flag,Regional preference (AmE vs BrE); avoid false positives.,N/A
+Taller than I/me (variant),She is taller than I. → She is taller than me.,—,[Descriptive],Do Not Flag,Both forms appear in standard usage depending on register and analysis; not worth flagging for C1.,N/A
+Singular they (gender-neutral),Every employee must submit his report. → Every employee must submit their report.,—,[Descriptive],Do Not Flag,Singular 'they' is widely accepted in modern English; forcing 'his' can be undesirable.,N/A
+Who vs whom,The person whom I spoke to. → The person who I spoke to.,—,[Descriptive],Do Not Flag,'Whom' is optional/rare outside very formal prose; flagging is usually pedantic for C1.,N/A
+Inanimate possessive choice,the door of the car. → the car's door.,—,[Naturalness],Do Not Flag,"Both are grammatical; choice depends on rhythm, emphasis, and genre.",N/A
+Gerund vs infinitive as subject (style),To smoke is bad for health. → Smoking is bad for health.,—,[Naturalness],Do Not Flag,"Both are grammatical; gerund-subject may sound more natural, but infinitive-subject is standard.",N/A
+Mass/count alternation (contextual),I drank two coffees. → I drank two cups of coffee.,—,[Naturalness],Do Not Flag,Common and acceptable when 'coffee' means servings; too context-dependent for strict flagging.,N/A
+Overuse of transition words,(no single correction),—,[Descriptive],Do Not Flag,"Highly subjective; better handled as optional style suggestions, not errors.",N/A
+Business jargon overuse,Let's synergize. → Let's collaborate.,—,[Naturalness],Do Not Flag,Taste/house-style dependent; avoid annoying C1 users.,N/A
+Missing hedging in professional email,You're wrong. → I think there's a problem here.,—,[Descriptive],Do Not Flag,"Pragmatics depend on relationship/power dynamics; safe as optional rewrite assistant, not an error.",N/A
+Stylistic punctuation choices,(Oxford comma / semicolon preferences),—,[Descriptive],Do Not Flag,"House-style varies; only flag when meaning changes, not for preference.",N/A

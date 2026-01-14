@@ -1,0 +1,66 @@
+﻿Category,Error Type,Minimal Pair,Flag/Explain
+Article Errors,Missing Definite Article,"""I went to library yesterday"" / ""I went to the library yesterday""",Flag + Explain
+Article Errors,Missing Indefinite Article,"""He is teacher"" / ""He is a teacher""",Flag + Explain
+Article Errors,Unnecessary Article with Plural Generics,"""The dogs are loyal animals"" / ""Dogs are loyal animals""",Flag + Explain
+Article Errors,Article with Uncountable Nouns,"""I need an information"" / ""I need information""",Flag + Explain
+Plural Marking Errors,Missing Plural -s,"""Three book"" / ""Three books""",Flag + Explain
+Plural Marking Errors,Double Plural Marking,"""Many peoples"" / ""Many people""",Flag + Explain
+Plural Marking Errors,Irregular Plural Formation,"""Two childs"" / ""Two children""",Flag + Explain
+Subject-Verb Agreement Errors,Third Person Singular -s Missing,"""She work here"" / ""She works here""",Flag + Explain
+Subject-Verb Agreement Errors,Incorrect Agreement with Collective Nouns,"""The team are ready"" (AmE) / ""The team is ready""",Flag Only
+Subject-Verb Agreement Errors,Agreement with Quantifiers,"""Each of them have"" / ""Each of them has""",Flag + Explain
+Verb Tense Errors,Missing Past Tense Marker,"""Yesterday I go shopping"" / ""Yesterday I went shopping""",Flag + Explain
+Verb Tense Errors,Incorrect Present Perfect Usage,"""I am living here for 5 years"" / ""I have lived here for 5 years""",Flag + Explain
+Verb Tense Errors,Simple Past vs Present Perfect,"""Did you eat lunch yet?"" / ""Have you eaten lunch yet?""",Flag + Explain
+Verb Tense Errors,Future Time Expression with Present Tense,"""Tomorrow I go to work"" / ""Tomorrow I will go to work""",Flag + Explain
+Aspect Errors,Missing Progressive Aspect,"""She cooks now"" (when action is ongoing) / ""She is cooking now""",Flag + Explain
+Aspect Errors,Stative Verb in Progressive,"""I am knowing the answer"" / ""I know the answer""",Flag + Explain
+Aspect Errors,Perfect Aspect with Time Adverbial,"""I have finished it yesterday"" / ""I finished it yesterday""",Flag + Explain
+Modal Verb Errors,Double Modals,"""Will can you help?"" / ""Can you help?""",Flag + Explain
+Modal Verb Errors,Modal + Infinitive with 'to',"""You should to go"" / ""You should go""",Flag + Explain
+Modal Verb Errors,Past Modal Formation,"""You should went"" / ""You should have gone""",Flag + Explain
+Preposition Errors,Wrong Preposition (Time),"""In Monday"" / ""On Monday""",Flag + Explain
+Preposition Errors,Wrong Preposition (Place),"""In the bus"" / ""On the bus""",Flag + Explain
+Preposition Errors,Wrong Preposition (Dependent),"""Depend of"" / ""Depend on""",Flag + Explain
+Preposition Errors,Missing Preposition,"""Listen the music"" / ""Listen to the music""",Flag + Explain
+Preposition Errors,Unnecessary Preposition,"""Discuss about the issue"" / ""Discuss the issue""",Flag + Explain
+Word Order Errors,Adverb Placement,"""He drives carefully always"" / ""He always drives carefully""",Flag + Explain
+Word Order Errors,Adjective Order,"""A wooden old table"" / ""An old wooden table""",Flag + Explain
+Word Order Errors,Question Word Order,"""Where you went?"" / ""Where did you go?""",Flag + Explain
+Word Order Errors,Indirect Question Word Order,"""I wonder where is he"" / ""I wonder where he is""",Flag + Explain
+Relative Clause Errors,Missing Relative Pronoun,"""The book I bought it"" / ""The book I bought"" OR ""The book that I bought""",Flag + Explain
+Relative Clause Errors,Resumptive Pronoun,"""The person who I met him"" / ""The person who I met""",Flag + Explain
+Relative Clause Errors,Wrong Relative Pronoun,"""The place who I visited"" / ""The place that/which I visited""",Flag + Explain
+Passive Voice Errors,Missing 'be' in Passive,"""The house built in 1990"" / ""The house was built in 1990""",Flag + Explain
+Passive Voice Errors,Passive with Intransitive Verb,"""The accident was happened"" / ""The accident happened""",Flag + Explain
+Passive Voice Errors,Wrong Participle Form,"""It was write"" / ""It was written""",Flag + Explain
+Gerund vs Infinitive Errors,Wrong Form after Verb,"""I enjoy to read"" / ""I enjoy reading""",Flag + Explain
+Gerund vs Infinitive Errors,Wrong Form after Verb (opposite),"""I want reading"" / ""I want to read""",Flag + Explain
+Gerund vs Infinitive Errors,Wrong Form after Preposition,"""I'm interested in to learn"" / ""I'm interested in learning""",Flag + Explain
+Countability Errors,Uncountable Treated as Countable,"""An advice"" / ""A piece of advice"" OR ""Some advice""",Flag + Explain
+Countability Errors,Wrong Quantifier for Countable,"""Much people"" / ""Many people""",Flag + Explain
+Countability Errors,Wrong Quantifier for Uncountable,"""Many money"" / ""Much money""",Flag + Explain
+Comparative and Superlative Errors,Double Comparative,"""More better"" / ""Better""",Flag + Explain
+Comparative and Superlative Errors,Missing 'than' in Comparison,"""She is taller from me"" / ""She is taller than me""",Flag + Explain
+Comparative and Superlative Errors,Wrong Superlative Form,"""The most good"" / ""The best""",Flag + Explain
+Conditional Errors,Wrong Tense in If-Clause,"""If I will have time"" / ""If I have time""",Flag + Explain
+Conditional Errors,Mixed Conditional Types,"""If I knew, I will tell you"" / ""If I knew, I would tell you""",Flag + Explain
+Conditional Errors,Impossible Condition Formation,"""If I was you"" / ""If I were you""",Flag + Explain
+Redundancy Errors,Double Negative,"""I don't have nothing"" / ""I don't have anything""",Flag + Explain
+Redundancy Errors,Redundant Subject,"""My brother he is tall"" / ""My brother is tall""",Flag + Explain
+Redundancy Errors,Redundant 'More' with Comparative,"""More easier"" / ""Easier""",Flag + Explain
+Pronoun Errors,Subject-Object Pronoun Confusion,"""Between you and I"" / ""Between you and me""",Flag + Explain
+Pronoun Errors,Reflexive Pronoun Misuse,"""Myself did it"" / ""I did it""",Flag + Explain
+Pronoun Errors,Possessive vs Possessive Pronoun,"""That book is my"" / ""That book is mine""",Flag + Explain
+Register and Formality Errors,Informal in Professional Context,"""Wanna discuss this?"" (in email to boss) / ""Would you like to discuss this?""",Flag Only
+Register and Formality Errors,Overly Formal in Casual Context,"""I shall be there"" (to friend) / ""I'll be there""",Flag Only
+Register and Formality Errors,Contractions in Formal Writing,"""The report doesn't show..."" (academic) / ""The report does not show...""",Flag Only
+Sentence Fragment and Run-on Errors,Sentence Fragment,"""Because I was tired."" (standalone) / ""I left early because I was tired.""",Flag + Explain
+Sentence Fragment and Run-on Errors,Comma Splice,"""I was tired~~,~~ I went home"" / ""I was tired, so I went home""",Flag + Explain
+Sentence Fragment and Run-on Errors,Run-on Sentence,"""I went homeI was tired"" / ""I went home because I was tired""",Flag + Explain
+Reported Speech Errors,Wrong Tense Backshift,"""He said he is tired"" / ""He said he was tired""",Flag + Explain
+Reported Speech Errors,No Change in Time Adverbials,"""She said she would come tomorrow"" / ""She said she would come the next day""",Flag + Explain
+Reported Speech Errors,Question Form in Reported Question,"""He asked where is she"" / ""He asked where she was""",Flag + Explain
+Reported Speech Errors,Missing Comma in Non-Restrictive Clause,"""My brotherwho lives in London"" / ""My brother, who lives in London,""",Flag + Explain
+Reported Speech Errors,Missing Apostrophe in Possessive,"""The students~~ books~~"" / ""The students' books""",Flag + Explain
+Reported Speech Errors,Its vs It's,"""Its raining"" / ""It's raining""",Flag + Explain

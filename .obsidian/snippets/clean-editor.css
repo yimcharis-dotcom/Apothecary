@@ -1,0 +1,22 @@
+/* NUCLEAR NEUTRALIZER - Force Absolute Neutral White */
+.theme-light {
+  /* Force absolute white for the main canvas */
+  --background-primary: #ffffff !important; 
+  /* Force a clean, non-pink secondary panel (sidebar) */
+  --background-secondary: #fdfdfd !important;
+  --background-primary-alt: #f8f8f8 !important;
+  --background-secondary-alt: #f5f5f5 !important;
+ 
+  /* Force "Ink on Paper" text contrast */
+  --text-normal: #000000 !important;
+  --text-muted: #2a2a2a !important;
+  --text-faint: #555555 !important;
+}
+ 
+/* Brighten File Explorer text and icons */
+.theme-light .nav-folder-title,
+.theme-light .nav-file-title {
+  color: #000000 !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+}

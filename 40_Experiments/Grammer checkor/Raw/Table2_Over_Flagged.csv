@@ -1,0 +1,4 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Informal Contraction (Email),The report doesn't show... → The report does not show...,—,[Descriptive],Ignore (Casual/Semi-Formal) / Flag Only (Academic),C1s know when to expand. Flagging in business emails is annoying; most companies accept contractions.,"N/A (register choice, not transfer)"
+Collective Noun Agreement,The team are ready. → The team is ready.,—,[Descriptive],Do Not Flag,Both BrE and AmE valid. Your spec says don't flag dialect variants.,N/A (not Cantonese-specific)
+'Wanna' in Casual,I wanna go. → I want to go.,—,[Descriptive],Ignore (Casual) / Flag + Explain (Formal),Standard in chat/SMS. Only flag in formal contexts.,N/A (universal casual register)

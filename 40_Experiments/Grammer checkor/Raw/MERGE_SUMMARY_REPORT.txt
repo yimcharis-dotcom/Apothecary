@@ -1,0 +1,98 @@
+
+═══════════════════════════════════════════════════════════════════
+  GRAMMAR CHECKER ERROR LIST: MERGE & MINIMAL PAIR AUDIT
+═══════════════════════════════════════════════════════════════════
+
+DATA SOURCES MERGED:
+-------------------
+• 19 Category CSVs (Articles, SVA, Modals, Prepositions, etc.)
+• Table1: Borderline Cantonese Transfer (5 items)
+• Table2: Over-Flagged (3 items)  
+• Table3: Keep Flag + Explain (6 items)
+
+TOTAL: 81 unique error types (no duplicates found ✓)
+
+
+POLICY DISTRIBUTION:
+-------------------
+Tier 1 (Flag Only):           26 error types (32%)
+Tier 2 (Flag + Explain):      57 error types (70%)
+Do Not Flag:                   2 error types (2%)
+                              ─────────────────────
+TOTAL:                        85 buckets* 
+
+*Note: Some rows have context-dependent rules (e.g., "Flag Only in Casual / 
+Flag + Explain in Formal"), so they appear in multiple buckets.
+
+
+MINIMAL PAIR QUALITY:
+--------------------
+Clean examples:               59 / 81 (73%) ✓
+  • Single issue
+  • ≤8 words
+  • ≤3 token changes
+
+Very short (<3 words):        13 / 81 (16%)
+  • May lack context
+  • Example: "An advice → A piece of advice"
+
+Multiple changes (>3):        10 / 81 (12%) ⚠
+  • Compound issues or rewrites
+  • Example: "I finish already → I already finished / I have finished"
+
+Median word count:            4 words
+Median changes per pair:      2 tokens
+
+
+PROBLEMATIC MINIMAL PAIRS REQUIRING REVIEW:
+-------------------------------------------
+                      Error Type                                                            Minimal Pair  mp_change_count
+         'Already' Aspect Marker              I finish already. → I already finished. / I have finished.                6
+ Question Tag (Fixed 'isn't it')                        You like it, isn't it? → You like it, don't you?                4
+        Uncountable as countable                             An advice → A piece of advice / Some advice                6
+    No change in time adverbials She said she would come tomorrow → She said she would come the next day                4
+Missing comma in non-restrictive       My brother who lives in London → My brother, who lives in London,                4
+              Wrong tag question                        You like it, isn't it? → You like it, don't you?                4
+                Adverb placement               He drives carefully always. → He always drives carefully.                4
+    Indirect question word order                           I wonder where is he. → I wonder where he is.                4
+          Present perfect misuse          I am living here for 5 years. → I have lived here for 5 years.                4
+         Past vs present perfect                      Did you eat lunch yet? → Have you eaten lunch yet?                4
+
+
+OUTPUT FILES CREATED:
+--------------------
+1. master_merged_all_errors.csv
+   → Complete merged dataset (81 rows)
+
+2. TIER1_ALLOWLIST.csv  
+   → 26 error types for "Flag Only" behavior
+   → Use this as the closed Tier-1 list in your spec
+
+3. TIER2_DEFAULT.csv
+   → 57 error types requiring explanations
+   → Anything not in Tier 1 or Do Not Flag defaults here
+
+4. DO_NOT_FLAG.csv
+   → 2 error types to ignore (dialect variants, acceptable usage)
+
+5. problematic_minimal_pairs_REVIEW_NEEDED.csv
+   → 10 rows with compound issues or long examples
+   → MANUAL REVIEW: pick better examples or keep all candidates
+
+
+NEXT STEPS:
+----------
+1. Review problematic_minimal_pairs_REVIEW_NEEDED.csv
+   • For each row, decide: keep as-is, find simpler example, or split into separate error types
+
+2. Add TIER1_ALLOWLIST to your system instruction as:
+   <constraint>
+   Tier 1 is permitted only for error types in the Tier1-Allowlist.
+   If an issue is not on the allowlist, it must be Tier 2.
+   </constraint>
+
+3. Optionally: add context rules for Cantonese transfer patterns
+   (e.g., "Null subject → Flag Only in Casual, Flag + Explain in Formal")
+
+
+═══════════════════════════════════════════════════════════════════

@@ -1,0 +1,7 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Missing definite article,I went to library. → I went to the library.,2,[Prescriptive],Flag + Explain,Article system absent in Cantonese; needs explicit teaching of definiteness.,去咗圖書館 (no article)
+Missing indefinite article,He is teacher. → He is a teacher.,2,[Prescriptive],Flag + Explain,Common transfer error; needs explanation of count noun + indefinite article rule.,佢係老師 (no article)
+Unnecessary article with generics,The dogs are loyal. → Dogs are loyal.,2,[Prescriptive],Flag + Explain,Generic vs specific article use is subtle; needs explanation.,狗好忠心 (no article for generics)
+Article with uncountable nouns,I need an information. → I need information.,2,[Prescriptive],Flag + Explain,Countability + article interaction; needs explicit rule.,我要啲資料 (no article)
+Article with proper nouns,The Hong Kong is busy. → Hong Kong is busy.,1,[Prescriptive],Flag Only,Self-evident for C1; just delete 'the'.,香港好繁忙 (no article)
+Zero article with institutions,She is at the home. → She is at home.,2,[Naturalness],Flag + Explain,Idiomatic; needs explanation of fixed expressions.,佢喺屋企 (no article)

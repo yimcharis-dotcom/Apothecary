@@ -1,0 +1,58 @@
+Error Type,Minimal Pair,Label,Runtime Behaviour,Justification,Cantonese Source,SourceFile
+'Already' Aspect Marker,I finish already. → I already finished. / I have finished.,[Prescriptive],Flag + Explain,Aspect marker transfer affecting tense. Needs explanation of English aspect/tense system.,我做完咗 (completive 咗),Table1_Borderline_Cantonese_Transfer
+'Got' for 'Have/There is',Got people inside. → There are people inside.,[Prescriptive],Flag + Explain,Non-standard existential. Needs explanation of 'there is/are' vs 'have/got'.,入面有人 (Colloquial Cantonese 有),Table3_Keep_Flag_Explain
+-ing vs -ed confusion,I am boring → I am bored,[Prescriptive],Flag + Explain,Participial adjective distinction needs explanation.,我好悶 (no distinction),19_Advanced_Structures
+Adjective order,A wooden old table → An old wooden table,[Naturalness],Flag + Explain,OSASCOMP order is arbitrary; needs memorization.,一張舊木枱 (age before material),7_Word_Order
+Adverb placement,He drives carefully always. → He always drives carefully.,[Prescriptive],Flag + Explain,Adverb placement rules complex; needs explanation.,佢成日小心咁揸車 (always at start),7_Word_Order
+Agreement with quantifiers,Each of them have. → Each of them has.,[Prescriptive],Flag + Explain,Complex; needs explanation of 'each' as singular.,佢哋每個人都有 (no agreement),3_SVA
+Article with proper nouns,The Hong Kong is busy. → Hong Kong is busy.,[Prescriptive],Flag + Explain,Self-evident for C1; just delete 'the'.,香港好繁忙 (no article),1_Articles
+Article with uncountable nouns,I need an information. → I need information.,[Prescriptive],Flag + Explain,Countability + article interaction; needs explicit rule.,我要啲資料 (no article),1_Articles
+Calque Verb: 'Eat Medicine',Eat medicine. → Take medicine.,[Prescriptive],Flag + Explain,Lexical error; sounds childish or non-native.,食藥 (lit. 'eat medicine'),Table3_Keep_Flag_Explain
+Calque Verb: 'Open/Close',Open the light. → Turn on the light.,[Prescriptive],Flag + Explain,Lexical error; confusing to non-HK readers. Needs verb collocation explanation.,開燈 (lit. 'open light'),Table3_Keep_Flag_Explain
+Comma splice,"I was tired, I went home → I was tired, so I went home",[Prescriptive],Flag + Explain,Needs explanation of clause linking.,"我攰咗,我返屋企 (comma acceptable)",15_Sentence_Structure
+Dangling modifier,"Walking down the street, the trees were beautiful → Walking down the street, I saw beautiful trees",[Prescriptive],Flag + Explain,Complex; needs explanation of subject match.,"行落街,啲樹好靚 (topic acceptable)",15_Sentence_Structure
+Double plural marking,Many peoples → Many people,[Prescriptive],Flag + Explain,Needs explanation that 'people' is already plural.,好多人 (no plural marking),2_Plural_Marking
+Existential 'Have',Have many people here. → There are many people here.,[Prescriptive],Flag + Explain,Changes meaning structure. Genuine error even in casual contexts.,呢度有好多人 (lit. 'here have many people'),Table3_Keep_Flag_Explain
+Existential 'there' agreement,There is many reasons. → There are many reasons.,[Prescriptive],Flag + Explain,Common error; needs explanation of post-verbal subject agreement.,有好多原因 (no agreement),3_SVA
+Future with present tense,Tomorrow I go. → Tomorrow I will go.,[Prescriptive],Flag + Explain,Tense required even with time adverb; transfer from context-based future in Cantonese.,聽日我去 (no future marker needed),8_Verb_Tense
+Indirect question word order,I wonder where is he. → I wonder where he is.,[Prescriptive],Flag + Explain,Embedded question rules need explanation.,我想知佢喺邊 (no inversion),7_Word_Order
+Missing 'be' in passive,The house built in 1990 → The house was built in 1990,[Prescriptive],Flag + Explain,Passive structure different; needs explanation.,間屋1990年起嘅 (no auxiliary),10_Passive_Voice
+Missing comma in non-restrictive,"My brother who lives in London → My brother, who lives in London,",[Prescriptive],Flag + Explain,Restrictive vs non-restrictive distinction affects meaning; needs explanation.,我阿哥喺倫敦住 (no comma),17_Punctuation
+Missing definite article,I went to library. → I went to the library.,[Prescriptive],Flag + Explain,Article system absent in Cantonese; needs explicit teaching of definiteness.,去咗圖書館 (no article),1_Articles
+Missing indefinite article,He is teacher. → He is a teacher.,[Prescriptive],Flag + Explain,Common transfer error; needs explanation of count noun + indefinite article rule.,佢係老師 (no article),1_Articles
+Missing inversion after negative,Never I have seen → Never have I seen,[Prescriptive],Flag + Explain,Inversion rules complex and formal; needs explanation.,我從來未見過 (no inversion),19_Advanced_Structures
+Missing past tense marker,Yesterday I go. → Yesterday I went.,[Prescriptive],Flag + Explain,Core tense-aspect system difference; needs explanation.,"尋日我去咗 (aspect marker 咗, not tense)",8_Verb_Tense
+Missing progressive,She cooks now. → She is cooking now.,[Prescriptive],Flag + Explain,Needs explanation of progressive for ongoing action.,佢而家煮緊飯 (progressive 緊),4_Aspect_Errors
+Missing relative with resumptive,The book I bought it → The book I bought,[Prescriptive],Flag + Explain,Compound error; needs explanation of both issues.,我買嗰本書佢... (topic chain),9_Relative_Clauses
+Mixed conditional types,"If I knew, I will tell you → If I knew, I would tell you",[Prescriptive],Flag + Explain,Consistency in conditional forms needs explanation.,"如果我知,我會話畀你知 (no modal distinction)",14_Conditionals
+No change in time adverbials,She said she would come tomorrow → She said she would come the next day,[Prescriptive],Flag + Explain,Deictic shift needs explanation.,佢話佢聽日會嚟 (no shift),16_Reported_Speech
+Parallel structure error,"I like reading, to swim and jogging → I like reading, swimming and jogging",[Prescriptive],Flag + Explain,Parallelism rule needs explanation.,我鍾意睇書、游水同跑步 (all same form),19_Advanced_Structures
+Passive with intransitive,The accident was happened → The accident happened,[Prescriptive],Flag + Explain,Transitivity needs explanation; confusing because both are past.,意外發生咗 (no passive),10_Passive_Voice
+Past modal formation,You should went. → You should have gone.,[Prescriptive],Flag + Explain,Complex structure; needs explanation of modal + perfect infinitive.,你應該去咗 (should + completive),5_Modal_Verbs
+Past vs present perfect,Did you eat lunch yet? → Have you eaten lunch yet?,[Prescriptive],Flag + Explain,'Yet' signals perfect in standard English; needs explanation.,你食咗飯未? (completive 咗 + 未),8_Verb_Tense
+Perfect with past time adverb,I have finished it yesterday. → I finished it yesterday.,[Prescriptive],Flag + Explain,Perfect vs simple past with definite time; needs explanation.,我尋日做完咗 (completive 咗),4_Aspect_Errors
+Present perfect misuse,I am living here for 5 years. → I have lived here for 5 years.,[Prescriptive],Flag + Explain,Aspect system transfer; needs explanation of duration + perfect.,我住咗呢度五年 (completive 咗),8_Verb_Tense
+Question Tag (Fixed 'isn't it'),"You like it, isn't it? → You like it, don't you?",[Prescriptive],Flag + Explain,Wrong grammar pattern; confusing to readers. Needs tag question rule explanation.,"你鍾意,係唔係? (lit. 'is not is?')",Table3_Keep_Flag_Explain
+Question form in reported question,He asked where is she → He asked where she was,[Prescriptive],Flag + Explain,Embedded question word order needs explanation.,佢問佢喺邊 (no inversion),16_Reported_Speech
+Question word order,Where you went? → Where did you go?,[Prescriptive],Flag + Explain,Inversion rule needs explanation; common transfer error.,你去咗邊? (no inversion),7_Word_Order
+Reflexive misuse,Myself did it → I did it,[Prescriptive],Flag + Explain,Reflexive use rules need explanation; common over-formality.,我自己做咗 (reflexive overused),18_Pronouns
+Resumptive Pronoun,The person who I met him. → The person who I met.,[Prescriptive],Flag + Explain,Genuine relative clause error. Needs explanation of English syntax.,我見過嗰個人佢... (topic chain with resumptive),Table3_Keep_Flag_Explain
+Resumptive pronoun,The person who I met him → The person who I met,[Prescriptive],Flag + Explain,Classic Cantonese transfer; needs explanation of English relative clause structure.,我見過嗰個人佢... (resumptive chain),9_Relative_Clauses
+Run-on sentence,I went home I was tired → I went home because I was tired,[Prescriptive],Flag + Explain,Needs explanation of clause boundaries.,我返屋企我攰 (juxtaposition OK),15_Sentence_Structure
+Sentence fragment,Because I was tired. → I left early because I was tired.,[Prescriptive],Flag + Explain,Needs explanation of subordinate vs independent clauses.,因為我攰 (acceptable fragment in Cantonese),15_Sentence_Structure
+Stative verb in progressive,I am knowing. → I know.,[Prescriptive],Flag + Explain,Needs explanation of stative vs dynamic verbs.,N/A (general ESL error),4_Aspect_Errors
+Subject-object confusion,Between you and I → Between you and me,[Prescriptive],Flag + Explain,Case system needs explanation; hypercorrection common.,你同我之間 (no case marking),18_Pronouns
+Subjunctive 'were',If I was you → If I were you,[Prescriptive],Flag + Explain,Subjunctive mood rare in modern English but expected in formal contexts; needs explanation.,如果我係你 (no mood distinction),14_Conditionals
+Uncountable as countable,An advice → A piece of advice / Some advice,[Prescriptive],Flag + Explain,English countability is arbitrary; needs memorization + partitive.,一個建議 (countable with classifier),12_Countability
+Unnecessary article with generics,The dogs are loyal. → Dogs are loyal.,[Prescriptive],Flag + Explain,Generic vs specific article use is subtle; needs explanation.,狗好忠心 (no article for generics),1_Articles
+Wrong dependent preposition,Depend of → Depend on,[Prescriptive],Flag + Explain,Fixed collocation; C1 knows once flagged.,依賴... (no preposition),6_Prepositions
+Wrong form after verb,I enjoy to read → I enjoy reading,[Prescriptive],Flag + Explain,Verb complementation pattern; needs explicit list/rule.,我鍾意睇書 (single verb form),11_Gerund_Infinitive
+Wrong form with causatives,I made him to go → I made him go,[Prescriptive],Flag + Explain,Causative pattern needs explanation.,我叫佢去 (single form),11_Gerund_Infinitive
+Wrong preposition (place),In the bus → On the bus,[Prescriptive],Flag + Explain,Vehicle prepositions are idiomatic; needs explanation.,喺架巴士度 (single locative 喺),6_Prepositions
+Wrong preposition (time),In Monday → On Monday,[Prescriptive],Flag + Explain,Basic for C1; self-evident fix.,星期一 (no preposition),6_Prepositions
+Wrong quantifier (countable),Much people → Many people,[Prescriptive],Flag + Explain,Basic for C1; self-evident.,好多人 (single quantifier 多),12_Countability
+Wrong quantifier (uncountable),Many money → Much money,[Prescriptive],Flag + Explain,Basic; self-evident.,好多錢 (single quantifier 多),12_Countability
+Wrong tag question,"You like it, isn't it? → You like it, don't you?",[Prescive],Flag + Explain,Tag formation needs explanation; Cantonese uses single tag.,"你鍾意,係唔係? (係唔係 for all)",19_Advanced_Structures
+Wrong tense backshift,He said he is tired → He said he was tired,[Prescriptive],Flag + Explain,Backshift rules need explanation; not intuitive.,佢話佢攰 (no backshift),16_Reported_Speech
+Wrong tense in if-clause,If I will have time → If I have time,[Prescriptive],Flag + Explain,Conditional tense rules need explanation; common error.,如果我有時間 (no tense distinction),14_Conditionals
+Zero article with institutions,She is at the home. → She is at home.,[Naturalness],Flag + Explain,Idiomatic; needs explanation of fixed expressions.,佢喺屋企 (no article),1_Articles

@@ -1,0 +1,4 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Wrong tense in if-clause,If I will have time → If I have time,2,[Prescriptive],Flag + Explain,Conditional tense rules need explanation; common error.,如果我有時間 (no tense distinction)
+Mixed conditional types,"If I knew, I will tell you → If I knew, I would tell you",2,[Prescriptive],Flag + Explain,Consistency in conditional forms needs explanation.,"如果我知,我會話畀你知 (no modal distinction)"
+Subjunctive 'were',If I was you → If I were you,2,[Prescriptive],Flag + Explain,Subjunctive mood rare in modern English but expected in formal contexts; needs explanation.,如果我係你 (no mood distinction)

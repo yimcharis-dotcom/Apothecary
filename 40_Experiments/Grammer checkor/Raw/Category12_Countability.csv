@@ -1,0 +1,4 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Uncountable as countable,An advice → A piece of advice / Some advice,2,[Prescriptive],Flag + Explain,English countability is arbitrary; needs memorization + partitive.,一個建議 (countable with classifier)
+Wrong quantifier (countable),Much people → Many people,1,[Prescriptive],Flag Only,Basic for C1; self-evident.,好多人 (single quantifier 多)
+Wrong quantifier (uncountable),Many money → Much money,1,[Prescriptive],Flag Only,Basic; self-evident.,好多錢 (single quantifier 多)

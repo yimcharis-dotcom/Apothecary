@@ -1,0 +1,14 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source,Category
+Missing definite article,I went to library. → I went to the library.,2,[Prescriptive],Flag + Explain,Article system absent in Cantonese; needs explicit teaching of definiteness.,去咗圖書館 (no article),Articles
+Missing indefinite article,He is teacher. → He is a teacher.,2,[Prescriptive],Flag + Explain,Common transfer error; needs explanation of count noun + indefinite article rule.,佢係老師 (no article),Articles
+Unnecessary article with generics,The dogs are loyal. → Dogs are loyal.,2,[Prescriptive],Flag + Explain,Generic vs specific article use is subtle; needs explanation.,狗好忠心 (no article for generics),Articles
+Article with uncountable nouns,I need an information. → I need information.,2,[Prescriptive],Flag + Explain,Countability + article interaction; needs explicit rule.,我要啲資料 (no article),Articles
+Article with proper nouns,The Hong Kong is busy. → Hong Kong is busy.,1,[Prescriptive],Flag Only,Self-evident for C1; just delete 'the'.,香港好繁忙 (no article),Articles
+Zero article with institutions,She is at the home. → She is at home.,2,[Naturalness],Flag + Explain,Idiomatic; needs explanation of fixed expressions.,佢喺屋企 (no article),Articles
+Missing plural -s,Three book → Three books,1,[Prescriptive],Flag Only,Very basic for C1; self-evident with numeral.,三本書 (no plural marking),Plural_Marking
+Irregular plural,Two childs → Two children,1,[Prescriptive],Flag Only,Basic morphology; C1 knows irregular forms.,兩個小朋友 (no plural marking),Plural_Marking
+Double plural marking,Many peoples → Many people,2,[Prescriptive],Flag + Explain,Needs explanation that 'people' is already plural.,好多人 (no plural marking),Plural_Marking
+Third person -s missing,She work here. → She works here.,1,[Prescriptive],Flag Only,Very common slip; self-evident for C1.,佢喺度做嘢 (no agreement marking),SVA
+Agreement with quantifiers,Each of them have. → Each of them has.,2,[Prescriptive],Flag + Explain,Complex; needs explanation of 'each' as singular.,佢哋每個人都有 (no agreement),SVA
+Existential 'there' agreement,There is many reasons. → There are many reasons.,2,[Prescriptive],Flag + Explain,Common error; needs explanation of post-verbal subject agreement.,有好多原因 (no agreement),SVA
+Collective noun agreement,The team are ready. → The team is ready.,—,[Descriptive],Do Not Flag,Dialect variation (BrE/AmE); spec says don't mark.,N/A,SVA

@@ -1,0 +1,6 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Null Subject (Weather/State),Is raining. → It is raining.,1,[Prescriptive],Flag Only (Casual) / Flag + Explain (Formal),C1s know dummy 'it' is required but omit in chat. Self-evident fix.,落緊雨 (no 'it' needed)
+Null Subject (Opinion),Is very difficult. → It is very difficult.,1,[Prescriptive],Flag Only (Casual) / Flag + Explain (Formal),Same as above; code-switching in casual contexts.,好難 (no 'it' needed)
+Missing Subject Pronoun,Don't know what to do. → I don't know what to do.,1,[Prescriptive],Flag Only (Casual) / Flag + Explain (Formal),Very common in WhatsApp/chat. Self-evident once flagged.,唔知點做 (no 'I' required)
+Redundant Subject (Topic-Comment),My brother he is tall. → My brother is tall.,1,[Naturalness],Flag Only (Casual) / Flag + Explain (Formal),Acceptable emphasis in speech; annoying in formal writing. Simple deletion.,我阿哥佢好高 (topic + comment structure)
+'Already' Aspect Marker,I finish already. → I already finished. / I have finished.,2,[Prescriptive],Flag + Explain,Aspect marker transfer affecting tense. Needs explanation of English aspect/tense system.,我做完咗 (completive 咗)

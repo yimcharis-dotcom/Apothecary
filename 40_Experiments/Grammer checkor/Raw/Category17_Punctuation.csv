@@ -1,0 +1,4 @@
+﻿Error Type,Minimal Pair,Tier,Label,Runtime Behaviour,Justification,Cantonese Source
+Missing comma in non-restrictive,"My brother who lives in London → My brother, who lives in London,",2,[Prescriptive],Flag + Explain,Restrictive vs non-restrictive distinction affects meaning; needs explanation.,我阿哥喺倫敦住 (no comma)
+Missing apostrophe in possessive,The students books → The students' books,1,[Prescriptive],Flag Only,Basic; self-evident.,學生啲書 (possessive particle 啲)
+Its vs it's,Its raining → It's raining,1,[Prescriptive],Flag Only,Common typo/confusion but self-evident fix.,N/A
