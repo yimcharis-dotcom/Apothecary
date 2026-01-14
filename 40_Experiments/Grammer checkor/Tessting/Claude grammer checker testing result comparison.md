@@ -1,8 +1,6 @@
-
-
 1. **Annotated Text**: Show original text with errors marked using [1.], [2.], [3.] citation format. Apply markup:
     - Tier 1: _italics_[\#.]
-    - Tier 2: ***bold italics***[\#.]
+    - Tier 2: _**bold italics**_[\#.]
 2. **Explanations** (Tier 2 only):
 [\#.] [Prescriptive/Descriptive/Naturalness] "quote" - What's wrong
 
@@ -17,14 +15,14 @@ Alternatives: [1–2 rephrasings]
 </output_format>
   <constraints>
     ```
-    <constraint priority="high">Only mark actual errors—not correct grammar, acceptable collocations, or standard constructions.</constraint>
+<constraint priority="high">Only mark actual errors—not correct grammar, acceptable collocations, or standard constructions.</constraint>
     ```
     <constraint priority="high">Use [#.] citation format with period for all markers. This format is required for parser compliance.</constraint>
     ```
-    <constraint priority="high">Every bold-italics-marked item must have a corresponding explanation in Section 2. If an annotation number appears in Section 1, it must appear in Section 2 unless it's Tier 1 (italics).</constraint>
+<constraint priority="high">Every bold-italics-marked item must have a corresponding explanation in Section 2. If an annotation number appears in Section 1, it must appear in Section 2 unless it's Tier 1 (italics).</constraint>
     ```
     ```
-    <constraint priority="high">Provide all four sections. Section 4 must fix every marked error, including those explained in Section 2 and register issues mentioned in explanations.</constraint>
+<constraint priority="high">Provide all four sections. Section 4 must fix every marked error, including those explained in Section 2 and register issues mentioned in explanations.</constraint>
     ```
     <constraint priority="medium">Label each Tier 2 issue as:
     - [Prescriptive]: violates grammar rules or collocations
@@ -49,12 +47,11 @@ Ready when you are.
 
 [^1_1]: DvPvN-Grammar-Checker-Tier-Classification-Edge-Cases.md
 
-
 ---
 
 ## 1. Annotated Text
 
-***Hey***[1.] Dr. Martinez, I wanted to reach out regarding the quarterly financial statements. The data shows significant revenue ***growth, however***[2.] the board feel the _projections is_[3.] overly optimistic. ***We're doing researches***[4.] on market trends, and based on this analysis, I suggest you reconsider your assumptions ***since your relatively new to this sector***[5.]. The ***equipments***[6.] purchased last quarter was depreciated incorrectly, and _making amendments to the balance sheet are_[7.] critical. Internet connectivity _issues has_[8.] prevented timely reporting. Please _advice_[9.] on how to proceed, as we _need respond_[10.] by _end of week_[11.].
+_**Hey**_[1.] Dr. Martinez, I wanted to reach out regarding the quarterly financial statements. The data shows significant revenue _**growth, however**_[2.] the board feel the _projections is_[3.] overly optimistic. _**We're doing researches**_[4.] on market trends, and based on this analysis, I suggest you reconsider your assumptions _**since your relatively new to this sector**_[5.]. The _**equipments**_[6.] purchased last quarter was depreciated incorrectly, and _making amendments to the balance sheet are_[7.] critical. Internet connectivity _issues has_[8.] prevented timely reporting. Please _advice_[9.] on how to proceed, as we _need respond_[10.] by _end of week_[11.].
 
 ***
 
@@ -127,7 +124,7 @@ Dr. Martinez, I wanted to reach out regarding the quarterly financial statements
 
 ## 1. Annotated Text
 
-So I've been trying to _setup_[1.] the new authentication system for our app, and honestly the documentation ***doesn't really help understanding***[2.] the OAuth flow. ***Me and my team was***[3.] debugging this issue for three days straight. The error _messages keeps_[4.] saying "invalid token" but we're doing everything _correct_[5.] according to the guides. I think the _problem are_[6.] in how the API handles refresh tokens, since _it seem like tokens expires_[7.] too quickly. We _need figure_[8.] out if this behavior is intentional or if there's configuration options we're missing. Has anyone dealt with similar problems? Would appreciate if someone could explain what's the proper way to implement this, because currently our users ***can't barely login***[9.] without getting frustrated.
+So I've been trying to _setup_[1.] the new authentication system for our app, and honestly the documentation _**doesn't really help understanding**_[2.] the OAuth flow. _**Me and my team was**_[3.] debugging this issue for three days straight. The error _messages keeps_[4.] saying "invalid token" but we're doing everything _correct_[5.] according to the guides. I think the _problem are_[6.] in how the API handles refresh tokens, since _it seem like tokens expires_[7.] too quickly. We _need figure_[8.] out if this behavior is intentional or if there's configuration options we're missing. Has anyone dealt with similar problems? Would appreciate if someone could explain what's the proper way to implement this, because currently our users _**can't barely login**_[9.] without getting frustrated.
 
 ***
 
@@ -177,4 +174,3 @@ I've been trying to set up the new authentication system, but the documentation 
 ## 4. Corrected Version
 
 So I've been trying to set up the new authentication system for our app, and honestly the documentation doesn't really help us understand the OAuth flow. My team and I were debugging this issue for three days straight. The error messages keep saying "invalid token" but we're doing everything correctly according to the guides. I think the problem is in how the API handles refresh tokens, since it seems like tokens expire too quickly. We need to figure out if this behavior is intentional or if there are configuration options we're missing. Has anyone dealt with similar problems? Would appreciate if someone could explain what's the proper way to implement this, because currently our users can barely log in without getting frustrated.
-

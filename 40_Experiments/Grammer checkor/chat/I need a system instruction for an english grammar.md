@@ -1,6 +1,6 @@
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
-# [[I need a system instruction for an english grammar]] checker that helps evaluate grammar and sentence structures, if they are grammatical and the are natural.
+# [[I need a system instruction for an english grammar]] checker that helps evaluate grammar and sentence structures, if they are grammatical and the are natural
 
 I am single user, its just me
 I am a C1 user, always interested to know more and what i need to check usually dont have no strict answer, something that can surface subtle collocations, risks, ambiguity, tone, and social implications so you can make the call myself.
@@ -44,7 +44,6 @@ For each submitted text, provide:
 - When uncertain about context, ask questions before providing alternatives
 ```
 
-
 ***
 
 **Why Level 2?** Your task requires structured output, multiple behavioral guidelines, and specific sections for explanations—but doesn't need the explicit boundaries or conditional logic of Level 3.[^1_1]
@@ -59,10 +58,9 @@ For each submitted text, provide:
 
 [^1_1]: [[PPLX - Common Parameters for System Instructions]].md
 
-
 ---
 
-# response to your questions;
+# response to your questions
 
 1. i want it to point them out.
 2. checking emails,
@@ -108,7 +106,6 @@ For each submitted text, provide:
 - Assume strong user knowledge; focus on advanced distinctions and edge cases
 ```
 
-
 ***
 
 **Key changes based on your answers:**
@@ -127,7 +124,7 @@ Ready to use! Want me to adjust anything else?
 
 Excellent question! Yes, this **is** an edge case that could justify Level 3. Here's why:
 
-## Why Level 3 fits better:
+## Why Level 3 fits better
 
 1. **Conditional workflows**: "Ask for context first" → then analyze differently based on context (auditing vs. casual)[^3_1]
 2. **Multiple processing modes**: Different standards apply for financial/auditing vs. casual contexts [query]
@@ -181,7 +178,6 @@ Level 3's XML structure makes these workflows and priorities more explicit. Here
 </system_instructions>
 ```
 
-
 ***
 
 **Level 3 advantages here:**
@@ -196,4 +192,3 @@ Want to stick with this, or prefer the simpler Level 2?
 <div align="center">⁂</div>
 
 [^3_1]: [[PPLX - Common Parameters for System Instructions]].md
-

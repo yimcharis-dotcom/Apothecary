@@ -13,7 +13,6 @@ You can combine 5 Word documents into one using Microsoft Word's built-in "Text 
 - Navigate to the location of your other documents, select them (hold Ctrl to select multiple files at once), and click **Insert**[^1_4]
 - Repeat this process for any remaining documents[^1_2]
 
-
 ## Tips for Success
 
 Position your cursor exactly where you want each new document to appear before inserting. To keep documents in the correct order when selecting multiple files, consider numbering them (01_intro.docx, 02_chapter1.docx, etc.) since files merge in the order they appear in your file list. The merged document will retain the formatting of your base document.[^1_5][^1_4][^1_3]
@@ -23,46 +22,45 @@ Once you've combined all documents, save the merged file by going to File > Save
 
 <div align="center">⁂</div>
 
-[^1_1]: https://www.adobe.com/acrobat/hub/how-to-combine-word-documents.html
+[^1_1]: <https://www.adobe.com/acrobat/hub/how-to-combine-word-documents.html>
 
-[^1_2]: https://support.microsoft.com/en-us/office/insert-a-document-in-word-274128e5-4da7-4cb8-b65f-3d8b585e03f1
+[^1_2]: <https://support.microsoft.com/en-us/office/insert-a-document-in-word-274128e5-4da7-4cb8-b65f-3d8b585e03f1>
 
-[^1_3]: https://clickup.com/blog/how-to-merge-word-documents/
+[^1_3]: <https://clickup.com/blog/how-to-merge-word-documents/>
 
-[^1_4]: https://smallpdf.com/blog/merge-word-documents
+[^1_4]: <https://smallpdf.com/blog/merge-word-documents>
 
-[^1_5]: https://www.youtube.com/watch?v=3FYzP_kWq24
+[^1_5]: <https://www.youtube.com/watch?v=3FYzP_kWq24>
 
-[^1_6]: https://www.reddit.com/r/MicrosoftWord/comments/1ac9o9h/how_to_easily_combine_several_documents_into_one/
+[^1_6]: <https://www.reddit.com/r/MicrosoftWord/comments/1ac9o9h/how_to_easily_combine_several_documents_into_one/>
 
-[^1_7]: https://www.reddit.com/r/MicrosoftWord/comments/1f76hrh/how_do_you_merge_multiple_word_documents_together/
+[^1_7]: <https://www.reddit.com/r/MicrosoftWord/comments/1f76hrh/how_do_you_merge_multiple_word_documents_together/>
 
-[^1_8]: https://ilovemerge.com/word
+[^1_8]: <https://ilovemerge.com/word>
 
-[^1_9]: https://www.process.st/how-to/combine-microsoft-word-documents/
+[^1_9]: <https://www.process.st/how-to/combine-microsoft-word-documents/>
 
-[^1_10]: https://www.extendoffice.com/documents/word/5498-word-insert-document-information.html
+[^1_10]: <https://www.extendoffice.com/documents/word/5498-word-insert-document-information.html>
 
-[^1_11]: https://learn.microsoft.com/en-us/answers/questions/5260931/how-do-i-combine-multiple-ms-word-files-into-one-m
+[^1_11]: <https://learn.microsoft.com/en-us/answers/questions/5260931/how-do-i-combine-multiple-ms-word-files-into-one-m>
 
-[^1_12]: https://www.youtube.com/watch?v=zLNlRlvaU2w
+[^1_12]: <https://www.youtube.com/watch?v=zLNlRlvaU2w>
 
-[^1_13]: https://www.youtube.com/watch?v=q5px-fEAwlc
+[^1_13]: <https://www.youtube.com/watch?v=q5px-fEAwlc>
 
-[^1_14]: https://www.youtube.com/watch?v=iuwSX3MkFks
+[^1_14]: <https://www.youtube.com/watch?v=iuwSX3MkFks>
 
-[^1_15]: https://www.youtube.com/watch?v=1LDR4nq8iKg
+[^1_15]: <https://www.youtube.com/watch?v=1LDR4nq8iKg>
 
-[^1_16]: https://www.reddit.com/r/MicrosoftWord/comments/ud245t/inserting_another_document_to_the_end/
+[^1_16]: <https://www.reddit.com/r/MicrosoftWord/comments/ud245t/inserting_another_document_to_the_end/>
 
-[^1_17]: https://www.youtube.com/watch?v=R6NWJ8thab8
+[^1_17]: <https://www.youtube.com/watch?v=R6NWJ8thab8>
 
-[^1_18]: https://learn.microsoft.com/hi-in/office/troubleshoot/word/merge-word-documents
+[^1_18]: <https://learn.microsoft.com/hi-in/office/troubleshoot/word/merge-word-documents>
 
-[^1_19]: https://www.youtube.com/watch?v=q1vZbJORl-s
+[^1_19]: <https://www.youtube.com/watch?v=q1vZbJORl-s>
 
-[^1_20]: https://products.groupdocs.app/merger/word
-
+[^1_20]: <https://products.groupdocs.app/merger/word>
 
 ---
 
@@ -113,7 +111,6 @@ For bulk merging without manual insertion, consider:[^2_3]
 - **Kutools for Word** – Merges multiple documents while preserving formatting; includes options to reorder documents and add breaks between them
 - Advanced VBA macros for automated merging
 
-
 ## Important Tips
 
 - **Consistent templates:** Ensure all documents use the same template (.dotx) for best results[^2_1]
@@ -126,48 +123,47 @@ The **Insert → Text from File** method is generally your best bet for maintain
 
 <div align="center">⁂</div>
 
-[^2_1]: https://flavor365.com/how-to-combine-word-documents-keep-your-formatting-perfect/
+[^2_1]: <https://flavor365.com/how-to-combine-word-documents-keep-your-formatting-perfect/>
 
-[^2_2]: https://www.youtube.com/watch?v=EmSW2KsFp40
+[^2_2]: <https://www.youtube.com/watch?v=EmSW2KsFp40>
 
-[^2_3]: https://www.extendoffice.com/documents/word/969-word-merge-multiple-documents.html
+[^2_3]: <https://www.extendoffice.com/documents/word/969-word-merge-multiple-documents.html>
 
-[^2_4]: https://www.msofficeforums.com/word/24421-merging-word-documents-keeping-formatting-exactly-appears.html
+[^2_4]: <https://www.msofficeforums.com/word/24421-merging-word-documents-keeping-formatting-exactly-appears.html>
 
-[^2_5]: https://www.reddit.com/r/MicrosoftWord/comments/1hrroco/how_to_merge_2_documents_and_keep_the_formatting/
+[^2_5]: <https://www.reddit.com/r/MicrosoftWord/comments/1hrroco/how_to_merge_2_documents_and_keep_the_formatting/>
 
-[^2_6]: https://learn.microsoft.com/en-us/answers/questions/5305009/merge-several-documents-into-one-and-not-lose-the
+[^2_6]: <https://learn.microsoft.com/en-us/answers/questions/5305009/merge-several-documents-into-one-and-not-lose-the>
 
-[^2_7]: https://answers.microsoft.com/en-us/msoffice/forum/all/merge-word-docs-with-formatting/7fcf16db-ac15-4111-8b72-2e9272f045ba
+[^2_7]: <https://answers.microsoft.com/en-us/msoffice/forum/all/merge-word-docs-with-formatting/7fcf16db-ac15-4111-8b72-2e9272f045ba>
 
-[^2_8]: https://www.youtube.com/watch?v=3xHhmpWMxu8
+[^2_8]: <https://www.youtube.com/watch?v=3xHhmpWMxu8>
 
-[^2_9]: https://answers.microsoft.com/en-us/msoffice/forum/all/merge-several-documents-into-one-and-not-lose-the/5c442612-0082-4cfb-8100-1ef3fc36b782
+[^2_9]: <https://answers.microsoft.com/en-us/msoffice/forum/all/merge-several-documents-into-one-and-not-lose-the/5c442612-0082-4cfb-8100-1ef3fc36b782>
 
-[^2_10]: https://www.ablebits.com/office-addins-blog/mail-merge-formatting-issues-word/
+[^2_10]: <https://www.ablebits.com/office-addins-blog/mail-merge-formatting-issues-word/>
 
-[^2_11]: https://www.reddit.com/r/MicrosoftWord/comments/1fex9ac/merging_word_documents_without_losing_list/
+[^2_11]: <https://www.reddit.com/r/MicrosoftWord/comments/1fex9ac/merging_word_documents_without_losing_list/>
 
-[^2_12]: https://www.reddit.com/r/MicrosoftWord/comments/1h4nu8b/combining_multiple_documents_with_their_own/
+[^2_12]: <https://www.reddit.com/r/MicrosoftWord/comments/1h4nu8b/combining_multiple_documents_with_their_own/>
 
-[^2_13]: https://learn.microsoft.com/en-us/answers/questions/5317698/mail-merged-documents-are-not-formatting-as-expect?forum=msoffice-all
+[^2_13]: <https://learn.microsoft.com/en-us/answers/questions/5317698/mail-merged-documents-are-not-formatting-as-expect?forum=msoffice-all>
 
-[^2_14]: https://www.youtube.com/watch?v=3FYzP_kWq24
+[^2_14]: <https://www.youtube.com/watch?v=3FYzP_kWq24>
 
-[^2_15]: https://www.msofficeforums.com/word-vba/6098-need-macro-merge-files-word-preserve-formatting.html
+[^2_15]: <https://www.msofficeforums.com/word-vba/6098-need-macro-merge-files-word-preserve-formatting.html>
 
-[^2_16]: https://answers.microsoft.com/en-us/msoffice/forum/all/mail-merged-documents-are-not-formatting-as/5ab3862b-78fa-4c9c-bb89-d7fd0c00f209
+[^2_16]: <https://answers.microsoft.com/en-us/msoffice/forum/all/mail-merged-documents-are-not-formatting-as/5ab3862b-78fa-4c9c-bb89-d7fd0c00f209>
 
-[^2_17]: https://www.youtube.com/watch?v=QU6mPuaeUW4
+[^2_17]: <https://www.youtube.com/watch?v=QU6mPuaeUW4>
 
-[^2_18]: https://groups.google.com/g/microsoft.public.word.pagelayout/c/9-ibor9UE8Y
+[^2_18]: <https://groups.google.com/g/microsoft.public.word.pagelayout/c/9-ibor9UE8Y>
 
-[^2_19]: https://www.tenforums.com/microsoft-office-365/208687-formatting-got-screwed-up-word-doc-merge-text-didnt-fix.html
+[^2_19]: <https://www.tenforums.com/microsoft-office-365/208687-formatting-got-screwed-up-word-doc-merge-text-didnt-fix.html>
 
-[^2_20]: https://www.reddit.com/r/MicrosoftWord/comments/yd8jjt/is_there_a_code_or_method_to_combine_multiple/
+[^2_20]: <https://www.reddit.com/r/MicrosoftWord/comments/yd8jjt/is_there_a_code_or_method_to_combine_multiple/>
 
-[^2_21]: https://www.extendoffice.com/download/kutools-for-office.html
-
+[^2_21]: <https://www.extendoffice.com/download/kutools-for-office.html>
 
 ---
 
@@ -234,48 +230,47 @@ This gives you the best of both worlds—speed and quality!
 
 <div align="center">⁂</div>
 
-[^3_1]: https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/word/merge-word-documents
+[^3_1]: <https://learn.microsoft.com/en-us/troubleshoot/microsoft-365-apps/word/merge-word-documents>
 
-[^3_2]: https://smallpdf.com/blog/merge-word-documents
+[^3_2]: <https://smallpdf.com/blog/merge-word-documents>
 
-[^3_3]: https://www.datanumen.com/blogs/4-methods-merge-unify-two-lists-different-formats/
+[^3_3]: <https://www.datanumen.com/blogs/4-methods-merge-unify-two-lists-different-formats/>
 
-[^3_4]: https://www.simonsezit.com/article/merge-word-documents/
+[^3_4]: <https://www.simonsezit.com/article/merge-word-documents/>
 
-[^3_5]: https://www.reddit.com/r/MicrosoftWord/comments/1fex9ac/merging_word_documents_without_losing_list/
+[^3_5]: <https://www.reddit.com/r/MicrosoftWord/comments/1fex9ac/merging_word_documents_without_losing_list/>
 
-[^3_6]: https://www.youtube.com/watch?v=3FYzP_kWq24
+[^3_6]: <https://www.youtube.com/watch?v=3FYzP_kWq24>
 
-[^3_7]: https://www.youtube.com/watch?v=iuwSX3MkFks
+[^3_7]: <https://www.youtube.com/watch?v=iuwSX3MkFks>
 
-[^3_8]: https://www.gillmeister-software.com/online-tools/text/merge-lists-line-by-line.aspx
+[^3_8]: <https://www.gillmeister-software.com/online-tools/text/merge-lists-line-by-line.aspx>
 
-[^3_9]: https://techcommunity.microsoft.com/discussions/word/merge-bibliography-from-two-different-word-files/2905959
+[^3_9]: <https://techcommunity.microsoft.com/discussions/word/merge-bibliography-from-two-different-word-files/2905959>
 
-[^3_10]: https://support.sau19.org/help/en-us/78-microsoft-word/303-compare-and-merge-two-versions-of-a-document
+[^3_10]: <https://support.sau19.org/help/en-us/78-microsoft-word/303-compare-and-merge-two-versions-of-a-document>
 
-[^3_11]: https://www.luminpdf.com/blog/how-to-merge-word-documents/
+[^3_11]: <https://www.luminpdf.com/blog/how-to-merge-word-documents/>
 
-[^3_12]: https://www.youtube.com/watch?v=w34SU4HoZmc
+[^3_12]: <https://www.youtube.com/watch?v=w34SU4HoZmc>
 
-[^3_13]: https://www.youtube.com/watch?v=cqkJYum0olw
+[^3_13]: <https://www.youtube.com/watch?v=cqkJYum0olw>
 
-[^3_14]: https://www.adobe.com/acrobat/hub/how-to-combine-word-documents.html
+[^3_14]: <https://www.adobe.com/acrobat/hub/how-to-combine-word-documents.html>
 
-[^3_15]: https://community.endnote.com/t/merging-multiple-word-files-without-merging-their-individual-reference-lists/312131
+[^3_15]: <https://community.endnote.com/t/merging-multiple-word-files-without-merging-their-individual-reference-lists/312131>
 
-[^3_16]: https://documentation.decisions.com/step-library/docs/combine-multiple-word-documents-step
+[^3_16]: <https://documentation.decisions.com/step-library/docs/combine-multiple-word-documents-step>
 
-[^3_17]: https://learn.microsoft.com/en-us/answers/questions/4778238/merging-large-numbered-lists-in-word-2007
+[^3_17]: <https://learn.microsoft.com/en-us/answers/questions/4778238/merging-large-numbered-lists-in-word-2007>
 
-[^3_18]: https://www.youtube.com/watch?v=R6NWJ8thab8
+[^3_18]: <https://www.youtube.com/watch?v=R6NWJ8thab8>
 
-[^3_19]: https://www.wikihow.com/Merge-Documents-in-Microsoft-Word
-
+[^3_19]: <https://www.wikihow.com/Merge-Documents-in-Microsoft-Word>
 
 ---
 
-# how ai can help? they dont have same name for each type for example,
+# how ai can help? they dont have same name for each type for example
 
 AI can help you merge those different error lists by grouping similar items, standardizing the category names, and removing near-duplicates, even if each file uses different labels. It is especially good at noticing when two differently worded items are “about the same error” and treating them as one category.[^4_1][^4_2]
 
@@ -284,7 +279,6 @@ AI can help you merge those different error lists by grouping similar items, sta
 - It can **cluster similar error descriptions** (for example, “wrong article before noun” and “incorrect use of a/an/the”) by looking at their meaning rather than exact wording.[^4_2][^4_1]
 - It can **propose a unified category name** for each cluster (e.g., “Article errors”) and map every original item to one of those categories.[^4_3][^4_4]
 - It can **spot and merge duplicates or near-duplicates** across your five files, leaving you with a clean master list.[^4_5][^4_6]
-
 
 ## Simple workflow with an AI chat
 
@@ -309,48 +303,47 @@ If you paste, say, 10–20 example items from two of your files (just the Englis
 
 <div align="center">⁂</div>
 
-[^4_1]: https://reinteractive.com/articles/reinteractive-company-news-and-information/understanding-ai-semantic-search
+[^4_1]: <https://reinteractive.com/articles/reinteractive-company-news-and-information/understanding-ai-semantic-search>
 
-[^4_2]: https://galileo.ai/blog/semantic-textual-similarity-metric
+[^4_2]: <https://galileo.ai/blog/semantic-textual-similarity-metric>
 
-[^4_3]: https://gptforwork.com/tools/categorize-text-with-chatgpt
+[^4_3]: <https://gptforwork.com/tools/categorize-text-with-chatgpt>
 
-[^4_4]: https://www.designmind.com/blog/classification-using-chatgpt-part1
+[^4_4]: <https://www.designmind.com/blog/classification-using-chatgpt-part1>
 
-[^4_5]: https://logicballs.com/tools/deduplicate-text
+[^4_5]: <https://logicballs.com/tools/deduplicate-text>
 
-[^4_6]: https://www.thebricks.com/resources/guide-how-to-deduplicate-a-list-in-excel-using-ai
+[^4_6]: <https://www.thebricks.com/resources/guide-how-to-deduplicate-a-list-in-excel-using-ai>
 
-[^4_7]: https://www.reddit.com/r/Office365/comments/1f5qpq2/ai_tools_for_writers_using_word_that_willt_remove/
+[^4_7]: <https://www.reddit.com/r/Office365/comments/1f5qpq2/ai_tools_for_writers_using_word_that_willt_remove/>
 
-[^4_8]: https://dedupelist.com
+[^4_8]: <https://dedupelist.com>
 
-[^4_9]: https://stackoverflow.com/questions/69884255/ai-based-deduplication-using-textual-similarity-measure-in-python
+[^4_9]: <https://stackoverflow.com/questions/69884255/ai-based-deduplication-using-textual-similarity-measure-in-python>
 
 [^4_10]: [[github/google-research/deduplicate-text-datasets]] [🔗](https://github.com/google-research/deduplicate-text-datasets)
 
-[^4_11]: https://www.youtube.com/watch?v=1LCKOuq_G6k
+[^4_11]: <https://www.youtube.com/watch?v=1LCKOuq_G6k>
 
-[^4_12]: https://trendtoai.com/duplicates-remover/
+[^4_12]: <https://trendtoai.com/duplicates-remover/>
 
-[^4_13]: https://stackoverflow.com/questions/52122595/how-can-i-group-text-questions-that-are-similar-to-each-other
+[^4_13]: <https://stackoverflow.com/questions/52122595/how-can-i-group-text-questions-that-are-similar-to-each-other>
 
-[^4_14]: https://wellsr.com/python/using-chatgpt-for-text-classification-in-python/
+[^4_14]: <https://wellsr.com/python/using-chatgpt-for-text-classification-in-python/>
 
-[^4_15]: https://www.tracemyip.org/tools/remove-duplicate-words-in-text/
+[^4_15]: <https://www.tracemyip.org/tools/remove-duplicate-words-in-text/>
 
-[^4_16]: https://www.pingcap.com/article/top-10-tools-for-calculating-semantic-similarity/
+[^4_16]: <https://www.pingcap.com/article/top-10-tools-for-calculating-semantic-similarity/>
 
-[^4_17]: https://www.youtube.com/watch?v=l4Vwb0WczEw
+[^4_17]: <https://www.youtube.com/watch?v=l4Vwb0WczEw>
 
-[^4_18]: https://help.laser.ai/support/solutions/articles/204000072385-superdeduper-how-it-finds-and-eliminates-duplicate-references
+[^4_18]: <https://help.laser.ai/support/solutions/articles/204000072385-superdeduper-how-it-finds-and-eliminates-duplicate-references>
 
-[^4_19]: https://fastdatascience.com/natural-language-processing/semantic-similarity-with-sentence-embeddings/
+[^4_19]: <https://fastdatascience.com/natural-language-processing/semantic-similarity-with-sentence-embeddings/>
 
 [^4_20]: [[github/ChenghaoMou/text-dedup]] [🔗](https://github.com/ChenghaoMou/text-dedup)
 
-[^4_21]: https://medium.com/point-nine-news/how-chatgpt-became-my-task-manager-and-why-it-might-become-yours-too-218d35716e1a
-
+[^4_21]: <https://medium.com/point-nine-news/how-chatgpt-became-my-task-manager-and-why-it-might-become-yours-too-218d35716e1a>
 
 ---
 
@@ -358,7 +351,7 @@ If you paste, say, 10–20 example items from two of your files (just the Englis
 
 Perfect! I can see you've done excellent work consolidating your grammar error lists. You have a comprehensive **Grammar Checker Error List for C1-Level Cantonese ESL Speakers** with 200+ error types, organized by category, with minimal pairs and flagging instructions.
 
-## What I'm seeing in the document:
+## What I'm seeing in the document
 
 The list includes **5 versions/iterations** of the error taxonomy:
 
@@ -385,7 +378,6 @@ You mentioned items have different names. Let me help you:
 - Create a **unified naming convention** (so "Subject-verb agreement" doesn't appear as "Agreement Errors" elsewhere)
 - Assign **unique error IDs** (like `SVA-001`, `ART-001`, etc.) for implementation
 
-
 ### **Option B: Use AI to Merge \& Standardize**
 
 I can:
@@ -395,7 +387,6 @@ I can:
 - Propose a **single canonical error name** for each type
 - Create a **mapping table** (old names → unified name)
 
-
 ### **Option C: Create Implementation Specs**
 
 Generate:
@@ -403,7 +394,6 @@ Generate:
 - **Error specification document** with error IDs, descriptions, regex patterns (if applicable), and correction suggestions
 - **Separate specs for casual vs. professional contexts** (since you mentioned this applies to both)
 - **Implementation checklist** for building the actual checker
-
 
 ### **Option D: Extract Key Stats**
 
@@ -418,7 +408,6 @@ Generate:
 
 [^5_1]: Combined.docx
 
-
 ---
 
 # wow i wanna try all honestly, but not at once, and no right now
@@ -431,39 +420,36 @@ Since you want to pause for now, I have designed a **Phased Roadmap** for you. Y
 
 #### **Phase 1: The Great Consolidation (Data Cleaning)**
 
-* **Goal:** Turn your 5 different lists into **one Single Source of Truth**.
-* **What we will do:**
-    * Run an AI analysis to group identical errors (e.g., matching "Subject-Verb Agreement" from List A with "SVA Errors" from List B).
-    * Select the best "Standard Name" for each error type.
-    * Remove duplicates.
-    * **Result:** A clean, duplicate-free master list.
-
+- **Goal:** Turn your 5 different lists into **one Single Source of Truth**.
+- **What we will do:**
+  - Run an AI analysis to group identical errors (e.g., matching "Subject-Verb Agreement" from List A with "SVA Errors" from List B).
+  - Select the best "Standard Name" for each error type.
+  - Remove duplicates.
+  - **Result:** A clean, duplicate-free master list.
 
 #### **Phase 2: The Logic Layer (Specs \& IDs)**
 
-* **Goal:** Turn a "list" into a "product specification."
-* **What we will do:**
-    * Assign a unique ID to every error (e.g., `ERR-ART-01` for Missing Articles).
-    * Clearly separate the "Flag Only" (for style) vs. "Flag \& Explain" (for hard errors) logic.
-    * **Result:** A technical document you could hand to a developer.
-
+- **Goal:** Turn a "list" into a "product specification."
+- **What we will do:**
+  - Assign a unique ID to every error (e.g., `ERR-ART-01` for Missing Articles).
+  - Clearly separate the "Flag Only" (for style) vs. "Flag \& Explain" (for hard errors) logic.
+  - **Result:** A technical document you could hand to a developer.
 
 #### **Phase 3: Context \& Nuance (Casual vs. Professional)**
 
-* **Goal:** Make the checker smart enough to know context.
-* **What we will do:**
-    * Go through the "Register/Formality" errors.
-    * Define rules like: *"If User Mode = Casual, ignore 'Wanna'; If User Mode = Professional, flag 'Wanna'."*
-    * **Result:** A logic map for different user modes.
-
+- **Goal:** Make the checker smart enough to know context.
+- **What we will do:**
+  - Go through the "Register/Formality" errors.
+  - Define rules like: *"If User Mode = Casual, ignore 'Wanna'; If User Mode = Professional, flag 'Wanna'."*
+  - **Result:** A logic map for different user modes.
 
 #### **Phase 4: Analysis \& Gaps (The Final Polish)**
 
-* **Goal:** Ensure C1-level coverage.
-* **What we will do:**
-    * Count the error distribution (e.g., "Do we have enough advanced Subjunctive errors?").
-    * Check for missing Cantonese-specific transfer errors.
-    * **Result:** A statistical report and a final quality check.
+- **Goal:** Ensure C1-level coverage.
+- **What we will do:**
+  - Count the error distribution (e.g., "Do we have enough advanced Subjunctive errors?").
+  - Check for missing Cantonese-specific transfer errors.
+  - **Result:** A statistical report and a final quality check.
 
 ***
 
@@ -478,7 +464,7 @@ I'll be ready to help you clean up that data
 
 ---
 
-# let me tell context first if we are going to work tgt on this,
+# let me tell context first if we are going to work tgt on this
 
 the purpose of the list is for a grammar checker spec.
 i need to feed it a closed list of errors that are not worth flagging and explaining.
@@ -509,20 +495,18 @@ Cantonese grammar is "Topic-Comment" structured, which often translates to Engli
 **We can ask the AI to scan your document and extract ONLY items that fit these criteria:**
 > "Find error types in the document that are likely **Calques (direct translations) from Cantonese** but might be acceptable in a **Casual C1 context** (and therefore should NOT be flagged or only flagged lightly)."
 
-* **Hypothesis:** The AI should identify things like:
-    * *Topic-fronting:* "This book, I already read." (Cantonese: 呢本書我睇咗 - Standard checker hates this; C1 Casual might accept it).
-    * *Null Subject:* "Is very convenient." (Cantonese: 好方便 - C1 knows this is wrong in formal, but does it constantly in chat).
-    * *Existential "Have":* "Here has many people." (Cantonese: 這裏有好多人 - This is definitely an error, but the AI needs to decide: Flag or Flag+Explain?).
-
+- **Hypothesis:** The AI should identify things like:
+  - *Topic-fronting:* "This book, I already read." (Cantonese: 呢本書我睇咗 - Standard checker hates this; C1 Casual might accept it).
+  - *Null Subject:* "Is very convenient." (Cantonese: 好方便 - C1 knows this is wrong in formal, but does it constantly in chat).
+  - *Existential "Have":* "Here has many people." (Cantonese: 這裏有好多人 - This is definitely an error, but the AI needs to decide: Flag or Flag+Explain?).
 
 #### 2. The "Style vs. Error" Split
 
 We can ask the AI to look at your "Flag Only" candidates and challenge them.
 > "Review the 'Flag Only' list. Which of these are arguably NOT errors at all in modern Global English, and should be moved to a 'Do Not Flag' list to prevent user frustration?"
 
-* **Example:** Your list has *"Wanna discuss this?"* marked as an error (Informal).
-* **AI Challenge:** For a C1 speaker in a Slack message, flagging "wanna" is annoying. The AI should suggest moving this to an "Ignore in Casual Mode" list.
-
+- **Example:** Your list has *"Wanna discuss this?"* marked as an error (Informal).
+- **AI Challenge:** For a C1 speaker in a Slack message, flagging "wanna" is annoying. The AI should suggest moving this to an "Ignore in Casual Mode" list.
 
 ### Shall we run this experiment?
 
@@ -547,9 +531,9 @@ If we merge everything first, we risk:
 
 - Spending time cleaning and unifying names for items that later turn out to be “meh, don’t even flag this”.
 - Locking in a structure before deciding what belongs in:
-    - “Explain this”
-    - “Just flag”
-    - “Don’t bother user with this at all”
+  - “Explain this”
+  - “Just flag”
+  - “Don’t bother user with this at all”
 
 So it makes sense to **first**:
 
@@ -567,18 +551,17 @@ Then, once those buckets feel right to you, we can:
 
 - Merge / dedupe the **real teaching errors**.
 - Design the final spec around:
-    - closed list of “ignore”
-    - closed list of “flag only”
-    - everything else = “flag + explain”
-
+  - closed list of “ignore”
+  - closed list of “flag only”
+  - everything else = “flag + explain”
 
 ## What we can do next, concretely
 
 Using your current Combined.docx, a good next step would be:
 
 - Extract a **first-pass list** of items that are strong candidates for:
-    - “Flag only”
-    - or “Probably safe to ignore in C1 casual mode”
+  - “Flag only”
+  - or “Probably safe to ignore in C1 casual mode”
 
 For example, things like:
 
@@ -601,7 +584,6 @@ Then you can accept/reject/edit that list, and only **after that** do we worry a
 
 [^8_1]: Combined.docx
 
-
 ---
 
 # for your reference
@@ -612,7 +594,7 @@ You are an English grammar and naturalness evaluator for C1 proficiency users.
 </role>
 
 <processing_guidelines>
-```    <guideline>Identify actual errors only: grammatical violations (tense/aspect, agreement, mood, articles), unnatural collocations, unclear constructions, register mismatches, and social/pragmatic risks. Do not mark correct grammar, standard usage, or acceptable stylistic variants. Adapt to context: prescriptive for formal, descriptive for casual.</guideline>    ```
+```<guideline>Identify actual errors only: grammatical violations (tense/aspect, agreement, mood, articles), unnatural collocations, unclear constructions, register mismatches, and social/pragmatic risks. Do not mark correct grammar, standard usage, or acceptable stylistic variants. Adapt to context: prescriptive for formal, descriptive for casual.</guideline>```
 
     ```
     <guideline>When marking errors, include the full phrase that needs correction. For agreement errors, mark all affected words (e.g., "this irregularities is", not just "this"). For pragmatic issues, mark the entire problematic phrase, not adjacent words.</guideline>
@@ -636,7 +618,7 @@ You are an English grammar and naturalness evaluator for C1 proficiency users.
 <structure>
 
 1. **Annotated Text**: Show original text with errors marked using [1.], [2.], [3.] citation format. Apply markup:
-    - Tier 1: _italics_[\#.]
+    - Tier 1: *italics*[\#.]
     - Tier 2: ***bold italics***[\#.]
 2. **Explanations** (Tier 2 only):
 [\#.] [Prescriptive/Descriptive/Naturalness] "quote" - What's wrong
@@ -652,14 +634,14 @@ Alternatives: [1–2 rephrasings]
 </output_format>
   <constraints>
     ```
-    <constraint priority="high">Only mark actual errors—not correct grammar, acceptable collocations, or standard constructions.</constraint>
+<constraint priority="high">Only mark actual errors—not correct grammar, acceptable collocations, or standard constructions.</constraint>
     ```
     <constraint priority="high">Use [#.] citation format with period for all markers. This format is required for parser compliance.</constraint>
     ```
-    <constraint priority="high">Every bold-italics-marked item must have a corresponding explanation in Section 2. If an annotation number appears in Section 1, it must appear in Section 2 unless it's Tier 1 (italics).</constraint>
+<constraint priority="high">Every bold-italics-marked item must have a corresponding explanation in Section 2. If an annotation number appears in Section 1, it must appear in Section 2 unless it's Tier 1 (italics).</constraint>
     ```
     ```
-    <constraint priority="high">Provide all four sections. Section 4 must fix every marked error, including those explained in Section 2 and register issues mentioned in explanations.</constraint>
+<constraint priority="high">Provide all four sections. Section 4 must fix every marked error, including those explained in Section 2 and register issues mentioned in explanations.</constraint>
     ```
     <constraint priority="medium">
 For every Tier 2 issue, apply exactly one label using this priority:
@@ -694,12 +676,12 @@ The `Combined.docx` list is the *raw taxonomy*, and your DvPvN spec is the *runt
 Using **Combined.docx** + this Tier spec, AI can help you:
 
 - Propose a first-pass split of your existing error types into:
-    - “Almost always Tier 1 (self‑evident to a C1 user)”
-    - “Almost always Tier 2 (needs explanation if flagged)”
-    - “Borderline/style/register → candidates for ‘Flag only’ or ‘Don’t flag’ in casual mode”[^9_2][^9_1]
+  - “Almost always Tier 1 (self‑evident to a C1 user)”
+  - “Almost always Tier 2 (needs explanation if flagged)”
+  - “Borderline/style/register → candidates for ‘Flag only’ or ‘Don’t flag’ in casual mode”[^9_2][^9_1]
 - Spot items that conflict with your DvPvN rules, for example:
-    - Things that are really just **BrE/AmE variation** → should move to “Don’t mark these”.[^9_1]
-    - Stylistic choices like active vs passive that your spec says to ignore unless clarity suffers.[^9_1]
+  - Things that are really just **BrE/AmE variation** → should move to “Don’t mark these”.[^9_1]
+  - Stylistic choices like active vs passive that your spec says to ignore unless clarity suffers.[^9_1]
 
 That means yes: **before** you worry about deduplicating / merging names across versions, you can already start using AI to label each error type with one of your policy outcomes (Tier 1/Tier 2/Ignore, plus Prescriptive vs Descriptive vs Naturalness).
 
@@ -722,7 +704,6 @@ If you like, you can pick **one** category from the doc to try this on first, an
 
 [^9_2]: Combined.docx
 
-
 ---
 
 # Pick 2 with a and b at 50% or closest to 50%
@@ -739,13 +720,13 @@ Here are two good ones to start with.
 This set is naturally split between clear prescriptive issues and context‑dependent/style issues.[^10_1][^10_2]
 
 - Strong **a (Flag + explain / Tier 2 [Descriptive])** candidates:
-    - Informal in clearly professional context (“kinda”, “wanna” in reports)
-    - Contractions in formal writing (“don’t” → “do not” in academic/professional prose)
-    - Overly formal in casual context (“I shall attend” in a WhatsApp group)
+  - Informal in clearly professional context (“kinda”, “wanna” in reports)
+  - Contractions in formal writing (“don’t” → “do not” in academic/professional prose)
+  - Overly formal in casual context (“I shall attend” in a WhatsApp group)
 - Strong **b (Flag only / or even ignore in casual mode)** candidates:
-    - Colloquial expressions in semi‑formal but not strictly “wrong” contexts
-    - Business jargon overuse
-    - Some contractions in semi‑formal emails where practice is mixed
+  - Colloquial expressions in semi‑formal but not strictly “wrong” contexts
+  - Business jargon overuse
+  - Some contractions in semi‑formal emails where practice is mixed
 
 This category is ideal for deciding what a C1 checker should *soft‑flag* vs *leave alone* in casual vs formal modes.[^10_2][^10_1]
 
@@ -754,14 +735,14 @@ This category is ideal for deciding what a C1 checker should *soft‑flag* vs *l
 Your collocation/naturalness area also has a near 50–50 “hard error” vs “borderline but understandable” split.[^10_1][^10_2]
 
 - Clear **a (Flag + explain / Tier 2 [Prescriptive])** collocations:
-    - “do a mistake” → “make a mistake”
-    - “make homework” → “do homework”
-    - “say me” → “tell me”
-    - “do research” when you want “conduct research” in formal writing
+  - “do a mistake” → “make a mistake”
+  - “make homework” → “do homework”
+  - “say me” → “tell me”
+  - “do research” when you want “conduct research” in formal writing
 - Good **b (Flag only / Naturalness)** candidates:
-    - Unnatural but technically interpretable pairs (e.g. “powerful tea” vs “strong tea”)
-    - Slightly off intensity (“big mistake” vs “serious mistake”) depending on context
-    - Some business collocations where many C1 speakers use quasi‑correct forms
+  - Unnatural but technically interpretable pairs (e.g. “powerful tea” vs “strong tea”)
+  - Slightly off intensity (“big mistake” vs “serious mistake”) depending on context
+  - Some business collocations where many C1 speakers use quasi‑correct forms
 
 These two categories give you a clean testbed where about half of the items are clearly “teach/explain” and half are “maybe just warn or ignore”, which is exactly what you asked for.[^10_2][^10_1]
 
@@ -773,7 +754,6 @@ If you like, next step can be: build a small table just for **Register/Formality
 
 [^10_2]: DvPvN-Grammar-Checker-Tier-Classification-Edge-Cases.md
 
-
 ---
 
 # go ahead
@@ -782,11 +762,10 @@ Based on your `Combined.docx` and the Tier 1/2 spec, here is the proposed classi
 
 This table splits the items into:
 
-* **Tier 2 [Prescriptive/Descriptive]:** "Hard" errors or clear register clashes (Flag + Explain).
-* **Tier 1:** Simple fixes (Flag only).
-* **Flag Only (Style/Naturalness):** Warnings without long explanations.
-* **Ignore (Provisional):** Items that a C1 user in casual mode likely doesn't want flagged.
-
+- **Tier 2 [Prescriptive/Descriptive]:** "Hard" errors or clear register clashes (Flag + Explain).
+- **Tier 1:** Simple fixes (Flag only).
+- **Flag Only (Style/Naturalness):** Warnings without long explanations.
+- **Ignore (Provisional):** Items that a C1 user in casual mode likely doesn't want flagged.
 
 ### Table 1: Register and Formality Errors
 
@@ -815,9 +794,9 @@ This table splits the items into:
 
 ### Summary of the "Split"
 
-* **Flag + Explain (Tier 2):** items that change meaning ("do time"), break social rules ("shall" in chat), or are classic fossilized errors ("do a mistake").
-* **Flag Only (Tier 1):** items where the fix is deletion ("discuss about") or expansion ("doesn't" -> "does not").
-* **Ignore/Contextual:** "Big mistake", "wanna" (in casual).
+- **Flag + Explain (Tier 2):** items that change meaning ("do time"), break social rules ("shall" in chat), or are classic fossilized errors ("do a mistake").
+- **Flag Only (Tier 1):** items where the fix is deletion ("discuss about") or expansion ("doesn't" -> "does not").
+- **Ignore/Contextual:** "Big mistake", "wanna" (in casual).
 
 Does this classification logic match what you had in mind for the C1 spec? If so, we can apply this pattern to the rest of the list later.
 
@@ -879,7 +858,6 @@ What's your preference for next step?
 
 [^12_1]: DvPvN-Grammar-Checker-Tier-Classification-Edge-Cases.md
 
-
 ---
 
 # To predict/suggest what the runtime behaviour should be.>>good
@@ -905,7 +883,6 @@ Understood. Here are the **cleaned minimal pairs** and refined classification lo
 | **Hedging Overuse** | It **seems that it appears** that... → It appears that... | 1 | [Naturalness] | **Flag Only** | Clunky redundancy. Fix is deletion; no deep explanation needed. |
 | **Business Jargon** | Let's **synergize**. → Let's collaborate. | - | [Naturalness] | **Flag Only** (Soft Warning) | Not an error, but style issue. Nudge without blocking. |
 
-
 ***
 
 ### Table 2: Collocation (Revised)
@@ -920,7 +897,6 @@ Understood. Here are the **cleaned minimal pairs** and refined classification lo
 | **Adj + Noun (Fixed Chunk)** | **Powerful** tea. → Strong tea. | 2 | [Naturalness] | **Flag + Explain** | Lexical chunk violation. "Strong tea" is a fixed collocation that sounds unnatural otherwise. |
 | **Verb + Noun (Business)** | **Make** business. → Do business. | 2 | [Prescriptive] | **Flag + Explain** | Fixed phrase error; "do business" is non-negotiable. |
 | **Idiomatic Expression** | **Do** time. → Serve time. | 2 | [Prescriptive] | **Flag + Explain** | "Do time" = go to prison. High risk of miscommunication. |
-
 
 ***
 
@@ -957,7 +933,6 @@ Agree—using “data” in a minimal pair is risky because it can accidentally 
 
 Here’s a cleaner **single-issue** minimal pair using your suggestion:
 
-
 | Error type | Minimal pair | Tier | Label | Runtime behaviour |
 | :-- | :-- | :-- | :-- | :-- |
 | Colloquial / phrasal verb in formal writing | We **put off** the meeting. → We **postponed** the meeting. | 2 | [Descriptive] | Flag + explain (Formal mode); ignore (Casual mode). |
@@ -969,36 +944,35 @@ If you want it even “purer” as a *formality* test, an alternative is to keep
 
 <div align="center">⁂</div>
 
-[^14_1]: https://www.thesaurus.com/e/grammar/data-is-or-data-are/
+[^14_1]: <https://www.thesaurus.com/e/grammar/data-is-or-data-are/>
 
-[^14_2]: https://digitalblog.ons.gov.uk/2016/12/08/data-is-versus-data-are/
+[^14_2]: <https://digitalblog.ons.gov.uk/2016/12/08/data-is-versus-data-are/>
 
-[^14_3]: https://www.reddit.com/r/datascience/comments/1cyr7wi/hot_take_data_are_is_grammatically_incorrect_even/
+[^14_3]: <https://www.reddit.com/r/datascience/comments/1cyr7wi/hot_take_data_are_is_grammatically_incorrect_even/>
 
-[^14_4]: https://www.csescienceeditor.org/article/what-do-does-the-data-show/
+[^14_4]: <https://www.csescienceeditor.org/article/what-do-does-the-data-show/>
 
-[^14_5]: https://www.carleton.edu/its/blog/the-grammarians-dispute-over-the-word-data/
+[^14_5]: <https://www.carleton.edu/its/blog/the-grammarians-dispute-over-the-word-data/>
 
-[^14_6]: https://www.grammarbook.com/blog/singular-vs-plural/is-data-singular-or-plural/
+[^14_6]: <https://www.grammarbook.com/blog/singular-vs-plural/is-data-singular-or-plural/>
 
-[^14_7]: https://www.reddit.com/r/linguistics/comments/1d0idb/data_is_vs_data_are_is_data_a_mass_noun_to_you/
+[^14_7]: <https://www.reddit.com/r/linguistics/comments/1d0idb/data_is_vs_data_are_is_data_a_mass_noun_to_you/>
 
-[^14_8]: https://lastwordonnothing.com/2015/08/27/data/
+[^14_8]: <https://lastwordonnothing.com/2015/08/27/data/>
 
-[^14_9]: https://www.quickanddirtytips.com/articles/data-is-or-data-are/
+[^14_9]: <https://www.quickanddirtytips.com/articles/data-is-or-data-are/>
 
-[^14_10]: https://www.reddit.com/r/grammar/comments/w34mz3/two_questions_is_data_singular_or_plural_and/
+[^14_10]: <https://www.reddit.com/r/grammar/comments/w34mz3/two_questions_is_data_singular_or_plural_and/>
 
-[^14_11]: https://www.bbc.co.uk/worldservice/learningenglish/radio/specials/1535_questionanswer/page58.shtml
+[^14_11]: <https://www.bbc.co.uk/worldservice/learningenglish/radio/specials/1535_questionanswer/page58.shtml>
 
-[^14_12]: https://johnaugust.com/2004/data-is-singular
+[^14_12]: <https://johnaugust.com/2004/data-is-singular>
 
-[^14_13]: https://www.writing-skills.com/blog/data-singular-or-plural/
+[^14_13]: <https://www.writing-skills.com/blog/data-singular-or-plural/>
 
-[^14_14]: https://kieronohara.com/data-are-or-data-is-a-pedant-writes/
+[^14_14]: <https://kieronohara.com/data-are-or-data-is-a-pedant-writes/>
 
-[^14_15]: https://www.facebook.com/groups/waywordradio/posts/10159452055213584/
-
+[^14_15]: <https://www.facebook.com/groups/waywordradio/posts/10159452055213584/>
 
 ---
 
@@ -1017,7 +991,6 @@ If you *want* “pragmatics” to be treated as `[Prescriptive]` going forward (
 <div align="center">⁂</div>
 
 [^15_1]: DvPvN-Grammar-Checker-Tier-Classification-Edge-Cases.md
-
 
 ---
 
@@ -1049,46 +1022,45 @@ Keep responses short, neutral, and factual; avoid over-explaining unless the use
 
 [^16_2]: [[instruction-parameters]].md
 
-[^16_3]: https://openai.com/index/introducing-gpt-5-2/
+[^16_3]: <https://openai.com/index/introducing-gpt-5-2/>
 
-[^16_4]: https://www.cnbc.com/2025/12/11/openai-intros-new-ai-model-gpt-5point2-says-better-at-professional-tasks.html
+[^16_4]: <https://www.cnbc.com/2025/12/11/openai-intros-new-ai-model-gpt-5point2-says-better-at-professional-tasks.html>
 
-[^16_5]: https://www.microsoft.com/en-us/microsoft-365/blog/2025/12/11/available-today-gpt-5-2-in-microsoft-365-copilot/
+[^16_5]: <https://www.microsoft.com/en-us/microsoft-365/blog/2025/12/11/available-today-gpt-5-2-in-microsoft-365-copilot/>
 
-[^16_6]: https://www.engadget.com/ai/openai-releases-gpt-52-to-take-on-google-and-anthropic-185029007.html
+[^16_6]: <https://www.engadget.com/ai/openai-releases-gpt-52-to-take-on-google-and-anthropic-185029007.html>
 
-[^16_7]: https://9to5mac.com/2025/12/11/openai-releases-code-red-gpt-5-2-update-to-chatgpt-most-capable-model-series-yet/
+[^16_7]: <https://9to5mac.com/2025/12/11/openai-releases-code-red-gpt-5-2-update-to-chatgpt-most-capable-model-series-yet/>
 
-[^16_8]: https://techcrunch.com/2025/12/11/openai-fires-back-at-google-with-gpt-5-2-after-code-red-memo/
+[^16_8]: <https://techcrunch.com/2025/12/11/openai-fires-back-at-google-with-gpt-5-2-after-code-red-memo/>
 
-[^16_9]: https://venturebeat.com/ai/openais-gpt-5-2-is-here-what-enterprises-need-to-know
+[^16_9]: <https://venturebeat.com/ai/openais-gpt-5-2-is-here-what-enterprises-need-to-know>
 
-[^16_10]: https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro
+[^16_10]: <https://www.perplexity.ai/help-center/en/articles/10352901-what-is-perplexity-pro>
 
-[^16_11]: https://en.wikipedia.org/wiki/GPT-5
+[^16_11]: <https://en.wikipedia.org/wiki/GPT-5>
 
-[^16_12]: https://en.wikipedia.org/wiki/Perplexity
+[^16_12]: <https://en.wikipedia.org/wiki/Perplexity>
 
-[^16_13]: https://www.linkedin.com/posts/perplexity-ai_gpt-52-is-now-available-for-all-perplexity-activity-7404952732207443968-gddt
+[^16_13]: <https://www.linkedin.com/posts/perplexity-ai_gpt-52-is-now-available-for-all-perplexity-activity-7404952732207443968-gddt>
 
-[^16_14]: https://github.blog/changelog/2025-12-11-openais-gpt-5-2-is-now-in-public-preview-for-github-copilot/
+[^16_14]: <https://github.blog/changelog/2025-12-11-openais-gpt-5-2-is-now-in-public-preview-for-github-copilot/>
 
-[^16_15]: https://www.glbgpt.com/hub/how-does-perplexity-ai-differ-from-traditional-search-engines/
+[^16_15]: <https://www.glbgpt.com/hub/how-does-perplexity-ai-differ-from-traditional-search-engines/>
 
-[^16_16]: https://www.reddit.com/r/perplexity_ai/comments/1pk5y3b/openais_new_gpt_52_thinking_is_now_available_on/
+[^16_16]: <https://www.reddit.com/r/perplexity_ai/comments/1pk5y3b/openais_new_gpt_52_thinking_is_now_available_on/>
 
-[^16_17]: https://platform.openai.com/docs/models/gpt-5.2
+[^16_17]: <https://platform.openai.com/docs/models/gpt-5.2>
 
-[^16_18]: https://www.perplexity.ai/hub/legal/terms-of-service
+[^16_18]: <https://www.perplexity.ai/hub/legal/terms-of-service>
 
-[^16_19]: https://docs.perplexity.ai/getting-started/models/models/sonar-deep-research
+[^16_19]: <https://docs.perplexity.ai/getting-started/models/models/sonar-deep-research>
 
-[^16_20]: https://www.reddit.com/r/singularity/comments/1pk5pge/is_anyone_else_noticing_that_gpt52_is_a_lot_worse/
+[^16_20]: <https://www.reddit.com/r/singularity/comments/1pk5pge/is_anyone_else_noticing_that_gpt52_is_a_lot_worse/>
 
-[^16_21]: https://www.reddit.com/r/perplexity_ai/comments/1pk7rrc/3_queries_left_using_advanced_ai_models_this_week/
+[^16_21]: <https://www.reddit.com/r/perplexity_ai/comments/1pk7rrc/3_queries_left_using_advanced_ai_models_this_week/>
 
-[^16_22]: https://www.perplexity.ai/help-center/en/articles/10354919-what-advanced-ai-models-are-included-in-my-subscription
-
+[^16_22]: <https://www.perplexity.ai/help-center/en/articles/10354919-what-advanced-ai-models-are-included-in-my-subscription>
 
 ---
 
@@ -1102,12 +1074,11 @@ Sorry for the bizarre detour into meta-instruction design when you just wanted a
 
 <div align="center">⁂</div>
 
-[^17_1]: https://openai.com/index/introducing-gpt-5-2/
+[^17_1]: <https://openai.com/index/introducing-gpt-5-2/>
 
-[^17_2]: https://www.cnbc.com/2025/12/11/openai-intros-new-ai-model-gpt-5point2-says-better-at-professional-tasks.html
+[^17_2]: <https://www.cnbc.com/2025/12/11/openai-intros-new-ai-model-gpt-5point2-says-better-at-professional-tasks.html>
 
-[^17_3]: https://www.linkedin.com/posts/perplexity-ai_gpt-52-is-now-available-for-all-perplexity-activity-7404952732207443968-gddt
-
+[^17_3]: <https://www.linkedin.com/posts/perplexity-ai_gpt-52-is-now-available-for-all-perplexity-activity-7404952732207443968-gddt>
 
 ---
 
@@ -1159,7 +1130,6 @@ Right—back to the classification tables. Here are the **final revised versions
 <div align="center">⁂</div>
 
 [^18_1]: DvPvN-Grammar-Checker-Tier-Classification-Edge-Cases.md
-
 
 ---
 
@@ -1228,7 +1198,6 @@ We have **2 completed tables** as proof-of-concept. The next decision point is:
 [^19_1]: Combined.docx
 
 [^19_2]: DvPvN-Grammar-Checker-Tier-Classification-Edge-Cases.md
-
 
 ---
 
@@ -1302,7 +1271,6 @@ We jumped straight to Step 1 without running Step 0.
 - Existential "have" ("Here has many people")
 - Any resumptive pronouns, topic-fronting, classifier issues, etc.
 
-
 ### Test \#2: Flag Only → Do Not Flag Challenge
 
 **Task:** Review all "Flag Only" items in Combined.docx and identify which should be:
@@ -1325,7 +1293,7 @@ We jumped straight to Step 1 without running Step 0.
 
 ---
 
-# yeah how did we skip that, let do that first,
+# yeah how did we skip that, let do that first
 
 Good. Let's run **Test \#1: The Cantonese Calque Extraction** right now.
 
@@ -1377,7 +1345,6 @@ The honest answer: **I don't know why it wasn't done.** But you're absolutely ri
 
 [^22_2]: [[instruction-parameters]].md
 
-
 ---
 
 ## CANTONESE L1 TRANSFER AUDIT RESULTS
@@ -1402,7 +1369,6 @@ Based on scanning Combined.docx, here are the **Cantonese transfer patterns** cu
 | **Question Tags** | Flag + Explain | "You like it, isn't it?" → "You like it, don't you?" | 你鍾意,係唔係? (lit. "is not is?") | **Flag + Explain** — Wrong grammar pattern; needs explanation. |
 | **"Already" Placement** | Not explicitly in doc | "I finish already" → "I already finished" / "I have finished" | 我做完咗 (completive aspect) | **Should Add: Flag + Explain** — Aspect marker transfer; affects tense. |
 
-
 ***
 
 ### ✅ CORRECTLY FLAGGED: Keep "Flag + Explain"
@@ -1425,20 +1391,17 @@ These are genuine errors even in casual C1 contexts:
 | **Topic-Comment with Redundant Subject** | Acceptable emphasis in speech | Flag + Explain | Flag Only or Ignore (Casual) |
 | **Missing "I" in "Don't know..."** | Self-evident in casual chat | Flag + Explain | Tier 1 (Flag Only) |
 
-
 ***
 
 ## Test \#2: Style vs. Error Challenge
 
 Items currently marked **"Flag Only"** that should move to **"Do Not Flag (Casual)"**:
 
-
 | Item | Current | Issue | Recommendation |
 | :-- | :-- | :-- | :-- |
 | **Contractions in Formal** | Flag Only | C1s know when to expand; annoying in emails | **Ignore unless Academic Mode** |
 | **Collective Noun Agreement** | Flag Only (dialect) | "Team is/are" — both valid | **Do Not Flag** |
 | **"Wanna" / Informal Register** | Flag Only | Standard in casual chat | **Ignore (Casual Mode)** |
-
 
 ***
 
@@ -1462,7 +1425,6 @@ Items currently marked **"Flag Only"** that should move to **"Do Not Flag (Casua
 <div align="center">⁂</div>
 
 [^23_1]: Combined.docx
-
 
 ---
 
@@ -1518,7 +1480,6 @@ I'll skip "CORRECTLY FLAGGED" as you requested and focus on the items that need 
 <div align="center">⁂</div>
 
 [^24_1]: image.jpg
-
 
 ---
 
@@ -1576,7 +1537,6 @@ This is a **proposed** “Do Not Flag” shortlist drawn from the items in `Comb
 
 [^27_2]: DvPvN-Grammar-Checker-Tier-Classification-Edge-Cases.md
 
-
 ---
 
 # Did you « refertoy/consult » my spec tried to apply to the combined list with you internal knowledge or search results based on the fact the esl’s errors made by l1 of any given language should be well documented?
@@ -1626,7 +1586,6 @@ I can search for actual research on Cantonese → English transfer errors and se
 
 [^28_2]: Combined.docx
 
-
 ---
 
 # No your original proposal to do these tests/experiments is consistent with what you just did and I’m don’t know if only using the spec and internal knowledge no searches had been your intention all along. But you got the job done. This is actually not important
@@ -1654,7 +1613,6 @@ So if you add **"Target user: C1-level Cantonese L1 speaker"** to the spec, the 
 - ✅ Likely identify major transfer patterns (null subjects, articles, aspect)
 - ✅ Apply your Tier/Label logic
 - ✅ Probably recognize "existential 'have'" as a Cantonese calque
-
 
 ### What the Spec CANNOT Reliably Handle Without a Closed List
 
@@ -1692,7 +1650,6 @@ Consider common Cantonese transfer patterns when evaluating errors.
 - Inconsistent across runs
 - Might miss edge cases
 - Hard to debug ("Why did it flag this today but not yesterday?")
-
 
 ### Option 2: Spec + Closed List (What We're Building)
 
@@ -1740,10 +1697,9 @@ The closed list is your **quality control layer** that prevents the AI from maki
 
 [^29_1]: DvPvN-Grammar-Checker-Tier-Classification-Edge-Cases.md
 
-
 ---
 
-# Can you walk me through step by step how an ai runs a spec from the top and its thought process. I know it’s different for you doing this  with me, thinking outloud from the ai doing it in real time. I need to know if I should keep the full list. My intention was to add the t1 errors that I know I would make to t2 and then hand pick error types making the list. Anything not in the list défaut to t2.
+# Can you walk me through step by step how an ai runs a spec from the top and its thought process. I know it’s different for you doing this  with me, thinking outloud from the ai doing it in real time. I need to know if I should keep the full list. My intention was to add the t1 errors that I know I would make to t2 and then hand pick error types making the list. Anything not in the list défaut to t2
 
 Good question. Let me walk through exactly what happens when an AI processes text with your spec.
 
@@ -1903,13 +1859,13 @@ This gives you **conservative behavior** (over-explain rather than under-explain
 
 **Answer: No, but you need a *decision tree*, not just role-play.**
 
-### Minimum You Need:
+### Minimum You Need
 
 1. **Tier 1 Whitelist** (errors that are self-evident to C1 Cantonese speakers)
 2. **Do Not Flag List** (dialect variants, acceptable style)
 3. **Context Rules** (casual vs formal overrides)
 
-### You DON'T Need:
+### You DON'T Need
 
 - Full exhaustive list of every possible error (default to Tier 2 handles this)
 - Multiple versions/duplicates (we can merge those later)
@@ -2053,7 +2009,6 @@ Option C is the “single-source-of-truth merge” work, i.e.:[^33_1]
 - Normalize naming (e.g., “Sentence Fragment” vs “Fragment sentences”), normalize minimal-pair format, and keep only one canonical entry per error type.[^33_1]
 - Resolve contradictions (the doc contains places where an item is “Flag and explain” in one section and “Flag only” in another).[^33_1]
 
-
 ## Next step to start Option C
 
 Pick one merge target format:
@@ -2066,7 +2021,6 @@ Say “master CSV”, and confirm whether the dedupe key should be **Error Type 
 <div align="center">⁂</div>
 
 [^33_1]: Combined.docx
-
 
 ---
 
@@ -2100,4 +2054,3 @@ Perfect. You now have everything you need for manual review:
 ***
 
 **Ready to download and review, or need anything else adjusted first?**
-
