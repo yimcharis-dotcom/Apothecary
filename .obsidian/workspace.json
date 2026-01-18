@@ -4,17 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "e73b916f980dbacb",
+        "id": "a67b33a376b510e0",
         "type": "tabs",
         "children": [
           {
-            "id": "1ffc38576b942683",
+            "id": "e94587d1b4f8573c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "00_Reference/Style/Themes CSS and resources.md",
+                "mode": "source",
+                "source": true,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Themes CSS and resources"
             }
           }
         ]
@@ -90,6 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "00_Reference/Style/Themes CSS and resources.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +114,19 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Themes CSS and resources"
+            }
+          },
+          {
+            "id": "1ffc38576b942683",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "style-settings",
+              "state": {},
+              "pinned": true,
+              "icon": "gear",
+              "title": "Style Settings"
             }
           },
           {
@@ -158,11 +185,12 @@
               "title": "Outline"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 359
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -187,8 +215,11 @@
       "side-note:Side Note: Open in Sidebar": false
     }
   },
-  "active": "1ffc38576b942683",
+  "active": "541e53139e67f519",
   "lastOpenFiles": [
+    "00_Reference/Style/Obsidian Canonical Markdown Test.md",
+    "__Templates/!tp - daily-template.md",
+    "Untitled 1.md",
     "00______________/PPLX API info (Conflicted copy BGD072 202601121618).md",
     "00______________/Claude API Info (Conflicted copy BGD072 202601121618).md",
     "00______________/Openrouter (Conflicted copy BGD072 202601121618).md",
@@ -200,12 +231,10 @@
     "Unconfirmed 809479.crdownload",
     "Untitled.md",
     "(.md",
-    "Untitled 1.md",
     "00_Reference/hotkeys.md",
     "00______________/Ollama Model inventory.md",
     "00_Reference/Style/Themes CSS and resources.md",
     "00_Reference/Style/compact-reading.css.md",
-    "00_Reference/Style/Obsidian Canonical Markdown Test.md",
     "Perplexity CLI.md",
     "spec_1_obsidian_vault_q_a_bridge.md",
     "20_AI tools/200_RAG/build_index.py.md",
@@ -220,7 +249,6 @@
     "00_System/001_System specifications - running/Spec Generator Space/!PPLX - System instruction generator - Spec.md",
     "00_System/001_System specifications - running/Spec Generator Space/!PPLX - Common Parameters for System Instructions.md",
     "10_Prompt library/100_System/System prompts for cursor on learning mode.md",
-    "40_Experiments/Chat related integration/AI Usage Analysis – Core Scripts.md",
     "WhatsApp Chat - Bonnie Ho.zip",
     "20_AI tools/201_MCPs/2010_vault-bridge/scr/package.json",
     "20_AI tools/201_MCPs/2010_vault-bridge/scr",

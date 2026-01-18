@@ -7,9 +7,10 @@
 .obsidian/hotkeys.json
 .obsidian/app.json
 .obsidian/community-plugins.json
-.obsidian/plugins/*/data.json
-.obsidian/plugins/*/cache/
+.obsidian/plugins/**/data.json
+.obsidian/plugins/**/cache/
 .obsidian/workspaces/
+.obsidian/appearance.json
 
 # Keep these (useful to sync):
 !.obsidian/plugins/ (plugin code)
@@ -21,7 +22,7 @@
 Thumbs.db
 desktop.ini
 
-# Temporary files
+# Temporary filesad
 *.tmp
 *.swp
 *~

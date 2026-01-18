@@ -1,7 +1,7 @@
 {
-  "cssTheme": "FastPpuccin",
+  "cssTheme": "Maple",
   "accentColor": "",
-  "theme": "obsidian",
+  "theme": "moonstone",
   "nativeMenus": false,
   "enabledCssSnippets": [
     "New Text Document",
@@ -17,7 +17,8 @@
     "Anu custom",
     "Enhanced CSS Pure White Light Mode for Obsidian",
     "Anu",
-    "obsidian"
+    "compact-reading",
+    "supercharged-links-gen"
   ],
   "baseFontSizeAction": true,
   "baseFontSize": 18,
