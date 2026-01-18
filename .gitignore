@@ -1,3 +1,27 @@
 .smart-env/
 .smtcmp_json_db/
 .trash
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/hotkeys.json
+.obsidian/app.json
+.obsidian/community-plugins.json
+.obsidian/plugins/*/data.json
+.obsidian/plugins/*/cache/
+.obsidian/workspaces/
+
+# Keep these (useful to sync):
+!.obsidian/plugins/ (plugin code)
+!.obsidian/themes/ (if you use custom themes)
+!.obsidian/snippets/ (your CSS snippets)
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.swp
+*~
