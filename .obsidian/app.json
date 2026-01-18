@@ -11,7 +11,7 @@
   "showInlineTitle": true,
   "readableLineLength": true,
   "propertiesInDocument": "source",
-  "promptDelete": false,
+  "promptDelete": true,
   "userIgnoreFilters": [
     "copilot*",
     "__Templetes/"

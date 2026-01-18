@@ -38,5 +38,7 @@
   "mcp-tools",
   "obsidian-local-rest-api",
   "open-vscode",
-  "perplexed"
+  "perplexed",
+  "perplexity-chat",
+  "obsidian-git"
 ]
