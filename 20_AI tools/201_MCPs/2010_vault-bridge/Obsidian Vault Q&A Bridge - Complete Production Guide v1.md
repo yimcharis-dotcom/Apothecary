@@ -219,7 +219,7 @@ node complete_bridge.cjs "What tags do I use most frequently?"
 
 | Option            | Default                      | Description                  |
 | ----------------- | ---------------------------- | ---------------------------- |
-| `vaultPath`       | `C:\Vault\Apothecary` | Path to your Obsidian vault  |
+| `vaultPath`       | `C:\Vault\Apothecary`     | Path to your Obsidian vault  |
 | `maxFiles`        | 5                            | Max files to read per query  |
 | `maxBytes`        | 200000                       | Max characters to read total |
 | `defaultProvider` | `grok`                       | Default AI provider          |
