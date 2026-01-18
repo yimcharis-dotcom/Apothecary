@@ -7,7 +7,7 @@ Created: 2023-10-01
 Updated: 2023-10-01
 ---
 
-This note documents a Python script for building a FAISS index from an Obsidian vault. The script embeds content from all `.md` files in the vault located at `C:\Vault\AI hub\Apothecary` and saves the index and metadata for use in similarity searches or AI applications.
+This note documents a Python script for building a FAISS index from an Obsidian vault. The script embeds content from all `.md` files in the vault located at `C:\Vault\Apothecary` and saves the index and metadata for use in similarity searches or AI applications.
 
 ## Purpose
 
@@ -21,6 +21,7 @@ To run the script, you need an isolated Python environment to manage dependencie
 
    - Open a terminal or PowerShell in your working directory (e.g., `C:\Users\YC\OneDrive\Desktop\LocalDocs\`).
    - Run the following command to create a virtual environment named `.venv`:
+
      ```bash
      python -m venv .venv
      ```
@@ -28,19 +29,23 @@ To run the script, you need an isolated Python environment to manage dependencie
 2. **Activate the Virtual Environment**:
 
    - Activate the environment so that `python` and `pip` commands use the isolated setup:
+
      ```powershell
      .\.venv\Scripts\Activate.ps1
      ```
+
    - Your terminal prompt should now show `(.venv)` to indicate the environment is active.
 
 3. **Run the Script**:
    - Ensure the script file is in your working directory.
 
 - **Hard-Coded Script (`build_index.py`)**:  
-   Uses fixed inputs and outputs, always indexing the vault at `C:\Vault\AI hub\Apothecary` and saving to `vault.index` and `vault_meta.json`. - Execute it with:
+   Uses fixed inputs and outputs, always indexing the vault at `C:\Vault\Apothecary` and saving to `vault.index` and `vault_meta.json`. - Execute it with:
+
   ```bash
   python build_index.py
   ```
+
 - **Parameterized Script (`build_index_cli.py`)**:  
    Allows customization at runtime. Specify the vault path and output names using command-line arguments like `--vault` and `--out`.
 
@@ -60,7 +65,7 @@ from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 
 # -------- Configuration --------
-VAULT_PATH = Path(r"C:\Vault\AI hub\Apothecary")  # Path to the Obsidian vault
+VAULT_PATH = Path(r"C:\Vault\Apothecary")  # Path to the Obsidian vault
 INDEX_PATH = Path("vault.index")               # Output path for FAISS index
 META_PATH = Path("vault_meta.json")            # Output path for metadata
 MODEL_NAME = "BAAI/bge-m3"                     # Embedding model to use
@@ -222,7 +227,7 @@ finally {
 ## Key Notes
 
 - **Virtual Environment**: Activation determines which Python interpreter runs; the working directory determines file locations.
-- **Vault Path**: Ensure `VAULT_PATH` in the script points to `C:\Vault\AI hub\Apothecary` for the hard-coded version.
+- **Vault Path**: Ensure `VAULT_PATH` in the script points to `C:\Vault\Apothecary` for the hard-coded version.
 - **Next Steps**: Place the script in the working directory, navigate to it with `cd`, run it, and report the directory and result (e.g., started embedding or any errors).
 
 ## Related Notes

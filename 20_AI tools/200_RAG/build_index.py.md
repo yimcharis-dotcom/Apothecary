@@ -7,7 +7,7 @@ from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 
 # -------- configuration --------
-VAULT_PATH = Path(r"C:\Vault\AI hub\Apothecary")
+VAULT_PATH = Path(r"C:\Vault\Apothecary")
 INDEX_PATH = Path("vault.index")
 META_PATH = Path("vault_meta.json")
 MODEL_NAME = "BAAI/bge-m3"

@@ -29,7 +29,7 @@ AI chat: go to main.js del openai /v1
 
 AI chat as markdown
 
-Auto classifier: [ PPLX]("C:\Vault\AI hub\Apothecary\. Obsidian\New folder\auto classifer\main. Js")
+Auto classifier: [ PPLX]("C:\Vault\Apothecary\. Obsidian\New folder\auto classifer\main. Js")
 
 ## **Perplexity’s OpenAI Compatibility**
 

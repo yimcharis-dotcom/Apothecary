@@ -12,7 +12,7 @@ const readline = require('readline');
 function loadConfig() {
 const configPath = path.join(\_\_dirname, 'config.json');
 const defaults = {
-vaultPath: "C:\\Vault\\AI hub\\Apothecary",
+vaultPath: "C:\\Vault\\Apothecary",
 pythonExe: "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs\\.venv\\Scripts\\python.exe",
 pythonScript: "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs\\rag_query_working.py",
 pythonCwd: "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs",
@@ -39,13 +39,13 @@ const config = loadConfig();
 const PROVIDERS = {
 grok: {
 name: 'Grok (X.AI)',
-url: 'https://api.x.ai/v1/chat/completions',
+url: '<https://api.x.ai/v1/chat/completions>',
 key: process.env.XAI_API_KEY || config.xaiApiKey,
 models: ['grok-4-1-fast-reasoning', 'grok-4-1-fast-non-reasoning','grok-4-fast-reasoning','grok-4-fast-non-reasoning','grok-4-0709','grok-code-fast-1', 'grok-3','grok-3-mini', 'grok-2-image-1212', 'grok-2-vision-1212']
 },
 pplx: {
 name: 'Perplexity',
-url: 'https://api.perplexity.ai/chat/completions',
+url: '<https://api.perplexity.ai/chat/completions>',
 key: process.env.PPLX_API_KEY || config.pplxApiKey,
 models: ['sonar', 'sonar-pro', 'sonar-deep-research', 'sonar-reasoning-pro']
 }
@@ -73,12 +73,12 @@ const providerKeys = Object.keys(PROVIDERS);
 providerKeys.forEach((key, i) => {
 const p = PROVIDERS[key];
 const hasKey = p.key ? '✅' : '❌';
-console.log(`  ${i + 1}. ${hasKey} ${p.name}`);
+console.log(`${i + 1}. ${hasKey} ${p.name}`);
 });
 
 let providerKey;
 while (true) {
-const answer = await askQuestion(rl, `\nSelect provider (1-${providerKeys.length}) or name [${config.defaultProvider}]: `);
+const answer = await askQuestion(rl, `\nSelect provider (1-${providerKeys.length}) or name [${config.defaultProvider}]:`);
 const choice = answer.trim() || config.defaultProvider;
 
     if (providerKeys.includes(choice.toLowerCase())) {
@@ -102,12 +102,12 @@ throw new Error(`Missing API key for ${provider.name}. Set ${providerKey.toUpper
 
 console.log(`\n📋 Available Models for ${provider.name}:`);
 provider.models.forEach((model, i) => {
-console.log(`  ${i + 1}. ${model}`);
+console.log(`${i + 1}. ${model}`);
 });
 
 let model;
 while (true) {
-const answer = await askQuestion(rl, `\nSelect model (1-${provider.models.length}) or name [${provider.models[0]}]: `);
+const answer = await askQuestion(rl, `\nSelect model (1-${provider.models.length}) or name [${provider.models[0]}]:`);
 const choice = answer.trim() || provider.models[0];
 
     if (provider.models.includes(choice)) {
@@ -150,9 +150,9 @@ Options:
 --help Show this help
 
 Examples:
-node complete_bridge.cjs --vault "C:\\Vault\\AI hub\\Apothecary" "What are my TODOs?"
-node complete_bridge.cjs --vault "C:\\Vault\\AI hub\\Apothecary" --provider pplx --model sonar-pro --temperature 0.9 "Explain my MCP setup"
-node complete_bridge.cjs --vault "C:\\Vault\\AI hub\\Apothecary" --model grok-3 "What's in my vault?"
+node complete_bridge.cjs --vault "C:\\Vault\\Apothecary" "What are my TODOs?"
+node complete_bridge.cjs --vault "C:\\Vault\\Apothecary" --provider pplx --model sonar-pro --temperature 0.9 "Explain my MCP setup"
+node complete_bridge.cjs --vault "C:\\Vault\\Apothecary" --model grok-3 "What's in my vault?"
 node complete_bridge.cjs --list-models
 node complete_bridge.cjs --list-models pplx
 node complete_bridge.cjs --interactive "your question"
@@ -169,13 +169,13 @@ return;
 }
 console.log(`\n📋 Models for ${provider.name}:`);
 provider.models.forEach((model, i) => {
-console.log(`  ${i + 1}. ${model}`);
+console.log(`${i + 1}. ${model}`);
 });
 } else {
 console.log('\n📋 Available Models by Provider:');
 Object.entries(PROVIDERS).forEach(([key, provider]) => {
 console.log(`\n${provider.name} (${key}):`);
-provider.models.forEach(model => console.log(`  - ${model}`));
+provider.models.forEach(model => console.log(`- ${model}`));
 });
 }
 }

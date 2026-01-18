@@ -1,5 +1,5 @@
 {
-"vaultPath": "C:\\Vault\\AI hub\\Apothecary",
+"vaultPath": "C:\\Vault\\Apothecary",
 "pythonExe": "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs\\.venv\\Scripts\\python.exe",
 "pythonScript": "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs\\rag_query_working.py",
 "pythonCwd": "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs",

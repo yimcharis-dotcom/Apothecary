@@ -14,7 +14,7 @@ const readline = require("readline");
 function loadConfig() {
   const configPath = path.join(__dirname, "config.json");
   const defaults = {
-    vaultPath: "C:\\Vault\\AI hub\\Apothecary",
+    vaultPath: "C:\\Vault\\Apothecary",
     pythonExe:
       "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs\\.venv\\Scripts\\python.exe",
     pythonScript:
@@ -120,8 +120,7 @@ async function selectProviderAndModel() {
   if (!provider.key) {
     rl.close();
     throw new Error(
-      `Missing API key for ${provider.name}. Set ${
-        providerKey.toUpperCase() === "GROK" ? "XAI" : "PPLX"
+      `Missing API key for ${provider.name}. Set ${providerKey.toUpperCase() === "GROK" ? "XAI" : "PPLX"
       }_API_KEY`
     );
   }
@@ -178,9 +177,9 @@ Options:
   --help              Show this help
 
 Examples:
-  node complete_bridge.cjs --vault "C:\\Vault\\AI hub\\Apothecary" "What are my TODOs?"
-  node complete_bridge.cjs --vault "C:\\Vault\\AI hub\\Apothecary" --provider pplx --model sonar-pro --temperature 0.9 "Explain my MCP setup"
-  node complete_bridge.cjs --vault "C:\\Vault\\AI hub\\Apothecary" --model grok-3 "What's in my vault?"
+  node complete_bridge.cjs --vault "C:\\Vault\\Apothecary" "What are my TODOs?"
+  node complete_bridge.cjs --vault "C:\\Vault\\Apothecary" --provider pplx --model sonar-pro --temperature 0.9 "Explain my MCP setup"
+  node complete_bridge.cjs --vault "C:\\Vault\\Apothecary" --model grok-3 "What's in my vault?"
   node complete_bridge.cjs --list-models
   node complete_bridge.cjs --list-models pplx
   node complete_bridge.cjs --interactive "your question"
@@ -213,8 +212,7 @@ async function queryRAG(question, verbose = false) {
   return new Promise((resolve, reject) => {
     if (verbose)
       console.log(
-        `🔍 Searching: "${question.substring(0, 50)}${
-          question.length > 50 ? "..." : ""
+        `🔍 Searching: "${question.substring(0, 50)}${question.length > 50 ? "..." : ""
         }"`
       );
 

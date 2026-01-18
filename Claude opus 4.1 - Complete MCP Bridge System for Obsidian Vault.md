@@ -126,7 +126,7 @@ PERPLEXITY_API_KEY=your_perplexity_api_key_here
 OPENAI_API_KEY=your_openai_api_key_here
 
 # Vault Path (override config if needed)
-VAULT_PATH=C:\Vault\AI hub\Apothecary
+VAULT_PATH=C:\Vault\Apothecary
 
 # Python for indexing (future use)
 PYTHON_PATH=C:\Users\YC\LocalDocs\.venv\Scripts\python.exe
@@ -1124,13 +1124,13 @@ cd obsidian-bridge
 ```
 ````
 
-2. Install dependencies:
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Configure your vault path in `config/config.json`:
+1. Configure your vault path in `config/config.json`:
 
 ```json
 {
@@ -1140,7 +1140,7 @@ npm install
 }
 ```
 
-4. Set up API keys in `.env`:
+1. Set up API keys in `.env`:
 
 ```bash
 GROK_API_KEY=your_key_here
@@ -1271,22 +1271,22 @@ mkdir C:\Users\YC\MCPs\obsidian-bridge
 cd C:\Users\YC\MCPs\obsidian-bridge
 ````
 
-2. **Create all the files above in their respective locations**
-3. **Install dependencies:**
+1. **Create all the files above in their respective locations**
+2. **Install dependencies:**
 
 ```powershell
 npm install
 ```
 
-4. **Configure your vault path:** Edit `config/config.json` and update the vault path to your actual Obsidian vault location.
-5. **Add your API keys:** Create `.env` file with your actual API keys.
-6. **Test the connection:**
+1. **Configure your vault path:** Edit `config/config.json` and update the vault path to your actual Obsidian vault location.
+2. **Add your API keys:** Create `.env` file with your actual API keys.
+3. **Test the connection:**
 
 ```powershell
 npm start test
 ```
 
-7. **Start interactive mode:**
+1. **Start interactive mode:**
 
 ```powershell
 npm start interactive
@@ -1370,7 +1370,7 @@ Edit `config/config.json`:
 }
 ```
 
-## 🎉 Success!
+## 🎉 Success
 
 Your Obsidian MCP Bridge is now ready! The system provides:
 

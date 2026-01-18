@@ -1,6 +1,6 @@
 ---
 Created: 2026-01-13
-updated: 2026-01-13T18:42:00
+updated: 2026-01-19T05:57:00
 Tags:
   - Ai/mcp
   - perplexity
@@ -9,6 +9,8 @@ Tags:
   - Documentation
 version: v1.0
 ---
+
+**Current state** - pending adding indexing before searches: 20260119 5:57am
 
 ✅ **Semantic Search** - Finds files by meaning, not keywords  
 ✅ **Secure** - MCP enforces path boundaries, read-only by default  
@@ -66,7 +68,7 @@ Or set up in `config.json`
 
 ```json
 {
-  "vaultPath": "C:\\Vault\\AI hub\\Apothecary",
+  "vaultPath": "C:\\Vault\\Apothecary",
   "pythonExe": "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs\\.venv\\Scripts\\python.exe",
   "pythonScript": "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs\\rag_query_working.py",
   "pythonCwd": "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs",
@@ -158,7 +160,7 @@ $env:XAI_API_KEY="your-key"
 
 ```bash
 # Test MCP server directly
-npx -y @modelcontextprotocol/server-filesystem "C:\Vault\AI hub\Apothecary"
+npx -y @modelcontextprotocol/server-filesystem "C:\Vault\Apothecary"
 ```
 
 ### **4. "Module not found" (FAISS):**
@@ -217,7 +219,7 @@ node complete_bridge.cjs "What tags do I use most frequently?"
 
 | Option            | Default                      | Description                  |
 | ----------------- | ---------------------------- | ---------------------------- |
-| `vaultPath`       | `C:\Vault\AI hub\Apothecary` | Path to your Obsidian vault  |
+| `vaultPath`       | `C:\Vault\Apothecary` | Path to your Obsidian vault  |
 | `maxFiles`        | 5                            | Max files to read per query  |
 | `maxBytes`        | 200000                       | Max characters to read total |
 | `defaultProvider` | `grok`                       | Default AI provider          |
@@ -303,7 +305,7 @@ node complete_bridge.cjs --list-models
 ```bash
 # Basic queries
 Node complete_bridge. Cjs "your question"
-Node complete_bridge. Cjs --vault "C:\Vault\AI hub\Apothecary" "question"
+Node complete_bridge. Cjs --vault "C:\Vault\Apothecary" "question"
 
 # Provider/model selection
 Node complete_bridge. Cjs --provider grok "question"

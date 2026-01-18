@@ -61,10 +61,10 @@ Would you like me to sketch a minimal MCP server API (read-only) for Obsidian ne
 
 ## User
 
-https://github.com/modelcontextprotocol>> anything we can use here?
+<https://github.com/modelcontextprotocol>>> anything we can use here?
 
 $env:OBSIDIAN_API_KEY="paste-your-api-key-here"
-$env:OBSIDIAN_REST_API_BASE_URL="https://127.0.0.1:27124"
+$env:OBSIDIAN_REST_API_BASE_URL="<https://127.0.0.1:27124>"
 npx -y obsidian-mcp-server
 
 # For filesystem access
@@ -619,7 +619,7 @@ return `You are answering using local files provided below.\n\nQUESTION:\n${quer
 // 5) call Perplexity (OpenAI-style chat API)
 async function askPerplexity(prompt) {
 if (!PPLX_API_KEY) throw new Error("Missing PPLX_API_KEY env var.");
-const r = await fetch("https://api.perplexity.ai/chat/completions", {
+const r = await fetch("<https://api.perplexity.ai/chat/completions>", {
 method: "POST",
 headers: {
 "Authorization": `Bearer ${PPLX_API_KEY}`,
@@ -815,7 +815,7 @@ return `You are answering using local files provided below.\n\nQUESTION:\n${quer
 
 async function askPerplexity(prompt) {
 if (!PPLX_API_KEY) throw new Error("Missing PPLX_API_KEY env var.");
-const r = await fetch("https://api.perplexity.ai/chat/completions", {
+const r = await fetch("<https://api.perplexity.ai/chat/completions>", {
 method: "POST",
 headers: {
 "Authorization": `Bearer ${PPLX_API_KEY}`,
@@ -2663,11 +2663,11 @@ Get-ChildItem
 
 # delete temp test scripts we no longer need
 
-Remove-Item -Force ` .\spawn-test.js,`
-.\spawn-test-cmd.js, ` .\spawn-test-shell.js,`
-.\mcp-fs-start.js, ` .\mcp-list.js,`
-.\mcp-list-2.js, ` .\mcp-resources.js,`
-.\mcp-tools.js, ` .\mcp-ls.js`
+Remove-Item -Force `.\spawn-test.js,`
+.\spawn-test-cmd.js, `.\spawn-test-shell.js,`
+.\mcp-fs-start.js, `.\mcp-list.js,`
+.\mcp-list-2.js, `.\mcp-resources.js,`
+.\mcp-tools.js, `.\mcp-ls.js`
 -ErrorAction SilentlyContinue
 
 # show what remains
@@ -2700,8 +2700,8 @@ powershell
 Copy code
 
 cd "C:\Users\YC\Documents\pplx-mcp-bridge"
-Remove-Item -Force ` ".\console.error(spawn error"`
-".\console.log(exit code" ` ".\process.stdout.write(d))"`
+Remove-Item -Force `".\console.error(spawn error"`
+".\console.log(exit code" `".\process.stdout.write(d))"`
 -ErrorAction SilentlyContinue
 Get-ChildItem
 
@@ -2744,7 +2744,7 @@ Copy code
 
 cd "C:\Users\YC\Documents\pplx-mcp-bridge"
 
-Remove-Item -Force -LiteralPath ` ".\console.error(spawn error"`
+Remove-Item -Force -LiteralPath `".\console.error(spawn error"`
 ".\console.log(exit code" `
 ".\process.stdout.write(d))"
 
@@ -2929,7 +2929,7 @@ return `You are answering using ONLY the local file excerpts below.\nQUESTION:\n
 
 async function askPerplexity(prompt) {
 if (!PPLX_API_KEY) throw new Error("Missing PPLX_API_KEY");
-const r = await fetch("https://api.perplexity.ai/chat/completions", {
+const r = await fetch("<https://api.perplexity.ai/chat/completions>", {
 method: "POST",
 headers: { Authorization: \`Bearer \${PPLX_API_KEY}\`, "Content-Type": "application/json" },
 body: JSON.stringify({
@@ -3071,7 +3071,7 @@ ${txt.slice(0, 4000)}`;
  }
  } catch {}
  }
- return `You are answering using ONLY the local file excerpts below.
+ return`You are answering using ONLY the local file excerpts below.
 
 QUESTION:
 ${query}
@@ -3082,7 +3082,7 @@ ${ctx}`;
 
 async function askPerplexity(prompt) {
 if (!PPLX_API_KEY) throw new Error("Missing PPLX_API_KEY");
-const r = await fetch("https://api.perplexity.ai/chat/completions", {
+const r = await fetch("<https://api.perplexity.ai/chat/completions>", {
 method: "POST",
 headers: { Authorization: `Bearer ${PPLX_API_KEY}`, "Content-Type": "application/json" },
 body: JSON.stringify({
@@ -3225,7 +3225,7 @@ ${txt.slice(0, 4000)}`;
  }
  } catch {}
  }
- return `You are answering using ONLY the local file excerpts below.
+ return`You are answering using ONLY the local file excerpts below.
 
 QUESTION:
 ${query}
@@ -3236,7 +3236,7 @@ ${ctx}`;
 
 async function askPerplexity(prompt) {
 if (!PPLX_API_KEY) throw new Error("Missing PPLX_API_KEY");
-const r = await fetch("https://api.perplexity.ai/chat/completions", {
+const r = await fetch("<https://api.perplexity.ai/chat/completions>", {
 method: "POST",
 headers: { Authorization: `Bearer ${PPLX_API_KEY}`, "Content-Type": "application/json" },
 body: JSON.stringify({
@@ -3359,7 +3359,7 @@ try { matches = JSON.parse(text); } catch { matches = []; }
 console.log(`Found ${matches.length} matches:`);
 for (const m of matches.slice(0, 50)) {
 const loc = m.path + (m.line != null ? `:${m.line}` : "");
-console.log(` - ${loc} ${m.preview ? "→ " + m.preview : ""}`);
+console.log(`- ${loc} ${m.preview ? "→ " + m.preview : ""}`);
 }
 
 await client.close();
@@ -3445,7 +3445,7 @@ const matches = await run(p);
 console.log(`\n=== "${p}" → ${matches.length} matches ===`);
 for (const m of matches.slice(0, 50)) {
 const loc = m.path + (m.line != null ? `:${m.line}` : "");
-console.log(` - ${loc}${m.preview ? " → " + m.preview : ""}`);
+console.log(`- ${loc}${m.preview ? " → " + m.preview : ""}`);
 }
 }
 
@@ -3662,7 +3662,7 @@ Client does not support MCP Roots, using allowed directories set from server arg
 
 ---
 
-#workflow-management #system-infrastructure #setup
+# workflow-management #system-infrastructure #setup
 
 ## **Folder Structure & Definitions** v2026-01-04
 
@@ -3824,7 +3824,7 @@ ${txt.slice(0, 4000)}`;
  }
  } catch {}
  }
- return `You are answering using ONLY the local Markdown excerpts below.
+ return`You are answering using ONLY the local Markdown excerpts below.
 
 QUESTION:
 ${query}
@@ -3835,7 +3835,7 @@ ${ctx}`;
 
 async function askPerplexity(prompt) {
 if (!PPLX_API_KEY) throw new Error("Missing PPLX_API_KEY");
-const r = await fetch("https://api.perplexity.ai/chat/completions", {
+const r = await fetch("<https://api.perplexity.ai/chat/completions>", {
 method: "POST",
 headers: { Authorization: \`Bearer \${PPLX_API_KEY}\`, "Content-Type": "application/json" },
 body: JSON.stringify({
@@ -4009,7 +4009,7 @@ query + "\n\nEXCERPTS:\n" + ctx;
 
 async function askPerplexity(prompt) {
 if (!PPLX_API_KEY) throw new Error("Missing PPLX_API_KEY");
-const r = await fetch("https://api.perplexity.ai/chat/completions", {
+const r = await fetch("<https://api.perplexity.ai/chat/completions>", {
 method: "POST",
 headers: { Authorization: "Bearer " + PPLX_API_KEY, "Content-Type": "application/json" },
 body: JSON.stringify({
@@ -4180,13 +4180,13 @@ const prefer = tools.tools?.find(t => t.name === "read_text_file") ? "read_text_
 const res = await client.callTool({ name: prefer, arguments: { path: absPath, ...(prefer === "read_file" ? { max_bytes: MAX_BYTES } : {}) } });
 return res.content?.[0]?.text ?? "";
 }
-function* extractTasks(text) {
+function*extractTasks(text) {
 const lines = text.split(/\r?\n/);
 const isoDate = /\b(20\d{2}-\d{2}-\d{2})\b/; // 2026-01-12
 const dueTag = /@due\(([^)]+)\)/i; // @due(2026-01-12)
-const dueColon = /\b(due|deadline)\s*:\s*([^\s]+.*)$/i; // due: 2026-01-12
+const dueColon = /\b(due|deadline)\s*:\s*([^\s]+._)$/i; // due: 2026-01-12
  const checkboxOpen = /^\s*[-*]\s*\[\s\]\s+(.*)$/; // - [ ] task
-const checkboxDone = /^\s*[-*]\s*\[x\]\s+(.*)$/i; // - [x] task
+const checkboxDone = /^\s_[-_]\s_\[x\]\s+(.*)$/i; // - [x] task
  const todoPrefix = /^\s*(?:todo|task)\s*[:\-]\s*(.+)$/i; // todo: do X
 
 lines.forEach((line, idx) => {
@@ -4519,7 +4519,7 @@ powershell
 
 Copy code
 
-$env:PPLX_API_KEY="..." 
+$env:PPLX_API_KEY="..."
 $env:MCP_ROOT="C:\Users\YC\Documents\TestFolder"
 node .\bridge-pplx-recursive.js "What are the main tasks and deadlines in these files?"
 
@@ -4639,7 +4639,7 @@ Copy code
 
 // Example: Ollama local swap-in
 async function askModel(prompt) {
-const r = await fetch("http://127.0.0.1:11434/api/generate", {
+const r = await fetch("<http://127.0.0.1:11434/api/generate>", {
 method: "POST",
 headers: { "Content-Type":"application/json" },
 body: JSON.stringify({ model: "llama3.1:8b", prompt, stream: false })
@@ -4771,7 +4771,7 @@ Copy code
 
 # Replace YOUR_KEY
 
-curl -k -H "Authorization: Bearer YOUR_KEY" https://127.0.0.1:27124/
+curl -k -H "Authorization: Bearer YOUR_KEY" <https://127.0.0.1:27124/>
 
 `-k` skips cert validation (since it’s self-signed). Trust the cert if you want to remove `-k`.
 
@@ -4787,7 +4787,7 @@ Want me to switch our bridge to the **Obsidian REST** path next (read-only first
 
 so its the same as what have done, just that thats a plugin specifically for obsidian?
 
-https://github.com/perplexityai/modelcontextprotocol
+<https://github.com/perplexityai/modelcontextprotocol>
 how about this
 
 ## ChatGPT
@@ -4851,7 +4851,7 @@ powershell
 Copy code
 
 $env:OBSIDIAN_API_KEY="..."
-$env:OBSIDIAN_REST_API_BASE_URL="https://127.0.0.1:27124"
+$env:OBSIDIAN_REST_API_BASE_URL="<https://127.0.0.1:27124>"
 npx -y obsidian-mcp-server
 
 It runs **outside** Obsidian and you connect clients to it yourself.
@@ -5203,7 +5203,7 @@ Adds **index** and **ask with index preselection**.
 
 Later we can add **safe write ops** (`create_file`, `move_path`, `soft_delete`) behind `--mode write`.
 
-### Two quick confirmations so I generate the new CLI exactly right (defaults in parentheses):
+### Two quick confirmations so I generate the new CLI exactly right (defaults in parentheses)
 
 Path to Python we should use for indexing:
 _(Assume `C:\Users\YC\LocalDocs\.venv\Scripts\python.exe`.)_
@@ -5315,7 +5315,7 @@ return res.content?.[0]?.text ?? "";
 async function askGrok(model, prompt) {
 const key = process.env.XAI_API_KEY;
 ensure(key, "XAI_API_KEY");
-const url = process.env.XAI_API_URL || "https://api.x.ai/v1/chat/completions";
+const url = process.env.XAI_API_URL || "<https://api.x.ai/v1/chat/completions>";
 const r = await fetch(url, {
 method: "POST",
 headers: { "Authorization": `Bearer ${key}`, "Content-Type": "application/json" },
@@ -5332,7 +5332,7 @@ return data.choices?.[0]?.message?.content ?? "";
 async function askPplx(model, prompt) {
 const key = process.env.PPLX_API_KEY;
 ensure(key, "PPLX_API_KEY");
-const r = await fetch("https://api.perplexity.ai/chat/completions", {
+const r = await fetch("<https://api.perplexity.ai/chat/completions>", {
 method: "POST",
 headers: { "Authorization": `Bearer ${key}`, "Content-Type": "application/json" },
 body: JSON.stringify({ model, temperature: 0.2, messages: [{ role: "user", content: prompt }] })
@@ -5343,7 +5343,7 @@ return data.choices?.[0]?.message?.content ?? "";
 }
 
 async function askOllama(model, prompt) {
-const host = process.env.OLLAMA_HOST || "http://127.0.0.1:11434";
+const host = process.env.OLLAMA_HOST || "<http://127.0.0.1:11434>";
 const r = await fetch(`${host}/api/generate`, {
 method: "POST",
 headers: { "Content-Type": "application/json" },
@@ -5483,7 +5483,7 @@ Copy code
 
 # Perplexity
 
-$env:PPLX_API_KEY="pplx-..." 
+$env:PPLX_API_KEY="pplx-..."
 node .\bridge-cli.js ask --root "$env:MCP_ROOT" --index "C:\Users\YC\LocalDocs\vault" --provider pplx --model sonar-pro "question"
 
 # Ollama (local)
@@ -5555,8 +5555,8 @@ function mcpTransport(root){return new StdioClientTransport({command:"npx",args:
 async function withMcp(root,fn){const c=new Client({name:"bridge-cli",version:"1.0.0"},{capabilities:{tools:{},resources:{},prompts:{}}});await c.connect(mcpTransport(root));try{return await fn(c)}finally{await c.close()}}
 async function readTextFile(c,p,max=200000){const t=await c.listTools();const prefer=t.tools?.find(x=>x.name==="read_text_file")?"read_text_file":"read_file";const r=await c.callTool({name:prefer,arguments:{path:p,...(prefer==="read_file"?{max_bytes:max}:{})}});return r.content?.[0]?.text??""}
 
-async function askGrok(model,prompt){const key=process.env.XAI_API_KEY;ensure(key,"XAI_API_KEY");const url=process.env.XAI_API_URL||"https://api.x.ai/v1/chat/completions";const r=await fetch(url,{method:"POST",headers:{Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify({model,temperature:0.2,messages:[{role:"user",content:prompt}]})});if(!r.ok)throw new Error(`grok error ${r.status}: ${await r.text()}`);const d=await r.json();return d.choices?.[0]?.message?.content??""}
-async function askPplx(model,prompt){const key=process.env.PPLX_API_KEY;ensure(key,"PPLX_API_KEY");const r=await fetch("https://api.perplexity.ai/chat/completions",{method:"POST",headers:{Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify({model,temperature:0.2,messages:[{role:"user",content:prompt}]})});if(!r.ok)throw new Error(`pplx error ${r.status}: ${await r.text()}`);const d=await r.json();return d.choices?.[0]?.message?.content??""}
+async function askGrok(model,prompt){const key=process.env.XAI_API_KEY;ensure(key,"XAI_API_KEY");const url=process.env.XAI_API_URL||"<https://api.x.ai/v1/chat/completions";const> r=await fetch(url,{method:"POST",headers:{Authorization:`Bearer ${key}`,"Content-Type":"application/json"},body:JSON.stringify({model,temperature:0.2,messages:[{role:"user",content:prompt}]})});if(!r.ok)throw new Error(`grok error ${r.status}: ${await r.text()}`);const d=await r.json();return d.choices?.[0]?.message?.content??""}
+async function askPplx(model,prompt){const key=process.env.PPLX_API_KEY;ensure(key,"PPLX_API_KEY");const r=await fetch("<https://api.perplexity.ai/chat/completions",{method:"POST",headers:{Authorization:`Bearer> ${key}`,"Content-Type":"application/json"},body:JSON.stringify({model,temperature:0.2,messages:[{role:"user",content:prompt}]})});if(!r.ok)throw new Error(`pplx error ${r.status}: ${await r.text()}`);const d=await r.json();return d.choices?.[0]?.message?.content??""}
 async function askOllama(model,prompt){const host=process.env.OLLAMA_HOST||"http://127.0.0.1:11434";const r=await fetch(`${host}/api/generate`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model,prompt,stream:false,options:{temperature:0.2}})});if(!r.ok)throw new Error(`ollama error ${r.status}: ${await r.text()}`);const d=await r.json();return d.response||""}
 async function askProvider(p,m,pr){if(p==="grok")return askGrok(m,pr);if(p==="pplx")return askPplx(m,pr);if(p==="ollama")return askOllama(m,pr);throw new Error(`Unknown provider: ${p}`)}
 
@@ -6079,7 +6079,7 @@ If you want **live logs** from the Node CLI next time, I can tweak `bridge-cli.j
 
 ## User
 
-PS C:\Users\YC\MCPs\pplx-mcp-bridge> $env:MCP_ROOT = "C:\Vault\AI hub\Apothecary\" # or your vault/copy
+PS C:\Users\YC\MCPs\pplx-mcp-bridge> $env:MCP_ROOT = "C:\Vault\Apothecary\" # or your vault/copy
 PS C:\Users\YC\MCPs\pplx-mcp-bridge> node .\bridge-cli.js ask --root "$env:MCP_ROOT" --index "C:\Users\YC\LocalDocs\vault" --topk 20 "What are the main tasks and deadlines in these files?"
 Traceback (most recent call last):
 File "C:\Users\YC\LocalDocs\query_index.py", line 29, in <module>
@@ -6368,7 +6368,7 @@ RAG assets folder: `C:\Users\YC\LocalDocs`
 
 Root example used for MCP: `C:\Users\YC\Documents\TestFolder`
 
-Another vault path attempted: `C:\Vault\AI hub\Apothecary\`
+Another vault path attempted: `C:\Vault\Apothecary\`
 
 ## Canvas spec status
 
