@@ -1,0 +1,230 @@
+{
+  "main": {
+    "id": "91bc72eac19de37f",
+    "type": "split",
+    "children": [
+      {
+        "id": "e73b916f980dbacb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1ffc38576b942683",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d92ac043bc7a21c5",
+    "type": "split",
+    "children": [
+      {
+        "id": "109c634eb22e518e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "541e53139e67f519",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "ebb8fedfbc3d8c00",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "d6585da53f481fab",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 450.5
+  },
+  "right": {
+    "id": "f1fb3d0c2d581110",
+    "type": "split",
+    "children": [
+      {
+        "id": "0ecf9f2291317297",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4bfff07e3068c9eb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "c4baaabf2a6aca71",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "1979b5550f1b97a5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "f947b38170b7d5f5",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "f0de4434449049f5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false,
+      "smart-composer:Open smart composer": false,
+      "open-vscode:VSCode": false,
+      "markdown-importer:Open format converter": false,
+      "zk-prefixer:Create new unique note": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "copilot:Open Copilot Chat": false,
+      "homepage:Open homepage": false,
+      "omnisearch:Omnisearch": false,
+      "quickadd:QuickAdd": false,
+      "side-note:Side Note: Open in Sidebar": false
+    }
+  },
+  "active": "541e53139e67f519",
+  "lastOpenFiles": [
+    "00______________/Claude API Info (Conflicted copy BGD072 202601121618).md",
+    "00______________/Openrouter (Conflicted copy BGD072 202601121618).md",
+    "00______________/PPLX API info (Conflicted copy BGD072 202601121618).md",
+    "00______________/Obsidian setup spec (Conflicted copy BGD072 202601121618).md",
+    "20_AI tools/200_RAG/Vault Index Building Script.md",
+    "gitignore",
+    "gitignore.js",
+    "gitignore.txt",
+    "Unconfirmed 809479.crdownload",
+    "Untitled.md",
+    "(.md",
+    "Untitled 1.md",
+    "00_Reference/hotkeys.md",
+    "00______________/Ollama Model inventory.md",
+    "00_Reference/Style/Themes CSS and resources.md",
+    "00_Reference/Style/compact-reading.css.md",
+    "00_Reference/Style/Obsidian Canonical Markdown Test.md",
+    "Perplexity CLI.md",
+    "spec_1_obsidian_vault_q_a_bridge.md",
+    "20_AI tools/200_RAG/build_index.py.md",
+    "20_AI tools/200_RAG/build_index_cli.py.md",
+    "20_AI tools/201_MCPs/OPGG - MCP + Wrapper - Installation.md",
+    "20_AI tools/201_MCPs/2010_vault-bridge/scr/complete_bridge.Cjs",
+    "20_AI tools/201_MCPs/2010_vault-bridge/scr/config.json",
+    "10_Prompt library/100_System/CURSOR - Learning-Focused Coding Assistant System Prompt.md",
+    "00_System/001_System specifications - running/!CURSOR - Learning-Focused Coding Assistant System Prompt.md",
+    "00_System/001_System specifications - running/!System prompts for cursor on learning mode.md",
+    "00_System/001_System specifications - running/Spec Generator Space/!PPLX - System Instruction Design Guidelines.md",
+    "00_System/001_System specifications - running/Spec Generator Space/!PPLX - System instruction generator - Spec.md",
+    "00_System/001_System specifications - running/Spec Generator Space/!PPLX - Common Parameters for System Instructions.md",
+    "10_Prompt library/100_System/System prompts for cursor on learning mode.md",
+    "40_Experiments/Chat related integration/AI Usage Analysis – Core Scripts.md",
+    "WhatsApp Chat - Bonnie Ho.zip",
+    "20_AI tools/201_MCPs/2010_vault-bridge/scr/package.json",
+    "20_AI tools/201_MCPs/2010_vault-bridge/scr",
+    "20_AI tools/201_MCPs/2010_vault-bridge",
+    "00_Reference/Guides/workflow-diagram.png"
+  ]
+}

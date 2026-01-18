@@ -1,0 +1,151 @@
+/* MAXIMUM COMPACT MODE - Minimal spacing */
+
+/* Base container - remove any default padding */
+.markdown-preview-view {
+    line-height: 1.2 !important;
+}
+
+/* Code blocks - 0.08 character heights */
+.markdown-preview-view pre {
+    margin-top: 0.08em !important;
+    margin-bottom: 0.08em !important;
+    padding: 0.25em !important;
+    line-height: 1.2 !important;
+}
+
+/* Tables - 0.08 character heights */
+.markdown-preview-view table {
+    margin-top: 0.08em !important;
+    margin-bottom: 0.08em !important;
+}
+
+/* Table cells - minimal padding */
+.markdown-preview-view td,
+.markdown-preview-view th {
+    padding: 0.15em 0.3em !important;
+}
+
+/* Headings - conservative one line spacing below, no spacing above */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+    line-height: 1.1 !important;
+}
+
+/* Paragraphs - conservative one line spacing below, no spacing above */
+.markdown-preview-view p {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+    line-height: 1.2 !important;
+}
+
+/* Lists - no indentation, conservative one line spacing */
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+    padding-left: 0 !important;
+    list-style-position: inside !important;
+}
+
+/* List items - minimal spacing, no indentation */
+.markdown-preview-view li {
+    margin-top: 0.03em !important;
+    margin-bottom: 0.03em !important;
+    line-height: 1.2 !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Blockquotes - conservative one line spacing */
+.markdown-preview-view blockquote {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+    padding: 0.25em 0.5em !important;
+    line-height: 1.2 !important;
+}
+
+/* Horizontal rules - 0.15 character heights */
+.markdown-preview-view hr {
+    margin-top: 0.15em !important;
+    margin-bottom: 0.15em !important;
+}
+
+/* Inline code - minimal padding */
+.markdown-preview-view code {
+    padding: 0.05em 0.2em !important;
+    line-height: 1.2 !important;
+}
+
+/* Callouts - conservative one line spacing */
+.markdown-preview-view .callout {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+    padding: 0.3em !important;
+}
+
+.markdown-preview-view .callout-content {
+    margin: 0 !important;
+    padding: 0.2em 0 !important;
+}
+
+/* Embedded notes - conservative one line spacing */
+.markdown-preview-view .markdown-embed {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+/* Links and other inline elements */
+.markdown-preview-view a {
+    line-height: inherit !important;
+}
+
+/* Remove extra spacing from nested elements */
+.markdown-preview-view * {
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+}
+
+/* Re-apply conservative one-line spacing for main elements */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 { 
+    margin-top: 0 !important; 
+    margin-bottom: 0.8em !important; 
+}
+.markdown-preview-view p { 
+    margin-top: 0 !important; 
+    margin-bottom: 0.8em !important; 
+}
+.markdown-preview-view ul,
+.markdown-preview-view ol { 
+    margin-top: 0 !important; 
+    margin-bottom: 0.8em !important; 
+    padding-left: 0 !important;
+}
+.markdown-preview-view li { 
+    margin-top: 0.03em !important; 
+    margin-bottom: 0.03em !important; 
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+.markdown-preview-view blockquote { 
+    margin-top: 0 !important; 
+    margin-bottom: 0.8em !important; 
+}
+.markdown-preview-view hr { 
+    margin-top: 0.15em !important; 
+    margin-bottom: 0.15em !important; 
+}
+.markdown-preview-view pre { 
+    margin-top: 0.08em !important; 
+    margin-bottom: 0.08em !important; 
+}

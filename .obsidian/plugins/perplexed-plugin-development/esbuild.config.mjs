@@ -62,7 +62,7 @@ const context = await esbuild.context({
 
 if (isProduction) {
 	// Build only for production
-	await context.Apothecary();
+	await context.rebuild();
 	process.exit(0);
 } else {
 	// Enable watch mode for development

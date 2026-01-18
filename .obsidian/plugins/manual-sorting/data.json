@@ -186,8 +186,7 @@
         "00_System/009_Folder Structure & Definitions",
         "00_System/000_Scripts - running",
         "00_System/001_System specifications - running",
-        "00_System/002_Espanso",
-        "00_System/004_Auotmaton"
+        "00_System/002_Espanso"
       ],
       "sortOrder": "custom"
     },
@@ -202,7 +201,6 @@
       "children": [
         "00_System/001_System specifications - running/!CURSOR - Learning-Focused Coding Assistant System Prompt.md",
         "00_System/001_System specifications - running/!System prompts for cursor on learning mode.md",
-        "00_System/001_System specifications - running/01_Response_Contract.md",
         "00_System/001_System specifications - running/02_Tone_Modifiers.md",
         "00_System/001_System specifications - running/Notetaking & PKM Space",
         "00_System/001_System specifications - running/Obsidian plugins",
@@ -210,10 +208,6 @@
         "00_System/001_System specifications - running/!!!!Modlide indv.md",
         "00_System/001_System specifications - running/!!!Modelfile batch job.md"
       ],
-      "sortOrder": "custom"
-    },
-    "00_System/001_System specifications - running/01_Response_Contract.md": {
-      "children": [],
       "sortOrder": "custom"
     },
     "00_System/001_System specifications - running/02_Tone_Modifiers.md": {
@@ -262,10 +256,6 @@
         "00_System/002_Espanso/2 _!Espanso snippets.md",
         "00_System/002_Espanso/3 _!Espanso snippetsd (short).md"
       ],
-      "sortOrder": "custom"
-    },
-    "00_System/004_Auotmaton": {
-      "children": [],
       "sortOrder": "custom"
     },
     "00_System/009_Folder Structure & Definitions": {
@@ -542,15 +532,10 @@
     },
     "40_Experiments/HKICPA-Download-Automation": {
       "children": [
-        "40_Experiments/HKICPA-Download-Automation/downloads_clean",
         "40_Experiments/HKICPA-Download-Automation/python-scripts",
         "40_Experiments/HKICPA-Download-Automation/contentpage.pdf",
         "40_Experiments/HKICPA-Download-Automation/HKICPA-Runbook.md.md"
       ],
-      "sortOrder": "custom"
-    },
-    "40_Experiments/HKICPA-Download-Automation/downloads_clean": {
-      "children": [],
       "sortOrder": "custom"
     },
     "40_Experiments/HKICPA-Download-Automation/python-scripts": {
@@ -580,6 +565,7 @@
     },
     "90_Inbox": {
       "children": [
+        "90_Inbox/image",
         "90_Inbox/20260113Tuesday.md",
         "90_Inbox/20260114Wednesday.md",
         "90_Inbox/📋 Planning for AI Usage Analysis - Claude output.md",
@@ -587,13 +573,20 @@
         "90_Inbox/2026-01-12_05-43-14_ChatGPT_What_Claude_vs_ChatGPT_vs_Perplexity_can_(and_can’t)_do_with.md",
         "90_Inbox/Github rawl 4 AI Open-source LLM Friendly Web Crawler & Scraper.md",
         "90_Inbox/Active Open‑Source AI & LLM Projects Beginners Can Actually Contribute To (With GitHub Links).md",
-        "90_Inbox/i need to find a stock's historical price hkex 006.docx",
-        "90_Inbox/For OCR"
+        "90_Inbox/i need to find a stock's historical price hkex 006.docx"
       ],
       "sortOrder": "custom"
     },
-    "90_Inbox/For OCR": {
-      "children": [],
+    "90_Inbox/image": {
+      "children": [
+        "90_Inbox/image/2026-01-12_05-43-14_ChatGPT_What_Claude_vs_ChatGPT_vs_Perplexity_can_(and_can’t)_do_with"
+      ],
+      "sortOrder": "custom"
+    },
+    "90_Inbox/image/2026-01-12_05-43-14_ChatGPT_What_Claude_vs_ChatGPT_vs_Perplexity_can_(and_can’t)_do_with": {
+      "children": [
+        "90_Inbox/image/2026-01-12_05-43-14_ChatGPT_What_Claude_vs_ChatGPT_vs_Perplexity_can_(and_can’t)_do_with/1768415441708.png"
+      ],
       "sortOrder": "custom"
     },
     "99_Archive": {
@@ -622,8 +615,7 @@
     "copilot/copilot-conversations": {
       "children": [
         "copilot/copilot-conversations/how_to_separte_line_44from_43@20260111_203121.md",
-        "copilot/copilot-conversations/how_would_you_rewrite_my_note_here@20260107_221546.md",
-        "copilot/copilot-conversations/what_do_you_think_about_my_note_here@20260107_221725.md"
+        "copilot/copilot-conversations/how_would_you_rewrite_my_note_here@20260107_221546.md"
       ],
       "sortOrder": "custom"
     }
