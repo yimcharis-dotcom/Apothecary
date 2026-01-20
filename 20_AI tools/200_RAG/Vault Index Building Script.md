@@ -216,7 +216,7 @@ For large vaults where indexing takes significant time, use this PowerShell scri
 try {
     powercfg /change standby-timeout-ac 0
     powercfg /change monitor-timeout-ac 0
-    python build_index_cli.py --vault "C:\Vault\automators-main" --out automators-mainTemplate
+    python build_index.py
 }
 finally {
     powercfg /change standby-timeout-ac 15

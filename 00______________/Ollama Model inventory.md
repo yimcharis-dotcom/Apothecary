@@ -12,20 +12,20 @@ updated: `=dateformat(date(today), "yyyy-MM-dd")`
 
 Base Url: http://localhost:11434
 URL: http://127.0.0.1:11434
-
-``` css 
-NAME                          ID              SIZE      MODIFIED
-phi4-mini:latest              587b3b536409    3.2 GB    About an hour ago
-phi4-mini-reasoning:latest    3ca8c2865ce9    3.2 GB    About an hour ago
-phi3-mini:latest              2fa0f718cffe    2.2 GB    2 hours ago
-bge-m3:latest                 790764642607    1.2 GB    4 days ago
-gemma2:9b                     ff02c3702f32    5.4 GB    7 days ago
-qwen2.5:3b                    357c53fb659c    1.9 GB    7 days ago
-gemma2:2b                     8ccf136fdd52    1.6 GB    7 days ago
-llama3.2:latest               a80c4f17acd5    2.0 GB    7 days ago
-llama3_1:latest               6ccd81b5413c    5.7 GB    8 days ago
-qwen2.5:7b-instruct           845dbda0ea48    4.7 GB    8 days ago
-mistral-4k:latest             f14a5be852dd    4.4 GB    9 days ago
+	[[T16 Gen 4 stacks]]
+	``` css 
+	NAME                          ID              SIZE      MODIFIED
+	phi4-mini:latest              587b3b536409    3.2 GB    About an hour ago
+	phi4-mini-reasoning:latest    3ca8c2865ce9    3.2 GB    About an hour ago
+	phi3-mini:latest              2fa0f718cffe    2.2 GB    2 hours ago
+	bge-m3:latest                 790764642607    1.2 GB    4 days ago
+	gemma2:9b                     ff02c3702f32    5.4 GB    7 days ago
+	qwen2.5:3b                    357c53fb659c    1.9 GB    7 days ago
+	gemma2:2b                     8ccf136fdd52    1.6 GB    7 days ago
+	llama3.2:latest               a80c4f17acd5    2.0 GB    7 days ago
+	llama3_1:latest               6ccd81b5413c    5.7 GB    8 days ago
+	qwen2.5:7b-instruct           845dbda0ea48    4.7 GB    8 days ago
+	mistral-4k:latest             f14a5be852dd    4.4 GB    9 days ago
 ```
 
 
