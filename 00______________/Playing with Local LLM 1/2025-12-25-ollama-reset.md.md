@@ -15,7 +15,7 @@ tags:
 ### Step 1  - make a list first , and then commend "Nuke all except phi3-local (your custom)" (why)
 
  **Why Kept phi3-local**:
- - Custom (Modelfile path: C:\Users\YC\OneDrive\Desktop\Modelfile).
+ - Custom (Modelfile path: C:\Users\YC\Modelfile).
  - No hallucinations.
  - PKM-optimized.
 ---
@@ -26,7 +26,7 @@ Reset models to a clean baseline (keep `phi3-local`) and document the process so
 ## Pre-cleanup context
 
 ### Why keep `phi3-local`?
-- Custom build (Modelfile path: `C:\Users\YC\OneDrive\Desktop\Modelfile`)
+- Custom build (Modelfile path: `C:\Users\YC\Modelfile`)
 - More reliable “I don’t know” behavior (lower hallucination risk)
 - PKM-optimized (your preferred default)
 

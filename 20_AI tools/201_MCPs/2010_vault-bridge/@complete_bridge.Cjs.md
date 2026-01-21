@@ -13,9 +13,9 @@ function loadConfig() {
 const configPath = path.join(\_\_dirname, 'config.json');
 const defaults = {
 vaultPath: "C:\\Vault\\Apothecary",
-pythonExe: "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs\\.venv\\Scripts\\python.exe",
-pythonScript: "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs\\rag_query_working.py",
-pythonCwd: "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs",
+pythonExe: "C:\\Users\\YC\\LocalDocs\\.venv\\Scripts\\python.exe",
+pythonScript: "C:\\Users\\YC\\LocalDocs\\rag_query_working.py",
+pythonCwd: "C:\\Users\\YC\\LocalDocs",
 maxFiles: 5,
 maxBytes: 200000,
 defaultProvider: "grok",

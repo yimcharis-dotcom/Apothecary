@@ -43,7 +43,7 @@ version: v1.0
 ### **1. Install Dependencies:**
 
 ```bash
-cd "C:\Users\YC\OneDrive\Desktop\MCPs\vault-bridge"
+cd "C:\Users\YC\MCPs\vault-bridge"
 npm install @modelcontextprotocol/sdk
 # Node 24+ has built-in fetch, no node-fetch needed
 ```
@@ -69,9 +69,9 @@ Or set up in `config.json`
 ```json
 {
   "vaultPath": "C:\\Vault\\Apothecary",
-  "pythonExe": "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs\\.venv\\Scripts\\python.exe",
-  "pythonScript": "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs\\rag_query_working.py",
-  "pythonCwd": "C:\\Users\\YC\\OneDrive\\Desktop\\LocalDocs",
+  "pythonExe": "C:\\Users\\YC\\LocalDocs\\.venv\\Scripts\\python.exe",
+  "pythonScript": "C:\\Users\\YC\\LocalDocs\\rag_query_working.py",
+  "pythonCwd": "C:\\Users\\YC\\LocalDocs",
   "maxFiles": 5,
   "maxBytes": 200000,
   "defaultProvider": "grok",
@@ -142,7 +142,7 @@ node complete_bridge.cjs --help
 
 ```bash
 # Test Python directly
-cd "C:\Users\YC\OneDrive\Desktop\LocalDocs"
+cd "C:\Users\YC\LocalDocs"
 .venv\Scripts\python.exe rag_query_working.py "test query"
 ```
 
@@ -166,7 +166,7 @@ npx -y @modelcontextprotocol/server-filesystem "C:\Vault\Apothecary"
 ### **4. "Module not found" (FAISS):**
 
 ```bash
-cd "C:\Users\YC\OneDrive\Desktop\LocalDocs"
+cd "C:\Users\YC\LocalDocs"
 .venv\Scripts\python.exe -m pip install faiss-cpu sentence-transformers
 ```
 
@@ -255,7 +255,7 @@ node complete_bridge.cjs "What tags do I use most frequently?"
 
 ### RAG System
 
-- **Location**: `C:\Users\YC\OneDrive\Desktop\LocalDocs\`
+- **Location**: `C:\Users\YC\LocalDocs\`
 - **Python Script**: `rag_query_working.py`
 - **Index**: `vault.index` (FAISS vector index)
 

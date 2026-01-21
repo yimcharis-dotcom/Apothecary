@@ -1,3 +1,23 @@
+---
+Description: FAISS vector index builder for Obsidian vault semantic search
+Tags:
+  - RAG
+  - Indexing
+  - Embeddings
+  - FAISS
+  - Sentence-transformers
+  - ai/tools
+Vault_path: C:\Vault\Apothecary
+Index_path: vault. Index
+Meta_path: vault_meta. Json
+Model_name: BAAI/bge-m 3
+Chunk_size: 800
+Chunk_overlap: 100
+File_type: .md
+index_date: 2025-12-25
+Related: "[[build_index.py - ref]]"
+---
+
 ```python
 
 from pathlib import Path

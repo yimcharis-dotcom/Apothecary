@@ -9,6 +9,18 @@ tags:
 created: 2026-01-05
 ---
 updated: `=dateformat(date(today), "yyyy-MM-dd")`
+`NAME                          ID              SIZE      MODIFIED`
+`llama 3.1:8b                   46 e 0 c 10 c 039 e    4.9 GB    19 seconds ago`
+`gemma3:12b                    f 4031 aab 637 d    8.1 GB    2 minutes ago`
+`deepseek-r1:8b                6995872 bfe 4 c    5.2 GB    4 minutes ago`
+`gemma3:4b                     a 2 af 6 cc 3 eb 7 f    3.3 GB    21 minutes ago`
+`gemma2:9b                     ff 02 c 3702 f 32    5.4 GB    23 minutes ago`
+`Bge-m 3: latest                 790764642607    1.2 GB    24 minutes ago`
+`Phi 3.5: latest                 61819 fb 370 a 3    2.2 GB    35 minutes ago`
+`Llama 3.2: latest               a 80 c 4 f 17 acd 5    2.0 GB    37 minutes ago`
+`qwen 2.5:7b                    845 dbda 0 ea 48    4.7 GB    21 hours ago`
+`Phi 4-mini-reasoning: latest    3 ca 8 c 2865 ce 9    3.2 GB    22 hours ago`
+
 
 Base Url: http://localhost:11434
 URL: http://127.0.0.1:11434

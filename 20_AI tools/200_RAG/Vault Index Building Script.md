@@ -19,7 +19,7 @@ To run the script, you need an isolated Python environment to manage dependencie
 
 1. **Create a Virtual Environment**:
 
-   - Open a terminal or PowerShell in your working directory (e.g., `C:\Users\YC\OneDrive\Desktop\LocalDocs\`).
+   - Open a terminal or PowerShell in your working directory (e.g., `C:\Users\YC\LocalDocs\`).
    - Run the following command to create a virtual environment named `.venv`:
 
      ```bash
