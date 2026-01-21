@@ -6,6 +6,7 @@
 ```bash
 git checkout claude/setup-mcp-client-K5lbl
 ```
+
 **What it does:** Switches your working directory to Claude's feature branch  
 **Why:** Lets you inspect what Claude changed before merging  
 **Result:** You're now on Claude's branch, can see his files and commits
@@ -13,6 +14,7 @@ git checkout claude/setup-mcp-client-K5lbl
 ```bash
 git log --oneline -5
 ```
+
 **What it does:** Shows the last 5 commits in compact format  
 **Why:** Quick overview of what Claude committed  
 **Result:** See commit hashes and messages like "26 df 142 Update paths: Remove OneDrive/Desktop..."
@@ -20,6 +22,7 @@ git log --oneline -5
 ```bash
 git checkout master
 ```
+
 **What it does:** Switches back to your main branch  
 **Why:** Merging happens FROM a feature branch INTO master  
 **Result:** You're back on master, ready to merge
@@ -27,6 +30,7 @@ git checkout master
 ```bash
 git merge claude/setup-mcp-client-K5lbl
 ```
+
 **What it does:** Integrates Claude's branch changes into master  
 **Why:** Brings Claude's work into your main codebase  
 **Result:** Master now contains Claude's commits (fast-forward merge if no conflicts)
@@ -34,6 +38,7 @@ git merge claude/setup-mcp-client-K5lbl
 ```bash
 git commit -m "Merge Claude's MCP client setup"
 ```
+
 **What it does:** Creates a merge commit (only needed if not fast-forward)  
 **Why:** Documents the merge in git history  
 **Result:** Permanent record of when/why branches were merged
@@ -69,6 +74,7 @@ git status                    # Confirm clean working directory
 ```
 
 ### After Claude Finishes (Remote Session)
+
 ```bash
 # 1. Download latest info
 git fetch origin              
@@ -147,6 +153,7 @@ git push origin main
 ## 💡 Pro Tips
 
 ### Use Branches for Experimental Work
+
 ```bash
 git checkout -b feature/new-idea
 # Work on feature
@@ -155,6 +162,7 @@ git push origin feature/new-idea
 ```
 
 ### Stash Local Changes Before Pulling
+
 ```bash
 git stash                     # Save local changes
 git pull                      # Update from remote
@@ -162,12 +170,14 @@ git stash pop                 # Restore local changes
 ```
 
 ### Check Recent History
+
 ```bash
 git log --oneline -5          # Last 5 commits
 git log --graph --all         # Visual branch history
 ```
 
 ### Clean Up Old Branches
+
 ```bash
 git branch -d <branch-name>   # Delete local branch
 git push origin --delete <branch-name>  # Delete remote branch
@@ -176,12 +186,14 @@ git push origin --delete <branch-name>  # Delete remote branch
 ## 🔄 Two Claude Code Modes
 
 ### Remote Repository Mode
+
 - Claude connects to GitHub repository
 - Changes committed and pushed remotely
 - You pull them later
 - **No dots in Cursor** until you pull
 
 ### Local MCP Filesystem Mode
+
 - Claude uses MCP to edit local files
 - Changes made directly on your machine
 - **Dots appear immediately** in Cursor
@@ -196,17 +208,20 @@ git push origin --delete <branch-name>  # Delete remote branch
 ## ⚠️ Common Issues
 
 ### "Your branch is behind 'origin/main'"
+
 ```bash
 git pull origin main
 ```
 
 ### "You have diverged branches"
+
 ```bash
 git fetch origin
 git rebase origin/main  # Or: git merge origin/main
 ```
 
 ### "Merge conflicts"
+
 ```bash
 # Fix conflicts in editor, then:
 git add <resolved-files>
@@ -223,6 +238,7 @@ git commit
 
 **Last Updated**: 2026-01-22  
 **Tested With**: Git 2. X, Claude Code, Cursor IDE
+
 ```
 
 This note provides a complete reference for your git workflow with Claude Code! Save it in your vault and link it from your [[Home]] page for easy access. 📚✨
