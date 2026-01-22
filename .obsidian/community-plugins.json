@@ -3,7 +3,6 @@
   "ai-templater",
   "obsidian-auto-link-title",
   "colored-tags",
-  "copilot",
   "easy-typing-obsidian",
   "editing-toolbar",
   "obsidian-excel-to-markdown-table",
@@ -16,7 +15,6 @@
   "quickadd",
   "recent-files-obsidian",
   "rich-foot",
-  "side-note",
   "obsidian-style-settings",
   "supercharged-links-obsidian",
   "tag-wrangler",
@@ -35,12 +33,12 @@
   "obsidian-regex-replace",
   "tag-buddy",
   "fix-require-modules",
-  "mcp-tools",
-  "obsidian-local-rest-api",
   "open-vscode",
   "perplexed",
   "perplexity-chat",
   "obsidian-git",
   "ai-image-analyzer",
-  "metadata-menu"
+  "metadata-menu",
+  "infio-copilot",
+  "ai-tagger-universe"
 ]

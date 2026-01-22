@@ -1,0 +1,28 @@
+{
+  "vaultPath": "C:\\Vault\\AI hub\\Rebuild",
+  "defaultProvider": "smart",
+  "modelPreferences": {
+    "simple_queries": {
+      "provider": "ollama",
+      "model": "codeqwen:1.5b"
+    },
+    "code_analysis": {
+      "provider": "ollama",
+      "model": "codellama:7b"
+    },
+    "complex_reasoning": {
+      "provider": "grok",
+      "model": "grok-beta"
+    },
+    "large_context": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-20250514"
+    }
+  },
+  "smartRouting": {
+    "enabled": true,
+    "simpleQueryMaxLength": 100,
+    "largeContextThreshold": 200000,
+    "preferLocal": true
+  }
+}
