@@ -1,5 +1,5 @@
 ---
-tags: [obsidian, perplexity, llm, prompt, workflow-management]
+tags: [obsidian, pplx, llm, Prompt, workflow-management]
 created: 2025-12-30
 ---
 ## Purpose

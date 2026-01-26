@@ -12,7 +12,7 @@ Download Obsidian and create a single vault to keep everything unified. Enable c
 Start noting during moments of friction—e.g., "I might forget this" or "This confused me." Capture raw thoughts in your daily note: questions from a meeting, audit findings, AI prompt ideas, or hobby insights. Don't edit heavily at first; dump and refine later. Aim for 5-10 minutes daily. What to note: fleeting ideas, quotes, tasks, reflections. For non-note-takers, treat it like a brain dump—no structure required initially.
 
 ### Multi-Domain Organization
-Use broad folders like /Areas/Audit, /Areas/AI, /Areas/Personal-Interests, plus /Projects, /Resources, /Archive (PARA method adapted). Create MOCs as hub notes linking related atomic notes across domains. Tag liberally (#audit-risk, #ai-prompt, #hobby-gardening) for cross-domain searches. Graph View reveals unexpected connections between accounting standards and AI ethics, for example.
+Use broad folders like /Areas/Audit, /Areas/AI, /Areas/Personal-Interests, plus /Projects, /Resources, /Archive (PARA method adapted). Create MOCs as hub notes linking related atomic notes across domains. Tag liberally (#audit-risk, #ai/prompt, #hobby-gardening) for cross-domain searches. Graph View reveals unexpected connections between accounting standards and AI ethics, for example.
 
 ### Practical Tricks for Productivity
 Master Markdown basics: # for headers, - for lists, ![[embed]] for transcluding sections. Use Quick Switcher (Ctrl/Cmd + O) constantly. Embed notes freely to reuse content. Weekly reviews: process daily notes into permanent ones.

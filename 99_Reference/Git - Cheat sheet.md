@@ -24,7 +24,7 @@ git log --oneline -5
 **Why:** Quick overview of what Claude committed  
 **Result:** See commit hashes and messages like "26 df 142 Update paths: Remove OneDrive/Desktop..."
 
-```bash
+```bash-
 git checkout master
 ```
 

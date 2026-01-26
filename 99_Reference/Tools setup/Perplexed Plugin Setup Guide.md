@@ -1,8 +1,8 @@
 ---
 tags:
   - obsidian
-  - perplexity
-  - setup
+  - pplx
+  - Setup
   - plugin
   - "#ai"
   - "#chatbot"

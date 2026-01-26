@@ -1,6 +1,6 @@
 ---
 Tags:
-  - Perplexity
+  - pplx
   - Prompt
   - Ai/tools
   - Cursor

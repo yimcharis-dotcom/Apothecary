@@ -3,7 +3,7 @@ Created: 2026-01-13
 updated: 2026-01-19T05:57:00
 Tags:
   - Ai/mcp
-  - perplexity
+  - pplx
   - Grok
   - guide
   - Documentation

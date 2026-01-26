@@ -1,10 +1,10 @@
 ---
 Tags:
-  - perplexity
-  - prompt
-  - ai/tools
-  - cursor
-  - setup
+  - pplx
+  - Prompt
+  - Ai/tools
+  - Cursor
+  - Setup
 Created: 2026-01-14
 updated: 2026-01-14T22:46:00
 version: v1.0

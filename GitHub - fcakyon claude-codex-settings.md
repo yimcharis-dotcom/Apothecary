@@ -1,0 +1,416 @@
+---
+source: https://github.com/fcakyon/claude-codex-settings
+Author:
+  - "[[fcakyon]]"
+Published:
+Created: 2026-01-26
+Description:
+Tags:
+  - claude
+  - chatgpt
+  - Codex
+  - claudeCode
+  - ai/prompt
+  - ai/tools
+---
+**[claude-codex-settings](https://github.com/fcakyon/claude-codex-settings)** Public
+
+## Installation
+
+> **Prerequisites:** Before installing, ensure you have Claude Code and required tools installed. See [INSTALL.md](https://github.com/fcakyon/claude-codex-settings/blob/main/INSTALL.md) for complete prerequisites.
+
+Install agents, commands, hooks, skills, and MCP servers via [Claude Code Plugins](https://docs.claude.com/en/docs/claude-code/plugins) system:
+
+```
+# Add marketplace
+/plugin marketplace add fcakyon/claude-codex-settings
+
+# Install plugins (pick what you need)
+/plugin install azure-tools@claude-settings        # Azure MCP & Skills (40+ services)
+/plugin install ccproxy-tools@claude-settings      # Use any LLM via ccproxy/LiteLLM
+/plugin install claude-tools@claude-settings       # Sync CLAUDE.md + allowlist
+/plugin install gcloud-tools@claude-settings       # GCloud MCP & Skills
+/plugin install general-dev@claude-settings        # Code simplifier + utilities
+/plugin install github-dev@claude-settings         # Git workflow + GitHub MCP
+/plugin install linear-tools@claude-settings       # Linear MCP & Skills
+/plugin install mongodb-tools@claude-settings      # MongoDB MCP & Skills (read-only)
+/plugin install notification-tools@claude-settings # OS notifications
+/plugin install paper-search-tools@claude-settings # Paper Search MCP & Skills
+/plugin install playwright-tools@claude-settings   # Playwright MCP + E2E skill
+/plugin install plugin-dev@claude-settings         # Plugin development toolkit
+/plugin install slack-tools@claude-settings        # Slack MCP & Skills
+/plugin install statusline-tools@claude-settings   # Session + 5H usage statusline
+/plugin install supabase-tools@claude-settings     # Supabase MCP & Skills
+/plugin install tavily-tools@claude-settings       # Tavily MCP & Skills
+/plugin install ultralytics-dev@claude-settings    # Auto-formatting hooks
+```
+
+After installing MCP plugins, run `/plugin-name:setup` for configuration (e.g., `/slack-tools:setup`).
+
+Then create symlink for cross-tool compatibility:
+
+```
+ln -s CLAUDE.md AGENTS.md
+```
+
+Restart Claude Code to activate.
+
+## Plugins
+
+**azure-tools** - Azure MCP & Skills
+
+40+ Azure services with Azure CLI authentication. Run `/azure-tools:setup` after install.
+
+**Skills:**
+
+- [`azure-usage`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/azure-tools/skills/azure-usage/SKILL.md) - Best practices for Azure
+- [`setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/azure-tools/skills/setup/SKILL.md) - Troubleshooting guide
+
+**Commands:**
+
+- [`/azure-tools:setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/azure-tools/commands/setup.md) - Configure Azure MCP
+
+**MCP:**[`.mcp.json`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/azure-tools/.mcp.json) | [microsoft/mcp/Azure.Mcp.Server](https://github.com/microsoft/mcp/tree/main/servers/Azure.Mcp.Server)
+
+**ccproxy-tools** - Use Claude Code with any LLM
+
+Configure Claude Code to use ccproxy/LiteLLM with Claude Pro/Max subscription, GitHub Copilot, or other providers. Run `/ccproxy-tools:setup` after install.
+
+**Commands:**
+
+- [`/ccproxy-tools:setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/ccproxy-tools/commands/setup.md) - Configure ccproxy/LiteLLM
+
+**Skills:**
+
+- [`setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/ccproxy-tools/skills/setup/SKILL.md) - Troubleshooting guide
+**claude-tools** - Sync CLAUDE. Md + allowlist + context refresh
+
+Commands for syncing CLAUDE. Md and permissions allowlist from repository, plus context refresh for long conversations.
+
+**Commands:**
+
+- [`/load-claude-md`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/claude-tools/commands/load-claude-md.md) - Refresh context with CLAUDE. Md instructions
+- [`/load-frontend-skill`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/claude-tools/commands/load-frontend-skill.md) - Load frontend design skill from Anthropic
+- [`/sync-claude-md`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/claude-tools/commands/sync-claude-md.md) - Sync CLAUDE. Md from GitHub
+- [`/sync-allowlist`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/claude-tools/commands/sync-allowlist.md) - Sync permissions allowlist
+**gcloud-tools** - GCloud MCP & Skills
+
+Logs, metrics, and traces. Run `/gcloud-tools:setup` after install.
+
+**Skills:**
+
+- [`gcloud-usage`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/gcloud-tools/skills/gcloud-usage/SKILL.md) - Best practices for GCloud Logs/Metrics/Traces
+- [`setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/gcloud-tools/skills/setup/SKILL.md) - Troubleshooting guide
+
+**Commands:**
+
+- [`/gcloud-tools:setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/gcloud-tools/commands/setup.md) - Configure GCloud MCP
+
+**MCP:**[`.mcp.json`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/gcloud-tools/.mcp.json) | [google-cloud/observability-mcp](https://github.com/googleapis/gcloud-mcp)
+
+**general-dev** - Code simplifier + utilities
+
+Code quality agent and utility hooks.
+
+**Agent:**
+
+- [`code-simplifier`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/general-dev/agents/code-simplifier.md) - Ensures code follows conventions
+
+**Hooks:**
+
+- [`enforce_rg_over_grep.py`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/general-dev/hooks/scripts/enforce_rg_over_grep.py) - Suggest ripgrep
+**github-dev** - Git workflow agents + commands
+
+Git and GitHub automation. Run `/github-dev:setup` after install.
+
+**Agents:**
+
+- [`commit-creator`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/github-dev/agents/commit-creator.md) - Intelligent commit workflow
+- [`pr-creator`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/github-dev/agents/pr-creator.md) - Pull request creation
+- [`pr-reviewer`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/github-dev/agents/pr-reviewer.md) - Code review agent
+
+**Commands:**
+
+- [`/commit-staged`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/github-dev/commands/commit-staged.md) - Commit staged changes
+- [`/create-pr`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/github-dev/commands/create-pr.md) - Create pull request
+- [`/review-pr`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/github-dev/commands/review-pr.md) - Review pull request
+- [`/clean-gone-branches`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/github-dev/commands/clean-gone-branches.md) - Clean deleted branches
+**linear-tools** - Linear MCP & Skills
+
+Issue tracking with OAuth. Run `/linear-tools:setup` after install.
+
+**Skills:**
+
+- [`linear-usage`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/linear-tools/skills/linear-usage/SKILL.md) - Best practices for Linear
+- [`setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/linear-tools/skills/setup/SKILL.md) - Troubleshooting guide
+
+**Commands:**
+
+- [`/linear-tools:setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/linear-tools/commands/setup.md) - Configure Linear MCP
+
+**MCP:**[`.mcp.json`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/linear-tools/.mcp.json) | [Linear MCP Docs](https://linear.app/docs/mcp)
+
+**mongodb-tools** - MongoDB MCP & Skills
+
+Database exploration (read-only). Run `/mongodb-tools:setup` after install.
+
+**Skills:**
+
+- [`mongodb-usage`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/mongodb-tools/skills/mongodb-usage/SKILL.md) - Best practices for MongoDB
+- [`setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/mongodb-tools/skills/setup/SKILL.md) - Troubleshooting guide
+
+**Commands:**
+
+- [`/mongodb-tools:setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/mongodb-tools/commands/setup.md) - Configure MongoDB MCP
+
+**MCP:**[`.mcp.json`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/mongodb-tools/.mcp.json) | [mongodb-js/mongodb-mcp-server](https://github.com/mongodb-js/mongodb-mcp-server)
+
+**notification-tools** - OS notifications
+
+Desktop notifications when Claude Code completes tasks.
+
+**Hooks:**
+
+- [`notify.sh`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/notification-tools/hooks/scripts/notify.sh) - OS notifications on task completion
+**paper-search-tools** - Paper Search MCP & Skills
+
+Search papers across arXiv, PubMed, IEEE, Scopus, ACM. Run `/paper-search-tools:setup` after install. Requires Docker.
+
+**Skills:**
+
+- [`paper-search-usage`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/paper-search-tools/skills/paper-search-usage/SKILL.md) - Best practices for paper search
+- [`setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/paper-search-tools/skills/setup/SKILL.md) - Troubleshooting guide
+
+**Commands:**
+
+- [`/paper-search-tools:setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/paper-search-tools/commands/setup.md) - Configure Paper Search MCP
+
+**MCP:**[`.mcp.json`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/paper-search-tools/.mcp.json) | [mcp/paper-search](https://hub.docker.com/r/mcp/paper-search)
+
+**playwright-tools** - Playwright MCP & E 2 E Testing
+
+Browser automation with E 2 E testing skill and responsive design testing agent. Run `/playwright-tools:setup` after install. May require `npx playwright install` for browser binaries.
+
+**Agents:**
+
+- [`responsive-tester`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/playwright-tools/agents/responsive-tester.md) - Test pages across viewport breakpoints
+
+**Skills:**
+
+- [`playwright-testing`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/playwright-tools/skills/playwright-testing/SKILL.md) - E 2 E testing best practices
+
+**Commands:**
+
+- [`/playwright-tools:setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/playwright-tools/commands/setup.md) - Configure Playwright MCP
+
+**MCP:**[`.mcp.json`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/playwright-tools/.mcp.json) | [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)
+
+**plugin-dev** - Plugin development toolkit
+
+Complete toolkit for building Claude Code plugins with skills, agents, and validation.
+
+**Skills:**
+
+- [`hook-development`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/skills/hook-development/SKILL.md) - Create hooks with prompt-based API
+- [`mcp-integration`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/skills/mcp-integration/SKILL.md) - Configure MCP servers
+- [`plugin-structure`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/skills/plugin-structure/SKILL.md) - Plugin layout and auto-discovery
+- [`plugin-settings`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/skills/plugin-settings/SKILL.md) - Per-project configuration
+- [`command-development`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/skills/command-development/SKILL.md) - Create custom commands
+- [`agent-development`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/skills/agent-development/SKILL.md) - Build autonomous agents
+- [`skill-development`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/skills/skill-development/SKILL.md) - Create reusable skills with progressive disclosure
+
+**Agents:**
+
+- [`agent-creator`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/agents/agent-creator.md) - AI-assisted agent generation
+- [`plugin-validator`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/agents/plugin-validator.md) - Validate plugin structure
+- [`skill-reviewer`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/agents/skill-reviewer.md) - Improve skill quality
+
+**Commands:**
+
+- [`/plugin-dev:create-plugin`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/commands/create-plugin.md) - 8-phase guided plugin workflow
+- [`/plugin-dev:load-skills`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/commands/load-skills.md) - Load all plugin development skills
+
+**Hooks:**
+
+- [`validate_skill.py`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/hooks/scripts/validate_skill.py) - Validates SKILL. Md structure
+- [`validate_mcp_hook_locations.py`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/hooks/scripts/validate_mcp_hook_locations.py) - Validates MCP/hook file locations
+- [`validate_plugin_paths.py`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/hooks/scripts/validate_plugin_paths.py) - Validates plugin. Json paths
+- [`validate_plugin_structure.py`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/hooks/scripts/validate_plugin_structure.py) - Validates plugin directory structure
+- [`sync_marketplace_to_plugins.py`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/plugin-dev/hooks/scripts/sync_marketplace_to_plugins.py) - Syncs marketplace. Json to plugin. Json
+**slack-tools** - Slack MCP & Skills
+
+Message search and channel history. Run `/slack-tools:setup` after install.
+
+**Skills:**
+
+- [`slack-usage`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/slack-tools/skills/slack-usage/SKILL.md) - Best practices for Slack MCP
+- [`setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/slack-tools/skills/setup/SKILL.md) - Troubleshooting guide
+
+**Commands:**
+
+- [`/slack-tools:setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/slack-tools/commands/setup.md) - Configure Slack MCP
+
+**MCP:**[`.mcp.json`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/slack-tools/.mcp.json) | [ubie-oss/slack-mcp-server](https://github.com/ubie-oss/slack-mcp-server)
+
+**statusline-tools** - Session + 5 H Usage Statusline
+
+Cross-platform statusline showing session context %, cost, and account-wide 5 H usage with time until reset. Run `/statusline-tools:setup` after install.
+
+**Skills:**
+
+- [`setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/statusline-tools/skills/setup/SKILL.md) - Statusline configuration guide
+
+**Commands:**
+
+- [`/statusline-tools:setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/statusline-tools/commands/setup.md) - Configure statusline
+**supabase-tools** - Supabase MCP & Skills
+
+Database management with OAuth. Run `/supabase-tools:setup` after install.
+
+**Skills:**
+
+- [`supabase-usage`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/supabase-tools/skills/supabase-usage/SKILL.md) - Best practices for Supabase MCP
+- [`setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/supabase-tools/skills/setup/SKILL.md) - Troubleshooting guide
+
+**Commands:**
+
+- [`/supabase-tools:setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/supabase-tools/commands/setup.md) - Configure Supabase MCP
+
+**MCP:**[`.mcp.json`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/supabase-tools/.mcp.json) | [supabase-community/supabase-mcp](https://github.com/supabase-community/supabase-mcp)
+
+**tavily-tools** - Tavily MCP & Skills
+
+Web search and content extraction. Run `/tavily-tools:setup` after install.
+
+**Skills:**
+
+- [`tavily-usage`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/tavily-tools/skills/tavily-usage/SKILL.md) - Best practices for Tavily Search
+- [`setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/tavily-tools/skills/setup/SKILL.md) - Troubleshooting guide
+
+**Commands:**
+
+- [`/tavily-tools:setup`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/tavily-tools/commands/setup.md) - Configure Tavily MCP
+
+**MCP:**[`.mcp.json`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/tavily-tools/.mcp.json) | [tavily-ai/tavily-mcp](https://github.com/tavily-ai/tavily-mcp)
+
+**ultralytics-dev** - Auto-formatting hooks
+
+Auto-formatting hooks for Python, JavaScript, Markdown, and Bash.
+
+**Hooks:**
+
+- [`format_python_docstrings.py`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/ultralytics-dev/hooks/scripts/format_python_docstrings.py) - Google-style docstring formatter
+- [`python_code_quality.py`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/ultralytics-dev/hooks/scripts/python_code_quality.py) - Python code quality with ruff
+- [`prettier_formatting.py`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/ultralytics-dev/hooks/scripts/prettier_formatting.py) - JavaScript/TypeScript/CSS/JSON
+- [`markdown_formatting.py`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/ultralytics-dev/hooks/scripts/markdown_formatting.py) - Markdown formatting
+- [`bash_formatting.py`](https://github.com/fcakyon/claude-codex-settings/blob/main/plugins/ultralytics-dev/hooks/scripts/bash_formatting.py) - Bash script formatting
+
+---
+
+## Configuration
+
+**Claude Code**
+
+Configuration in [`.claude/settings.json`](https://github.com/fcakyon/claude-codex-settings/blob/main/.claude/settings.json):
+
+- **Model**: OpusPlan mode (plan: Opus 4.5, execute: Opus 4.5, fast: Sonnet 4.5) - [source](https://github.com/anthropics/claude-code/blob/4dc23d0275ff615ba1dccbdd76ad2b12a3ede591/CHANGELOG.md?plain=1#L61)
+- **Environment**: bash working directory, telemetry disabled, MCP output limits
+- **Permissions**: bash commands, git operations, MCP tools
+- **Statusline**: Custom usage tracking powered by [ccusage](https://ccusage.com/)
+- **Plugins**: All plugins enabled
+**Z.ai (85% cheaper)**
+
+Configuration in [`.claude/settings-zai.json`](https://github.com/fcakyon/claude-codex-settings/blob/main/.claude/settings-zai.json) using [Z.ai GLM models via Anthropic-compatible API](https://docs.z.ai/scenario-example/develop-tools/claude):
+
+- **Main model**: GLM-4.6 (dialogue, planning, coding, complex reasoning)
+- **Fast model**: GLM-4.5-Air (file search, syntax checking)
+- **Cost savings**: 85% cheaper than Claude 4.5 - [source](https://z.ai/blog/glm-4.6)
+- **API key**: Get from [z.ai/model-api](https://z.ai/model-api)
+**Kimi K 2**
+
+Run Claude Code with [Kimi K2](https://moonshotai.github.io/Kimi-K2/) via Anthropic-compatible API - [source](https://platform.moonshot.ai/docs/guide/agent-support):
+
+- **Thinking model**: `kimi-k2-thinking-turbo` - High-speed thinking, 256 K context
+- **Fast model**: `kimi-k2-turbo-preview` - Without extended thinking
+- **API key**: Get from [platform.moonshot.ai](https://platform.moonshot.ai/)
+```
+export ANTHROPIC_BASE_URL="https://api.moonshot.ai/anthropic/"
+export ANTHROPIC_API_KEY="your-moonshot-api-key"
+export ANTHROPIC_MODEL=kimi-k2-thinking-turbo
+export ANTHROPIC_DEFAULT_OPUS_MODEL=kimi-k2-thinking-turbo
+export ANTHROPIC_DEFAULT_SONNET_MODEL=kimi-k2-thinking-turbo
+export ANTHROPIC_DEFAULT_HAIKU_MODEL=kimi-k2-thinking-turbo
+export CLAUDE_CODE_SUBAGENT_MODEL=kimi-k2-thinking-turbo
+```
+**OpenAI Codex**
+
+Configuration in [`~/.codex/config.toml`](https://github.com/fcakyon/claude-codex-settings/blob/main/config.toml):
+
+- **Model**: `gpt-5-codex` with `model_reasoning_effort` set to "high"
+- **Provider**: Azure via `responses` API surface
+- **Auth**: Project-specific base URL with `env_key` authentication
+**ccproxy (Use Claude Code with Any LLM)**
+
+Assign any API or model to any task type via [ccproxy](https://github.com/starbased-co/ccproxy):
+
+- **MAX/Pro subscription**: Uses OAuth from your Claude subscription (no API keys)
+- **Any provider**: OpenAI, Gemini, Perplexity, local LLMs, or any OpenAI-compatible API
+- **Fully customizable**: Assign different models to default, thinking, planning, background tasks
+- **SDK support**: Works with Anthropic SDK and LiteLLM SDK beyond Claude Code
+**VSCode**
+
+Settings in [`.vscode/settings.json`](https://github.com/fcakyon/claude-codex-settings/blob/main/.vscode/settings.json):
+
+- **GitHub Copilot**: Custom instructions for automated commit messages and PR descriptions
+- **Python**: Ruff formatting with auto-save and format-on-save enabled
+- **Terminal**: Cross-platform compatibility configurations
+
+## Statusline
+
+Simple statusline plugin that uses the official usage API to show account-wide block usage and reset time in real-time. Works for both API and subscription users.
+
+[![](https://private-user-images.githubusercontent.com/34196005/530427282-7bbb8e98-2755-46be-b0a4-cc8367a58fdb.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjkzNjg3MDAsIm5iZiI6MTc2OTM2ODQwMCwicGF0aCI6Ii8zNDE5NjAwNS81MzA0MjcyODItN2JiYjhlOTgtMjc1NS00NmJlLWIwYTQtY2M4MzY3YTU4ZmRiLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTI1VDE5MTMyMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTlkZjEzN2FhNWQwMGFmZjllZmY2NzJhZDQzOTYzMDQwMTE2YTQ0ZTA5MDY5MzlmNjQxOTY2MGMyNDAyNDQwZGEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.55ptP88WxCnJ2DIbdAlLz0ZfyVFew-K6-gibRByve-g)](https://github.com/fcakyon/claude-codex-settings?tab=readme-ov-file#statusline) **Setup**
+```
+/plugin marketplace add fcakyon/claude-codex-settings
+/plugin install statusline-tools@claude-settings
+/statusline-tools:setup
+```
+
+**Color coding:**
+
+- 🟢 <50% usage / <1 h until reset
+- 🟡 50-70% usage / 1-3.5 h until reset
+- 🔴 70%+ usage / >3.5 h until reset
+
+See [Claude Code statusline docs](https://code.claude.com/docs/en/statusline) for details.
+
+## TODO
+
+- App [dokploy](https://github.com/Dokploy/dokploy) tools plugin with [dokploy-mcp](https://github.com/Dokploy/mcp) server and deployment best practices skill
+- Add more comprehsensive fullstack-dev plugin with various ocnfigurable skills:
+	- Frontend: Next. Js 16 (App Router, React 19, TypeScript)
+	- Backend: FastAPI, NodeJS
+	- Auth: Clerk (Auth, Email), Firebase/Firestore (Auth, DB), Supabase+Resend (Auth, DB, Email) RBAC with org: admin and org: member roles
+	- Styling: Tailwind CSS v 4, [shadcn/ui components](https://github.com/shadcn-ui/ui), [Radix UI primitives](https://github.com/radix-ui/primitives)
+	- Monitoring: Sentry (errors, APM, session replay, structured logs)
+	- Analytics: [Web Vitals + Google Analytics](https://nextjs.org/docs/app/api-reference/functions/use-report-web-vitals)
+- Publish `claudesettings.com` as a comprehensive documentation for installing, using and sharing useful Claude-Code settings
+- Rename plugins names to `mongodb-skills`, `github-skills`... Instead of `mongodb-tools`, `github-dev`... For better UX
+- Add worktree support to github-dev create-pr and commit-staged commands for easier work on multiple branches of the same repo simultaneously
+- Add current repo branch and worktree info into statusline-tools plugin
+
+## References
+
+- [Claude Code](https://github.com/anthropics/claude-code) - Official CLI for Claude
+- [Anthropic Skills](https://github.com/anthropics/skills) - Official skill examples
+
+[![Star History Chart](https://camo.githubusercontent.com/d7ac82092573ea4078ef4ac858c49367a2ef1ebafe14a6cd00c387d3cfc62524/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d6663616b796f6e2f636c617564652d636f6465782d73657474696e677326747970653d44617465)](https://www.star-history.com/#fcakyon/claude-codex-settings&Date)
+
+## Releases 13
+
+[\+ 12 releases](https://github.com/fcakyon/claude-codex-settings/releases)
+
+## Languages
+
+- [Python 55.0%](https://github.com/fcakyon/claude-codex-settings/search?l=python)
+- [Shell 45.0%](https://github.com/fcakyon/claude-codex-settings/search?l=shell)

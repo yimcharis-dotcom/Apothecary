@@ -2,7 +2,7 @@
 Description: ref for build_index.py
 Tags:
   - RAG
-  - Configuration
+  - config
   - Embeddings
   - ai/tools
 Related: "[[build_index.py]]"

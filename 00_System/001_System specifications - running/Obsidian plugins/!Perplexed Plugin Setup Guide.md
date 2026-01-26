@@ -1,8 +1,8 @@
 ---
 tags:
   - obsidian
-  - perplexity
-  - setup
+  - pplx
+  - Setup
   - plugin
 created: 2025-12-30
 status: working

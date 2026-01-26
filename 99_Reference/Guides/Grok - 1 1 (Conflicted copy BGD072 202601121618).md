@@ -9,7 +9,7 @@
 Start by downloading Obsidian from https://obsidian.md and installing it on your device. Create a vault by selecting a folder to store your notes—name it something like "AI Knowledge Base" for focus on your projects. Add initial notes for categories: one for AI concepts, one for prompts, and folders for specific projects like "System Spec Generator" or "Custom GPT." Install core plugins via Settings > Community Plugins, such as Dataview for querying notes and Templater for prompt templates. Use Markdown for formatting, and link notes with [[Note Title]] to build connections.
 
 ### Note-Taking During AI Iterations and Reviews
-When iterating on projects like a grammar checker, jot down inputs, AI outputs, errors, and tweaks in dedicated notes—e.g., "Iteration 1: Prompt Test Results." Review AI work by comparing outputs against benchmarks, noting biases or inaccuracies, and logging improvements for the next cycle. For quick organization, use tags like #AI-Prompt or #Project-Iteration, and backlinks to trace changes.
+When iterating on projects like a grammar checker, jot down inputs, AI outputs, errors, and tweaks in dedicated notes—e.g., "Iteration 1: Prompt Test Results." Review AI work by comparing outputs against benchmarks, noting biases or inaccuracies, and logging improvements for the next cycle. For quick organization, use tags like #ai/prompt or #Project-Iteration, and backlinks to trace changes.
 
 ### Organizing, Saving, and Quick Access
 Save notes automatically in your vault, organized by folders (e.g., /Prompts, /Projects) and tags for cross-referencing. For fast use, set up Espanso (download from https://espanso.org) to expand shortcuts like ":specgen" into full prompts. PowerToys can handle quick searches via PowerToys Run (Alt+Space), but for text expansion, Espanso is more direct—install it, edit config files for custom triggers.
@@ -33,7 +33,7 @@ Obsidian excels as a free, local-first tool for building a wiki-like system, whe
 3. **Configure Basic Settings**: Go to Settings > Appearance to select a theme (e.g., Minimal for clean AI-focused work). Enable Safe Mode off to access plugins. Under Editor, turn on features like auto-pairing brackets for code snippets in prompts.
 
 4. **Install Essential Plugins**: In Settings > Community Plugins > Browse, search and install:
-   - **Dataview**: For querying notes, e.g., listing all #AI-Prompt .
+   - **Dataview**: For querying notes, e.g., listing all #ai/prompt .
    - **Templater**: For creating reusable prompt templates.
    - **Calendar**: To track project iterations by date.
    - **Advanced URI**: For deep links to notes from external tools.

@@ -1,7 +1,7 @@
 ---
 Tags:
   - ai/integration
-  - ai/Claude
+  - Claude
   - plugin
 Created: 2026-01-08
 ---
