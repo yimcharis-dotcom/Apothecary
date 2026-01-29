@@ -1,0 +1,339 @@
+
+---
+created: 2026-01-28
+updated: 2026-01-28
+tags:
+  - ai/tools
+  - registry
+  - index
+  - tracking
+status: active
+---
+
+# 🤖 AI Tools & Platforms Registry
+
+> **Master index of all AI platforms, tools, and integrations**  
+> Last updated: 2026-01-28
+
+---
+
+## 📊 Quick Status Overview
+
+| Category | Count | Status |
+|----------|-------|--------|
+| **API Platforms** | 6 | ✅ Active |
+| **Tools/Integrations** | 5 | ✅ Active |
+| **Local Models** | 10+ | ✅ Active |
+
+---
+
+## 🌐 AI API Platforms
+
+### 1. Claude (Anthropic)
+
+- **Status**: ✅ Active
+- **API Key**: Stored in [[99_env/Claude API Info]]
+- **Documentation**: [[99_env/Claude API Info]]
+- **Base URL**: `https://api.anthropic.com/v1`
+- **Models Available**: Claude 3.5 Sonnet, Claude 3 Opus
+- **Usage**:
+  - Primary chat interface
+  - Via LiteLLM proxy
+  - Claude Code integration
+- **Last Used**: Recent
+- **Notes**: Main API for most tasks
+
+---
+
+### 2. Grok (xAI)
+
+- **Status**: ✅ Active
+- **API Key**: Stored in [[99_env/Grok API info]]
+- **Documentation**: [[99_env/Grok API info]]
+- **Base URL**: `https://api.x.ai/v1`
+- **Models Available**:
+  - grok-4-1-fast-reasoning
+  - grok-4-1-fast-non-reasoning
+  - grok-code-fast-1 ⭐ (best for coding)
+  - grok-4-fast-reasoning
+  - grok-3-beta
+  - grok-2-vision-1212
+- **Usage**:
+  - Via LiteLLM proxy
+  - MCP vault-bridge integration
+  - Obsidian plugins (OpenAI-compatible)
+- **Last Used**: Recent
+- **Notes**: Great for coding tasks, creative work
+
+---
+
+### 3. Perplexity (PPLX)
+
+- **Status**: ✅ Active
+- **API Key**: Stored in [[99_env/PPLX API info]]
+- **Documentation**: [[99_env/PPLX API info]]
+- **Base URL**: `https://api.perplexity.ai`
+- **Models Available**:
+  - sonar
+  - sonar-pro
+  - sonar-reasoning
+  - sonar-deep-research
+- **Usage**:
+  - Via LiteLLM proxy
+  - MCP vault-bridge integration
+  - Perplexity CLI tool
+  - Obsidian Perplexed plugin
+  - AI Usage Analysis pipeline
+- **Last Used**: Recent
+- **Notes**: Best for research, real-time information
+
+---
+
+### 4. Deepseek
+
+- **Status**: ✅ Active
+- **API Key**: Stored in [[99_env/Deepseek API info]]
+- **Documentation**: [[99_env/Deepseek API info]]
+- **Base URL**: `https://api.deepseek.com/v1`
+- **Models Available**: deepseek-chat
+- **Usage**:
+  - Via Obsidian plugins (OpenAI-compatible)
+- **Last Used**: Unknown
+- **Notes**: Cost-effective alternative
+
+---
+
+### 5. OpenRouter
+
+- **Status**: ✅ Active
+- **API Key**: Stored in [[99_env/Openrouter]]
+- **Documentation**: [[99_env/Openrouter]]
+- **Base URL**: `https://openrouter.ai/api/v1`
+- **Models Available**: Multiple providers via unified API
+- **Usage**:
+  - OpenAI-compatible endpoint
+- **Last Used**: Unknown
+- **Notes**: Aggregator for multiple AI providers
+
+---
+
+### 6. Ollama (Local)
+
+- **Status**: ✅ Active
+- **API Key**: Stored in [[99_env/Ollama API key]]
+- **Documentation**: [[99_env/ss_Ollama Model inventory]]
+- **Base URL**: `http://localhost:11434`
+- **Models Installed**:
+  - llama 3.1:8b
+  - gemma3:12b
+  - deepseek-r1:8b
+  - gemma3:4b
+  - gemma2:9b
+  - bge-m3:latest (embedding)
+  - phi3.5:latest
+  - llama 3.2:latest
+  - qwen2.5:7b
+  - phi4-mini-reasoning:latest
+  - And more... (see [[99_env/ss_Ollama Model inventory]])
+- **Usage**:
+  - Local AI processing
+  - Privacy-focused tasks
+  - GPT4All integration via symlinks
+- **Last Used**: Recent
+- **Notes**: Fully local, no API costs, privacy-first
+
+---
+
+## 🛠️ AI Tools & Integrations
+
+### 1. LiteLLM Proxy
+
+- **Status**: ✅ Installed & Configured
+- **Location**: `C:\Users\YC\LiteLLM\litellm-config`
+- **Documentation**:
+  - [[202_LiteLLM/LiteLLM Proxy - Startup Guide]]
+  - [[202_LiteLLM/LiteLLM Proxy Installation]]
+  - [[202_LiteLLM/LiteLLM config.yaml Reference]]
+- **Version**: 1.81.1
+- **Purpose**: Unified API proxy for multiple AI providers
+- **Configured Models**:
+  - All Grok models
+  - All Perplexity models
+  - Accessible via `http://localhost:4000`
+- **Usage**:
+  - Claude Code integration
+  - Single endpoint for multiple providers
+- **Startup**: `start-proxy.ps1` script
+- **Last Used**: Recent
+- **Notes**: Master key: `sk-litellm-master-key-12345`
+
+---
+
+### 2. MCP Vault Bridge
+
+- **Status**: ✅ Active (pending indexing update)
+- **Location**: `C:\Users\YC\MCPs\vault-bridge`
+- **Documentation**:
+  - [[201_MCPs/2010_vault-bridge/Obsidian Vault Q&A Bridge - Complete Production Guide v1]]
+  - [[201_MCPs/2010_vault-bridge/Vault Bridge Script Index v1]]
+- **Purpose**: Semantic search and Q&A with Obsidian vault
+- **Features**:
+  - ✅ Semantic search
+  - ✅ Multi-AI support (Grok, Perplexity)
+  - ✅ Source attribution
+  - ⚠️ Pending: Indexing before searches
+- **Usage**: MCP server for vault queries
+- **Last Updated**: 2026-01-19
+- **Notes**: Production-ready, secure, read-only by default
+
+---
+
+### 3. RAG/FAISS Indexing
+
+- **Status**: ✅ Scripts Available
+- **Location**: [[200_RAG/Vault Index Building Script]]
+- **Documentation**: [[200_RAG/Vault Index Building Script]]
+- **Purpose**: Build searchable embeddings from vault content
+- **Scripts**:
+  - `build_index.py` (hard-coded paths)
+  - `build_index_cli.py` (parameterized)
+- **Model**: BAAI/bge-m3
+- **Output**: `vault.index` + `vault_meta.json`
+- **Usage**:
+  - Similarity search
+  - AI-driven vault analysis
+- **Last Used**: Unknown
+- **Notes**: Requires virtual environment setup
+
+---
+
+### 4. OCR Tools
+
+- **Status**: ✅ Installed
+- **Documentation**: [[OCR tools]]
+- **Tools**:
+  - **Tesseract**: OCR engine
+  - **pytesseract**: Python wrapper
+  - **OCRmyPDF**: PDF OCR tool
+- **Usage**:
+  - Extract text from images
+  - Make PDFs searchable
+  - Batch processing
+- **Last Used**: Unknown
+- **Notes**: Supports multiple languages (eng, chi_sim)
+
+---
+
+### 5. Perplexity CLI
+
+- **Status**: ✅ Installed
+- **Documentation**: [[Chat related integration/Perplexity CLI]]
+- **Purpose**: Command-line interface for Perplexity AI with RAG
+- **Features**:
+  - Ask questions via CLI
+  - Note-taking and RAG
+  - Chat history management
+  - Export conversations
+- **Usage**: Terminal-based Perplexity access
+- **Last Used**: Unknown
+- **Notes**: Includes RAG capabilities for notes
+
+---
+
+### 6. AI Usage Analysis Pipeline
+
+- **Status**: ✅ Scripts Available
+- **Documentation**:
+  - [[Chat related integration/_AI Usage Analysis Pipeline (Guide)]]
+  - [[Chat related integration/AI Usage Analysis – Core Scripts]]
+  - [[Chat related integration/AI Usage Analysis – Perplexity CLI Branch]]
+- **Purpose**: Analyze AI usage patterns from ChatGPT and Perplexity
+- **Workflow**:
+  1. Export data from platforms
+  2. Normalize usage data
+  3. Analyze session patterns
+- **Scripts**: Python scripts for parsing and analysis
+- **Last Used**: Unknown
+- **Notes**: Diagnostic tool for understanding usage patterns
+
+---
+
+## 📝 Usage Tracking
+
+### Recent Activity
+
+- **LiteLLM Proxy**: Regularly used for Claude Code
+- **Grok**: Used for coding tasks
+- **Perplexity**: Used for research
+- **Claude**: Primary chat interface
+- **Ollama**: Local model testing
+
+### Integration Status
+
+| Integration | Status | Notes |
+|-------------|--------|-------|
+| Claude Code ↔ LiteLLM | ✅ Working | Via proxy |
+| MCP Vault Bridge | ⚠️ Needs indexing | Otherwise ready |
+| Obsidian Plugins | ✅ Multiple | Perplexed, Copilot, etc. |
+| GPT4All ↔ Ollama | ✅ Symlinks | Space-saving setup |
+
+---
+
+## 🔗 Quick Links
+
+### API Documentation
+
+- [[99_env/Claude API Info]]
+- [[99_env/Grok API info]]
+- [[99_env/PPLX API info]]
+- [[99_env/Deepseek API info]]
+- [[99_env/Openrouter]]
+- [[99_env/Ollama API key]]
+
+### Tool Documentation
+
+- [[202_LiteLLM/LiteLLM Proxy - Startup Guide]]
+- [[201_MCPs/2010_vault-bridge/Obsidian Vault Q&A Bridge - Complete Production Guide v1]]
+- [[200_RAG/Vault Index Building Script]]
+- [[OCR tools]]
+- [[Chat related integration/Perplexity CLI]]
+
+---
+
+## 💡 Recommendations
+
+### To Track Better
+
+1. **Add "Last Used" dates** when you use each tool
+2. **Note specific use cases** for each platform
+3. **Track costs** if applicable
+4. **Document any issues** or limitations discovered
+
+### Potential Consolidations
+
+- Consider if you need all 6 API platforms
+- Some tools might be redundant (e.g., multiple OpenAI-compatible endpoints)
+
+### Next Steps
+
+- [ ] Update MCP Vault Bridge indexing
+- [ ] Test Deepseek more thoroughly
+- [ ] Document actual usage patterns
+- [ ] Set up cost tracking if needed
+
+---
+
+## 📅 Maintenance Log
+
+| Date | Action | Notes |
+|------|--------|-------|
+| 2026-01-28 | Created registry | Initial documentation |
+
+---
+
+*This registry should be updated whenever you:*
+
+- *Add a new AI platform or tool*
+- *Change configuration*
+- *Discover new use cases*
+- *Encounter issues or limitations*

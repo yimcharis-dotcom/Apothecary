@@ -1,0 +1,50 @@
+Provider,Product/Plan,Capability,Surface,Connected To,Presence,Auth
+Anthropic,Claude Pro ($20/mo),Web Chat,https://claude.ai,Browser,Web,OAuth
+Anthropic,Claude Code,IDE Integration,Cursor IDE,Primary dev (17 processes),Local,OAuth
+Anthropic,Claude Code,IDE Integration,VS Code Extension,IDE plugin (49 ext),Local,OAuth
+Anthropic,Claude Code,CLI,Terminal,Global npm tool,Local,OAuth
+Anthropic,Claude API,SDK,anthropic-python,Direct calls,Hybrid,OAuth
+Anthropic,Claude API,Proxy,LiteLLM,"Grok, Perplexity routing",Hybrid,OAuth
+Anthropic,Claude Desktop,MCP Gateway,Desktop App,"Vault Bridge, Obsidian MCP",Local,OAuth
+OpenAI,ChatGPT Plus ($20/mo),Web Chat,https://chatgpt.com,Browser,Web,Email+Pass
+OpenAI,Codex,CLI,@openai/codex,Global npm tool,Local,Email+Pass
+OpenAI,OpenAI API,SDK,openai-python,Direct calls,Hybrid,Email+Pass
+Perplexity,Perplexity Pro ($20/mo),Web Chat,https://perplexity.ai,Browser,Web,OAuth
+Perplexity,Perplexity App,Mobile/Desktop,Native app,Cross-platform,Local,OAuth
+Perplexity,Perplexity API,SDK,perplexity-sonar (4 variants),LiteLLM proxy,Hybrid,OAuth
+xAI,Grok Premium ($25/mo),Web Chat,https://x.com/i/grok,Browser/X.com,Web,X.com auth
+xAI,Grok API,SDK,grok models (10 variants),LiteLLM proxy,Hybrid,X.com auth
+Google,Gemini (Free),Web Chat,https://gemini.google.com,Browser,Web,OAuth
+Google,Gemini CLI,CLI,@google/gemini-cli,Global npm tool,Local,OAuth
+Google,Gemini Code Assist,VS Code Ext,google.geminicodeassist,VS Code (49 ext),Local,OAuth
+Google,Antigravity,IDE (VS Code fork),Dedicated editor,Google AI integration,Local,OAuth
+Google,Gemini API,SDK,google-generativeai,Direct calls,Hybrid,OAuth
+Google,Google AI Studio,Testing,https://aistudio.google.com,Browser,Web,OAuth
+Google,Gmail (Free),Auth Hub,OAuth provider,"Claude, Perplexity, Cursor, etc.",Web,Google acct
+Google,Google Cloud (Varies),Production API,Gemini API,Enterprise deployments,Web,API Keys
+Alibaba,Qwen (Free),Web Chat,https://qwenlm.alibaba.com,Browser,Web,Qwen OAuth
+Alibaba,Qwen CLI,CLI,@qwen-code/qwen-code,Global npm tool,Local,Qwen OAuth
+Alibaba,Qwen2.5-Coder,Local Model,Ollama runtime,Local inference,Local,None
+Moonshot AI,Kimi (Free),Web Chat,https://kimi.moonshot.cn,Browser,Web,Google OAuth
+DeepSeek,DeepSeek (Free),Web Chat,https://chat.deepseek.com,Browser,Web,Google OAuth
+Meta,Meta AI (Free),Web Chat,https://www.meta.ai,Browser,Web,Facebook auth
+Quora,POE (Free),Web Chat,https://poe.com,Browser/Mobile,Web,POE account
+Brave,Brave Search (Free),Search engine API,Privacy search,Moltbot gateway,Web,API Key
+OpenRouter,OpenRouter (Varies),API Aggregator,100+ models,Cost optimization,Web,API Key
+Ollama,Ollama (Free),Local Runtime,http://localhost:11434,"Multi-App (Continue, Obsidian, RAG)",Local,None
+ggml.ai,Llama.cpp (Free),C++ Runtime,Local inference,Alternative to Ollama,Local,None
+Codeium,Windsurf IDE,IDE (VS Code fork),Dedicated editor,Standalone,Local,OAuth
+Cursor (Anysphere),Cursor Pro ($20/mo),IDE (VS Code fork),Cursor IDE (v1.x),"Windows, Claude backend",Local,VS Code auth
+Microsoft,VS Code (Free),IDE (VS Code fork),VS Code,"Extensions (49 total, 9+ AI)",Local,Local
+Codeium,Windsurf (Free),IDE (VS Code fork),Windsurf IDE,Flow backend (multi-provider),Local,Local
+Zed Industries,Zed (Free),IDE (VS Code fork),Zed IDE,None (local editor),Local,Local
+Custom,OpenMCP Config,MCP System,Local config,MCP connections,Local,Local
+Custom,LocalDocs RAG,RAG System,Local scripts,Vault Bridge MCP,Local,Local
+Custom,Apothecary Vault,Knowledge Base,C:\Vault\Apothecary,"LocalDocs, Vault Bridge",Local,Local
+Obsidian,Obsidian (Free),Knowledge Vault,https://obsidian.md,C:\Vault\Apothecary,Local,Local
+Mintplex Labs,AnythingLLM (Free),RAG Interface,Desktop app,Local doc indexing,Local,Local
+Kilo,Kilo code,VS Code Ext,Dedicated editor,,,
+Kombai,Kombai,VS Code Ext,Dedicated editor,,,
+Custom,Vault Bridge MCP,MCP Bridge,MCP Server,"LocalDocs RAG, Vault queries",Local,Local
+BerriAI,LiteLLM Proxy,Proxy/Router,http://localhost:8000,"Grok, Perplexity routing",Local,Local
+Anomaly,opencode-ai,CLI,opencode-ai (npm global),Model providers (varies),Local,Local

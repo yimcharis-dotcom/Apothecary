@@ -9,9 +9,9 @@
   "uriCallbacks": true,
   "defaultViewMode": "source",
   "showInlineTitle": true,
-  "readableLineLength": false,
+  "readableLineLength": true,
   "propertiesInDocument": "source",
-  "promptDelete": true,
+  "promptDelete": false,
   "userIgnoreFilters": [
     "copilot*",
     "__Templetes/"

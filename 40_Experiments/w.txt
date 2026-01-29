@@ -1,0 +1,14 @@
+{
+  tools: {
+    web: {
+      search: {
+        provider: "perplexity",
+        perplexity: {
+          apiKey: "pplx-...",
+          baseUrl: "https://api.perplexity.ai",
+          model: "perplexity/sonar-pro"
+        }
+      }
+    }
+  }
+}
