@@ -9,11 +9,13 @@ tags:
   - "#perplexed-plugin"
   - "#obsidian-plugin"
 created: 2025-12-30
+updated: 2026-01-30
 status: working
 ---
 ## Installation
 
 ### 1. Download and install manually
+
 The Perplexed plugin is not in the Community Plugins directory yet, so install manually:
 
 1. Go to [[github/lossless-group/perplexed-plugin]] [🔗](https://github.com/lossless-group/perplexed-plugin)
@@ -28,23 +30,29 @@ The Perplexed plugin is not in the Community Plugins directory yet, so install m
 ## Configuration
 
 ### 2. Required settings
+
 Go to **Settings → Community Plugins → Perplexed**:
 
 #### Endpoint
-```
-
-[https://api.perplexity.ai/chat/completions](https://api.perplexity.ai/chat/completions)
 
 ```
-⚠️ **Critical**: Must be the full path (not just `https://api.perplexity.ai`)
+
+[https://api.perplexity.ai/v2/chat/completions](https://api.perplexity.ai/v2/chat/completions)
+
+```
+
+⚠️ **Critical**: Must be the full path (not just `https://api.perplexity.ai/v2`)
 ⚠️ **No trailing slash**
 
 #### API Key
-Get your key from: https://www.perplexity.ai/settings/api
+
+Get your key from: <https://www.perplexity.ai/settings/api>
+
 - Requires payment info on file
 - Paste the key into the "API Key" field
 
 ### 3. Request Body Template
+
 Use this template for citations and clean responses:
 
 ```
@@ -54,16 +62,17 @@ Use this template for citations and clean responses:
 ```
 
 **Template notes:**
+
 - `sonar-pro`: Use `sonar` for faster/cheaper responses
 - `max_tokens`: 1500 is balanced; raise for long reports, lower (500) for speed
 - `return_citations: true`: Shows source URLs at bottom
 - `stream: false`: Get full response at once (set `true` for live typing effect)
 - system prompt [[00_Reference/Tools setup/Perplexity Chat (Obsidian) – Stop rambling + citations]]
 
-
 ## Usage
 
 ### Running queries
+
 1. Open Command Palette (Ctrl/Cmd+P)
 2. Type "Perplexed"
 3. Select the query command
@@ -71,6 +80,7 @@ Use this template for citations and clean responses:
 5. Response appears in current note with citations
 
 ### Best practices
+
 - Use specific questions for better results
 - Check citations for accuracy
 - Lower `max_tokens` for faster daily use
@@ -89,22 +99,26 @@ Use this template for citations and clean responses:
 ### Common issues
 
 **404 Error:**
+
 - Check endpoint is exactly: `https://api.perplexity.ai/chat/completions`
 - No trailing `/`
 - Verify in `.obsidian/plugins/perplexed/data.json` if UI won't save
 
 **Empty responses:**
+
 - Check Developer Console (Ctrl/Cmd+Shift+I) for errors
 - Verify API key is valid (test at Perplexity's API playground)
 - Check rate limits if on free trial
 
 **Connection refused:**
-- Wrong endpoint (e.g., `localhost` or missing `https://`)
-- VPN/firewall blocking `api.perplexity.ai`
 
+- Wrong endpoint (e.g., `localhost` or missing `https://`)
+- VPN/firewall blocking `api.perplexity.ai` (or `api.perplexity.ai/v2`)
 
 ## Related
+
 - [[Perplexity Chat Plugin Setup]] – Alternative simple chat plugin
 - [[Obsidian AI Workflows]] – Broader AI integration guide
-- [[!Perplexed Plugin Setup Guide]] - in running version 
+- [[!Perplexed Plugin Setup Guide]] - in running version
+
 ```
