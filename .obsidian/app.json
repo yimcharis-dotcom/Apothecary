@@ -1,6 +1,7 @@
 {
-  "livePreview": true,
+  "openBehavior": "daily",
   "strictLineBreaks": true,
+  "livePreview": true,
   "showLineNumber": true,
   "tabSize": 2,
   "alwaysUpdateLinks": true,

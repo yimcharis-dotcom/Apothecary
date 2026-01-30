@@ -5071,7 +5071,7 @@ var OpenAI = class extends APIClient {
    * @param {string | undefined} [opts.apiKey=process.env['OPENAI_API_KEY'] ?? undefined]
    * @param {string | null | undefined} [opts.organization=process.env['OPENAI_ORG_ID'] ?? null]
    * @param {string | null | undefined} [opts.project=process.env['OPENAI_PROJECT_ID'] ?? null]
-   * @param {string} [opts.baseURL=process.env['OPENAI_BASE_URL'] ?? https://api.perplexity.ai] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['OPENAI_BASE_URL'] ?? https://api.perplexity.ai/v2] - Override the default base URL for the API.
    * @param {number} [opts.timeout=10 minutes] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -5090,7 +5090,7 @@ var OpenAI = class extends APIClient {
       organization,
       project,
       ...opts,
-      baseURL: baseURL || `https://api.perplexity.ai`
+      baseURL: baseURL || `https://api.perplexity.ai/v2`
     };
     if (!options.dangerouslyAllowBrowser && isRunningInBrowser()) {
       throw new OpenAIError("It looks like you're running in a browser-like environment.\n\nThis is disabled by default, as it risks exposing your secret API credentials to attackers.\nIf you understand the risks and have appropriate mitigations in place,\nyou can set the `dangerouslyAllowBrowser` option to `true`, e.g.,\n\nnew OpenAI({ apiKey, dangerouslyAllowBrowser: true });\n\nhttps://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety\n");
@@ -5178,7 +5178,7 @@ var ChatGPT = class {
                      max_tokens = 150, temperature = 0, top_p = 0.95, 
                       baseURL) {
   
-  const url = `${baseURL || "https://api.perplexity.ai"}/chat/completions`;
+  const url = `${baseURL || "https://api.perplexity.ai/v2"}/chat/completions`;
   
   try {
     const response = await fetch(url, {
@@ -5301,7 +5301,7 @@ Respond only with valid JSON. Do not write an introduction or summary.
 var DEFAULT_SETTINGS = {
   apiKey: "",
   apiKeyCreatedAt: null,
-  baseURL: "https://api.perplexity.ai",
+  baseURL: "https://api.perplexity.ai/v2",
   classifierEngine: 0 /* ChatGPT */,
   // Default to ChatGPT
   jinaApiKey: "jina_***",

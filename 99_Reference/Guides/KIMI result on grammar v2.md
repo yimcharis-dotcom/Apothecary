@@ -75,7 +75,7 @@ We will piggy-back on the free “Text Generator” community plug-in that can c
 1. Plug-in browser → search **“Text Generator”** → Install → Enable.  
 2. Settings → Text Generator → Add new provider:  
    - Name: `PPLX-Sonar`  
-   - Base URL: `https://api.perplexity.ai`  
+   - Base URL: `https://api.perplexity.ai/v2`  
    - Model: `sonar` (cheapest, good at grammar)  
    - Bearer token: paste your PPLX key.  
 3. Still in settings → Templates → Add template:  

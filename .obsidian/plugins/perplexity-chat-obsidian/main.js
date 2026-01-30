@@ -241,7 +241,7 @@ class ChatView extends import_obsidian.ItemView {
         };
 
         try {
-          const response = yield fetch("https://api.perplexity.ai/chat/completions", options);
+          const response = yield fetch("https://api.perplexity.ai/v2/chat/completions", options);
 
           if (!response.ok) {
             const errText = yield response.text();

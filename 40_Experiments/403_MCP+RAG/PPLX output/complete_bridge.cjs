@@ -29,7 +29,7 @@ const PROVIDERS = {
   },
   perplexity: {
     name: 'Perplexity',
-    baseUrl: 'https://api.perplexity.ai/chat/completions',
+    baseUrl: 'https://api.perplexity.ai/v2/chat/completions',
     apiKey: process.env.PPLX_API_KEY || '',
     models: ['llama-3.1-sonar-small-128k-online', 'llama-3.1-sonar-large-128k-online'],
     available: !!process.env.PPLX_API_KEY

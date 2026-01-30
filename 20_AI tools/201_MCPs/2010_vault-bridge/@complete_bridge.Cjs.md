@@ -45,7 +45,7 @@ models: ['grok-4-1-fast-reasoning', 'grok-4-1-fast-non-reasoning','grok-4-fast-r
 },
 pplx: {
 name: 'Perplexity',
-url: '<https://api.perplexity.ai/chat/completions>',
+url: '<https://api.perplexity.ai/v2/chat/completions>',
 key: process.env.PPLX_API_KEY || config.pplxApiKey,
 models: ['sonar', 'sonar-pro', 'sonar-deep-research', 'sonar-reasoning-pro']
 }

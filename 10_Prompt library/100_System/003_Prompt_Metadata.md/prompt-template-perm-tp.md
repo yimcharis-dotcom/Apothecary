@@ -1,11 +1,11 @@
 ---
 type: prompt
-domain: <% tp.system.prompt("Domain (e.g. grammar, coding, legal)") %>
-model_target: <% tp.system.prompt("Target model") %>
+domain: 
+model_target: null
 status: draft
 version: 0.1
-created: <% tp.date.now("YYYY-MM-DD HH:mm") %> 
-updated: <% tp.date.now("YYYY-MM-DD HH:mm") %>
+created: 2026-01-31 07:21 
+updated: 2026-01-31 07:21
 tags: 
 ---
 

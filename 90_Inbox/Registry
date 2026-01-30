@@ -1,13 +1,15 @@
 
 ---
 created: 2026-01-28
-updated: 2026-01-28
+updated: 2026-01-30
 tags:
-  - ai/tools
-  - registry
-  - index
-  - tracking
+
+- ai/tools
+- registry
+- index
+- tracking
 status: active
+
 ---
 
 # 🤖 AI Tools & Platforms Registry
@@ -72,7 +74,7 @@ status: active
 - **Status**: ✅ Active
 - **API Key**: Stored in [[99_env/PPLX API info]]
 - **Documentation**: [[99_env/PPLX API info]]
-- **Base URL**: `https://api.perplexity.ai`
+- **Base URL**: `https://api.perplexity.ai/v2`
 - **Models Available**:
   - sonar
   - sonar-pro

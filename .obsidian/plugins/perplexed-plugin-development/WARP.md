@@ -123,7 +123,7 @@ Extremely strict TypeScript settings enabled:
 
 ### Perplexity
 
--   Endpoint: `https://api.perplexity.ai/chat/completions`
+-   Endpoint: `https://api.perplexity.ai/v2/chat/completions`
 -   Models: `sonar-pro`, `sonar-small`, `sonar-deep-research`, etc.
 -   Features: Citations, images, related questions, recency filters
 -   Streaming: Supported via SSE

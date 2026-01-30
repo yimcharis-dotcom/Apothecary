@@ -1,6 +1,5 @@
 {
   "format": "YYYYMMDDdddd",
   "folder": "90_Inbox",
-  "autorun": true,
   "template": "__Templates/!tp - daily-template"
 }

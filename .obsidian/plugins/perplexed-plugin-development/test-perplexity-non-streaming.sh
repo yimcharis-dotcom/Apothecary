@@ -15,7 +15,7 @@ echo "Testing Perplexity API (NON-STREAMING) with the same payload structure..."
 echo "API Key: ${API_KEY:0:10}..."
 echo ""
 
-curl -X POST "https://api.perplexity.ai/chat/completions" \
+curl -X POST "https://api.perplexity.ai/v2/chat/completions" \
   -H "Authorization: Bearer $API_KEY" \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \

@@ -67,7 +67,7 @@ Perplexity is a commercial AI service that provides high-quality, source-cited r
 2. **Configure in Plugin**:
    - Open Obsidian Settings → Community Plugins → Perplexed
    - Enter your Perplexity API key
-   - The default endpoint should work: `https://api.perplexity.ai/chat/completions`
+   - The default endpoint should work: `https://api.perplexity.ai/v2/chat/completions`
 
 ### 2. Configure Perplexica (Self-hosted alternative)
 

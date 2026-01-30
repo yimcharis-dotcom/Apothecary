@@ -60,7 +60,7 @@ const PROVIDERS = {
   },
   pplx: {
     name: "Perplexity",
-    url: "https://api.perplexity.ai/chat/completions",
+    url: "https://api.perplexity.ai/v2/chat/completions",
     key: process.env.PPLX_API_KEY || config.pplxApiKey,
     models: [
       "sonar",

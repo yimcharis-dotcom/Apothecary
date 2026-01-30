@@ -73,7 +73,7 @@ const DEFAULT_SETTINGS: PerplexedPluginSettings = {
     // Use host.docker.internal to connect to the host machine from Docker containers
     localLLMPath: 'http://host.docker.internal:3030/api/search',
     perplexicaEndpoint: 'http://localhost:3030/api/search',
-    perplexityEndpoint: 'https://api.perplexity.ai/chat/completions',
+    perplexityEndpoint: 'https://api.perplexity.ai/v2/chat/completions',
     lmStudioEndpoint: 'http://localhost:1234/v1/chat/completions',
     headerPosition: 'top',
     requestBodyTemplate: `{
@@ -582,7 +582,7 @@ export default class PerplexedPlugin extends Plugin {
                     const modal = new URLUpdateModal(this.app, {
                         title: 'Update Perplexity API URL',
                         label: 'Perplexity API URL',
-                        placeholder: 'https://api.perplexity.ai/chat/completions',
+                        placeholder: 'https://api.perplexity.ai/v2/chat/completions',
                         currentValue: this.settings.perplexityEndpoint,
                         onSave: async (newUrl: string) => {
                             this.settings.perplexityEndpoint = newUrl;
@@ -963,7 +963,7 @@ class PerplexedSettingTab extends PluginSettingTab {
             .setName('Endpoint')
             .setDesc('API endpoint for Perplexity service')
             .addText(text => text
-                .setPlaceholder('https://api.perplexity.ai/chat/completions')
+                .setPlaceholder('https://api.perplexity.ai/v2/chat/completions')
                 .setValue(this.plugin.settings.perplexityEndpoint)
                 .onChange(async (value: string) => {
                     this.plugin.settings.perplexityEndpoint = value;
