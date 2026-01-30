@@ -109,14 +109,6 @@
       "key": "."
     }
   ],
-  "editor:unindent-list": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": ","
-    }
-  ],
   "editing-toolbar:fullscreen-focus": [],
   "vault-ai:toggle-vaultai-chat": [],
   "editor:toggle-code": [
@@ -159,15 +151,6 @@
       "key": "["
     }
   ],
-  "workspace:split-vertical": [
-    {
-      "modifiers": [
-        "Alt",
-        "Mod"
-      ],
-      "key": "ArrowRight"
-    }
-  ],
   "app:go-back": [
     {
       "modifiers": [
@@ -194,7 +177,6 @@
   ],
   "easy-typing-obsidian:easy-typing-paste-without-format": [],
   "obsidian-auto-link-title:enhance-url-with-title": [],
-  "obsidian-auto-link-title:auto-link-title-normal-paste": [],
   "workspace:close-window": [],
   "app:delete-file": [
     {
@@ -225,12 +207,12 @@
       "key": "PageUp"
     }
   ],
-  "app:open-settings": [
+  "terminal:find-in-terminal": [],
+  "table-editor-obsidian:table-control-bar": [],
+  "open-with-default-app:show": [
     {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": ";"
+      "modifiers": [],
+      "key": "F7"
     }
   ]
 }

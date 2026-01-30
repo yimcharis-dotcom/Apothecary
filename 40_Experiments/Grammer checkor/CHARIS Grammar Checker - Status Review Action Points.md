@@ -30,7 +30,7 @@ Tier 1 → _italics_[#]
 Tier 2 → ***bold italics***[#]
 ```
 
-**Version B (from Edge Cases doc):**
+**Version B (from Edge Cases bydoc):**
 ```
 Tier 1 → _italics_[#.]
 Tier 2 → ***bold italics***[#.]

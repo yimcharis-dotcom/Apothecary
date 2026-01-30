@@ -1,23 +1,23 @@
 {
-  "livePreview": false,
+  "livePreview": true,
   "strictLineBreaks": true,
   "showLineNumber": true,
   "tabSize": 2,
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": true,
-  "trashOption": "local",
+  "trashOption": "system",
   "uriCallbacks": true,
-  "defaultViewMode": "source",
+  "defaultViewMode": "preview",
   "showInlineTitle": true,
   "readableLineLength": true,
   "propertiesInDocument": "source",
-  "promptDelete": false,
+  "promptDelete": true,
   "userIgnoreFilters": [
     "copilot*",
     "__Templetes/"
   ],
   "rightToLeft": false,
-  "focusNewTab": false,
+  "focusNewTab": true,
   "pdfExportSettings": {
     "includeName": true,
     "pageSize": "A4",
