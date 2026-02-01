@@ -159,7 +159,7 @@ This keeps the runbook stable while acknowledging the roadmap.
 - If HKICPA updates standards quarterly, you'll break even by Q2 2026.
 **For future "simple" automation:**
 - **Time-box it**: If manual task = 2 hours, automation should take ≤ 4 hours (1 day). If you're on day 3, stop and evaluate.
-- **Document incrementally**: Write the [[README]] _first_ (what should this do?), then code to match it.
+- **Document incrementally**: Write the [[Untitled 1/README]] _first_ (what should this do?), then code to match it.
 - **Reuse ruthlessly**: Keep a personal repo of scripts. Next "download PDFs from manifest" project starts at 80% done.
 **The real insight:** You're not slow—automation is genuinely hard, and documentation overhead is real. The question isn't "who has time for this?" but **"which problems are worth solving this way?"**.​
 

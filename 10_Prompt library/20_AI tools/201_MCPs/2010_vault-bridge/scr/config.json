@@ -1,0 +1,12 @@
+{
+    "vaultPath": "C:\\Vault\\Apothecary",
+    "pythonExe": "C:\\Users\\YC\\LocalDocs\\.venv\\Scripts\\python.exe",
+    "pythonScript": "C:\\Users\\YC\\LocalDocs\\rag_query_working.py",
+    "pythonCwd": "C:\\Users\\YC\\LocalDocs",
+    "maxFiles": 5,
+    "maxBytes": 200000,
+    "defaultProvider": "grok",
+    "temperature": 0.7,
+    "xaiApiKey": "xai-ap3FR5Oo56oqBOAapUvEmH6XUKwL3bBysMNu5POmqRvkZedTDMMGdUs2KelXRQT43TD0nxRnZeaxRDMk",
+    "pplxApiKey": "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"
+}

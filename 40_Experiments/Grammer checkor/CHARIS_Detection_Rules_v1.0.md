@@ -26,6 +26,8 @@ Skip Examples: Valid sentences this rule should ignore
 
 ## T1-cap
 
+
+
 **Trigger:** Missing capitalization at sentence start or on proper nouns
 
 ```yaml
