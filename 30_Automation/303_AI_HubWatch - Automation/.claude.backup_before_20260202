@@ -1,0 +1,90 @@
+# AI HubWatch - Automation Scripts Deployment
+
+## Purpose
+This folder contains **source versions** of AI HubWatch automation scripts. Edit and version scripts here, then deploy to runtime location.
+
+## Architecture
+
+### Canonical Locations
+- **Source (edit here):** `C:\Vault\Apothecary\30_Automation\303_AI_HubWatch - Automation\`
+  - Production-ready versions with `!` prefix
+  - Version controlled in Obsidian vault
+  - Documentation and changelog
+  - Edit scripts here, then deploy to runtime
+
+- **Runtime (deployed to):** `C:\Users\YC\AI_hub\`
+  - Where scripts actively run
+  - Files copied here via Obsidian QuickAdd deployment
+  - Do NOT edit runtime versions - edit source in Vault instead
+
+- **Logs:** `C:\Users\YC\AI_hub\_Change_log\`
+  - Installation/deletion logs with `_add` and `_del` suffixes
+
+## Scripts
+
+### Deployed Scripts (with ! prefix)
+- `!WatchHub_Realtime.ps1` - Real-time AI tools & skills monitoring v2
+- `!SyncSkills.ps1` - Skills symlink manager v2
+- `!TrackInstallation.ps1` - Before/after installation tracker
+- `!Hub.ps1` - Main hub control center v2
+- `!ExportToObsidian.ps1` - Obsidian inventory exporter
+
+## Workflow
+
+### Automated Detection & Sync
+```
+AI Tool Installed
+  ↓ WatchHub detects
+  ↓ Creates junction
+  ↓ Logs to _Change_log
+  ↓ Updates Obsidian
+
+Skill Installed to Claude
+  ↓ WatchHub detects
+  ↓ Triggers SyncSkills
+  ↓ Symlinks to all agents
+  ↓ Logs to _Change_log
+  ↓ Updates Obsidian
+```
+
+### Deployment Process
+1. Edit scripts here in Vault with `!` prefix (e.g., `!WatchHub_Realtime.ps1`)
+2. Use Obsidian QuickAdd: `Ctrl+P` → `🚀 Deploy Script to Running`
+3. Enter script name with `!` prefix
+4. Script copied to `C:\Users\YC\AI_hub\` (without `!` prefix for runtime)
+5. Update `_CHANGELOG.md` with version and changes
+
+## Key Features
+
+### WatchHub_Realtime.ps1 v2
+- Monitors 6 locations for AI tool installations
+- Monitors `Claude_User_Dot/skills/` for skill changes
+- Auto-triggers SyncSkills on skill add/delete
+- Logs format: `foldername_category_add.txt` and `foldername_category_del.txt`
+
+### SyncSkills.ps1 v2
+- Changed from copy to symlink (`mklink /D`)
+- Added `-Delete` flag for cleanup
+- Syncs skills from Claude to all AI agents
+
+### TrackInstallation.ps1
+- Before/after snapshot comparison
+- Predicts installation locations
+- Interactive menu interface
+
+### Hub.ps1 v2
+- Menu option 9: WatchHub v2
+- Menu option 10: Track Installation
+- CLI: `.\Hub.ps1 watch` and `.\Hub.ps1 track`
+
+## Documentation
+- `QuickAdd Setup Guide.md` - Obsidian deployment workflow setup
+- `_CHANGELOG.md` - Version history and deployment log
+
+## Important Notes
+- The `!` prefix indicates version-controlled source files in Vault
+- Source files live here, runtime copies in `AI_hub\` (without `!` prefix)
+- Always edit here in Vault, then deploy to `AI_hub\` via QuickAdd
+- Update changelog with each deployment
+- Skills use symlinks (not copies) for real-time sync
+- Deletion detection automatically cleans up broken links

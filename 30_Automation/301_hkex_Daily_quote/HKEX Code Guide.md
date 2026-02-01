@@ -1,6 +1,6 @@
 ---
 title: HKEX Code Guide - How It Works
-tags: 
+tags:
   - automation
   - learning
   - code-explanation
@@ -11,7 +11,7 @@ created: 2026-01-27
 purpose: learning
 difficulty: beginner-friendly
 related:
-  - "[[README]]"
+  - "[[Untitled 1/README]]"
   - "[[HKEX Quick Reference]]"
   - "[[hkex_playwright_quote_page_v0.1.0.py]]"
   - "[[hkex_playwright_quote_page_debugging_v0.1.0.py]]"
@@ -23,7 +23,7 @@ related:
 
 **Start here if:** You want to learn how the code works, not just run it.
 
-**Just want to run it?** → [[README]]
+**Just want to run it?** → [[Untitled 1/README]]
 
 ---
 
@@ -543,7 +543,7 @@ OUTPUT_DIR = r"C:\Users\YC\Documents\Stock Data"
 EXCEL_FILE = os.path.join(OUTPUT_DIR, "hkex_quotes.xlsx")
 ```
 
-**Don't forget:** Update the scheduled task path! See [[README#Manage the Task]]
+**Don't forget:** Update the scheduled task path! See [[Untitled 1/README#Manage the Task]]
 
 ---
 
@@ -595,7 +595,7 @@ for stock_code in STOCK_CODES:
 
 ### Change the Schedule Time
 
-See [[README#Manage the Task]] or [[HKEX Quick Reference#Scheduled Task Commands]]
+See [[Untitled 1/README#Manage the Task]] or [[HKEX Quick Reference#Scheduled Task Commands]]
 
 ```powershell
 schtasks /Change /TN "HKEX daily quote" /ST 20:00
@@ -734,7 +734,7 @@ page.wait_for_selector('dt.col_prevcls', state='visible', timeout=30000)
 
 ## Learn More
 
-- **[[README]]** - Quick start and basic usage
+- **[[Untitled 1/README]]** - Quick start and basic usage
 - **[[HKEX Quick Reference]]** - Commands and paths cheat sheet
 - **[[HKEX_Session_Transfer_Summary 1]]** - Deep technical dive and alternatives
 - **[Playwright Docs](https://playwright.dev/python/)** - Official documentation

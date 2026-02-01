@@ -9,7 +9,7 @@ tags:
 created: 2026-01-27
 type: reference
 related:
-  - "[[README]]"
+  - "[[Untitled 1/README]]"
   - "[[HKEX Code Guide]]"
   - "[[HKEX_Session_Transfer_Summary 1]]"
 ---
@@ -20,7 +20,7 @@ related:
 
 **Learning how it works?** → [[HKEX Code Guide]]
 
-**Just getting started?** → [[README]]
+**Just getting started?** → [[Untitled 1/README]]
 
 ---
 
@@ -416,7 +416,7 @@ page.wait_for_selector('dt.col_prevcls', state='visible', timeout=30000)
 
 ### Problem: Task didn't run
 **Solution:** Check if logged in. Task runs in "Interactive only" mode.
-**See:** [[README#Scheduled Automation]]
+**See:** [[Untitled 1/README#Scheduled Automation]]
 
 ### Problem: Excel file not updating
 **Solution:** Check if file is open in Excel. Close it and try again.
@@ -429,7 +429,7 @@ page.wait_for_selector('dt.col_prevcls', state='visible', timeout=30000)
 
 ## Related Documentation
 
-- **[[README]]** - Start here! Quick overview and basic usage
+- **[[Untitled 1/README]]** - Start here! Quick overview and basic usage
 - **[[HKEX Code Guide]]** - Learn how the code works (detailed explanations)
 - **[[HKEX_Session_Transfer_Summary 1]]** - Technical deep dive and alternative approaches
 - **[[HKEX_Daily_Quote_Automation]]** - Original automation setup guide
