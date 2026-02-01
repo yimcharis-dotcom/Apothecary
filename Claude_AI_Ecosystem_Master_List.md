@@ -1,7 +1,7 @@
 
 # Claude AI Ecosystem Master List
 
-**Last Updated:** 2026-01-28
+**Last Updated:** 2026-01-31
 **Format:** Canonical table structure (Provider → Product/Plan → Capability → Surface → Connected To → Presence → Auth → Status)
 
 ho---
@@ -50,55 +50,64 @@ Reads as: **Anthropic** offers **Claude Code** which provides **IDE Integration*
 
 ## Master Reference Table
 
-| Provider               | Product/Plan            | Capability         | Surface                       | Connected To                        | Presence | Auth          | Status |
-| ---------------------- | ----------------------- | ------------------ | ----------------------------- | ----------------------------------- | -------- | ------------- | ------ |
-| **Claude (Anthropic)** | Claude Pro ($20/mo)     | Web Chat           | <https://claude.ai>           | Browser                             | Web      | OAuth         | ✅      |
-|                        | Claude Code             | IDE Integration    | Cursor IDE                    | Primary dev (17 processes)          | Local    | OAuth         | ✅      |
-|                        | Claude Code             | IDE Integration    | VS Code Extension             | IDE plugin (49 ext)                 | Local    | OAuth         | ✅      |
-|                        | Claude Code             | CLI                | Terminal                      | Global npm tool                     | Local    | OAuth         | ✅      |
-|                        | Claude API              | SDK                | anthropic-python              | Direct calls                        | Hybrid   | OAuth         | ✅      |
-|                        | Claude API              | Proxy              | LiteLLM                       | Grok, Perplexity routing            | Hybrid   | OAuth         | ✅      |
-|                        | Claude Desktop          | MCP Gateway        | Desktop App                   | Vault Bridge, Obsidian MCP          | Local    | OAuth         | ✅      |
-| **ChatGPT (OpenAI)**   | ChatGPT Plus ($20/mo)   | Web Chat           | <https://chatgpt.com>         | Browser                             | Web      | Email+Pass    | ✅      |
-|                        | Codex                   | CLI                | @openai/codex                 | Global npm tool                     | Local    | Email+Pass    | ✅      |
-|                        | OpenAI API              | SDK                | openai-python                 | Direct calls                        | Hybrid   | Email+Pass    | ✅      |
-| **Cursor (Anysphere)** | Cursor Pro ($20/mo)     | IDE                | Cursor IDE (v1.x)             | Windows, Claude backend             | Local    | VS Code auth  | ✅      |
-| **VS Code**            | VS Code (Free)          | IDE                | VS Code                       | Extensions (49 total, 9+ AI)        | Local    | Local         | ✅      |
-| **Windsurf**           | Windsurf (Free)         | IDE                | Windsurf IDE                  | Flow backend (multi-provider)       | Local    | Local         | ✅      |
-| **Zed**                | Zed (Free)              | IDE                | Zed IDE                       | None (local editor)                 | Local    | Local         | ✅      |
-| **LiteLLM**            | LiteLLM Proxy           | Proxy/Router       | <http://localhost:8000>       | Grok, Perplexity routing            | Local    | Local         | ❌      |
-| **OpenCode**           | opencode-ai             | CLI                | opencode-ai (npm global)      | Model providers (varies)            | Local    | Local         | ✅      |
-| **Perplexity**         | Perplexity Pro ($20/mo) | Web Chat           | <https://perplexity.ai>       | Browser                             | Web      | OAuth         | ✅      |
-|                        | Perplexity App          | Mobile/Desktop     | Native app                    | Cross-platform                      | Local    | OAuth         | ✅      |
-|                        | Perplexity API          | SDK                | perplexity-sonar (4 variants) | LiteLLM proxy                       | Hybrid   | OAuth         | ✅      |
-| **xAI**                | Grok Premium ($25/mo)   | Web Chat           | <https://x.com/i/grok>        | Browser/X.com                       | Web      | X.com auth    | ✅      |
-|                        | Grok API                | SDK                | grok models (10 variants)     | LiteLLM proxy                       | Hybrid   | X.com auth    | ✅      |
-| **Google**             | Gemini (Free)           | Web Chat           | <https://gemini.google.com>   | Browser                             | Web      | OAuth         | ✅      |
-|                        | Gemini CLI              | CLI                | @google/gemini-cli            | Global npm tool                     | Local    | OAuth         | ✅      |
-|                        | Gemini Code Assist      | VS Code Ext        | google.geminicodeassist       | VS Code (49 ext)                    | Local    | OAuth         | ✅      |
-|                        | Antigravity             | IDE (VS Code fork) | Dedicated editor              | Google AI integration               | Local    | OAuth         | ✅      |
-|                        | Gemini API              | SDK                | google-generativeai           | Direct calls                        | Hybrid   | OAuth         | ✅      |
-|                        | Google AI Studio        | Testing            | <https://aistudio.google.com> | Browser                             | Web      | OAuth         | ✅      |
-|                        | Gmail (Free)            | Auth Hub           | OAuth provider                | Claude, Perplexity, Cursor, etc.    | Web      | Google acct   | ✅      |
-|                        | Google Cloud (Varies)   | Production API     | Gemini API                    | Enterprise deployments              | Web      | API Keys      | ✅      |
-| **Qwen (Alibaba)**     | Qwen (Free)             | Web Chat           | <https://qwenlm.alibaba.com>  | Browser                             | Web      | Qwen OAuth    | ✅      |
-|                        | Qwen CLI                | CLI                | @qwen-code/qwen-code          | Global npm tool                     | Local    | Qwen OAuth    | ✅      |
-|                        | Qwen2.5-Coder           | Local Model        | Ollama runtime                | Local inference                     | Local    | None          | ✅      |
-| **Codeium**            | Windsurf IDE            | IDE                | Dedicated editor              | Standalone                          | Local    | OAuth         | ✅      |
-| **Obsidian**           | Obsidian (Free)         | Knowledge Vault    | <https://obsidian.md>         | C:\Vault\Apothecary                 | Local    | Local         | ✅      |
-| **Vault Bridge**       | Vault Bridge MCP        | MCP Bridge         | MCP Server                    | LocalDocs RAG, Vault queries        | Local    | Local         | ✅      |
-| **OpenMCP**            | OpenMCP Config          | MCP System         | Local config                  | MCP connections                     | Local    | Local         | ✅      |
-| **LocalDocs**          | LocalDocs RAG           | RAG System         | Local scripts                 | Vault Bridge MCP                    | Local    | Local         | ✅      |
-| **Vault**              | Apothecary Vault        | Knowledge Base     | C:\Vault\Apothecary           | LocalDocs, Vault Bridge             | Local    | Local         | ✅      |
-| **Kimi (Moonshot)**    | Kimi (Free)             | Web Chat           | <https://kimi.moonshot.cn>    | Browser                             | Web      | Google OAuth  | ✅      |
-| **DeepSeek**           | DeepSeek (Free)         | Web Chat           | <https://chat.deepseek.com>   | Browser                             | Web      | Google OAuth  | ✅      |
-| **Meta**               | Meta AI (Free)          | Web Chat           | <https://www.meta.ai>         | Browser                             | Web      | Facebook auth | ✅      |
-| **POE (Quora)**        | POE (Free)              | Multi-Model        | <https://poe.com>             | Browser/Mobile                      | Web      | POE account   | ✅      |
-| **Brave**              | Brave Search (Free)     | Search API         | Privacy search                | Moltbot gateway                     | Web      | API Key       | ✅      |
-| **OpenRouter**         | OpenRouter (Varies)     | API Aggregator     | 100+ models                   | Cost optimization                   | Web      | API Key       | ✅      |
-| **Ollama**             | Ollama (Free)           | Local Runtime      | <http://localhost:11434>      | Multi-App (Continue, Obsidian, RAG) | Local    | None          | ✅      |
-| **Llama.cpp**          | Llama.cpp (Free)        | C++ Runtime        | Local inference               | Alternative to Ollama               | Local    | None          | ✅      |
-| **AnythingLLM**        | AnythingLLM (Free)      | RAG Interface      | Desktop app                   | Local doc indexing                  | Local    | Local         | ✅      |
+| Provider | Product/Plan | Capability | Surface | Connected To | Presence | Auth | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **Anthropic** | Claude Pro ($20/mo) | Interface (Browser) | <https://claude.ai> | Browser | Web | OAuth | ✅ |
+| | Claude Code | Agent (Autonomous) | Terminal, Cursor, VS Code | Dev environment (17 procs) | Local | OAuth | ✅ |
+| | Claude API | API (Model Provider) | anthropic-python, LiteLLM | Direct calls, Proxies | Hybrid | OAuth | ✅ |
+| | Claude Desktop | MCP Gateway | Desktop App | Vault Bridge, Obsidian MCP | Local | OAuth | ✅ |
+| | Claude Server Commander | CLI Utility | Terminal | MCP Server Management | Local | OAuth | ✅ |
+| | OpenClaude | CLI Utility | Terminal | Alternative Interface | Local | OAuth | ✅ |
+| **OpenAI** | ChatGPT Plus ($20/mo) | Interface (Browser) | <https://chatgpt.com> | Browser | Web | Email+Pass | ✅ |
+| | Codex | CLI Utility | @openai/codex | Global npm tool | Local | Email+Pass | ✅ |
+| | OpenAI API | API (Model Provider) | openai-python | Direct calls | Hybrid | Email+Pass | ✅ |
+| **Cursor** | Cursor Pro ($20/mo) | IDE | Cursor IDE (v1.x) | Windows, Claude backend | Local | VS Code auth | ✅ |
+| **VS Code** | VS Code (Free) | IDE | VS Code | | Local | | ✅ |
+| **Codeium** | Windsurf IDE | IDE | Windsurf IDE | Flow backend (multi-provider) | Local | OAuth | ✅ |
+| **Zed Industries** | Zed (Free) | IDE | Zed IDE | None (local editor) | Local | Local | ✅ |
+| **BerriAI** | LiteLLM Proxy | API (Router/Proxy) | <http://localhost:8000> | Grok, Perplexity routing | Local | Local | ⚠️ |
+| **Anomaly** | opencode-ai | CLI Utility | opencode-ai (npm global) | Model providers (varies) | Local | Local | ✅ |
+| **Perplexity** | Perplexity Pro ($20/mo) | Interface (Search) | <https://perplexity.ai> | Browser | Web | OAuth | ✅ |
+| | Perplexity App | Interface (Mobile/Desktop) | Native app | Cross-platform | Local | OAuth | ✅ |
+| | Perplexity API | API (Search) | perplexity-sonar | LiteLLM proxy | Hybrid | OAuth | ✅ |
+| **xAI** | Grok Premium ($25/mo) | Interface (Social) | <https://x.com/i/grok> | Browser/X.com | Web | X.com auth | ✅ |
+| | Grok API | API (Model Provider) | grok models | LiteLLM proxy | Hybrid | X.com auth | ✅ |
+| **Google** | Gemini (Free) | Interface (Browser) | <https://gemini.google.com> | Browser | Web | OAuth | ✅ |
+| | Gemini CLI | CLI Utility | @google/gemini-cli | Global npm tool | Local | OAuth | ✅ |
+| | Gemini Code Assist | IDE Extension | google.geminicodeassist | VS Code Extension | Local | OAuth | ✅ |
+| | Antigravity | IDE | IDE | Google AI integration | Local | OAuth | ✅ |
+| | Gemini API | API (Model Provider) | google-generativeai | Direct calls | Hybrid | OAuth | ✅ |
+| | Google AI Studio | API Playground | <https://aistudio.google.com> | Browser | Web | OAuth | ✅ |
+| | Google Cloud (Varies) | Infrastructure | <https://console.cloud.google.com> | Enterprise deployments | Web | API Keys | ✅ |
+| | CloudCode | IDE Extension | VS Code | Cloud Platform Integration | Local | OAuth | ✅ |
+| **Qwen** | Qwen (Free) | Interface (Browser) | <https://qwenlm.alibaba.com> | Browser | Web | Qwen OAuth | ✅ |
+| | Qwen CLI | CLI Utility | @qwen-code/qwen-code | Global npm tool | Local | Qwen OAuth | ✅ |
+
+| **Obsidian** | Obsidian (Free) | Knowledge Base | Desktop App | C:\Vault\Apothecary | Local | Local | ✅ |
+| **Vault Bridge** | Vault Bridge MCP | MCP Server | MCP Server | LocalDocs RAG, Vault queries | Local | Local | ✅ |
+| **OpenMCP** | OpenMCP Config | MCP Infrastructure | Local config | MCP connections | Local | Local | ✅ |
+| **LocalDocs** | LocalDocs RAG | Knowledge / RAG | Local scripts | Vault Bridge MCP | Local | Local | ✅ |
+| **Vault** | Apothecary Vault | Knowledge Base | C:\Vault\Apothecary | LocalDocs, Vault Bridge | Local | Local | ✅ |
+| **Moonshot AI** | Kimi (Free) | Interface (Browser) | <https://kimi.moonshot.cn> | Browser | Web | Google OAuth | ✅ |
+| **DeepSeek** | DeepSeek (Free) | Interface (Browser) | <https://chat.deepseek.com> | Browser | Web | Google OAuth | ✅ |
+| **Meta** | Meta AI (Free) | Interface (Browser) | <https://www.meta.ai> | Browser | Web | Facebook auth | ✅ |
+| **POE** | POE (Free) | Interface (Multi-Model) | <https://poe.com> | Browser/Mobile | Web | POE account | ✅ |
+| **Brave** | Brave Search (Free) | API (Search) | <https://api.search.brave.com> | Moltbot gateway | Web | API Key | ✅ |
+| **OpenRouter** | OpenRouter (Varies) | API (Aggregator) | <https://openrouter.ai> | Cost optimization | Web | API Key | ✅ |
+| **Ollama** | Ollama (Free) | Inference Layer | <http://localhost:11434> | Multi-App (Continue, Obsidian, RAG) | Local | None | ✅ |
+| **ggml.ai** | Llama.cpp (Free) | Inference Layer | Terminal | Alternative to Ollama | Local | None | ✅ |
+| **AnythingLLM** | AnythingLLM (Free) | Knowledge / RAG | Desktop app | Local doc indexing | Local | Local | ✅ |
+| **Kilo** | Kilo code | IDE Extension | VS Code | | Local | | ✅ |
+| **Kombai** | Kombai | IDE Extension | VS Code | | Local | | ✅ |
+| **Cline** | Cline | Agent (Autonomous) | VS Code | Multi-Provider API | Local | API Key | ✅ |
+| **Roo** | Roo Code | Agent (Autonomous) | VS Code | Multi-Provider API | Local | API Key | ✅ |
+| **ByteDance** | Trae / TraeCN | IDE | Trae IDE | Adaptive AI (CN/Global) | Local | OAuth | ✅ |
+| **All-Hands-AI** | OpenHands | Agent Platform | Web UI (Local) | Multi-Provider API | Local | API Key | ✅ |
+| **Aider** | Aider | Agent (Autonomous) | Terminal | Multi-Provider API | Local | API Key | ✅ |
+| **Oven** | Bun | Infrastructure | Terminal | JS Toolkit | Local | None | ✅ |
+| **Hugging Face** | HF Cache | Infrastructure | Local Directory | SDKs / Transformers | Local | API Key | ✅ |
+| **Skills Hub** | Agent Fleet | Agent Swarm | Terminal | MoltBot, Junie, Qoder, Neovate, etc. | Local | OAuth | ✅ |
+| **OpenMCP** | McpJam (Dev) | MCP Dev Tool | Terminal | MCP Server Testing | Local | | ✅ |
 
 ---
 
@@ -217,12 +226,11 @@ LiteLLM Proxy (http://localhost:8000)
 
 | Metric | Count |
 |--------|-------|
-| Service Providers | 19 |
+| Service Providers | 36 |
 | Paid Subscriptions | 5 |
 | Free Services | 11+ |
-| VS Code Extensions (all) | 49 |
+| VS Code Extensions (all) | 54 |
 | AI-related Extensions | 9+ |
-| Local LLM Models | 3 (via Ollama) |
 | MCP Servers | 4 |
 | Global CLIs | 6+ |
 | Python Packages | 113+ |
@@ -242,8 +250,8 @@ LiteLLM Proxy (http://localhost:8000)
 ## Metadata
 
 - **Format Version:** 5.0 (Presence-aware canonical structure)
-- **Last Updated:** 2026-01-29
+- **Last Updated:** 2026-01-31
 - **Structure:** Provider → Product/Plan → Capability → Surface + Connections + Presence
 - **Scope:** External service providers only (excludes custom infrastructure implementation)
-- **Completeness:** 100% (19 providers documented)
+- **Completeness:** 100% (37 providers documented)
 - **Next Phase:** Build web app dashboard to visualize connections and manage subscriptions

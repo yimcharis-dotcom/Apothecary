@@ -1,0 +1,552 @@
+[
+  {
+    "Provider": "Anthropic",
+    "Product/Plan": "Claude Pro ($20/mo)",
+    "Capability": "Interface (Browser)",
+    "Surface": "https://claude.ai",
+    "Connected To": "Browser",
+    "Presence": "Web",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Anthropic",
+    "Product/Plan": "Claude Code",
+    "Capability": "Agent (Autonomous)",
+    "Surface": "Terminal, Cursor, VS Code",
+    "Connected To": "Dev environment (17 procs)",
+    "Presence": "Local",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Anthropic",
+    "Product/Plan": "Claude API",
+    "Capability": "API (Model Provider)",
+    "Surface": "anthropic-python, LiteLLM",
+    "Connected To": "Direct calls, Proxies",
+    "Presence": "Hybrid",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Anthropic",
+    "Product/Plan": "Claude Desktop",
+    "Capability": "MCP Gateway",
+    "Surface": "Desktop App",
+    "Connected To": "Vault Bridge, Obsidian MCP",
+    "Presence": "Local",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Anthropic",
+    "Product/Plan": "Claude Server Commander",
+    "Capability": "CLI Utility",
+    "Surface": "Terminal",
+    "Connected To": "MCP Server Management",
+    "Presence": "Local",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Anthropic",
+    "Product/Plan": "OpenClaude",
+    "Capability": "CLI Utility",
+    "Surface": "Terminal",
+    "Connected To": "Alternative Interface",
+    "Presence": "Local",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "OpenAI",
+    "Product/Plan": "ChatGPT Plus ($20/mo)",
+    "Capability": "Interface (Browser)",
+    "Surface": "https://chatgpt.com",
+    "Connected To": "Browser",
+    "Presence": "Web",
+    "Auth": "Email+Pass",
+    "Status": "Active"
+  },
+  {
+    "Provider": "OpenAI",
+    "Product/Plan": "Codex",
+    "Capability": "CLI Utility",
+    "Surface": "@openai/codex",
+    "Connected To": "Global npm tool",
+    "Presence": "Local",
+    "Auth": "Email+Pass",
+    "Status": "Active"
+  },
+  {
+    "Provider": "OpenAI",
+    "Product/Plan": "OpenAI API",
+    "Capability": "API (Model Provider)",
+    "Surface": "openai-python",
+    "Connected To": "Direct calls",
+    "Presence": "Hybrid",
+    "Auth": "Email+Pass",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Cursor",
+    "Product/Plan": "Cursor Pro ($20/mo)",
+    "Capability": "IDE",
+    "Surface": "Cursor IDE (v1.x)",
+    "Connected To": "Windows, Claude backend",
+    "Presence": "Local",
+    "Auth": "VS Code auth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "VS Code",
+    "Product/Plan": "VS Code (Free)",
+    "Capability": "IDE",
+    "Surface": "VS Code",
+    "Connected To": "",
+    "Presence": " 9+ AI)",
+    "Auth": "",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Codeium",
+    "Product/Plan": "Windsurf IDE",
+    "Capability": "IDE",
+    "Surface": "Windsurf IDE",
+    "Connected To": "Flow backend (multi-provider)",
+    "Presence": "Local",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Zed Industries",
+    "Product/Plan": "Zed (Free)",
+    "Capability": "IDE",
+    "Surface": "Zed IDE",
+    "Connected To": "None (local editor)",
+    "Presence": "Local",
+    "Auth": "Local",
+    "Status": "Active"
+  },
+  {
+    "Provider": "BerriAI",
+    "Product/Plan": "LiteLLM Proxy",
+    "Capability": "API (Router/Proxy)",
+    "Surface": "http://localhost:8000",
+    "Connected To": "Grok, Perplexity routing",
+    "Presence": "Local",
+    "Auth": "Local",
+    "Status": "Configured"
+  },
+  {
+    "Provider": "Anomaly",
+    "Product/Plan": "opencode-ai",
+    "Capability": "CLI Utility",
+    "Surface": "opencode-ai (npm global)",
+    "Connected To": "Model providers (varies)",
+    "Presence": "Local",
+    "Auth": "Local",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Perplexity",
+    "Product/Plan": "Perplexity Pro ($20/mo)",
+    "Capability": "Interface (Search)",
+    "Surface": "https://perplexity.ai",
+    "Connected To": "Browser",
+    "Presence": "Web",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Perplexity",
+    "Product/Plan": "Perplexity App",
+    "Capability": "Interface (Mobile/Desktop)",
+    "Surface": "Native app",
+    "Connected To": "Cross-platform",
+    "Presence": "Local",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Perplexity",
+    "Product/Plan": "Perplexity API",
+    "Capability": "API (Search)",
+    "Surface": "perplexity-sonar",
+    "Connected To": "LiteLLM proxy",
+    "Presence": "Hybrid",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "xAI",
+    "Product/Plan": "Grok Premium ($25/mo)",
+    "Capability": "Interface (Social)",
+    "Surface": "https://x.com/i/grok",
+    "Connected To": "Browser/X.com",
+    "Presence": "Web",
+    "Auth": "X.com auth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "xAI",
+    "Product/Plan": "Grok API",
+    "Capability": "API (Model Provider)",
+    "Surface": "grok models",
+    "Connected To": "LiteLLM proxy",
+    "Presence": "Hybrid",
+    "Auth": "X.com auth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Google",
+    "Product/Plan": "Gemini (Free)",
+    "Capability": "Interface (Browser)",
+    "Surface": "https://gemini.google.com",
+    "Connected To": "Browser",
+    "Presence": "Web",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Google",
+    "Product/Plan": "Gemini CLI",
+    "Capability": "CLI Utility",
+    "Surface": "@google/gemini-cli",
+    "Connected To": "Global npm tool",
+    "Presence": "Local",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Google",
+    "Product/Plan": "Gemini Code Assist",
+    "Capability": "IDE Extension",
+    "Surface": "google.geminicodeassist",
+    "Connected To": "VS Code Extension",
+    "Presence": "Local",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Google",
+    "Product/Plan": "Antigravity",
+    "Capability": "IDE",
+    "Surface": "IDE",
+    "Connected To": "Google AI integration",
+    "Presence": "Local",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Google",
+    "Product/Plan": "Gemini API",
+    "Capability": "API (Model Provider)",
+    "Surface": "google-generativeai",
+    "Connected To": "Direct calls",
+    "Presence": "Hybrid",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Google",
+    "Product/Plan": "Google AI Studio",
+    "Capability": "API Playground",
+    "Surface": "https://aistudio.google.com",
+    "Connected To": "Browser",
+    "Presence": "Web",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Google",
+    "Product/Plan": "Google Cloud (Varies)",
+    "Capability": "Infrastructure",
+    "Surface": "https://console.cloud.google.com",
+    "Connected To": "Enterprise deployments",
+    "Presence": "Web",
+    "Auth": "API Keys",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Google",
+    "Product/Plan": "CloudCode",
+    "Capability": "IDE Extension",
+    "Surface": "VS Code",
+    "Connected To": "Cloud Platform Integration",
+    "Presence": "Local",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Qwen",
+    "Product/Plan": "Qwen (Free)",
+    "Capability": "Interface (Browser)",
+    "Surface": "https://qwenlm.alibaba.com",
+    "Connected To": "Browser",
+    "Presence": "Web",
+    "Auth": "Qwen OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Qwen",
+    "Product/Plan": "Qwen CLI",
+    "Capability": "CLI Utility",
+    "Surface": "@qwen-code/qwen-code",
+    "Connected To": "Global npm tool",
+    "Presence": "Local",
+    "Auth": "Qwen OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Obsidian",
+    "Product/Plan": "Obsidian (Free)",
+    "Capability": "Knowledge Base",
+    "Surface": "Desktop App",
+    "Connected To": "C:\\Vault\\Apothecary",
+    "Presence": "Local",
+    "Auth": "Local",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Vault Bridge",
+    "Product/Plan": "Vault Bridge MCP",
+    "Capability": "MCP Server",
+    "Surface": "MCP Server",
+    "Connected To": "LocalDocs RAG, Vault queries",
+    "Presence": "Local",
+    "Auth": "Local",
+    "Status": "Active"
+  },
+  {
+    "Provider": "OpenMCP",
+    "Product/Plan": "OpenMCP Config",
+    "Capability": "MCP Infrastructure",
+    "Surface": "Local config",
+    "Connected To": "MCP connections",
+    "Presence": "Local",
+    "Auth": "Local",
+    "Status": "Active"
+  },
+  {
+    "Provider": "LocalDocs",
+    "Product/Plan": "LocalDocs RAG",
+    "Capability": "Knowledge / RAG",
+    "Surface": "Local scripts",
+    "Connected To": "Vault Bridge MCP",
+    "Presence": "Local",
+    "Auth": "Local",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Vault",
+    "Product/Plan": "Apothecary Vault",
+    "Capability": "Knowledge Base",
+    "Surface": "C:\\Vault\\Apothecary",
+    "Connected To": "LocalDocs, Vault Bridge",
+    "Presence": "Local",
+    "Auth": "Local",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Moonshot AI",
+    "Product/Plan": "Kimi (Free)",
+    "Capability": "Interface (Browser)",
+    "Surface": "https://kimi.moonshot.cn",
+    "Connected To": "Browser",
+    "Presence": "Web",
+    "Auth": "Google OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "DeepSeek",
+    "Product/Plan": "DeepSeek (Free)",
+    "Capability": "Interface (Browser)",
+    "Surface": "https://chat.deepseek.com",
+    "Connected To": "Browser",
+    "Presence": "Web",
+    "Auth": "Google OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Meta",
+    "Product/Plan": "Meta AI (Free)",
+    "Capability": "Interface (Browser)",
+    "Surface": "https://www.meta.ai",
+    "Connected To": "Browser",
+    "Presence": "Web",
+    "Auth": "Facebook auth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "POE",
+    "Product/Plan": "POE (Free)",
+    "Capability": "Interface (Multi-Model)",
+    "Surface": "https://poe.com",
+    "Connected To": "Browser/Mobile",
+    "Presence": "Web",
+    "Auth": "POE account",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Brave",
+    "Product/Plan": "Brave Search (Free)",
+    "Capability": "API (Search)",
+    "Surface": "https://api.search.brave.com",
+    "Connected To": "Moltbot gateway",
+    "Presence": "Web",
+    "Auth": "API Key",
+    "Status": "Active"
+  },
+  {
+    "Provider": "OpenRouter",
+    "Product/Plan": "OpenRouter (Varies)",
+    "Capability": "API (Aggregator)",
+    "Surface": "https://openrouter.ai",
+    "Connected To": "Cost optimization",
+    "Presence": "Web",
+    "Auth": "API Key",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Ollama",
+    "Product/Plan": "Ollama (Free)",
+    "Capability": "Inference Layer",
+    "Surface": "http://localhost:11434",
+    "Connected To": "Multi-App (Continue, Obsidian, RAG)",
+    "Presence": "Local",
+    "Auth": "None",
+    "Status": "Active"
+  },
+  {
+    "Provider": "ggml.ai",
+    "Product/Plan": "Llama.cpp (Free)",
+    "Capability": "Inference Layer",
+    "Surface": "Terminal",
+    "Connected To": "Alternative to Ollama",
+    "Presence": "Local",
+    "Auth": "None",
+    "Status": "Active"
+  },
+  {
+    "Provider": "AnythingLLM",
+    "Product/Plan": "AnythingLLM (Free)",
+    "Capability": "Knowledge / RAG",
+    "Surface": "Desktop app",
+    "Connected To": "Local doc indexing",
+    "Presence": "Local",
+    "Auth": "Local",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Kilo",
+    "Product/Plan": "Kilo code",
+    "Capability": "IDE Extension",
+    "Surface": "VS Code",
+    "Connected To": "",
+    "Presence": "Local",
+    "Auth": "",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Kombai",
+    "Product/Plan": "Kombai",
+    "Capability": "IDE Extension",
+    "Surface": "VS Code",
+    "Connected To": "",
+    "Presence": "Local",
+    "Auth": "",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Cline",
+    "Product/Plan": "Cline",
+    "Capability": "Agent (Autonomous)",
+    "Surface": "VS Code",
+    "Connected To": "Multi-Provider API",
+    "Presence": "Local",
+    "Auth": "API Key",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Roo",
+    "Product/Plan": "Roo Code",
+    "Capability": "Agent (Autonomous)",
+    "Surface": "VS Code",
+    "Connected To": "Multi-Provider API",
+    "Presence": "Local",
+    "Auth": "API Key",
+    "Status": "Active"
+  },
+  {
+    "Provider": "ByteDance",
+    "Product/Plan": "Trae / TraeCN",
+    "Capability": "IDE",
+    "Surface": "Trae IDE",
+    "Connected To": "Adaptive AI (CN/Global)",
+    "Presence": "Local",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "All-Hands-AI",
+    "Product/Plan": "OpenHands",
+    "Capability": "Agent Platform",
+    "Surface": "Web UI (Local)",
+    "Connected To": "Multi-Provider API",
+    "Presence": "Local",
+    "Auth": "API Key",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Aider",
+    "Product/Plan": "Aider",
+    "Capability": "Agent (Autonomous)",
+    "Surface": "Terminal",
+    "Connected To": "Multi-Provider API",
+    "Presence": "Local",
+    "Auth": "API Key",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Oven",
+    "Product/Plan": "Bun",
+    "Capability": "Infrastructure",
+    "Surface": "Terminal",
+    "Connected To": "JS Toolkit",
+    "Presence": "Local",
+    "Auth": "None",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Hugging Face",
+    "Product/Plan": "HF Cache",
+    "Capability": "Infrastructure",
+    "Surface": "Local Directory",
+    "Connected To": "SDKs / Transformers",
+    "Presence": "Local",
+    "Auth": "API Key",
+    "Status": "Active"
+  },
+  {
+    "Provider": "Skills Hub",
+    "Product/Plan": "Agent Fleet",
+    "Capability": "Agent Swarm",
+    "Surface": "Terminal",
+    "Connected To": "MoltBot, Junie, Qoder, Neovate, etc.",
+    "Presence": "Local",
+    "Auth": "OAuth",
+    "Status": "Active"
+  },
+  {
+    "Provider": "OpenMCP",
+    "Product/Plan": "McpJam (Dev)",
+    "Capability": "MCP Dev Tool",
+    "Surface": "Terminal",
+    "Connected To": "MCP Server Testing",
+    "Presence": "Local",
+    "Auth": "",
+    "Status": "Active"
+  }
+]
