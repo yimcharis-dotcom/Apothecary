@@ -92,6 +92,11 @@ $aiKeywords = if ($script:StrictKeywords) { $script:StrictKeywords } else {
     )
 }
 
+# Use dangerous extensions from shared config
+$dangerousExtensions = if ($script:DangerousExtensions) { $script:DangerousExtensions } else {
+    @(".exe", ".msi", ".bat", ".cmd", ".com", ".vbs", ".ps1", ".dll", ".scr")
+}
+
 # ============================================================================
 # Helper Functions
 # ============================================================================
@@ -255,12 +260,15 @@ foreach ($key in $monitorPaths.Keys) {
                 Write-Log "  Category: $category" -Color Gray
 
                 $patternMatch = $name -match $pattern
-                # Use strict keywords (no overly broad terms like 'ai', 'agent', 'github')
-                $aiKeywords = @(
-                    'claude', 'cursor', 'zed', 'ollama', 'gemini', 'windsurf',
-                    'mcp', 'anthropic', 'openai', 'copilot', 'codeium',
-                    'tabnine', 'aider', 'continue', 'cody', 'supermaven', 'chatgpt', 'codegpt'
-                )
+                # Use strict keywords from shared config (passed via MessageData)
+                $aiKeywords = $Event.MessageData.AIKeywords
+                if (-not $aiKeywords) {
+                    $aiKeywords = @(
+                        'claude', 'cursor', 'zed', 'ollama', 'gemini', 'windsurf',
+                        'mcp', 'anthropic', 'openai', 'copilot', 'codeium',
+                        'tabnine', 'aider', 'continue', 'cody', 'supermaven', 'chatgpt', 'codegpt'
+                    )
+                }
                 $nameMatch = $aiKeywords | Where-Object { $name -like "*$_*" }
 
                 # Config file validation - check if folder has expected AI tool config files
@@ -511,6 +519,7 @@ foreach ($key in $monitorPaths.Keys) {
             DebounceMsec = $script:debounceMsec
             Mutex = $script:mutex
             MutexTimeout = $script:mutexTimeout
+            AIKeywords = $aiKeywords
         }
 
         $null = Register-ObjectEvent -InputObject $watcher -EventName Created -Action $createAction -MessageData $messageData
@@ -609,8 +618,11 @@ if (Test-Path $skillsPath) {
                 Write-Log "  -> Valid skill: $($foundSkillFiles -join ', ')" -Color DarkGreen
             }
 
-            # Security check - look for dangerous files
-            $dangerousExts = @(".exe", ".msi", ".bat", ".cmd", ".com", ".vbs", ".ps1", ".dll")
+            # Security check - look for dangerous files (uses shared config)
+            $dangerousExts = $Event.MessageData.DangerousExtensions
+            if (-not $dangerousExts) {
+                $dangerousExts = @(".exe", ".msi", ".bat", ".cmd", ".com", ".vbs", ".ps1", ".dll", ".scr")
+            }
             $dangerousFiles = Get-ChildItem -Path $fullPath -Recurse -File -ErrorAction SilentlyContinue |
                 Where-Object { $dangerousExts -contains $_.Extension.ToLower() }
 
@@ -733,6 +745,7 @@ if (Test-Path $skillsPath) {
             DebounceMsec = $script:debounceMsec
             Mutex = $script:mutex
             MutexTimeout = $script:mutexTimeout
+            DangerousExtensions = $dangerousExtensions
         }
 
         $null = Register-ObjectEvent -InputObject $skillsWatcher -EventName Created -Action $skillCreateAction -MessageData $skillsMessageData
