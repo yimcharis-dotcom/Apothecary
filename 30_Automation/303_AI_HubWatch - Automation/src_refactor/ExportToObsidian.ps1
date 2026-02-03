@@ -1,12 +1,19 @@
 # ExportToObsidian.ps1
 # Auto-generate AI Hub inventory as Obsidian note
+# v2: + Portable paths
 
 param(
-    [string]$VaultPath = "C:\Vault\Apothecary\20_AI tools",
+    [string]$VaultPath = "$env:USERPROFILE\Vault\Apothecary\20_AI tools",
     [string]$NoteName = "AI_Hub_Inventory_AUTO.md"
 )
 
-$HubDir = "C:\Users\YC\AI_hub"
+# Load shared config
+$configPath = Join-Path $PSScriptRoot "AIToolsConfig.ps1"
+if (Test-Path $configPath) {
+    . $configPath
+}
+
+$HubDir = if ($script:HubDir) { $script:HubDir } elseif ($env:AI_HUB_PATH) { $env:AI_HUB_PATH } else { "$env:USERPROFILE\AI_hub" }
 $OutputPath = Join-Path $VaultPath $NoteName
 
 Write-Host "Generating AI Hub inventory for Obsidian..." -ForegroundColor Cyan
@@ -52,9 +59,9 @@ type: dashboard
 
 # AI Hub Inventory
 
-> **Auto-generated on**: $timestamp  
-> **Source**: ``C:\Users\YC\AI_hub``  
-> **Total Agents**: $($agents.Count)  
+> **Auto-generated on**: $timestamp
+> **Source**: ``$HubDir``
+> **Total Agents**: $($agents.Count)
 > **Agents with Skills**: $($agentsWithSkills.Count)  
 
 ---
@@ -82,7 +89,7 @@ $( ($skillsIndex.GetEnumerator() | Sort-Object { $_.Value.Count } -Descending | 
 
 ### View Inventory
 ``````powershell
-cd C:\Users\YC\AI_hub
+cd $HubDir
 .\ShowSkills.ps1        # File system view
 npx skills list -g      # Skills CLI view
 .\ShowConfigs.ps1       # Find all configs
@@ -112,8 +119,8 @@ npx skills update -y
 
 ---
 
-*Last updated: $timestamp*  
-*Auto-generated from C:\Users\YC\AI_hub*
+*Last updated: $timestamp*
+*Auto-generated from $HubDir*
 
 "@
 
