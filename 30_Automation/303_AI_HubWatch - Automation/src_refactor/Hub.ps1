@@ -6,7 +6,8 @@ param(
     [string]$Command = "menu"
 )
 
-$HubDir = "C:\Users\YC\AI_hub"
+$HubDir = if ($env:AI_HUB_PATH) { $env:AI_HUB_PATH } else { "$env:USERPROFILE\AI_hub" }
+$TaskName = "AI_HubWatch_AutoMonitor"
 
 function Show-Menu {
     Clear-Host
@@ -27,8 +28,12 @@ function Show-Menu {
     Write-Host "UTILITIES" -ForegroundColor Yellow
     Write-Host "  7. Open Hub in VSCode" -ForegroundColor White
     Write-Host "  8. Export to Obsidian" -ForegroundColor White
-    Write-Host "  9. Start WatchHub monitor (v2)" -ForegroundColor White
-    Write-Host " 10. Track Installation (before/after)" -ForegroundColor White
+    Write-Host ""
+    Write-Host "WATCHHUB" -ForegroundColor Yellow
+    Write-Host "  9. Start WatchHub monitor" -ForegroundColor White
+    Write-Host " 10. Stop WatchHub monitor" -ForegroundColor White
+    Write-Host " 11. WatchHub status" -ForegroundColor White
+    Write-Host " 12. Track Installation (before/after)" -ForegroundColor White
     Write-Host ""
     Write-Host "  Q. Quit" -ForegroundColor DarkGray
     Write-Host ""
@@ -83,9 +88,91 @@ function Open-InVSCode {
 }
 
 function Start-WatchHub {
-    Write-Host "`nStarting WatchHub Real-Time Monitor v2..." -ForegroundColor Cyan
+    Write-Host "`nStarting WatchHub Real-Time Monitor..." -ForegroundColor Cyan
     Write-Host "Press Ctrl+C to stop" -ForegroundColor DarkGray
-    & "$HubDir\WatchHub_Realtime.ps1"
+    & "$PSScriptRoot\WatchHub_Realtime.ps1"
+}
+
+function Stop-WatchHub {
+    Write-Host "`n=== Stopping WatchHub ===" -ForegroundColor Yellow
+
+    # Stop scheduled task if running
+    $task = Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue
+    if ($task -and $task.State -eq 'Running') {
+        Stop-ScheduledTask -TaskName $TaskName
+        Write-Host "[+] Stopped scheduled task: $TaskName" -ForegroundColor Green
+    }
+
+    # Kill any running PowerShell processes with WatchHub
+    $procs = Get-Process -Name powershell, pwsh -ErrorAction SilentlyContinue | Where-Object {
+        $_.CommandLine -like "*WatchHub*" -or $_.CommandLine -like "*WatchHub_Realtime*"
+    }
+
+    if ($procs) {
+        $procs | ForEach-Object {
+            Stop-Process -Id $_.Id -Force -ErrorAction SilentlyContinue
+            Write-Host "[+] Killed process: $($_.Id)" -ForegroundColor Green
+        }
+    }
+
+    # Alternative: find by window title or script path
+    Get-CimInstance Win32_Process -Filter "Name = 'powershell.exe'" -ErrorAction SilentlyContinue |
+        Where-Object { $_.CommandLine -like "*WatchHub*" } |
+        ForEach-Object {
+            Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue
+            Write-Host "[+] Killed process: $($_.ProcessId)" -ForegroundColor Green
+        }
+
+    Write-Host "`nWatchHub stopped. Safe to run manual inventory." -ForegroundColor Cyan
+}
+
+function Get-WatchHubStatus {
+    Write-Host "`n=== WatchHub Status ===" -ForegroundColor Cyan
+
+    # Check scheduled task
+    $task = Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue
+    if ($task) {
+        $stateColor = switch ($task.State) {
+            'Running' { 'Green' }
+            'Ready' { 'Yellow' }
+            default { 'DarkGray' }
+        }
+        Write-Host "`nScheduled Task:" -ForegroundColor White
+        Write-Host "  Name:   $TaskName" -ForegroundColor DarkGray
+        Write-Host "  State:  $($task.State)" -ForegroundColor $stateColor
+    } else {
+        Write-Host "`nScheduled Task: Not installed" -ForegroundColor DarkGray
+    }
+
+    # Check running processes
+    $watchHubProcs = Get-CimInstance Win32_Process -Filter "Name = 'powershell.exe'" -ErrorAction SilentlyContinue |
+        Where-Object { $_.CommandLine -like "*WatchHub*" }
+
+    Write-Host "`nRunning Processes:" -ForegroundColor White
+    if ($watchHubProcs) {
+        $watchHubProcs | ForEach-Object {
+            Write-Host "  PID $($_.ProcessId): Running" -ForegroundColor Green
+        }
+    } else {
+        Write-Host "  None" -ForegroundColor DarkGray
+    }
+
+    # Check recent logs
+    $logsDir = Join-Path $HubDir "_Change_log"
+    if (Test-Path $logsDir) {
+        $recentLogs = Get-ChildItem $logsDir -Filter "*.txt" -ErrorAction SilentlyContinue |
+            Sort-Object LastWriteTime -Descending |
+            Select-Object -First 3
+
+        Write-Host "`nRecent Activity:" -ForegroundColor White
+        if ($recentLogs) {
+            $recentLogs | ForEach-Object {
+                Write-Host "  $($_.Name) - $($_.LastWriteTime)" -ForegroundColor DarkGray
+            }
+        } else {
+            Write-Host "  No recent logs" -ForegroundColor DarkGray
+        }
+    }
 }
 
 function Track-Installation {
@@ -100,28 +187,32 @@ switch ($Command.ToLower()) {
             $choice = Read-Host "Select option"
 
             switch ($choice) {
-                "1" { & "$HubDir\ShowSkills.ps1"; pause }
-                "2" { & "$HubDir\ShowConfigs.ps1"; pause }
+                "1" { & "$PSScriptRoot\ShowSkills.ps1"; pause }
+                "2" { & "$PSScriptRoot\ShowConfigs.ps1"; pause }
                 "3" { Show-AllAgents; pause }
-                "4" { & "$HubDir\SyncSkills.ps1"; pause }
+                "4" { & "$PSScriptRoot\SyncSkills.ps1"; pause }
                 "5" { Install-SkillToAll; pause }
                 "6" { npx skills update --yes; pause }
                 "7" { Open-InVSCode; pause }
-                "8" { & "$HubDir\ExportToObsidian.ps1"; pause }
+                "8" { & "$PSScriptRoot\ExportToObsidian.ps1"; pause }
                 "9" { Start-WatchHub }
-                "10" { Track-Installation; pause }
+                "10" { Stop-WatchHub; pause }
+                "11" { Get-WatchHubStatus; pause }
+                "12" { Track-Installation; pause }
                 "q" { exit 0 }
                 default { Write-Host "Invalid option!" -ForegroundColor Red; Start-Sleep 1 }
             }
         }
     }
-    "skills" { & "$HubDir\ShowSkills.ps1" }
-    "configs" { & "$HubDir\ShowConfigs.ps1" }
+    "skills" { & "$PSScriptRoot\ShowSkills.ps1" }
+    "configs" { & "$PSScriptRoot\ShowConfigs.ps1" }
     "agents" { Show-AllAgents }
-    "sync" { & "$HubDir\SyncSkills.ps1" }
+    "sync" { & "$PSScriptRoot\SyncSkills.ps1" }
     "code" { Open-InVSCode }
-    "obsidian" { & "$HubDir\ExportToObsidian.ps1" }
+    "obsidian" { & "$PSScriptRoot\ExportToObsidian.ps1" }
     "watch" { Start-WatchHub }
+    "stop" { Stop-WatchHub }
+    "status" { Get-WatchHubStatus }
     "track" { Track-Installation }
     default {
         Write-Host "Unknown command: $Command" -ForegroundColor Red
@@ -133,7 +224,9 @@ switch ($Command.ToLower()) {
         Write-Host "  .\Hub.ps1 sync     - Sync skills"
         Write-Host "  .\Hub.ps1 code     - Open in VSCode"
         Write-Host "  .\Hub.ps1 obsidian - Export to Obsidian"
-        Write-Host "  .\Hub.ps1 watch    - Start WatchHub v2"
+        Write-Host "  .\Hub.ps1 watch    - Start WatchHub"
+        Write-Host "  .\Hub.ps1 stop     - Stop WatchHub"
+        Write-Host "  .\Hub.ps1 status   - WatchHub status"
         Write-Host "  .\Hub.ps1 track    - Track installation"
     }
 }

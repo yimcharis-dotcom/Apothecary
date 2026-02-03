@@ -1,17 +1,9 @@
-# WatchHub Auto-Start Setup (Auto-elevates to Admin)
+# WatchHub Auto-Start Setup (User-Level - No Admin Required)
 # - Shows "Started" notification on launch
 # - Only logs when errors occur
+# - Runs at user level (no elevation needed)
 
 param([switch]$Remove)
-
-# Auto-elevate to Administrator if not already
-if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Write-Host "Requesting Administrator privileges..." -ForegroundColor Yellow
-    $arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`""
-    if ($Remove) { $arguments += " -Remove" }
-    Start-Process powershell -Verb RunAs -ArgumentList $arguments
-    exit
-}
 
 $TaskName = "AI_HubWatch_AutoMonitor"
 $ScriptPath = "$PSScriptRoot\WatchHub_Realtime.ps1"
@@ -47,7 +39,7 @@ if ($Remove) {
 # ============================================================================
 
 Write-Host "`n=== Setting Up WatchHub Auto-Start ===" -ForegroundColor Cyan
-Write-Host "Running as: Administrator" -ForegroundColor Green
+Write-Host "Running as: $env:USERNAME (User-Level)" -ForegroundColor Green
 
 if (-not (Test-Path $ScriptPath)) {
     Write-Host "[!] ERROR: WatchHub_Realtime.ps1 not found!" -ForegroundColor Red
@@ -209,7 +201,7 @@ $Trigger = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
 $Principal = New-ScheduledTaskPrincipal `
     -UserId $env:USERNAME `
     -LogonType Interactive `
-    -RunLevel Highest
+    -RunLevel Limited
 
 $Settings = New-ScheduledTaskSettingsSet `
     -AllowStartIfOnBatteries `
@@ -243,6 +235,7 @@ try {
     Write-Host "==================================================" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "Behavior:" -ForegroundColor White
+    Write-Host "  - Runs at USER level (no admin)" -ForegroundColor DarkGray
     Write-Host "  - Shows popup on startup: 'Started'" -ForegroundColor DarkGray
     Write-Host "  - Runs silently (no logging)" -ForegroundColor DarkGray
     Write-Host "  - On error: Alerts + creates error log" -ForegroundColor DarkGray
