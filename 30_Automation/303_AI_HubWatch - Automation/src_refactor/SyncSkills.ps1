@@ -1,6 +1,7 @@
 # SyncSkills.ps1
 # Symlink skills from source agent to all others
 # v2: Uses symlinks instead of copies + supports deletion
+# v3: + Shared config + Skill validation + Portable paths
 
 param(
     [Parameter(Mandatory=$false)]
@@ -10,10 +11,31 @@ param(
     [string]$SkillName = "*",  # Default: all skills
 
     [Parameter(Mandatory=$false)]
-    [switch]$Delete  # Remove symlinks instead of creating
+    [switch]$Delete,  # Remove symlinks instead of creating
+
+    [Parameter(Mandatory=$false)]
+    [switch]$SkipValidation  # Skip skill file validation
 )
 
-$HubDir = "C:\Users\YC\AI_hub"
+# Load shared config
+$configPath = Join-Path $PSScriptRoot "AIToolsConfig.ps1"
+if (Test-Path $configPath) {
+    . $configPath
+}
+
+$HubDir = if ($script:HubDir) { $script:HubDir } elseif ($env:AI_HUB_PATH) { $env:AI_HUB_PATH } else { "$env:USERPROFILE\AI_hub" }
+
+# Skill validation function
+function Test-ValidSkill {
+    param([string]$SkillPath)
+    $signatures = @("skill.json", "package.json", "index.js", "index.ts", "main.py", "__init__.py", "skill.yaml", "skill.yml")
+    foreach ($sig in $signatures) {
+        if (Test-Path (Join-Path $SkillPath $sig)) { return $true }
+    }
+    # Fallback: check if folder has any content
+    $items = Get-ChildItem -Path $SkillPath -ErrorAction SilentlyContinue
+    return $items.Count -gt 0
+}
 
 # Get source skills directory
 $sourcePath = Join-Path $HubDir $SourceAgent
@@ -70,8 +92,27 @@ if ($Delete) {
         exit 0
     }
 
+    # Validate skills before syncing (unless -SkipValidation)
+    $validSkills = @()
+    $invalidSkills = @()
+    foreach ($skill in $skillsToCopy) {
+        if ($SkipValidation -or (Test-ValidSkill -SkillPath $skill.FullName)) {
+            $validSkills += $skill
+        } else {
+            $invalidSkills += $skill
+        }
+    }
+
     Write-Host "`n=== Syncing from $SourceAgent (symlinks) ===" -ForegroundColor Cyan
-    Write-Host "Skills to sync: $($skillsToCopy.Name -join ', ')" -ForegroundColor White
+    Write-Host "Valid skills: $($validSkills.Name -join ', ')" -ForegroundColor White
+    if ($invalidSkills.Count -gt 0) {
+        Write-Host "Invalid (skipped): $($invalidSkills.Name -join ', ')" -ForegroundColor DarkYellow
+    }
+
+    if ($validSkills.Count -eq 0) {
+        Write-Host "No valid skills to sync" -ForegroundColor Yellow
+        exit 0
+    }
 
     $linkedCount = 0
     $skippedCount = 0
@@ -81,7 +122,7 @@ if ($Delete) {
 
         Write-Host "`n$($agent.Name):" -ForegroundColor Green
 
-        foreach ($skill in $skillsToCopy) {
+        foreach ($skill in $validSkills) {
             $targetPath = Join-Path $targetSkillsDir $skill.Name
 
             if (Test-Path $targetPath) {
@@ -102,11 +143,12 @@ if ($Delete) {
     }
 
     Write-Host "`n=== Summary ===" -ForegroundColor Cyan
-    Write-Host "Symlinked: $linkedCount | Skipped: $skippedCount" -ForegroundColor White
+    Write-Host "Symlinked: $linkedCount | Skipped: $skippedCount | Invalid: $($invalidSkills.Count)" -ForegroundColor White
 }
 
 # Usage examples
 Write-Host "`nUsage:" -ForegroundColor DarkGray
-Write-Host "  .\SyncSkills.ps1                           # Symlink all skills" -ForegroundColor DarkGray
+Write-Host "  .\SyncSkills.ps1                           # Symlink all valid skills" -ForegroundColor DarkGray
 Write-Host "  .\SyncSkills.ps1 -SkillName 'excel-editor' # Symlink one skill" -ForegroundColor DarkGray
 Write-Host "  .\SyncSkills.ps1 -SkillName 'old-skill' -Delete  # Remove symlinks" -ForegroundColor DarkGray
+Write-Host "  .\SyncSkills.ps1 -SkipValidation           # Skip skill file validation" -ForegroundColor DarkGray

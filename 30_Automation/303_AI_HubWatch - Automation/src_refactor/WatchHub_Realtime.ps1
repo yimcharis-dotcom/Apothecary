@@ -9,6 +9,10 @@
 #     + Efficient event wait (30s intervals)
 #     + Debug logging option
 #     + Mutex locking (prevents concurrent conflicts)
+# v4: + Config file validation (reduces false positives)
+#     + Shared AIToolsConfig.ps1 (single source of truth)
+#     + Skill validation (checks for skill.json, package.json, etc.)
+#     + Removed overly broad keywords (ai, agent, github)
 # ============================================================================
 
 param(
@@ -16,6 +20,16 @@ param(
     [switch]$Verbose,
     [switch]$Debug
 )
+
+# ============================================================================
+# Load Shared Configuration
+# ============================================================================
+$configPath = Join-Path $PSScriptRoot "AIToolsConfig.ps1"
+if (Test-Path $configPath) {
+    . $configPath
+} else {
+    Write-Host "[!] AIToolsConfig.ps1 not found - using defaults" -ForegroundColor Yellow
+}
 
 # ============================================================================
 # Debounce Configuration (prevents duplicate events)
@@ -69,12 +83,14 @@ $monitorPaths = @{
     }
 }
 
-$aiKeywords = @(
-    'claude', 'cursor', 'zed', 'ollama', 'gemini', 'windsurf',
-    'mcp', 'anthropic', 'openai', 'copilot', 'codeium',
-    'tabnine', 'github', 'llm', 'ai', 'gpt', 'chatbot',
-    'agent', 'aider', 'continue', 'cody', 'supermaven'
-)
+# Use strict keywords from shared config (removes overly broad: ai, agent, github, chatbot)
+$aiKeywords = if ($script:StrictKeywords) { $script:StrictKeywords } else {
+    @(
+        'claude', 'cursor', 'zed', 'ollama', 'gemini', 'windsurf',
+        'mcp', 'anthropic', 'openai', 'copilot', 'codeium',
+        'tabnine', 'aider', 'continue', 'cody', 'supermaven', 'chatgpt', 'codegpt'
+    )
+}
 
 # ============================================================================
 # Helper Functions
@@ -159,13 +175,15 @@ if (-not (Test-Path $LogsFolder)) {
 # ============================================================================
 
 Write-Log "=======================================================" -Color Cyan
-Write-Log "  AI Hub Real-Time Monitor v3" -Color Cyan
+Write-Log "  AI Hub Real-Time Monitor v4" -Color Cyan
 Write-Log "  + Logs: _Change_log (_add / _del)" -Color DarkCyan
 Write-Log "  + Deletion detection & cleanup" -Color DarkCyan
 Write-Log "  + Skills auto-sync (symlinks)" -Color DarkMagenta
 Write-Log "  + Debouncing (2s dedup window)" -Color DarkGreen
 Write-Log "  + Duplicate junction detection" -Color DarkGreen
 Write-Log "  + Mutex locking (thread-safe)" -Color DarkGreen
+Write-Log "  + Config file validation (v4)" -Color DarkYellow
+Write-Log "  + Skill validation (v4)" -Color DarkYellow
 if ($script:DebugMode) {
     Write-Log "  + DEBUG MODE ON (logging to DEBUG_*.log)" -Color Yellow
 }
@@ -237,16 +255,53 @@ foreach ($key in $monitorPaths.Keys) {
                 Write-Log "  Category: $category" -Color Gray
 
                 $patternMatch = $name -match $pattern
+                # Use strict keywords (no overly broad terms like 'ai', 'agent', 'github')
                 $aiKeywords = @(
                     'claude', 'cursor', 'zed', 'ollama', 'gemini', 'windsurf',
                     'mcp', 'anthropic', 'openai', 'copilot', 'codeium',
-                    'tabnine', 'github', 'llm', 'ai', 'gpt', 'chatbot',
-                    'agent', 'aider', 'continue', 'cody', 'supermaven'
+                    'tabnine', 'aider', 'continue', 'cody', 'supermaven', 'chatgpt', 'codegpt'
                 )
                 $nameMatch = $aiKeywords | Where-Object { $name -like "*$_*" }
 
+                # Config file validation - check if folder has expected AI tool config files
+                $configValidated = $false
+                $validationReason = ""
                 if ($nameMatch -or $patternMatch) {
+                    # Wait a moment for files to be created
+                    Start-Sleep -Milliseconds 500
+
+                    # Check for common AI tool config files
+                    $configSignatures = @(
+                        "settings.json", "config.json", "claude_desktop_config.json",
+                        "extensions.json", "hosts.json", "models", "skill.json",
+                        "package.json", ".aider.conf.yml", "keymap.json"
+                    )
+                    $foundConfigs = @()
+                    foreach ($sig in $configSignatures) {
+                        $sigPath = Join-Path $fullPath $sig
+                        if (Test-Path $sigPath) {
+                            $foundConfigs += $sig
+                        }
+                    }
+
+                    if ($foundConfigs.Count -gt 0) {
+                        $configValidated = $true
+                        $validationReason = "Config files found: $($foundConfigs -join ', ')"
+                    } else {
+                        # Check if folder has any content (might be new install)
+                        $items = Get-ChildItem -Path $fullPath -ErrorAction SilentlyContinue
+                        if ($items.Count -gt 0) {
+                            $configValidated = $true
+                            $validationReason = "Folder has content ($($items.Count) items)"
+                        } else {
+                            $validationReason = "Empty folder - skipping"
+                        }
+                    }
+                }
+
+                if (($nameMatch -or $patternMatch) -and $configValidated) {
                     Write-Log "  -> Identified as AI tool!" -Color Green
+                    Write-Log "  -> $validationReason" -Color DarkGreen
 
                     $cleanName = $name -replace '^\.', ''
                     $cleanName = $cleanName -replace '[<>:"/\\|?*]', '_'
@@ -326,6 +381,8 @@ foreach ($key in $monitorPaths.Keys) {
                             Write-Log "  [MUTEX] Released lock" -Color DarkGray -DebugOnly
                         }
                     }
+                } elseif ($nameMatch -or $patternMatch) {
+                    Write-Log "  [o] Name matches but validation failed: $validationReason" -Color DarkYellow
                 } else {
                     Write-Log "  [o] Not identified as AI tool (skipping)" -Color DarkGray
                 }
@@ -522,6 +579,35 @@ if (Test-Path $skillsPath) {
             Write-Log "NEW SKILL DETECTED" -Color Magenta
             Write-Log "  Name: $name" -Color White
             Write-Log "  Path: $fullPath" -Color Gray
+
+            # Validate skill has expected files
+            Start-Sleep -Milliseconds 500  # Wait for files to be created
+            $skillSignatures = @("skill.json", "package.json", "index.js", "index.ts", "main.py", "__init__.py", "skill.yaml", "skill.yml")
+            $foundSkillFiles = @()
+            foreach ($sig in $skillSignatures) {
+                $sigPath = Join-Path $fullPath $sig
+                if (Test-Path $sigPath) {
+                    $foundSkillFiles += $sig
+                }
+            }
+
+            $isValidSkill = $foundSkillFiles.Count -gt 0
+            if (-not $isValidSkill) {
+                # Check if folder has any content
+                $items = Get-ChildItem -Path $fullPath -ErrorAction SilentlyContinue
+                $isValidSkill = $items.Count -gt 0
+            }
+
+            if (-not $isValidSkill) {
+                Write-Log "  [o] Empty folder - not a valid skill (skipping)" -Color DarkYellow
+                Write-Log "=====================================================" -Color Magenta
+                Write-Log ""
+                return
+            }
+
+            if ($foundSkillFiles.Count -gt 0) {
+                Write-Log "  -> Valid skill: $($foundSkillFiles -join ', ')" -Color DarkGreen
+            }
 
             # Trigger SyncSkills to symlink to all agents
             $syncScript = Join-Path $hubPath "SyncSkills.ps1"
