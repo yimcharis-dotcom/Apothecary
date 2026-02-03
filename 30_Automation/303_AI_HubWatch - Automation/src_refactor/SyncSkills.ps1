@@ -3,6 +3,7 @@
 # v2: Uses symlinks instead of copies + supports deletion
 # v3: + Shared config + Skill validation + Portable paths
 # v4: + Agent validation + Security checks
+# v5: + Uses shared functions from AIToolsConfig.ps1
 
 param(
     [Parameter(Mandatory=$false)]
@@ -24,50 +25,62 @@ param(
     [switch]$SkipAgentValidation  # Skip agent identity validation
 )
 
-# Load shared config
+# Load shared config (provides Test-IsValidSkill, Test-SkillSecurity, Test-IsValidAgent, $DangerousExtensions)
 $configPath = Join-Path $PSScriptRoot "AIToolsConfig.ps1"
+$configLoaded = $false
 if (Test-Path $configPath) {
     . $configPath
+    $configLoaded = $true
 }
 
 $HubDir = if ($script:HubDir) { $script:HubDir } elseif ($env:AI_HUB_PATH) { $env:AI_HUB_PATH } else { "$env:USERPROFILE\AI_hub" }
 
-# Skill validation function
-function Test-ValidSkill {
+# Use shared dangerous extensions or fallback
+$dangerousExts = if ($script:DangerousExtensions) { $script:DangerousExtensions } else {
+    @(".exe", ".msi", ".bat", ".cmd", ".com", ".vbs", ".ps1", ".dll", ".scr")
+}
+
+# Wrapper functions that use shared config or fallback to local implementation
+function Test-ValidSkillWrapper {
     param([string]$SkillPath)
+    if ($configLoaded -and (Get-Command Test-IsValidSkill -ErrorAction SilentlyContinue)) {
+        return Test-IsValidSkill -SkillPath $SkillPath
+    }
+    # Fallback
     $signatures = @("skill.json", "package.json", "index.js", "index.ts", "main.py", "__init__.py", "skill.yaml", "skill.yml")
     foreach ($sig in $signatures) {
         if (Test-Path (Join-Path $SkillPath $sig)) { return $true }
     }
-    # Fallback: check if folder has any content
     $items = Get-ChildItem -Path $SkillPath -ErrorAction SilentlyContinue
     return $items.Count -gt 0
 }
 
-# Security check function
-function Test-SkillSecurityLocal {
+function Test-SkillSecurityWrapper {
     param([string]$SkillPath)
-    $dangerousExts = @(".exe", ".msi", ".bat", ".cmd", ".com", ".vbs", ".ps1", ".dll", ".scr")
+    if ($configLoaded -and (Get-Command Test-SkillSecurity -ErrorAction SilentlyContinue)) {
+        return Test-SkillSecurity -SkillPath $SkillPath
+    }
+    # Fallback
     $dangerous = Get-ChildItem -Path $SkillPath -Recurse -File -ErrorAction SilentlyContinue |
         Where-Object { $dangerousExts -contains $_.Extension.ToLower() }
     return @{
         IsSafe = ($dangerous.Count -eq 0)
         DangerousFiles = $dangerous
+        Warnings = @()
     }
 }
 
-# Agent validation function (check if folder is real AI agent)
-function Test-ValidAgentLocal {
+function Test-ValidAgentWrapper {
     param([string]$AgentPath)
-    # Check for common AI tool config files
-    $configSignatures = @(
-        "settings.json", "config.json", "claude_desktop_config.json",
-        "extensions.json", "hosts.json", "keymap.json", "state.vscdb"
-    )
+    if ($configLoaded -and (Get-Command Test-IsValidAgent -ErrorAction SilentlyContinue)) {
+        $result = Test-IsValidAgent -AgentPath $AgentPath
+        return $result.IsValid
+    }
+    # Fallback - check for config files or name pattern
+    $configSignatures = @("settings.json", "config.json", "claude_desktop_config.json", "extensions.json", "hosts.json", "keymap.json", "state.vscdb")
     foreach ($sig in $configSignatures) {
         if (Test-Path (Join-Path $AgentPath $sig)) { return $true }
     }
-    # Also valid if name matches known AI tools
     $folderName = Split-Path $AgentPath -Leaf
     $aiPatterns = @("claude", "cursor", "zed", "ollama", "copilot", "cody", "continue", "anthropic", "code", "vscode")
     foreach ($pattern in $aiPatterns) {
@@ -96,7 +109,7 @@ $targetAgents = @()
 $invalidAgents = @()
 
 foreach ($agent in $allPotentialAgents) {
-    if ($SkipAgentValidation -or (Test-ValidAgentLocal -AgentPath $agent.FullName)) {
+    if ($SkipAgentValidation -or (Test-ValidAgentWrapper -AgentPath $agent.FullName)) {
         $targetAgents += $agent
     } else {
         $invalidAgents += $agent
@@ -153,17 +166,17 @@ if ($Delete) {
     $unsafeSkills = @()
 
     foreach ($skill in $skillsToCopy) {
-        # Check validity
-        $isValid = $SkipValidation -or (Test-ValidSkill -SkillPath $skill.FullName)
+        # Check validity (uses shared Test-IsValidSkill or fallback)
+        $isValid = $SkipValidation -or (Test-ValidSkillWrapper -SkillPath $skill.FullName)
 
         if (-not $isValid) {
             $invalidSkills += $skill
             continue
         }
 
-        # Security check (unless -SkipSecurity)
+        # Security check (uses shared Test-SkillSecurity or fallback)
         if (-not $SkipSecurity) {
-            $secCheck = Test-SkillSecurityLocal -SkillPath $skill.FullName
+            $secCheck = Test-SkillSecurityWrapper -SkillPath $skill.FullName
             if (-not $secCheck.IsSafe) {
                 $unsafeSkills += @{ Skill = $skill; Files = $secCheck.DangerousFiles }
                 continue
