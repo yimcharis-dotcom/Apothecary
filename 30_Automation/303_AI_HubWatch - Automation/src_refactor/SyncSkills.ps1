@@ -2,6 +2,7 @@
 # Symlink skills from source agent to all others
 # v2: Uses symlinks instead of copies + supports deletion
 # v3: + Shared config + Skill validation + Portable paths
+# v4: + Agent validation + Security checks
 
 param(
     [Parameter(Mandatory=$false)]
@@ -14,7 +15,13 @@ param(
     [switch]$Delete,  # Remove symlinks instead of creating
 
     [Parameter(Mandatory=$false)]
-    [switch]$SkipValidation  # Skip skill file validation
+    [switch]$SkipValidation,  # Skip skill file validation
+
+    [Parameter(Mandatory=$false)]
+    [switch]$SkipSecurity,  # Skip security checks (dangerous file detection)
+
+    [Parameter(Mandatory=$false)]
+    [switch]$SkipAgentValidation  # Skip agent identity validation
 )
 
 # Load shared config
@@ -37,6 +44,38 @@ function Test-ValidSkill {
     return $items.Count -gt 0
 }
 
+# Security check function
+function Test-SkillSecurityLocal {
+    param([string]$SkillPath)
+    $dangerousExts = @(".exe", ".msi", ".bat", ".cmd", ".com", ".vbs", ".ps1", ".dll", ".scr")
+    $dangerous = Get-ChildItem -Path $SkillPath -Recurse -File -ErrorAction SilentlyContinue |
+        Where-Object { $dangerousExts -contains $_.Extension.ToLower() }
+    return @{
+        IsSafe = ($dangerous.Count -eq 0)
+        DangerousFiles = $dangerous
+    }
+}
+
+# Agent validation function (check if folder is real AI agent)
+function Test-ValidAgentLocal {
+    param([string]$AgentPath)
+    # Check for common AI tool config files
+    $configSignatures = @(
+        "settings.json", "config.json", "claude_desktop_config.json",
+        "extensions.json", "hosts.json", "keymap.json", "state.vscdb"
+    )
+    foreach ($sig in $configSignatures) {
+        if (Test-Path (Join-Path $AgentPath $sig)) { return $true }
+    }
+    # Also valid if name matches known AI tools
+    $folderName = Split-Path $AgentPath -Leaf
+    $aiPatterns = @("claude", "cursor", "zed", "ollama", "copilot", "cody", "continue", "anthropic", "code", "vscode")
+    foreach ($pattern in $aiPatterns) {
+        if ($folderName -like "*$pattern*") { return $true }
+    }
+    return $false
+}
+
 # Get source skills directory
 $sourcePath = Join-Path $HubDir $SourceAgent
 $sourceSkillsDir = Join-Path $sourcePath "skills"
@@ -47,9 +86,25 @@ if (-not (Test-Path $sourceSkillsDir)) {
 }
 
 # Find all agents with skills directories
-$targetAgents = Get-ChildItem -Path $HubDir -Directory | Where-Object {
+$allPotentialAgents = Get-ChildItem -Path $HubDir -Directory | Where-Object {
     $skillsPath = Join-Path $_.FullName "skills"
     ($_.Name -ne $SourceAgent) -and (Test-Path $skillsPath)
+}
+
+# Validate agents (unless -SkipAgentValidation)
+$targetAgents = @()
+$invalidAgents = @()
+
+foreach ($agent in $allPotentialAgents) {
+    if ($SkipAgentValidation -or (Test-ValidAgentLocal -AgentPath $agent.FullName)) {
+        $targetAgents += $agent
+    } else {
+        $invalidAgents += $agent
+    }
+}
+
+if ($invalidAgents.Count -gt 0) {
+    Write-Host "`nSkipped non-AI agents: $($invalidAgents.Name -join ', ')" -ForegroundColor DarkYellow
 }
 
 if ($Delete) {
@@ -95,18 +150,42 @@ if ($Delete) {
     # Validate skills before syncing (unless -SkipValidation)
     $validSkills = @()
     $invalidSkills = @()
+    $unsafeSkills = @()
+
     foreach ($skill in $skillsToCopy) {
-        if ($SkipValidation -or (Test-ValidSkill -SkillPath $skill.FullName)) {
-            $validSkills += $skill
-        } else {
+        # Check validity
+        $isValid = $SkipValidation -or (Test-ValidSkill -SkillPath $skill.FullName)
+
+        if (-not $isValid) {
             $invalidSkills += $skill
+            continue
         }
+
+        # Security check (unless -SkipSecurity)
+        if (-not $SkipSecurity) {
+            $secCheck = Test-SkillSecurityLocal -SkillPath $skill.FullName
+            if (-not $secCheck.IsSafe) {
+                $unsafeSkills += @{ Skill = $skill; Files = $secCheck.DangerousFiles }
+                continue
+            }
+        }
+
+        $validSkills += $skill
     }
 
     Write-Host "`n=== Syncing from $SourceAgent (symlinks) ===" -ForegroundColor Cyan
     Write-Host "Valid skills: $($validSkills.Name -join ', ')" -ForegroundColor White
     if ($invalidSkills.Count -gt 0) {
         Write-Host "Invalid (skipped): $($invalidSkills.Name -join ', ')" -ForegroundColor DarkYellow
+    }
+    if ($unsafeSkills.Count -gt 0) {
+        Write-Host "UNSAFE (blocked): $($unsafeSkills.Skill.Name -join ', ')" -ForegroundColor Red
+        foreach ($unsafe in $unsafeSkills) {
+            Write-Host "  $($unsafe.Skill.Name) contains:" -ForegroundColor Red
+            foreach ($df in $unsafe.Files) {
+                Write-Host "    - $($df.Name)" -ForegroundColor DarkRed
+            }
+        }
     }
 
     if ($validSkills.Count -eq 0) {
@@ -143,12 +222,17 @@ if ($Delete) {
     }
 
     Write-Host "`n=== Summary ===" -ForegroundColor Cyan
-    Write-Host "Symlinked: $linkedCount | Skipped: $skippedCount | Invalid: $($invalidSkills.Count)" -ForegroundColor White
+    Write-Host "Symlinked: $linkedCount | Skipped: $skippedCount | Invalid: $($invalidSkills.Count) | Unsafe: $($unsafeSkills.Count)" -ForegroundColor White
+    if ($invalidAgents.Count -gt 0) {
+        Write-Host "Non-AI agents skipped: $($invalidAgents.Count)" -ForegroundColor DarkGray
+    }
 }
 
 # Usage examples
 Write-Host "`nUsage:" -ForegroundColor DarkGray
 Write-Host "  .\SyncSkills.ps1                           # Symlink all valid skills" -ForegroundColor DarkGray
-Write-Host "  .\SyncSkills.ps1 -SkillName 'excel-editor' # Symlink one skill" -ForegroundColor DarkGray
-Write-Host "  .\SyncSkills.ps1 -SkillName 'old-skill' -Delete  # Remove symlinks" -ForegroundColor DarkGray
+Write-Host "  .\SyncSkills.ps1 -SkillName 'my-skill'     # Symlink one skill" -ForegroundColor DarkGray
+Write-Host "  .\SyncSkills.ps1 -SkillName 'old' -Delete  # Remove symlinks" -ForegroundColor DarkGray
 Write-Host "  .\SyncSkills.ps1 -SkipValidation           # Skip skill file validation" -ForegroundColor DarkGray
+Write-Host "  .\SyncSkills.ps1 -SkipSecurity             # Skip dangerous file check" -ForegroundColor DarkGray
+Write-Host "  .\SyncSkills.ps1 -SkipAgentValidation      # Sync to ALL folders with skills/" -ForegroundColor DarkGray
