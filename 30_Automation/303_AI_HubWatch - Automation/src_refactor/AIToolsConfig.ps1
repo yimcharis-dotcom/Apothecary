@@ -259,6 +259,230 @@ $script:SkillSignatureFiles = @(
     "skill.yml"
 )
 
+# ============================================================================
+# Multi-Source Skill Locations
+# Different AI tools store skills/extensions in different places
+# ============================================================================
+
+$script:SkillSources = @{
+    "Claude" = @{
+        AgentPattern = "Claude*"
+        SkillsSubfolder = "skills"
+        Format = "MCP"
+    }
+    "Cursor" = @{
+        AgentPattern = "Cursor*", "cursor*"
+        SkillsSubfolder = "extensions"
+        Format = "VSCode"
+    }
+    "Continue" = @{
+        AgentPattern = "Continue*", "continue*"
+        SkillsSubfolder = "."  # Root level config.json contains skills
+        Format = "Continue"
+    }
+    "VSCode" = @{
+        AgentPattern = "Code*", "VSCode*"
+        SkillsSubfolder = "extensions"
+        Format = "VSCode"
+    }
+    "Zed" = @{
+        AgentPattern = "Zed*", "zed*"
+        SkillsSubfolder = "extensions"
+        Format = "Zed"
+    }
+    "Cody" = @{
+        AgentPattern = "Cody*", "cody*", "sourcegraph*"
+        SkillsSubfolder = "."
+        Format = "Cody"
+    }
+}
+
+# Skill format signatures - how to identify skill type
+$script:SkillFormats = @{
+    "MCP" = @{
+        Signatures = @("skill.json", "mcp.json")
+        EntryPoints = @("index.js", "index.ts", "main.py")
+        Description = "Model Context Protocol skill"
+    }
+    "VSCode" = @{
+        Signatures = @("package.json", "extension.js")
+        EntryPoints = @("extension.js", "out/extension.js")
+        Description = "VSCode/Cursor extension"
+    }
+    "Continue" = @{
+        Signatures = @("config.json", "config.ts")
+        EntryPoints = @()
+        Description = "Continue dev extension"
+    }
+    "Zed" = @{
+        Signatures = @("extension.toml", "Cargo.toml")
+        EntryPoints = @("src/lib.rs", "extension.wasm")
+        Description = "Zed extension"
+    }
+    "Generic" = @{
+        Signatures = @("package.json", "setup.py", "pyproject.toml")
+        EntryPoints = @("index.js", "main.py", "__init__.py")
+        Description = "Generic skill package"
+    }
+}
+
+# ============================================================================
+# Security Configuration
+# ============================================================================
+
+# Dangerous file extensions that should trigger warnings
+$script:DangerousExtensions = @(
+    ".exe", ".msi", ".bat", ".cmd", ".com", ".scr",
+    ".vbs", ".vbe", ".wsf", ".wsh", ".ps1", ".psm1",
+    ".jar", ".dll", ".sys"
+)
+
+# Suspicious patterns in file names
+$script:SuspiciousPatterns = @(
+    "keylog", "stealer", "inject", "hook", "dump",
+    "crack", "keygen", "patch", "loader"
+)
+
+function Test-SkillSecurity {
+    <#
+    .SYNOPSIS
+        Check if skill folder contains potentially dangerous files
+    .PARAMETER SkillPath
+        Full path to the skill folder
+    .RETURNS
+        Hashtable with IsSafe, Warnings, DangerousFiles
+    #>
+    param([string]$SkillPath)
+
+    $result = @{
+        IsSafe = $true
+        Warnings = @()
+        DangerousFiles = @()
+        SuspiciousFiles = @()
+    }
+
+    # Get all files recursively
+    $files = Get-ChildItem -Path $SkillPath -Recurse -File -ErrorAction SilentlyContinue
+
+    foreach ($file in $files) {
+        # Check for dangerous extensions
+        if ($script:DangerousExtensions -contains $file.Extension.ToLower()) {
+            $result.DangerousFiles += $file.FullName
+            $result.Warnings += "Dangerous file type: $($file.Name)"
+        }
+
+        # Check for suspicious names
+        foreach ($pattern in $script:SuspiciousPatterns) {
+            if ($file.Name -like "*$pattern*") {
+                $result.SuspiciousFiles += $file.FullName
+                $result.Warnings += "Suspicious filename: $($file.Name)"
+            }
+        }
+    }
+
+    if ($result.DangerousFiles.Count -gt 0 -or $result.SuspiciousFiles.Count -gt 0) {
+        $result.IsSafe = $false
+    }
+
+    return $result
+}
+
+# ============================================================================
+# Agent Validation
+# ============================================================================
+
+function Test-IsValidAgent {
+    <#
+    .SYNOPSIS
+        Verify folder is a real AI agent (not just any folder with skills/)
+    .PARAMETER AgentPath
+        Full path to the agent folder in Hub
+    .RETURNS
+        Hashtable with IsValid, ToolType, ConfigFiles
+    #>
+    param([string]$AgentPath)
+
+    $result = @{
+        IsValid = $false
+        ToolType = "Unknown"
+        ConfigFiles = @()
+        SkillsFormat = "Unknown"
+    }
+
+    $folderName = Split-Path $AgentPath -Leaf
+
+    # Check against known AI tool definitions
+    foreach ($tool in $script:AIToolDefinitions.Keys) {
+        $def = $script:AIToolDefinitions[$tool]
+
+        # Check if folder name matches any of the tool's known names
+        $nameMatch = $def.Names | Where-Object {
+            $folderName -like "*$_*" -or $folderName -like "${_}_*"
+        }
+
+        if ($nameMatch) {
+            # Check for config files
+            foreach ($configFile in $def.ConfigFiles) {
+                $configPath = Join-Path $AgentPath $configFile
+                if (Test-Path $configPath) {
+                    $result.ConfigFiles += $configFile
+                }
+            }
+
+            if ($result.ConfigFiles.Count -gt 0) {
+                $result.IsValid = $true
+                $result.ToolType = $tool
+                $result.SkillsFormat = $def.Category
+                return $result
+            }
+        }
+    }
+
+    # Fallback: if has skills folder with valid skills, consider it valid
+    $skillsPath = Join-Path $AgentPath "skills"
+    if (Test-Path $skillsPath) {
+        $skills = Get-ChildItem -Path $skillsPath -Directory -ErrorAction SilentlyContinue
+        $validSkillCount = 0
+        foreach ($skill in $skills) {
+            if (Test-IsValidSkill -SkillPath $skill.FullName) {
+                $validSkillCount++
+            }
+        }
+        if ($validSkillCount -gt 0) {
+            $result.IsValid = $true
+            $result.ToolType = "Unknown (has valid skills)"
+            return $result
+        }
+    }
+
+    return $result
+}
+
+function Get-SkillFormat {
+    <#
+    .SYNOPSIS
+        Detect the format/type of a skill
+    .PARAMETER SkillPath
+        Full path to the skill folder
+    .RETURNS
+        String: MCP, VSCode, Continue, Zed, Generic, or Unknown
+    #>
+    param([string]$SkillPath)
+
+    foreach ($format in $script:SkillFormats.Keys) {
+        $def = $script:SkillFormats[$format]
+
+        foreach ($sig in $def.Signatures) {
+            $sigPath = Join-Path $SkillPath $sig
+            if (Test-Path $sigPath) {
+                return $format
+            }
+        }
+    }
+
+    return "Unknown"
+}
+
 function Test-IsValidSkill {
     <#
     .SYNOPSIS
@@ -288,7 +512,13 @@ function Test-IsValidSkill {
 # - $script:TaskName
 # - $script:AIToolDefinitions
 # - $script:StrictKeywords
+# - $script:SkillSources
+# - $script:SkillFormats
+# - $script:DangerousExtensions
 # - Test-IsAIToolByName
 # - Test-IsAIToolByConfig
 # - Get-AIToolInfo
 # - Test-IsValidSkill
+# - Test-SkillSecurity
+# - Test-IsValidAgent
+# - Get-SkillFormat

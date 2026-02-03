@@ -609,6 +609,22 @@ if (Test-Path $skillsPath) {
                 Write-Log "  -> Valid skill: $($foundSkillFiles -join ', ')" -Color DarkGreen
             }
 
+            # Security check - look for dangerous files
+            $dangerousExts = @(".exe", ".msi", ".bat", ".cmd", ".com", ".vbs", ".ps1", ".dll")
+            $dangerousFiles = Get-ChildItem -Path $fullPath -Recurse -File -ErrorAction SilentlyContinue |
+                Where-Object { $dangerousExts -contains $_.Extension.ToLower() }
+
+            if ($dangerousFiles.Count -gt 0) {
+                Write-Log "  [!] SECURITY WARNING: Dangerous files detected!" -Color Red
+                foreach ($df in $dangerousFiles) {
+                    Write-Log "      - $($df.Name)" -Color Red
+                }
+                Write-Log "  [!] Skipping sync - review skill manually" -Color Red
+                Write-Log "=====================================================" -Color Magenta
+                Write-Log ""
+                return
+            }
+
             # Trigger SyncSkills to symlink to all agents
             $syncScript = Join-Path $hubPath "SyncSkills.ps1"
             if (Test-Path $syncScript) {
