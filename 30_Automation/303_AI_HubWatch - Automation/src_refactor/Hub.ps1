@@ -176,7 +176,7 @@ function Get-WatchHubStatus {
 }
 
 function Track-Installation {
-    & "$HubDir\TrackInstallation.ps1"
+    & "$PSScriptRoot\TrackInstallation.ps1"
 }
 
 # Command dispatch
