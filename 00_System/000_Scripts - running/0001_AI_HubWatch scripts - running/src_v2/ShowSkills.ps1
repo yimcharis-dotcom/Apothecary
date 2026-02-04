@@ -1,7 +1,14 @@
 # ShowSkills.ps1
 # Quick inventory of skills across all AI agents in the Hub
+# v2: + Portable paths + Symlink detection + Skill validation
 
-$HubDir = "C:\Users\YC\AI_hub"
+# Load shared config
+$configPath = Join-Path $PSScriptRoot "AIToolsConfig.ps1"
+if (Test-Path $configPath) {
+    . $configPath
+}
+
+$HubDir = if ($script:HubDir) { $script:HubDir } elseif ($env:AI_HUB_PATH) { $env:AI_HUB_PATH } else { "$env:USERPROFILE\AI_hub" }
 
 Write-Host "`n=== Skills Inventory ===" -ForegroundColor Cyan
 
@@ -26,7 +33,11 @@ foreach ($agent in $agentsWithSkills) {
         Write-Host "  (no skills)" -ForegroundColor DarkGray
     } else {
         foreach ($skill in $skills) {
-            Write-Host "  - $($skill.Name)" -ForegroundColor White
+            # Check if symlink
+            $isSymlink = $skill.Attributes -band [System.IO.FileAttributes]::ReparsePoint
+            $symIndicator = if ($isSymlink) { " [symlink]" } else { " [source]" }
+            $color = if ($isSymlink) { "DarkGray" } else { "White" }
+            Write-Host "  - $($skill.Name)$symIndicator" -ForegroundColor $color
 
             # Track which agents have this skill
             if (-not $skillsIndex.ContainsKey($skill.Name)) {

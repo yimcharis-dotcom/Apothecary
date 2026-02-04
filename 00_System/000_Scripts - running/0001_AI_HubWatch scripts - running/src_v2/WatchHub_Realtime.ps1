@@ -9,6 +9,10 @@
 #     + Efficient event wait (30s intervals)
 #     + Debug logging option
 #     + Mutex locking (prevents concurrent conflicts)
+# v4: + Config file validation (reduces false positives)
+#     + Shared AIToolsConfig.ps1 (single source of truth)
+#     + Skill validation (checks for skill.json, package.json, etc.)
+#     + Removed overly broad keywords (ai, agent, github)
 # ============================================================================
 
 param(
@@ -16,6 +20,16 @@ param(
     [switch]$Verbose,
     [switch]$Debug
 )
+
+# ============================================================================
+# Load Shared Configuration
+# ============================================================================
+$configPath = Join-Path $PSScriptRoot "AIToolsConfig.ps1"
+if (Test-Path $configPath) {
+    . $configPath
+} else {
+    Write-Host "[!] AIToolsConfig.ps1 not found - using defaults" -ForegroundColor Yellow
+}
 
 # ============================================================================
 # Debounce Configuration (prevents duplicate events)
@@ -35,6 +49,7 @@ $script:mutexTimeout = 10000  # 10 seconds max wait for mutex
 # ============================================================================
 
 $LogsFolder = Join-Path $HubPath "_Change_log"
+$ScriptsDir = Join-Path $HubPath "_HubWatchScripts"
 
 $monitorPaths = @{
     "UserHome" = @{
@@ -69,12 +84,19 @@ $monitorPaths = @{
     }
 }
 
-$aiKeywords = @(
-    'claude', 'cursor', 'zed', 'ollama', 'gemini', 'windsurf',
-    'mcp', 'anthropic', 'openai', 'copilot', 'codeium',
-    'tabnine', 'github', 'llm', 'ai', 'gpt', 'chatbot',
-    'agent', 'aider', 'continue', 'cody', 'supermaven'
-)
+# Use strict keywords from shared config (removes overly broad: ai, agent, github, chatbot)
+$aiKeywords = if ($script:StrictKeywords) { $script:StrictKeywords } else {
+    @(
+        'claude', 'cursor', 'zed', 'ollama', 'gemini', 'windsurf',
+        'mcp', 'anthropic', 'openai', 'copilot', 'codeium',
+        'tabnine', 'aider', 'continue', 'cody', 'supermaven', 'chatgpt', 'codegpt'
+    )
+}
+
+# Use dangerous extensions from shared config
+$dangerousExtensions = if ($script:DangerousExtensions) { $script:DangerousExtensions } else {
+    @(".exe", ".msi", ".bat", ".cmd", ".com", ".vbs", ".ps1", ".dll", ".scr")
+}
 
 # ============================================================================
 # Helper Functions
@@ -159,13 +181,15 @@ if (-not (Test-Path $LogsFolder)) {
 # ============================================================================
 
 Write-Log "=======================================================" -Color Cyan
-Write-Log "  AI Hub Real-Time Monitor v3" -Color Cyan
+Write-Log "  AI Hub Real-Time Monitor v4" -Color Cyan
 Write-Log "  + Logs: _Change_log (_add / _del)" -Color DarkCyan
 Write-Log "  + Deletion detection & cleanup" -Color DarkCyan
 Write-Log "  + Skills auto-sync (symlinks)" -Color DarkMagenta
 Write-Log "  + Debouncing (2s dedup window)" -Color DarkGreen
 Write-Log "  + Duplicate junction detection" -Color DarkGreen
 Write-Log "  + Mutex locking (thread-safe)" -Color DarkGreen
+Write-Log "  + Config file validation (v4)" -Color DarkYellow
+Write-Log "  + Skill validation (v4)" -Color DarkYellow
 if ($script:DebugMode) {
     Write-Log "  + DEBUG MODE ON (logging to DEBUG_*.log)" -Color Yellow
 }
@@ -237,16 +261,56 @@ foreach ($key in $monitorPaths.Keys) {
                 Write-Log "  Category: $category" -Color Gray
 
                 $patternMatch = $name -match $pattern
-                $aiKeywords = @(
-                    'claude', 'cursor', 'zed', 'ollama', 'gemini', 'windsurf',
-                    'mcp', 'anthropic', 'openai', 'copilot', 'codeium',
-                    'tabnine', 'github', 'llm', 'ai', 'gpt', 'chatbot',
-                    'agent', 'aider', 'continue', 'cody', 'supermaven'
-                )
+                # Use strict keywords from shared config (passed via MessageData)
+                $aiKeywords = $Event.MessageData.AIKeywords
+                if (-not $aiKeywords) {
+                    $aiKeywords = @(
+                        'claude', 'cursor', 'zed', 'ollama', 'gemini', 'windsurf',
+                        'mcp', 'anthropic', 'openai', 'copilot', 'codeium',
+                        'tabnine', 'aider', 'continue', 'cody', 'supermaven', 'chatgpt', 'codegpt'
+                    )
+                }
                 $nameMatch = $aiKeywords | Where-Object { $name -like "*$_*" }
 
+                # Config file validation - check if folder has expected AI tool config files
+                $configValidated = $false
+                $validationReason = ""
                 if ($nameMatch -or $patternMatch) {
+                    # Wait a moment for files to be created
+                    Start-Sleep -Milliseconds 500
+
+                    # Check for common AI tool config files
+                    $configSignatures = @(
+                        "settings.json", "config.json", "claude_desktop_config.json",
+                        "extensions.json", "hosts.json", "models", "skill.json",
+                        "package.json", ".aider.conf.yml", "keymap.json"
+                    )
+                    $foundConfigs = @()
+                    foreach ($sig in $configSignatures) {
+                        $sigPath = Join-Path $fullPath $sig
+                        if (Test-Path $sigPath) {
+                            $foundConfigs += $sig
+                        }
+                    }
+
+                    if ($foundConfigs.Count -gt 0) {
+                        $configValidated = $true
+                        $validationReason = "Config files found: $($foundConfigs -join ', ')"
+                    } else {
+                        # Check if folder has any content (might be new install)
+                        $items = Get-ChildItem -Path $fullPath -ErrorAction SilentlyContinue
+                        if ($items.Count -gt 0) {
+                            $configValidated = $true
+                            $validationReason = "Folder has content ($($items.Count) items)"
+                        } else {
+                            $validationReason = "Empty folder - skipping"
+                        }
+                    }
+                }
+
+                if (($nameMatch -or $patternMatch) -and $configValidated) {
                     Write-Log "  -> Identified as AI tool!" -Color Green
+                    Write-Log "  -> $validationReason" -Color DarkGreen
 
                     $cleanName = $name -replace '^\.', ''
                     $cleanName = $cleanName -replace '[<>:"/\\|?*]', '_'
@@ -307,11 +371,16 @@ foreach ($key in $monitorPaths.Keys) {
                             Add-Content -Path $folderLogPath -Value $folderLogEntry -Encoding UTF8
                             Write-Log "  [+] Logged to: $logFileName" -Color DarkGreen
 
-                            # Export to Obsidian
-                            $exportScript = Join-Path $hubPath "ExportToObsidian.ps1"
+                            # Export to Obsidian (prefer linked scripts in hub; fall back to script folder)
+                            $exportScript = Join-Path $Event.MessageData.ScriptsDir "ExportToObsidian.ps1"
+                            if (-not (Test-Path $exportScript)) { $exportScript = Join-Path $hubPath "ExportToObsidian.ps1" }
+                            if (-not (Test-Path $exportScript)) { $exportScript = Join-Path $Event.MessageData.ScriptRoot "ExportToObsidian.ps1" }
+
                             if (Test-Path $exportScript) {
                                 Write-Log "  [*] Updating Obsidian inventory..." -Color Cyan
                                 & $exportScript
+                            } else {
+                                Write-Log "  [o] ExportToObsidian.ps1 not found (skipping)" -Color DarkGray -DebugOnly
                             }
                         } else {
                             Write-Log "  [X] Failed to create junction" -Color Red
@@ -326,6 +395,8 @@ foreach ($key in $monitorPaths.Keys) {
                             Write-Log "  [MUTEX] Released lock" -Color DarkGray -DebugOnly
                         }
                     }
+                } elseif ($nameMatch -or $patternMatch) {
+                    Write-Log "  [o] Name matches but validation failed: $validationReason" -Color DarkYellow
                 } else {
                     Write-Log "  [o] Not identified as AI tool (skipping)" -Color DarkGray
                 }
@@ -418,11 +489,16 @@ foreach ($key in $monitorPaths.Keys) {
                         Add-Content -Path $folderLogPath -Value $folderLogEntry -Encoding UTF8
                         Write-Log "  [+] Logged to: $logFileName" -Color DarkYellow
 
-                        # Export to Obsidian
-                        $exportScript = Join-Path $hubPath "ExportToObsidian.ps1"
+                        # Export to Obsidian (prefer linked scripts in hub; fall back to script folder)
+                        $exportScript = Join-Path $Event.MessageData.ScriptsDir "ExportToObsidian.ps1"
+                        if (-not (Test-Path $exportScript)) { $exportScript = Join-Path $hubPath "ExportToObsidian.ps1" }
+                        if (-not (Test-Path $exportScript)) { $exportScript = Join-Path $Event.MessageData.ScriptRoot "ExportToObsidian.ps1" }
+
                         if (Test-Path $exportScript) {
                             Write-Log "  [*] Updating Obsidian inventory..." -Color Cyan
                             & $exportScript
+                        } else {
+                            Write-Log "  [o] ExportToObsidian.ps1 not found (skipping)" -Color DarkGray -DebugOnly
                         }
                     } else {
                         Write-Log "  [X] Failed to remove junction" -Color Red
@@ -454,6 +530,9 @@ foreach ($key in $monitorPaths.Keys) {
             DebounceMsec = $script:debounceMsec
             Mutex = $script:mutex
             MutexTimeout = $script:mutexTimeout
+            AIKeywords = $aiKeywords
+            ScriptsDir = $ScriptsDir
+            ScriptRoot = $PSScriptRoot
         }
 
         $null = Register-ObjectEvent -InputObject $watcher -EventName Created -Action $createAction -MessageData $messageData
@@ -523,11 +602,64 @@ if (Test-Path $skillsPath) {
             Write-Log "  Name: $name" -Color White
             Write-Log "  Path: $fullPath" -Color Gray
 
+            # Validate skill has expected files
+            Start-Sleep -Milliseconds 500  # Wait for files to be created
+            $skillSignatures = @("skill.json", "package.json", "index.js", "index.ts", "main.py", "__init__.py", "skill.yaml", "skill.yml")
+            $foundSkillFiles = @()
+            foreach ($sig in $skillSignatures) {
+                $sigPath = Join-Path $fullPath $sig
+                if (Test-Path $sigPath) {
+                    $foundSkillFiles += $sig
+                }
+            }
+
+            $isValidSkill = $foundSkillFiles.Count -gt 0
+            if (-not $isValidSkill) {
+                # Check if folder has any content
+                $items = Get-ChildItem -Path $fullPath -ErrorAction SilentlyContinue
+                $isValidSkill = $items.Count -gt 0
+            }
+
+            if (-not $isValidSkill) {
+                Write-Log "  [o] Empty folder - not a valid skill (skipping)" -Color DarkYellow
+                Write-Log "=====================================================" -Color Magenta
+                Write-Log ""
+                return
+            }
+
+            if ($foundSkillFiles.Count -gt 0) {
+                Write-Log "  -> Valid skill: $($foundSkillFiles -join ', ')" -Color DarkGreen
+            }
+
+            # Security check - look for dangerous files (uses shared config)
+            $dangerousExts = $Event.MessageData.DangerousExtensions
+            if (-not $dangerousExts) {
+                $dangerousExts = @(".exe", ".msi", ".bat", ".cmd", ".com", ".vbs", ".ps1", ".dll", ".scr")
+            }
+            $dangerousFiles = Get-ChildItem -Path $fullPath -Recurse -File -ErrorAction SilentlyContinue |
+                Where-Object { $dangerousExts -contains $_.Extension.ToLower() }
+
+            if ($dangerousFiles.Count -gt 0) {
+                Write-Log "  [!] SECURITY WARNING: Dangerous files detected!" -Color Red
+                foreach ($df in $dangerousFiles) {
+                    Write-Log "      - $($df.Name)" -Color Red
+                }
+                Write-Log "  [!] Skipping sync - review skill manually" -Color Red
+                Write-Log "=====================================================" -Color Magenta
+                Write-Log ""
+                return
+            }
+
             # Trigger SyncSkills to symlink to all agents
-            $syncScript = Join-Path $hubPath "SyncSkills.ps1"
+            $syncScript = Join-Path $Event.MessageData.ScriptsDir "SyncSkills.ps1"
+            if (-not (Test-Path $syncScript)) { $syncScript = Join-Path $hubPath "SyncSkills.ps1" }
+            if (-not (Test-Path $syncScript)) { $syncScript = Join-Path $Event.MessageData.ScriptRoot "SyncSkills.ps1" }
+
             if (Test-Path $syncScript) {
                 Write-Log "  -> Syncing skill to all agents..." -Color Cyan
                 & $syncScript -SkillName $name
+            } else {
+                Write-Log "  [o] SyncSkills.ps1 not found (skipping)" -Color DarkGray -DebugOnly
             }
 
             # Log to _Change_log
@@ -544,10 +676,15 @@ if (Test-Path $skillsPath) {
             Write-Log "  [+] Logged to: $logFileName" -Color DarkMagenta
 
             # Update Obsidian
-            $exportScript = Join-Path $hubPath "ExportToObsidian.ps1"
+            $exportScript = Join-Path $Event.MessageData.ScriptsDir "ExportToObsidian.ps1"
+            if (-not (Test-Path $exportScript)) { $exportScript = Join-Path $hubPath "ExportToObsidian.ps1" }
+            if (-not (Test-Path $exportScript)) { $exportScript = Join-Path $Event.MessageData.ScriptRoot "ExportToObsidian.ps1" }
+
             if (Test-Path $exportScript) {
                 Write-Log "  [*] Updating Obsidian inventory..." -Color Cyan
                 & $exportScript
+            } else {
+                Write-Log "  [o] ExportToObsidian.ps1 not found (skipping)" -Color DarkGray -DebugOnly
             }
 
             Write-Log "=====================================================" -Color Magenta
@@ -593,10 +730,15 @@ if (Test-Path $skillsPath) {
             Write-Log "  Path: $fullPath" -Color Gray
 
             # Trigger SyncSkills to remove symlinks from all agents
-            $syncScript = Join-Path $hubPath "SyncSkills.ps1"
+            $syncScript = Join-Path $Event.MessageData.ScriptsDir "SyncSkills.ps1"
+            if (-not (Test-Path $syncScript)) { $syncScript = Join-Path $hubPath "SyncSkills.ps1" }
+            if (-not (Test-Path $syncScript)) { $syncScript = Join-Path $Event.MessageData.ScriptRoot "SyncSkills.ps1" }
+
             if (Test-Path $syncScript) {
                 Write-Log "  -> Removing skill symlinks from all agents..." -Color Yellow
                 & $syncScript -SkillName $name -Delete
+            } else {
+                Write-Log "  [o] SyncSkills.ps1 not found (skipping)" -Color DarkGray -DebugOnly
             }
 
             # Log to _Change_log
@@ -613,10 +755,15 @@ if (Test-Path $skillsPath) {
             Write-Log "  [+] Logged to: $logFileName" -Color DarkYellow
 
             # Update Obsidian
-            $exportScript = Join-Path $hubPath "ExportToObsidian.ps1"
+            $exportScript = Join-Path $Event.MessageData.ScriptsDir "ExportToObsidian.ps1"
+            if (-not (Test-Path $exportScript)) { $exportScript = Join-Path $hubPath "ExportToObsidian.ps1" }
+            if (-not (Test-Path $exportScript)) { $exportScript = Join-Path $Event.MessageData.ScriptRoot "ExportToObsidian.ps1" }
+
             if (Test-Path $exportScript) {
                 Write-Log "  [*] Updating Obsidian inventory..." -Color Cyan
                 & $exportScript
+            } else {
+                Write-Log "  [o] ExportToObsidian.ps1 not found (skipping)" -Color DarkGray -DebugOnly
             }
 
             Write-Log "=====================================================" -Color DarkMagenta
@@ -631,6 +778,9 @@ if (Test-Path $skillsPath) {
             DebounceMsec = $script:debounceMsec
             Mutex = $script:mutex
             MutexTimeout = $script:mutexTimeout
+            DangerousExtensions = $dangerousExtensions
+            ScriptsDir = $ScriptsDir
+            ScriptRoot = $PSScriptRoot
         }
 
         $null = Register-ObjectEvent -InputObject $skillsWatcher -EventName Created -Action $skillCreateAction -MessageData $skillsMessageData
