@@ -6,12 +6,10 @@ tags:
   - collab
   - claude
 created: 2026-01-22
-updated: 2026-01-23
+updated: 2026-02-04
 aliases:
   - Git-Cheatsheet
   - Claude-Git-Workflow
-words:
-  2026-01-25: 772
 ---
 # Explanation of the Git Commands
 
@@ -33,21 +31,21 @@ git log --oneline -5
 **Why:** Quick overview of what Claude committed  
 **Result:** See commit hashes and messages like "26 df 142 Update paths: Remove OneDrive/Desktop..."
 
-```bash-
-git checkout master
+```bash
+git checkout main
 ```
 
 **What it does:** Switches back to your main branch  
-**Why:** Merging happens FROM a feature branch INTO master  
-**Result:** You're back on master, ready to merge
+**Why:** Merging happens FROM a feature branch INTO main  
+**Result:** You're back on main, ready to merge
 
 ```bash
 git merge claude/setup-mcp-client-K5lbl
 ```
 
-**What it does:** Integrates Claude's branch changes into master  
+**What it does:** Integrates Claude's branch changes into main  
 **Why:** Brings Claude's work into your main codebase  
-**Result:** Master now contains Claude's commits (fast-forward merge if no conflicts)
+**Result:** main now contains Claude's commits (fast-forward merge if no conflicts)
 
 ```bash
 git commit -m "Merge Claude's MCP client setup"
@@ -91,8 +89,8 @@ git checkout claude/setup-mcp-client-K5lbl
 # 2. Inspect recent commits
 git log --oneline -5
 
-# 3. Return to master
-git checkout master
+# 3. Return to main
+git checkout main
 
 # 4. Merge Claude's work
 git merge claude/setup-mcp-client-K5lbl
@@ -101,7 +99,7 @@ git merge claude/setup-mcp-client-K5lbl
 git commit -m "Merge Claude's MCP client setup"
 
 # 6. Push to remote
-git push origin master
+git push origin main
 ```
 
 ## 📋 Complete Workflow Summary
@@ -116,8 +114,8 @@ git status && git pull origin main
 git fetch origin && git pull origin main
 
 # Step 4: Add your local changes (if any)
-git add . 
-git commit -m "Local updates" 
+git add -A
+git commit -m "Local updates"
 git push origin main
 ```
 
@@ -221,6 +219,26 @@ git add <resolved-files>
 git commit
 ```
 
+## ✅ Quick Definitions
+
+- `origin` = the remote name (usually GitHub)
+- `origin/main` = your local copy of the remote `main` branch
+- `git add -A` = stage new + modified + deleted files
+- `git add .` = stage new + modified (may miss deletions)
+
+## ✅ `git status -sb` Symbols
+
+- `M` = modified
+- `D` = deleted
+- `??` = untracked (new)
+- `## main...origin/main` = local `main` matches remote tracking branch
+
+## ✅ Windows Warnings (Common)
+
+- LF → CRLF warnings are line-ending notices, not errors.
+- Embedded repo warning means a folder inside your repo has its own `.git`.
+- `invalid path 'nul'` means a Windows reserved filename was created.
+
 ## 📚 Related Notes
 
 - [[MCP Bridge Setup]]
@@ -229,9 +247,5 @@ git commit
 
 ---
 
-**Last Updated**: 2026-01-22  
-**Tested With**: Git 2. X, Claude Code, Cursor IDE
-
-```
-
-This note provides a complete reference for your git workflow with Claude Code! Save it in your vault and link it from your [[Home]] page for easy access. 📚✨
+**Last Updated**: 2026-02-04  
+**Tested With**: Git 2.x, Claude Code, Cursor IDE

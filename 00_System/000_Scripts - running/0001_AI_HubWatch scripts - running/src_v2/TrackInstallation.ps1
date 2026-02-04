@@ -1,17 +1,33 @@
-howt # ============================================================================
+# ============================================================================
 # TrackInstallation.ps1
 # Monitors where programs install in real-time
 # Shows before/after snapshots to reveal installation locations
+# v2: + Shared config + Portable paths + Strict keywords
 # ============================================================================
 
 param(
     [Parameter(Mandatory=$false)]
     [string]$Mode = "menu",  # menu, before, after, predict
-    
+
     [string]$SnapshotFile = "$env:TEMP\install_snapshot.json",
-    
+
     [switch]$ShowAll
 )
+
+# Load shared config
+$configPath = Join-Path $PSScriptRoot "AIToolsConfig.ps1"
+if (Test-Path $configPath) {
+    . $configPath
+}
+
+$HubDir = if ($script:HubDir) { $script:HubDir } elseif ($env:AI_HUB_PATH) { $env:AI_HUB_PATH } else { "$env:USERPROFILE\AI_hub" }
+
+# Use strict keywords from shared config (no overly broad terms)
+$aiKeywordsPattern = if ($script:StrictKeywords) {
+    '(' + ($script:StrictKeywords -join '|') + ')'
+} else {
+    '(claude|cursor|ollama|mcp|gemini|zed|windsurf|copilot|anthropic|openai|codeium|tabnine|aider|continue|cody|supermaven)'
+}
 
 # ============================================================================
 # Configuration - Common Installation Locations
@@ -19,7 +35,7 @@ param(
 
 $commonPaths = @{
     "User Home Configs" = @{
-        Path = "C:\Users\$env:USERNAME"
+        Path = "$env:USERPROFILE"
         Pattern = "^\."
         Examples = @(".claude", ".cursor", ".ollama", ".config")
     }
@@ -303,8 +319,8 @@ function Show-InstallationChanges {
                 Write-Host "    Path: $($item.FullPath)" -ForegroundColor Gray
                 Write-Host "    Created: $($item.Created)" -ForegroundColor Gray
                 
-                # Suggest junction creation
-                $isAITool = $item.FolderName -match '(claude|cursor|ollama|ai|mcp|llm|agent|gemini|zed|windsurf|copilot)'
+                # Suggest junction creation (using strict keywords)
+                $isAITool = $item.FolderName -match $aiKeywordsPattern
                 if ($isAITool) {
                     Write-Host "    → Looks like an AI tool! Consider linking to AI_hub" -ForegroundColor Green
                 }
@@ -330,7 +346,7 @@ function Show-InstallationChanges {
             $name = $change.FolderName -replace '^\.'
             $junctionName = "${name}_${category}"
             
-            Write-Host "mklink /J ""$env:USERPROFILE\AI_hub\$junctionName"" ""$($change.FullPath)""" -ForegroundColor Cyan
+            Write-Host "mklink /J ""$HubDir\$junctionName"" ""$($change.FullPath)""" -ForegroundColor Cyan
         }
         Write-Host ""
     }
