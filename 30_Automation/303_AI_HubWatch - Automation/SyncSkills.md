@@ -1,3 +1,4 @@
+```
 # SyncSkills.ps1
 # Symlink skills from source agent to all others
 # v2: Uses symlinks instead of copies + supports deletion
@@ -110,3 +111,5 @@ Write-Host "`nUsage:" -ForegroundColor DarkGray
 Write-Host "  .\SyncSkills.ps1                           # Symlink all skills" -ForegroundColor DarkGray
 Write-Host "  .\SyncSkills.ps1 -SkillName 'excel-editor' # Symlink one skill" -ForegroundColor DarkGray
 Write-Host "  .\SyncSkills.ps1 -SkillName 'old-skill' -Delete  # Remove symlinks" -ForegroundColor DarkGray
+
+```

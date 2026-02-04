@@ -1,3 +1,4 @@
+```
 # WatchHub Smart Wrapper
 # - Shows "Started" on launch
 # - Only logs when errors occur
@@ -136,3 +137,5 @@ Location: $ErrorLogDir
         }
     }
 }
+
+```

@@ -10,7 +10,7 @@
   "uriCallbacks": true,
   "defaultViewMode": "preview",
   "showInlineTitle": true,
-  "readableLineLength": true,
+  "readableLineLength": false,
   "propertiesInDocument": "source",
   "promptDelete": true,
   "userIgnoreFilters": [

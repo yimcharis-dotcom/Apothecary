@@ -1,3 +1,4 @@
+```
 # WatchHub Auto-Start Setup (Auto-elevates to Admin)
 # - Shows "Started" notification on launch
 # - Only logs when errors occur
@@ -264,3 +265,5 @@ try {
 }
 
 Read-Host "Press Enter to exit"
+
+```

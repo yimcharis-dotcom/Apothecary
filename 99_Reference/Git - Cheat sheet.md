@@ -1,8 +1,17 @@
 ---
-tags: [git, cheatsheet, workflow, collab, claude]
+tags:
+  - git
+  - cheatsheet
+  - workflow
+  - collab
+  - claude
 created: 2026-01-22
 updated: 2026-01-23
-aliases: [Git-Cheatsheet, Claude-Git-Workflow]
+aliases:
+  - Git-Cheatsheet
+  - Claude-Git-Workflow
+words:
+  2026-01-25: 772
 ---
 # Explanation of the Git Commands
 
