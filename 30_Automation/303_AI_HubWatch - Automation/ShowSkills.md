@@ -1,3 +1,4 @@
+```
 # ShowSkills.ps1
 # Quick inventory of skills across all AI agents in the Hub
 
@@ -49,3 +50,4 @@ $skillsIndex.GetEnumerator() | Sort-Object { $_.Value.Count } -Descending | ForE
     Write-Host "`n$($_.Key) ($count agents):" -ForegroundColor Yellow
     Write-Host "  $agents" -ForegroundColor DarkGray
 }
+```

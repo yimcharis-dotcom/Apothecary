@@ -1,3 +1,4 @@
+```
 # ============================================================================
 # WatchHub_Realtime.ps1
 # Real-time FileSystemWatcher for AI Hub
@@ -690,3 +691,5 @@ try {
     }
     Write-Log "Monitoring stopped." -Color Red
 }
+
+```

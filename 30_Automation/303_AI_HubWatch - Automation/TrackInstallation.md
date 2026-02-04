@@ -1,4 +1,5 @@
-howt # ============================================================================
+```
+ # ============================================================================
 # TrackInstallation.ps1
 # Monitors where programs install in real-time
 # Shows before/after snapshots to reveal installation locations
@@ -488,3 +489,5 @@ switch ($Mode.ToLower()) {
     "guide" { Show-InstallerTypeGuide }
     default { Show-Menu }
 }
+
+```

@@ -1,10 +1,27 @@
 # AI HubWatch Scripts - Changelog
 
+## 2026-02-03
+
+### 🐛 Issue
+
+- Hub skills inventory shows only local folders; UI shows more skills not present under C:\Users\YC\AI_hub\<Agent>\skills.
+- Non-skill repo folders (e.g., .claude, assets, notebooks) appear in inventory when a repo sits inside a skills folder.
+
+### 🔍 Cause
+
+- Inventory logic counts directories under each skills folder, so it excludes zipped/skill files and includes any repo subfolders.
+- Skills present only in the UI are not synced into the local skills folder or the shared .agents skills path.
+
+### ✅ Fix
+
+-
+
 ## 2026-02-01
 
 ### ✨ Initial Deployment
 
 **Scripts deployed:**
+
 - `!WatchHub_Realtime.ps1` v2.0
   - Real-time monitoring of AI tools installation
   - Deletion detection & cleanup

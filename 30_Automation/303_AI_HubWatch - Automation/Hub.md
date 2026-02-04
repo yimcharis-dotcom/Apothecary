@@ -1,5 +1,6 @@
 # Hub.ps1
 # Master control script for AI Hub management
+```
 
 param(
     [Parameter(Position = 0)]
@@ -137,3 +138,5 @@ switch ($Command.ToLower()) {
         Write-Host "  .\Hub.ps1 track    - Track installation"
     }
 }
+
+```

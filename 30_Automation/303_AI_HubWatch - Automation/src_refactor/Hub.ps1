@@ -1,6 +1,5 @@
 # Hub.ps1
 # Master control script for AI Hub management
-
 param(
     [Parameter(Position = 0)]
     [string]$Command = "menu"

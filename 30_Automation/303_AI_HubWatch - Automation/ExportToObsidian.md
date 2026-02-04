@@ -94,7 +94,7 @@ cd C:\Users\YC\AI_hub
 .\ShowSkills.ps1        # File system view
 npx skills list -g      # Skills CLI view
 .\ShowConfigs.ps1       # Find all configs
-``````
+
 
 ### Install Skills
 
@@ -104,7 +104,7 @@ npx skills add vercel-labs/agent-skills --all -g -y
 
 # Update all skills
 npx skills update -y
-``````
+
 
 ### Export to Obsidian
 
