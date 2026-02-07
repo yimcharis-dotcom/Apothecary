@@ -1,0 +1,56 @@
+Provider,Product/Plan,Capability,Surface,Connected To,Presence,Auth,Status
+Anthropic,Claude Pro ($20/mo),Interface (Browser),https://claude.ai,Browser,Web,,Active
+Anthropic,Claude Code,Agent (Autonomous),"Terminal, Cursor, VS Code",Dev environment (17 procs),Local,,Active
+Anthropic,Claude API,API (Model Provider),"anthropic-python, LiteLLM","Direct calls, Proxies",Hybrid,,Active
+Anthropic,Claude Desktop,MCP Gateway,Desktop App,"Vault Bridge, Obsidian MCP",Local,,Active
+Anthropic,Claude Server Commander,CLI Utility,Terminal,MCP Server Management,Local,,Active
+Anthropic,OpenClaude,CLI Utility,Terminal,Alternative Interface,Local,,Active
+OpenAI,ChatGPT Plus ($20/mo),Interface (Browser),https://chatgpt.com,Browser,Web,,Active
+OpenAI,Codex,CLI Utility,@openai/codex,Global npm tool,Local,,Active
+OpenAI,OpenAI API,API (Model Provider),openai-python,Direct calls,Hybrid,,Active
+Cursor,Cursor Pro ($20/mo),IDE,Cursor IDE (v1.x),"Windows, Claude backend",Local,,Active
+VS Code,VS Code (Free),IDE,VS Code,,,,Active
+Codeium,Windsurf IDE,IDE,Windsurf IDE,Flow backend (multi-provider),Local,,Active
+Zed Industries,Zed (Free),IDE,Zed IDE,None (local editor),Local,,Active
+BerriAI,LiteLLM Proxy,API (Router/Proxy),http://localhost:8000,"Grok, Perplexity routing",Local,,Configured
+Anomaly,opencode-ai,CLI Utility,opencode-ai (npm global),Model providers (varies),Local,,Active
+Perplexity,Perplexity Pro ($20/mo),Interface (Search),https://perplexity.ai,Browser,Web,,Active
+Perplexity,Perplexity App,Interface (Mobile/Desktop),Native app,Cross-platform,Local,,Active
+Perplexity,Perplexity API,API (Search),perplexity-sonar,LiteLLM proxy,Hybrid,,Active
+xAI,Grok Premium ($25/mo),Interface (Social),https://x.com/i/grok,Browser/X.com,Web,,Active
+xAI,Grok API,API (Model Provider),grok models,LiteLLM proxy,Hybrid,,Active
+Google,Gemini (Free),Interface (Browser),https://gemini.google.com,Browser,Web,,Active
+Google,Gemini CLI,CLI Utility,@google/gemini-cli,Global npm tool,Local,,Active
+Google,Gemini Code Assist,IDE Extension,google.geminicodeassist,VS Code Extension,Local,,Active
+Google,Antigravity,IDE,IDE,Google AI integration,Local,,Active
+Google,Gemini API,API (Model Provider),google-generativeai,Direct calls,Hybrid,,Active
+Google,Google AI Studio,API Playground,https://aistudio.google.com,Browser,Web,,Active
+Google,Google Cloud (Varies),Infrastructure,https://console.cloud.google.com,Enterprise deployments,Web,,Active
+Google,CloudCode,IDE Extension,VS Code,Cloud Platform Integration,Local,,Active
+Qwen,Qwen (Free),Interface (Browser),https://qwenlm.alibaba.com,Browser,Web,,Active
+Qwen,Qwen CLI,CLI Utility,@qwen-code/qwen-code,Global npm tool,Local,,Active
+Obsidian,Obsidian (Free),Knowledge Base,Desktop App,C:\Vault\Apothecary,Local,,Active
+Vault Bridge,Vault Bridge MCP,MCP Server,MCP Server,"LocalDocs RAG, Vault queries",Local,,Active
+OpenMCP,OpenMCP Config,MCP Infrastructure,Local config,MCP connections,Local,,Active
+LocalDocs,LocalDocs RAG,Knowledge / RAG,Local scripts,Vault Bridge MCP,Local,,Active
+Vault,Apothecary Vault,Knowledge Base,C:\Vault\Apothecary,"LocalDocs, Vault Bridge",Local,,Active
+Moonshot AI,Kimi (Free),Interface (Browser),https://kimi.moonshot.cn,Browser,Web,,Active
+DeepSeek,DeepSeek (Free),Interface (Browser),https://chat.deepseek.com,Browser,Web,,Active
+Meta,Meta AI (Free),Interface (Browser),https://www.meta.ai,Browser,Web,,Active
+POE,POE (Free),Interface (Multi-Model),https://poe.com,Browser/Mobile,Web,,Active
+Brave,Brave Search (Free),API (Search),https://api.search.brave.com,Moltbot gateway,Web,,Active
+OpenRouter,OpenRouter (Varies),API (Aggregator),https://openrouter.ai,Cost optimization,Web,,Active
+Ollama,Ollama (Free),Inference Layer,http://localhost:11434,"Multi-App (Continue, Obsidian, RAG)",Local,,Active
+ggml.ai,Llama.cpp (Free),Inference Layer,Terminal,Alternative to Ollama,Local,,Active
+AnythingLLM,AnythingLLM (Free),Knowledge / RAG,Desktop app,Local doc indexing,Local,,Active
+Kilo,Kilo code,IDE Extension,VS Code,,Local,,Active
+Kombai,Kombai,IDE Extension,VS Code,,Local,,Active
+Cline,Cline,Agent (Autonomous),VS Code,Multi-Provider API,Local,,Active
+Roo,Roo Code,Agent (Autonomous),VS Code,Multi-Provider API,Local,,Active
+ByteDance,Trae / TraeCN,IDE,Trae IDE,Adaptive AI (CN/Global),Local,,Active
+All-Hands-AI,OpenHands,Agent Platform,Web UI (Local),Multi-Provider API,Local,,Active
+Aider,Aider,Agent (Autonomous),Terminal,Multi-Provider API,Local,,Active
+Oven,Bun,Infrastructure,Terminal,JS Toolkit,Local,,Active
+Hugging Face,HF Cache,Infrastructure,Local Directory,SDKs / Transformers,Local,,Active
+Skills Hub,Agent Fleet,Agent Swarm,Terminal,"MoltBot, Junie, Qoder, Neovate, etc.",Local,,Active
+OpenMCP,McpJam (Dev),MCP Dev Tool,Terminal,MCP Server Testing,Local,,Active

@@ -11,6 +11,7 @@
 .obsidian/plugins/**/cache/
 .obsidian/workspaces/
 .obsidian/appearance.json
+.smtcmp_json_db.tar.gz
 
 # Keep these (useful to sync):
 !.obsidian/plugins/ (plugin code)

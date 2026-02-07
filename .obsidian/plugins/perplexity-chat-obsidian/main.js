@@ -241,14 +241,19 @@ class ChatView extends import_obsidian.ItemView {
         };
 
         try {
-          const response = yield fetch("https://api.perplexity.ai/v2/chat/completions", options);
+          const response = yield import_obsidian.requestUrl({
+    url: "https://api.perplexity.ai/v2/chat/completions",
+    method: "POST",
+    headers: options.headers,
+    body: options.body
+  });
 
-          if (!response.ok) {
-            const errText = yield response.text();
-            throw new Error(`HTTP ${response.status}: ${errText}`);
-          }
+  if (response.status < 200 || response.status >= 300) {
+    const errText = response.text ?? JSON.stringify(response.json ?? {});
+    throw new Error(`HTTP ${response.status}: ${errText}`);
+  }
 
-          return yield response.json();
+  return response.json;
         } catch (error) {
           throw new Error(
             `Failed to fetch response: ${error instanceof Error ? error.message : "Unknown error"}`
