@@ -1,0 +1,65 @@
+{
+  "version": "2026-02-08",
+  "providers": [
+    {
+      "name": "Anthropic",
+      "aliases": ["anthropic", "claude", "claudecode", "claude-desktop", "openclaude"],
+      "supports_skills_default": "yes",
+      "supports_mcp_default": "yes"
+    },
+    {
+      "name": "OpenAI",
+      "aliases": ["openai", "chatgpt", "codex"],
+      "supports_skills_default": "no",
+      "supports_mcp_default": "no"
+    },
+    {
+      "name": "Google",
+      "aliases": ["google", "gemini", "aistudio", "antigravity", "cloudcode"],
+      "supports_skills_default": "unknown",
+      "supports_mcp_default": "unknown"
+    },
+    {
+      "name": "Codeium",
+      "aliases": ["codeium", "windsurf"],
+      "supports_skills_default": "yes",
+      "supports_mcp_default": "unknown"
+    },
+    {
+      "name": "Cursor",
+      "aliases": ["cursor"],
+      "supports_skills_default": "yes",
+      "supports_mcp_default": "unknown"
+    },
+    {
+      "name": "Perplexity",
+      "aliases": ["perplexity", "sonar"],
+      "supports_skills_default": "no",
+      "supports_mcp_default": "no"
+    },
+    {
+      "name": "xAI",
+      "aliases": ["xai", "grok"],
+      "supports_skills_default": "no",
+      "supports_mcp_default": "no"
+    },
+    {
+      "name": "Ollama",
+      "aliases": ["ollama"],
+      "supports_skills_default": "no",
+      "supports_mcp_default": "unknown"
+    },
+    {
+      "name": "VS Code",
+      "aliases": ["vscode", "code"],
+      "supports_skills_default": "yes",
+      "supports_mcp_default": "unknown"
+    },
+    {
+      "name": "Zed Industries",
+      "aliases": ["zed"],
+      "supports_skills_default": "yes",
+      "supports_mcp_default": "unknown"
+    }
+  ]
+}

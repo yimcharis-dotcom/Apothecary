@@ -1,0 +1,16 @@
+# Sensitive OAuth files
+collectors/credentials.json
+collectors/token.json
+
+# Generated data
+data/*.json
+data/*.csv
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/

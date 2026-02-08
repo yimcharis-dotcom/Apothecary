@@ -9,6 +9,7 @@ This project creates a comprehensive dashboard to visualize and track all AI too
 ## What We Want to Track
 
 ### 1. Local Installations
+
 - AI applications (Claude Desktop, Cursor, VS Code, Windsurf, etc.)
 - IDEs and editors with AI extensions
 - CLI tools (npm global packages, pip packages, chocolatey packages)
@@ -17,12 +18,15 @@ This project creates a comprehensive dashboard to visualize and track all AI too
 - Browser extensions
 
 ### 2. Cloud Services & OAuth Connections
+
 - Services connected via Gmail OAuth (API grants, app permissions)
 - Services connected via GitHub OAuth
 - When they were authorized
 - What scopes/permissions they have
+- Not scraping Google Account Connections page (too manual/fragile)
 
 ### 3. Configuration Files & Storage Locations
+
 - Config file paths for each tool (settings.json, config.json, etc.)
 - Skills directories and where they're stored
 - MCP server config files
@@ -30,6 +34,7 @@ This project creates a comprehensive dashboard to visualize and track all AI too
 - Workspace settings
 
 ### 4. Relationships
+
 - Which apps use which services (e.g., "Claude Desktop uses Gmail OAuth")
 - Which apps share skill directories
 - Which MCP servers are used by which apps
@@ -37,14 +42,24 @@ This project creates a comprehensive dashboard to visualize and track all AI too
 
 ## Current State
 
+### Status (as of 2026-02-07)
+
+- ✅ Gmail OAuth scanner + CSV workflow implemented
+- ✅ OAuth CSV import script implemented
+- ❌ Google Account Connections scraping dropped
+- ⏳ Other collectors (Windows apps, hub logs, config scan, merge) not built yet
+- ⏳ Dashboard not built yet
+
 ### Existing Assets
 
 **Documentation**:
+
 - `C:\Vault\Apothecary\90_Inbox\Claude_AI_Ecosystem_Master_List.json` - Manual inventory of 100+ tools (comprehensive!)
 - `C:\Vault\Apothecary\90_Inbox\Claude_AI_Ecosystem_Master_List.md` - Markdown version
 - `C:\Vault\Apothecary\90_Inbox\Claude_AI_Ecosystem_Master_List (Excerpt).csv` - CSV export
 
 **Automation**:
+
 - `C:\Vault\Apothecary\30_Automation\303_AI_HubWatch - Automation\src_v2_refactor\` - Watcher scripts
   - `WatchHub_Realtime.ps1` - Real-time filesystem watcher (monitors for new AI tool installations)
   - `TrackInstallation.ps1` - Installation tracker
@@ -53,6 +68,7 @@ This project creates a comprehensive dashboard to visualize and track all AI too
   - `AIToolsConfig.ps1` - Shared configuration
 
 **AI Hub**:
+
 - Location: `%USERPROFILE%\AI_hub`
 - Uses junction/symlinks to track installed tools
 - Logs changes in `_Change_log` folder
@@ -61,6 +77,7 @@ This project creates a comprehensive dashboard to visualize and track all AI too
 ### Current Watcher Script Capabilities
 
 The existing `WatchHub_Realtime.ps1` already:
+
 - ✅ Monitors multiple directories for new AI tool installations
 - ✅ Creates junctions in AI_hub when new tools detected
 - ✅ Logs all changes with timestamps
@@ -71,6 +88,7 @@ The existing `WatchHub_Realtime.ps1` already:
 - ✅ Mutex locking (thread-safe)
 
 **What needs improvement**:
+
 - Extract tool metadata (name, version, paths) more reliably
 - Better integration with the new dashboard system
 - Export data in structured JSON format for dashboard consumption
@@ -79,25 +97,32 @@ The existing `WatchHub_Realtime.ps1` already:
 
 ### Phase 1: Data Collection Scripts (Python)
 
-**1. Gmail OAuth Scanner** (`scan_gmail_oauth.py`)
+**1. Gmail OAuth Scanner** (`scan_gmail_oauth.py`) ✅ Implemented
+
 - Use Gmail API to list all authorized apps
 - Extract: app name, scopes granted, authorization date, last used
 - Output: `gmail_connections.json`
+- Auto-export editable CSV table: `oauth_connections_table.csv`
+- Import filled CSV back into JSON with: `import_oauth_connections_from_csv.py`
+- Optional future: MCP Gmail connector (read-only) if a trusted server is available
 
-**2. Windows App Scanner** (`scan_windows_apps.py`)
+**2. Windows App Scanner** (`scan_windows_apps.py`) ⏳ Planned
+
 - Query Windows Registry (HKLM/HKCU Uninstall keys)
 - Scan Program Files and AppData
 - Check package managers: `npm list -g`, `pip list`, `choco list`
 - Check browser extensions (Chrome, Edge)
 - Output: `windows_apps.json`
 
-**3. Hub Watcher Integration** (`scan_hub_logs.py`)
+**3. Hub Watcher Integration** (`scan_hub_logs.py`) ⏳ Planned
+
 - Parse existing `AI_hub/_Change_log/*.txt` files
 - Parse `AI_hub/discovery.log`
 - Extract junction paths and their targets
 - Output: `hub_junctions.json`
 
-**4. Config Hunter** (`scan_configs.py`)
+**4. Config Hunter** (`scan_configs.py`) ⏳ Planned
+
 - Scan common config locations:
   - `%APPDATA%` (AppData\Roaming)
   - `%LOCALAPPDATA%` (AppData\Local)
@@ -106,7 +131,8 @@ The existing `WatchHub_Realtime.ps1` already:
 - Identify MCP server configs
 - Output: `config_files.json`
 
-**5. Data Merger** (`merge_inventory.py`)
+**5. Data Merger** (`merge_inventory.py`) ⏳ Planned
+
 - Combine all JSON outputs
 - Match local apps with OAuth connections
 - Identify relationships
@@ -206,6 +232,7 @@ The existing `WatchHub_Realtime.ps1` already:
 ## Technical Decisions
 
 ### Why Streamlit?
+
 - Fast to build (vs React/Vue web app)
 - Python-based (good for system scanning scripts)
 - Interactive widgets out of the box
@@ -224,17 +251,12 @@ C:\Vault\Apothecary\30_Automation\303_AI_HubWatch - Automation\
 ├── dashboard/
 │   ├── collectors/
 │   │   ├── scan_gmail_oauth.py
-│   │   ├── scan_windows_apps.py
-│   │   ├── scan_hub_logs.py
-│   │   ├── scan_configs.py
-│   │   └── merge_inventory.py
+│   │   ├── import_oauth_connections_from_csv.py
 │   ├── data/
 │   │   ├── gmail_connections.json
-│   │   ├── windows_apps.json
-│   │   ├── hub_junctions.json
-│   │   ├── config_files.json
-│   │   └── master_inventory.json
-│   ├── dashboard.py (Streamlit app)
+│   │   ├── oauth_connections_table.csv
+│   │   └── gmail_connections_template.json
+│   ├── dashboard.py (Streamlit app, planned)
 │   └── requirements.txt
 └── README.md (usage instructions)
 ```
@@ -242,6 +264,7 @@ C:\Vault\Apothecary\30_Automation\303_AI_HubWatch - Automation\
 ### Dependencies
 
 **Python Packages** (requirements.txt):
+
 ```
 streamlit
 google-auth
@@ -253,23 +276,43 @@ networkx
 ```
 
 **Windows PowerShell** (already available):
+
 - For registry queries
 - For package manager checks
 
 ## Integration with Existing Watcher
 
 The existing `WatchHub_Realtime.ps1` will continue to monitor and log changes. The dashboard will:
+
 1. Read from `AI_hub/_Change_log/` to get real-time updates
 2. Parse `discovery.log` for historical data
 3. Periodically re-scan (manual refresh in dashboard)
 
 **Enhancement to watcher** (optional):
+
 - Export JSON snapshot on each change: `AI_hub/_snapshots/latest.json`
 - Dashboard reads this for real-time updates
 
+## CSV Workflow (No Manual JSON Arrays)
+
+Goal: avoid hand-editing `oauth_connections` arrays.
+
+Flow:
+
+1. Run `scan_gmail_oauth.py` → writes `gmail_connections.json` and regenerates `oauth_connections_table.csv`
+2. Fill `oauth_connections_table.csv` (table format)
+3. Run `import_oauth_connections_from_csv.py` → replaces `oauth_connections` in `gmail_connections.json`
+
+Notes:
+
+- The CSV is regenerated on each Gmail scan (auto-refresh).
+- JSON is backed up to `data/gmail_connections.json.bak` on import.
+- This workflow is Gmail-only; Google Connections page is intentionally excluded.
+
 ## Next Steps
 
-### Immediate (Phase 1a):
+### Immediate (Phase 1a)
+
 1. Build Gmail OAuth scanner first
    - Authenticate with Gmail API
    - List authorized apps and scopes
@@ -280,21 +323,24 @@ The existing `WatchHub_Realtime.ps1` will continue to monitor and log changes. T
    - Check package managers
    - Save to `windows_apps.json`
 
-### Short-term (Phase 1b):
+### Short-term (Phase 1b)
+
 3. Build Hub log parser
-4. Build config file hunter
-5. Build data merger
+2. Build config file hunter
+3. Build data merger
 
-### Medium-term (Phase 2):
+### Medium-term (Phase 2)
+
 6. Create Streamlit dashboard skeleton
-7. Build Overview tab
-8. Build Apps Inventory tab
+2. Build Overview tab
+3. Build Apps Inventory tab
 
-### Long-term (Phase 3):
+### Long-term (Phase 3)
+
 9. Add OAuth Connections tab
-10. Add Config Map visualization
-11. Add Relationship Graph
-12. Polish UI and add filters
+2. Add Config Map visualization
+3. Add Relationship Graph
+4. Polish UI and add filters
 
 ## Important Notes
 
@@ -313,6 +359,7 @@ The existing `WatchHub_Realtime.ps1` will continue to monitor and log changes. T
 ## Success Criteria
 
 When complete, you should be able to:
+
 - ✅ See all installed AI tools in one dashboard
 - ✅ Know which services are connected to Gmail/GitHub
 - ✅ Find config files, skills dirs, MCP configs for any tool

@@ -49,6 +49,8 @@ $script:mutexTimeout = 10000  # 10 seconds max wait for mutex
 # ============================================================================
 
 $LogsFolder = Join-Path $HubPath "_Change_log"
+$ProviderRegistryPath = Join-Path $PSScriptRoot "provider_registry.json"
+$DecisionTablePath = Join-Path $PSScriptRoot "detection_decisions.csv"
 
 $monitorPaths = @{
     "UserHome" = @{
@@ -175,6 +177,12 @@ if (-not (Test-Path $LogsFolder)) {
     Write-Log "Created logs folder: $LogsFolder" -Color Green
 }
 
+if (-not (Test-Path $DecisionTablePath)) {
+    $decisionHeaders = "event_id,detected_at,artifact_path,artifact_type,layer1_provider,layer1_confidence,layer2_provider,layer2_confidence,evidence_local,evidence_external,is_ai_related,provider_final,supports_skills,supports_mcp,action_state,reviewed_by,reviewed_at,notes"
+    Set-Content -Path $DecisionTablePath -Value $decisionHeaders -Encoding UTF8
+    Write-Log "Created decision table: $DecisionTablePath" -Color Green
+}
+
 # ============================================================================
 # FileSystemWatcher Setup
 # ============================================================================
@@ -229,6 +237,8 @@ foreach ($key in $monitorPaths.Keys) {
             $debounceMsec = $Event.MessageData.DebounceMsec
             $mutex = $Event.MessageData.Mutex
             $mutexTimeout = $Event.MessageData.MutexTimeout
+            $providerRegistryPath = $Event.MessageData.ProviderRegistryPath
+            $decisionTablePath = $Event.MessageData.DecisionTablePath
 
             function Write-Log {
                 param([string]$Message, [string]$Color = "White", [switch]$DebugOnly)
@@ -270,49 +280,89 @@ foreach ($key in $monitorPaths.Keys) {
                     )
                 }
                 $nameMatch = $aiKeywords | Where-Object { $name -like "*$_*" }
+                $cleanName = $name -replace '^\.', ''
+                $cleanName = $cleanName -replace '[<>:"/\\|?*]', '_'
 
-                # Config file validation - check if folder has expected AI tool config files
-                $configValidated = $false
-                $validationReason = ""
-                if ($nameMatch -or $patternMatch) {
-                    # Wait a moment for files to be created
-                    Start-Sleep -Milliseconds 500
+                # Wait a moment for files to be created
+                Start-Sleep -Milliseconds 500
 
-                    # Check for common AI tool config files
-                    $configSignatures = @(
-                        "settings.json", "config.json", "claude_desktop_config.json",
-                        "extensions.json", "hosts.json", "models", "skill.json",
-                        "package.json", ".aider.conf.yml", "keymap.json"
-                    )
-                    $foundConfigs = @()
-                    foreach ($sig in $configSignatures) {
-                        $sigPath = Join-Path $fullPath $sig
-                        if (Test-Path $sigPath) {
-                            $foundConfigs += $sig
-                        }
-                    }
-
-                    if ($foundConfigs.Count -gt 0) {
-                        $configValidated = $true
-                        $validationReason = "Config files found: $($foundConfigs -join ', ')"
-                    } else {
-                        # Check if folder has any content (might be new install)
-                        $items = Get-ChildItem -Path $fullPath -ErrorAction SilentlyContinue
-                        if ($items.Count -gt 0) {
-                            $configValidated = $true
-                            $validationReason = "Folder has content ($($items.Count) items)"
-                        } else {
-                            $validationReason = "Empty folder - skipping"
-                        }
+                # Check for common AI tool config files
+                $configSignatures = @(
+                    "settings.json", "config.json", "claude_desktop_config.json",
+                    "extensions.json", "hosts.json", "models", "skill.json",
+                    "package.json", ".aider.conf.yml", "keymap.json"
+                )
+                $foundConfigs = @()
+                foreach ($sig in $configSignatures) {
+                    $sigPath = Join-Path $fullPath $sig
+                    if (Test-Path $sigPath) {
+                        $foundConfigs += $sig
                     }
                 }
 
-                if (($nameMatch -or $patternMatch) -and $configValidated) {
+                $folderItems = Get-ChildItem -Path $fullPath -ErrorAction SilentlyContinue
+                $hasContent = $folderItems.Count -gt 0
+                $hasConfigSignals = $foundConfigs.Count -gt 0
+
+                # Layer 1 provider candidate by local aliases
+                $providerCandidates = @()
+                $exactAliasHit = $false
+                if (Test-Path $providerRegistryPath) {
+                    try {
+                        $registry = Get-Content -Path $providerRegistryPath -Raw -ErrorAction Stop | ConvertFrom-Json -ErrorAction Stop
+                        foreach ($providerEntry in $registry.providers) {
+                            if (-not $providerEntry.aliases) { continue }
+                            foreach ($alias in $providerEntry.aliases) {
+                                $aliasLower = "$alias".ToLower()
+                                if ([string]::IsNullOrWhiteSpace($aliasLower)) { continue }
+                                if ($cleanName.ToLower() -eq $aliasLower) {
+                                    $providerCandidates += $providerEntry.name
+                                    $exactAliasHit = $true
+                                    break
+                                }
+                                if ($cleanName.ToLower() -like "*$aliasLower*") {
+                                    $providerCandidates += $providerEntry.name
+                                    break
+                                }
+                            }
+                        }
+                    } catch {
+                        Write-Log "  [X] Provider registry parse failed: $($_.Exception.Message)" -Color Red
+                    }
+                }
+
+                $providerCandidates = $providerCandidates | Sort-Object -Unique
+                $providerCount = $providerCandidates.Count
+                $layer1Provider = if ($providerCount -eq 1) { $providerCandidates[0] } else { "" }
+                $layer1Confidence = "0.00"
+                if ($providerCount -eq 1 -and $exactAliasHit) {
+                    $layer1Confidence = "0.95"
+                } elseif ($providerCount -eq 1 -and $hasConfigSignals) {
+                    $layer1Confidence = "0.85"
+                } elseif ($providerCount -eq 1) {
+                    $layer1Confidence = "0.70"
+                } elseif ($providerCount -gt 1) {
+                    $layer1Confidence = "0.40"
+                }
+
+                $isPotentialAI = ($nameMatch.Count -gt 0) -or $hasConfigSignals -or ($providerCount -gt 0)
+                $isHighConfidence = ($providerCount -eq 1) -and ($exactAliasHit -or $hasConfigSignals)
+                $validationReason = if ($hasConfigSignals) {
+                    "Config files found: $($foundConfigs -join ', ')"
+                } elseif ($nameMatch.Count -gt 0 -and $hasContent) {
+                    "Keyword match with folder content"
+                } elseif ($providerCount -gt 0) {
+                    "Provider alias match"
+                } elseif (-not $hasContent) {
+                    "Empty folder"
+                } else {
+                    "No AI signals"
+                }
+
+                if ($isHighConfidence) {
                     Write-Log "  -> Identified as AI tool!" -Color Green
                     Write-Log "  -> $validationReason" -Color DarkGreen
 
-                    $cleanName = $name -replace '^\.', ''
-                    $cleanName = $cleanName -replace '[<>:"/\\|?*]', '_'
                     $junctionName = "${cleanName}_${category}"
                     $junctionPath = Join-Path $hubPath $junctionName
 
@@ -389,8 +439,44 @@ foreach ($key in $monitorPaths.Keys) {
                             Write-Log "  [MUTEX] Released lock" -Color DarkGray -DebugOnly
                         }
                     }
-                } elseif ($nameMatch -or $patternMatch) {
-                    Write-Log "  [o] Name matches but validation failed: $validationReason" -Color DarkYellow
+                } elseif ($isPotentialAI) {
+                    Write-Log "  [PENDING] Requires Layer2/Human review: $validationReason" -Color DarkYellow
+
+                    if (Test-Path $decisionTablePath) {
+                        $eventId = [guid]::NewGuid().ToString()
+                        $detectedAt = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+                        $evidenceLocal = @()
+                        if ($nameMatch.Count -gt 0) { $evidenceLocal += "keywords:$($nameMatch -join '|')" }
+                        if ($hasConfigSignals) { $evidenceLocal += "configs:$($foundConfigs -join '|')" }
+                        if ($providerCount -gt 0) { $evidenceLocal += "providers:$($providerCandidates -join '|')" }
+                        if ($patternMatch) { $evidenceLocal += "pattern:$pattern" }
+                        $notes = "Queued after Layer1. Run Layer2 subagent, then human decision."
+
+                        $decisionRow = [PSCustomObject]@{
+                            event_id = $eventId
+                            detected_at = $detectedAt
+                            artifact_path = $fullPath
+                            artifact_type = "folder"
+                            layer1_provider = $layer1Provider
+                            layer1_confidence = $layer1Confidence
+                            layer2_provider = ""
+                            layer2_confidence = ""
+                            evidence_local = ($evidenceLocal -join "; ")
+                            evidence_external = ""
+                            is_ai_related = "pending"
+                            provider_final = ""
+                            supports_skills = "unknown"
+                            supports_mcp = "unknown"
+                            action_state = "pending"
+                            reviewed_by = ""
+                            reviewed_at = ""
+                            notes = $notes
+                        }
+                        $decisionRow | Export-Csv -Path $decisionTablePath -NoTypeInformation -Append -Encoding UTF8
+                        Write-Log "  [+] Queued pending decision: $eventId" -Color DarkYellow
+                    } else {
+                        Write-Log "  [X] Decision table missing: $decisionTablePath" -Color Red
+                    }
                 } else {
                     Write-Log "  [o] Not identified as AI tool (skipping)" -Color DarkGray
                 }
@@ -520,6 +606,8 @@ foreach ($key in $monitorPaths.Keys) {
             Mutex = $script:mutex
             MutexTimeout = $script:mutexTimeout
             AIKeywords = $aiKeywords
+            ProviderRegistryPath = $ProviderRegistryPath
+            DecisionTablePath = $DecisionTablePath
         }
 
         $null = Register-ObjectEvent -InputObject $watcher -EventName Created -Action $createAction -MessageData $messageData

@@ -27,3 +27,5 @@ desktop.ini
 *.tmp
 *.swp
 *~
+
+99_Archive/**

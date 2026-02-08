@@ -1,0 +1,1 @@
+event_id,detected_at,artifact_path,artifact_type,layer1_provider,layer1_confidence,layer2_provider,layer2_confidence,evidence_local,evidence_external,is_ai_related,provider_final,supports_skills,supports_mcp,action_state,reviewed_by,reviewed_at,notes
