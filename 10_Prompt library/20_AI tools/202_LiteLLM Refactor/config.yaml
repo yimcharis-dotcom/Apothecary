@@ -94,44 +94,6 @@ model_list:
       model: perplexity/sonar-reasoning-pro
       api_key: os.environ/PERPLEXITY_API_KEY
 
-# ========== OPENAI MODELS (Via OpenRouter or API Key) ==========
-
-# Note: ChatGPT Plus Subscription does NOT provide an API Key
-
-# Use OpenRouter or purchase API credits at platform.openai.com
-  
-# - model_name: gpt-4o
-
-# litellm_params
-
-# model: openai/gpt-4o
-
-# api_key: os.environ/OPENAI_API_KEY
-
-# - model_name: gpt-4o-mini
-
-# litellm_params
-
-# model: openai/gpt-4o-mini
-
-# api_key: os.environ/OPENAI_API_KEY
-
-# - model_name: o1
-
-# litellm_params
-
-# model: openai/o1
-
-# api_key: os.environ/OPENAI_API_KEY
-
-# - model_name: o3-mini
-
-# litellm_params
-
-# model: openai/o3-mini
-
-# api_key: os.environ/OPENAI_API_KEY
-
 # ========== GOOGLE AI STUDIO (GEMINI) ==========
 
 # Free tier available at aistudio.google.com
@@ -163,15 +125,35 @@ model_list:
       model: openrouter/openai/gpt-4o
       api_key: os.environ/OPENROUTER_API_KEY
 
+# ========== LITELLM SETTINGS ==========
+
 litellm_settings:
   master_key: "sk-litellm-master-key-12345"
   drop_params: true
   set_verbose: true
+  # Enable automatic cost tracking
+  track_cost: true
+  # Custom headers for spend tracking
+  extra_spend_tag_headers:
+    - "x-custom-header"
+  # Keep user-agent tracking for tool identification (Claude Code, etc.)
+  disable_add_user_agent_to_request_tags: false
+
+# ========== GENERAL SETTINGS ==========
 
 general_settings:
-  database_url: "sqlite:///C:\Users\YC\LiteLLM\litellm.db" # Local SQLite for cost tracking
+  # Local SQLite for cost tracking and usage logs
+  database_url: "sqlite:///C:\Users\YC\LiteLLM\litellm.db"
   store_model_in_db: true
+  
+# ========== ROUTING SETTINGS ==========
 
-general_settings:
-  database_url: "sqlite:///C:\Users\YC\LiteLLM\litellm.db" # Local SQLite for cost tracking
-  store_model_in_db: true
+# Optional: Load balancing and failover
+router_settings:
+  model_group_alias:
+    # Add aliases for easier model access
+    "grok": "grok-code-fast-1"
+    "claude": "openrouter-claude-3-7-sonnet"
+    "gpt4": "openrouter-gpt-4o"
+    "research": "perplexity-sonar-deep-research"
+    "reasoning": "grok-4-1-fast-reasoning"
