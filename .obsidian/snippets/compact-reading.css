@@ -1,192 +1,159 @@
-/* MAXIMUM COMPACT MODE - Minimal spacing */
+/* MAXIMUM COMPACT MODE
+   Goal:
+   - Edit mode: no spacing between lines (including blank lines), only small padding after headings
+   - Reading view: tight blocks, only small padding after headings
+   - Folding compatibility preserved
+*/
 
-/* Base container - remove any default padding */
-.markdown-preview-view {
-    line-height: 1.2 !important;
-}
-
-/* Code blocks - 0.08 character heights */
-.markdown-preview-view pre {
-    margin-top: 0.08em !important;
-    margin-bottom: 0.08em !important;
-    padding: 0.25em !important;
-    line-height: 1.2 !important;
-}
-
-/* Tables - 0.08 character heights */
-.markdown-preview-view table {
-    margin-top: 0.08em !important;
-    margin-bottom: 0.08em !important;
-}
-
-/* Table cells - minimal padding */
-.markdown-preview-view td,
-.markdown-preview-view th {
-    padding: 0.15em 0.3em !important;
-}
-
-/* Headings - conservative one line spacing below, no spacing above */
-.markdown-preview-view h1,
-.markdown-preview-view h2,
-.markdown-preview-view h3,
-.markdown-preview-view h4,
-.markdown-preview-view h5,
-.markdown-preview-view h6 {
-    margin-top: 0 !important;
-    margin-bottom: 0.8em !important;
-    line-height: 1.1 !important;
-}
-
-/* Paragraphs - conservative one line spacing below, no spacing above */
-.markdown-preview-view p {
-    margin-top: 0 !important;
-    margin-bottom: 0.8em !important;
-    line-height: 1.2 !important;
-}
-
-/* Lists - no indentation, conservative one line spacing */
-.markdown-preview-view ul,
-.markdown-preview-view ol {
-    margin-top: 0 !important;
-    margin-bottom: 0.8em !important;
+:root{
+    --ff-line: 1.2;
+    --ff-hline: 1.5;
+    --ff-hpad: 0.3em; /* heading bottom padding; tune 0.35em–0.50em */
+  }
+  
+  /* ============================================
+     READING VIEW
+     ============================================ */
+  
+  .markdown-preview-view{
+    line-height: var(--ff-line) !important;
+  }
+  
+  /* Everything tight: no margins anywhere */
+  .markdown-preview-view :is(p,ul,ol,li,blockquote,pre,table,thead,tbody,tfoot,tr,td,th,hr,.callout,.markdown-embed){
+    margin: 0 !important;
+  }
+  
+  /* Only headings get a small gap after */
+  .markdown-preview-view :is(ho0,h1,h2,h3,h4,h5,h6){
+    line-height: var(--ff-hline) !important;
+    margin: 0 !important;
+    padding-bottom: var(--ff-hpad) !important;
+  }
+  
+  /* Lists: keep compact and aligned */
+  .markdown-preview-view :is(ul,ol){
     padding-left: 0 !important;
     list-style-position: inside !important;
-}
+  } 
+  .markdown-preview-view :is(p){
+    line-height: var(0.5em) !important;
+    padding-left: 0 !important;
+    list-style-position: inside !important;
+    padding-bottom: var(--ff-hpad) !important
 
-/* List items - minimal spacing, no indentation */
-.markdown-preview-view li {
-    margin-top: 0.03em !important;
-    margin-bottom: 0.03em !important;
-    line-height: 1.2 !important;
+  }
+  .markdown-preview-view li{
     padding-left: 0 !important;
     margin-left: 0 !important;
-}
-
-/* Blockquotes - conservative one line spacing */
-.markdown-preview-view blockquote {
-    margin-top: 0 !important;
-    margin-bottom: 0.8em !important;
-    padding: 0.25em 0.5em !important;
-    line-height: 1.2 !important;
-}
-
-/* Horizontal rules - 0.15 character heights */
-.markdown-preview-view hr {
-    margin-top: 0.15em !important;
-    margin-bottom: 0.15em !important;
-}
-
-/* Inline code - minimal padding */
-.markdown-preview-view code {
-    padding: 0.05em 0.2em !important;
-    line-height: 1.2 !important;
-}
-
-/* Callouts - conservative one line spacing */
-.markdown-preview-view .callout {
-    margin-top: 0 !important;
-    margin-bottom: 0.8em !important;
-    padding: 0.3em !important;
-}
-
-.markdown-preview-view .callout-content {
+  
+  .markdown-preview-view li{
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+  
+  /* Blockquotes: compact padding only */
+  .markdown-preview-view blockquote{
+    padding: 0.4em 0.50em !important;
+  }
+  
+  /* Code blocks: compact, readable line height */
+  .markdown-preview-view pre{
+    padding: 0.em !important;
+    line-height: 1.3 !important;
+  }
+  
+  .markdown-preview-view code{
+    padding: 0.2em 0.1em !important;
+    line-height: var(--ff-line) !important;
+  }
+  
+  /* Tables: compact cell padding */
+  .markdown-preview-view :is(td,th){
+    padding: 0.1em 0.em !important;
+  }
+  
+  /* Callouts: compact padding */
+  .markdown-preview-view .callout{
+    padding: 0.25em !important;
+  }
+  
+  .markdown-preview-view .callout-content{
     margin: 0 !important;
-    padding: 0.2em 0 !important;
-}
-
-/* Embedded notes - conservative one line spacing */
-.markdown-preview-view .markdown-embed {
-    margin-top: 0 !important;
-    margin-bottom: 0.8em !important;
-}
-
-/* Links and other inline elements */
-.markdown-preview-view a {
-    line-height: inherit !important;
-}
-
-/* Remove extra spacing from nested elements */
-.markdown-preview-view * {
-    margin-block-start: 0 !important;
-    margin-block-end: 0 !important;
-}
-
-/* Re-apply conservative one-line spacing for main elements */
-.markdown-preview-view h1,
-.markdown-preview-view h2,
-.markdown-preview-view h3,
-.markdown-preview-view h4,
-.markdown-preview-view h5,
-.markdown-preview-view h6 { 
-    margin-top: 0 !important; 
-    margin-bottom: 0.8em !important; 
-}
-.markdown-preview-view p { 
-    margin-top: 0 !important; 
-    margin-bottom: 0.8em !important; 
-}
-.markdown-preview-view ul,
-.markdown-preview-view ol { 
-    margin-top: 0 !important; 
-    margin-bottom: 0.8em !important; 
-    padding-left: 0 !important;
-}
-.markdown-preview-view li { 
-    margin-top: 0.03em !important; 
-    margin-bottom: 0.03em !important; 
-    padding-left: 0 !important;
-    margin-left: 0 !important;
-}
-.markdown-preview-view blockquote { 
-    margin-top: 0 !important; 
-    margin-bottom: 0.8em !important; 
-}
-.markdown-preview-view hr { 
-    margin-top: 0.15em !important; 
-    margin-bottom: 0.15em !important; 
-}
-.markdown-preview-view pre { 
-    margin-top: 0.08em !important; 
-    margin-bottom: 0.08em !important; 
-
-}
-/* ===========================
-   EDIT VIEW (Live Preview / Source) – compact mode
-   Add below your current rules
-   =========================== */
-
-/* Base editor line height (text) */
-.markdown-source-view.mod-cm6 .cm-content {
-  line-height: 1.2 !important;
-}
-
-/* Paragraph spacing in editor (Live Preview renders paragraphs as lines; keep it tight) */
-.markdown-source-view.mod-cm6 .cm-line {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* Headings in editor */
-.markdown-source-view.mod-cm6 .cm-header {
-  line-height: 1.1 !important;
-}
-
-/* Lists in editor (reduce extra vertical whitespace) */
-.markdown-source-view.mod-cm6 .cm-line:has(.cm-formatting-list),
-.markdown-source-view.mod-cm6 .cm-line:has(.cm-list-1),
-.markdown-source-view.mod-cm6 .cm-line:has(.cm-list-2),
-.markdown-source-view.mod-cm6 .cm-line:has(.cm-list-3) {
-  line-height: 1.2 !important;
-}
-
-/* Code blocks in editor (monospace) */
-.markdown-source-view.mod-cm6 .cm-line:has(.cm-hmd-codeblock),
-.markdown-source-view.mod-cm6 .cm-content .cm-inline-code {
-  line-height: 1.2 !important;
-}
-
-/* Optional: make editor a touch roomier than reading view */
-.theme-light .markdown-source-view.mod-cm6 .cm-content,
-.theme-dark  .markdown-source-view.mod-cm6 .cm-content {
-  /* change 1.2 → 1.3/1.4 if you want */
-}
+    padding: 0 !important;
+  }
+  
+  /* IMPORTANT: do NOT include a global reset like
+     .markdown-preview-view * { margin-block-*:0 }
+     It can override the heading padding depending on order.
+  */
+  
+  /* ============================================
+     LIVE PREVIEW / EDIT VIEW (CM6)
+     ============================================ */
+  
+  .markdown-source-view.mod-cm6 .cm-content,
+  .markdown-source-view.mod-cm6 .cm-line{
+    line-height: var(--ff-line) !important;
+    margin: 0 !important;   /* avoid CM6 layout issues */
+    padding: 0 !important;  /* no line spacing */
+  }
+  
+  /* Headings: slightly tighter + small padding after heading line only */
+  .markdown-source-view.mod-cm6 :is(
+    .HyperMD-header-1,.HyperMD-header-2,.HyperMD-header-3,
+    .HyperMD-header-4,.HyperMD-header-5,.HyperMD-header-6
+  ){
+    line-height: var(--ff-hline) !important;
+  }
+  
+  .markdown-source-view.mod-cm6 .cm-line.HyperMD-header{
+    padding-bottom: var(--ff-hpad) !important;
+  }
+  
+  /* Blank lines: no added gap */
+  .markdown-source-view.mod-cm6 .cm-line:has(> br:only-child){
+    padding: 0 !important;
+  }
+  
+  /* Lists: keep compact */
+  .markdown-source-view.mod-cm6 .HyperMD-list-line{
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: var(--ff-line) !important;
+  }
+  
+  /* Code blocks: readable, but no extra spacing between lines */
+  .markdown-source-view.mod-cm6 .HyperMD-codeblock{
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Tables: keep compact (no extra spacing) */
+  .markdown-source-view.mod-cm6 :is(.cm-hmd-table-sep,.HyperMD-table-row){
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Horizontal rules: compact */
+  .markdown-source-view.mod-cm6 .cm-line:has(.cm-hr){
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* ============================================
+     FOLDING FIX - Preserve fold mechanics
+     ============================================ */
+  
+  .markdown-source-view.mod-cm6 :is(.cm-foldPlaceholder,.cm-fold-indicator){
+    padding: initial !important;
+    margin: initial !important;
+    line-height: initial !important;
+  }
+  
+  .markdown-source-view.mod-cm6 .cm-gutterElement{
+    padding: initial !important;
+    margin: initial !important;
+  }
+  

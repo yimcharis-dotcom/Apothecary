@@ -1,2 +1,0 @@
-espanso_trigger: null
-

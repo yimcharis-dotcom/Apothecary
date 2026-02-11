@@ -1,6 +1,6 @@
 {
-  "openBehavior": "daily",
-  "strictLineBreaks": true,
+  "openBehavior": "",
+  "strictLineBreaks": false,
   "livePreview": true,
   "showLineNumber": true,
   "tabSize": 2,
@@ -8,14 +8,16 @@
   "showUnsupportedFiles": true,
   "trashOption": "system",
   "uriCallbacks": true,
-  "defaultViewMode": "preview",
+  "defaultViewMode": "source",
   "showInlineTitle": true,
   "readableLineLength": false,
   "propertiesInDocument": "source",
   "promptDelete": true,
   "userIgnoreFilters": [
     "copilot*",
-    "__Templetes/"
+    "__Templates/",
+    "99_Archive/",
+    "/(^|\\/)__?ss\\//"
   ],
   "rightToLeft": false,
   "focusNewTab": true,

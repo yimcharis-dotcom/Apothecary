@@ -1,3 +1,8 @@
+---
+tag: [ai/skills, claude, guide]
+
+---
+
 # Complete Guide to Creating and Implementing Claude Skills
 
 ## What Are Claude Skills?

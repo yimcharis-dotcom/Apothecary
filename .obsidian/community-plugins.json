@@ -1,5 +1,4 @@
 [
-  "obsidian-advanced-uri",
   "ai-templater",
   "obsidian-auto-link-title",
   "colored-tags",
@@ -20,7 +19,6 @@
   "tag-wrangler",
   "text-extractor",
   "templater-obsidian",
-  "vault-transfer",
   "table-editor-obsidian",
   "ai-providers",
   "nldates-obsidian",
@@ -32,9 +30,7 @@
   "metadata-auto-classifier",
   "obsidian-regex-replace",
   "tag-buddy",
-  "fix-require-modules",
   "open-vscode",
-  "perplexed",
   "perplexity-chat",
   "obsidian-git",
   "metadata-menu",
@@ -47,6 +43,5 @@
   "dataview-properties",
   "obsidian-meta-bind-plugin",
   "opencode-obsidian",
-  "cursor-integration",
-  "note-chain"
+  "cursor-integration"
 ]
