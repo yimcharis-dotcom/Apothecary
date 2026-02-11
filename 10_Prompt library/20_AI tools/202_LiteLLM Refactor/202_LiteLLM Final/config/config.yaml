@@ -100,6 +100,21 @@ model_list:
     litellm_params:
       model: chatgpt/o1-preview
 
+  # ========== CHATGPT 2026 MODELS ==========
+  # Defaulting to GPT-5.2 series
+  
+  - model_name: chatgpt-5-2-instant
+    model_info:
+      mode: responses
+    litellm_params:
+      model: chatgpt/gpt-5.2-instant
+
+  - model_name: chatgpt-5-2-thinking
+    model_info:
+      mode: responses
+    litellm_params:
+      model: chatgpt/gpt-5.2-thinking
+
   # ========== AZURE OPENAI (Subscription Based) ==========
   # If you meant Azure Subscription, uncomment and fill details below
   
@@ -131,6 +146,18 @@ model_list:
       model: gemini/gemini-1.5-pro
       api_key: os.environ/GEMINI_API_KEY
 
+  # ========== GEMINI 3 (2026) ==========
+
+  - model_name: gemini-3
+    litellm_params:
+      model: gemini/gemini-3
+      api_key: os.environ/GEMINI_API_KEY
+
+  - model_name: gemini-3-flash
+    litellm_params:
+      model: gemini/gemini-3-flash
+      api_key: os.environ/GEMINI_API_KEY
+
   # ========== OPENROUTER MODELS ==========
   
   - model_name: openrouter-claude-3-7-sonnet
@@ -146,6 +173,25 @@ model_list:
   - model_name: openrouter-gpt-4o
     litellm_params:
       model: openrouter/openai/gpt-4o
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  # ========== ANTHROPIC (via OpenRouter) ==========
+
+  - model_name: openrouter-claude-opus-4-6
+    litellm_params:
+      model: openrouter/anthropic/claude-opus-4.6
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: openrouter-claude-haiku-4-5
+    litellm_params:
+      model: openrouter/anthropic/claude-haiku-4.5
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  # ========== FREE / EXPERIMENTAL (via OpenRouter) ==========
+
+  - model_name: openrouter-deepseek-chimera
+    litellm_params:
+      model: openrouter/deepseek/deepseek-tng-r1t2-chimera
       api_key: os.environ/OPENROUTER_API_KEY
 
 litellm_settings:
