@@ -8,6 +8,8 @@ description: " AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy,
 Tags:
   - clippings
   - ai/tools
+dv_f"Crawl job submitted. Task ID: '{task_id}"'
+dv_fcrawl-job-submitted-task-id: '{task_id}"'
 ---
 **[crawl4ai](https://github.com/unclecode/crawl4ai)** Public
 

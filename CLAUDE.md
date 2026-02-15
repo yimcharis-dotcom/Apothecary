@@ -22,39 +22,41 @@ The vault follows a **4-stage pipeline** for content development:
 ### Key Directory Purposes
 
 - **00_System/003_Skills/** - Claude Code skills (custom + Codex system skills)
+  
   - Contains both skill source directories and packaged `.skill` files
   - Skills use SKILL.md frontmatter + scripts/ + references/ + assets/ structure
   - Codex skills marked with `.codex-system-skills.marker` file
-
 - **00_System/002_Espanso/** - Text expansion snippet configurations
+  
   - YAML snippets for Espanso text expander
   - Location: `C:\Users\YC\AppData\Roaming\espanso\match\`
-
 - **30_Automation/** - Active automation projects:
+  
   - `303_AI_HubWatch` - PowerShell watcher + Python dashboard for AI tool inventory
   - `301_hkex_Daily_quote` - Playwright-based stock quote automation
   - `300_HKICPA-Download-Automation` - Document download automation
-
 - **10_Prompt library/** - Organized by category (Accounting, AI_Development, Grammar, etc.)
-
 - **99_env/** - API keys and environment configurations (NOT committed to git)
+  
   - Contains connection info for Claude API, Deepseek, Grok, OpenRouter, etc.
-
 - **99_Reference/** - External documentation and guides (read-only)
 
 ## Technology Stack
 
 ### Python
+
 - **Primary use**: Automation scripts, data collection, OAuth management
 - **Common libraries**: google-auth, google-api-python-client, streamlit, pandas, plotly
 - **Install dependencies**: `pip install -r requirements.txt` (found in project subdirectories)
 
 ### PowerShell
+
 - **Primary use**: Windows automation, file system watching, AI tool tracking
 - **Key scripts**: `WatchHub_Realtime.ps1`, `TrackInstallation.ps1`, `SyncSkills.ps1`
 - **Location**: `30_Automation/303_AI_HubWatch - Automation/src_v2/`
 
 ### Playwright
+
 - **Primary use**: Browser automation for data scraping (HKEX quotes)
 - **Setup**: Install via `pip install playwright` then `playwright install`
 
@@ -63,6 +65,7 @@ The vault follows a **4-stage pipeline** for content development:
 ### Working with Claude Code Skills
 
 **Creating a new skill:**
+
 ```bash
 # Use the skill-builder skill (if available)
 # Or manually create structure:
@@ -71,11 +74,13 @@ mkdir -p "00_System/003_Skills/skill-name/{scripts,references,assets}"
 ```
 
 **Validating a skill:**
+
 ```bash
 python "00_System/003_Skills/Claude/skill-builder/scripts/validate_skill.py" path/to/skill/
 ```
 
 **Packaging a skill:**
+
 ```bash
 python "00_System/003_Skills/Claude/skill-builder/scripts/package_skill.py" path/to/skill/
 # Creates a .skill file for distribution
@@ -84,12 +89,14 @@ python "00_System/003_Skills/Claude/skill-builder/scripts/package_skill.py" path
 ### Working with AI_HubWatch Automation
 
 **Running the file watcher:**
+
 ```powershell
 cd "30_Automation/303_AI_HubWatch - Automation/src_v2"
 .\WatchHub_Realtime.ps1
 ```
 
 **Scanning Gmail OAuth connections:**
+
 ```bash
 cd "30_Automation/303_AI_HubWatch - Automation/dashboard"
 python collectors/scan_gmail_oauth.py
@@ -97,6 +104,7 @@ python collectors/scan_gmail_oauth.py
 ```
 
 **Installing dashboard dependencies:**
+
 ```bash
 cd "30_Automation/303_AI_HubWatch - Automation/dashboard"
 pip install -r requirements.txt
@@ -107,6 +115,7 @@ pip install -r requirements.txt
 **Snippet file location**: `C:\Users\YC\AppData\Roaming\espanso\match\`
 
 **After editing snippets in vault:**
+
 1. Copy from `00_System/002_Espanso/` to Espanso match directory
 2. Restart Espanso or reload configuration
 
@@ -118,6 +127,7 @@ pip install -r requirements.txt
 - **Commit messages**: Follow existing style (imperative, descriptive)
 
 **Files to NEVER commit**:
+
 - API keys in `99_env/` (already in .gitignore)
 - `.obsidian/workspace.json` and similar session files (already ignored)
 - Large binary files or vector databases (`.tar.gz` files)
@@ -129,6 +139,7 @@ pip install -r requirements.txt
 **Purpose**: Track all AI tools installed on Windows, monitor OAuth connections, visualize relationships
 
 **Current state**:
+
 - ✅ Gmail OAuth scanner implemented
 - ✅ PowerShell file watcher working
 - ⏳ Dashboard UI (Streamlit) planned but not built
@@ -141,6 +152,7 @@ pip install -r requirements.txt
 ### Skills Architecture
 
 **Skill structure**:
+
 ```
 skill-name/
 ├── SKILL.md              # Main documentation with YAML frontmatter
@@ -150,6 +162,7 @@ skill-name/
 ```
 
 **Skill frontmatter fields**:
+
 - `name`: Display name
 - `description`: Brief (1-2 sentences) usage trigger description
 - `author`, `version`, `license`: Metadata
@@ -187,18 +200,21 @@ skill-name/
 Since this is primarily a knowledge management vault (not a software project), traditional testing commands don't apply. However:
 
 **For Python scripts:**
+
 ```bash
 # Run script directly (most automation scripts are standalone)
 python path/to/script.py
 ```
 
 **For PowerShell scripts:**
+
 ```powershell
 # Execute with appropriate execution policy
 powershell -ExecutionPolicy Bypass -File script.ps1
 ```
 
 **For Playwright scripts:**
+
 ```bash
 playwright test  # If test files exist
 python script.py  # For standalone Playwright scripts

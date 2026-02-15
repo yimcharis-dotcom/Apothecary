@@ -12,8 +12,6 @@ Tags:
   - claudeCode
   - ai/prompt
   - ai/tools
-words:
-  2026-01-31: 2896
 ---
 **[claude-codex-settings](https://github.com/fcakyon/claude-codex-settings)** Public
 

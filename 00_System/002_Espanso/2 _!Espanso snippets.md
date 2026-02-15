@@ -66,7 +66,7 @@ C:\Users\YC\AppData\Roaming\espanso\match\
 
 ```yaml
   # Converts a trigger and prompt into an Espanso YAML snippet
-  - trigger: ";toesp"
+  - trigger: ":toesp"
     replace: |
       Convert INPUT Trigger and INPUT Prompt into an Espanso YAML snippet.
 
@@ -88,7 +88,7 @@ C:\Users\YC\AppData\Roaming\espanso\match\
       ```yaml
         # YAML comment describing what the trigger does
         - trigger: "TRIGGER"
-          replace: |
+          replace: |-
             PROMPT (verbatim, indented under replace)
         ```
 
@@ -115,4 +115,22 @@ C:\Users\YC\AppData\Roaming\espanso\match\
       Do not add summaries or concluding restatements.
 
       Keep explanations direct, neutral, and functional.
+```
+---
+2026-02-1300:24
+# : slink — Create Windows Symlink Command
+	
+```yaml
+# Create a Windows symbolic link between source and target paths
+  - trigger: ":slink"
+    replace: |-
+      New-Item -ItemType SymbolicLink -Path "" -Target ""
+```
+# : jlink — Create Windows junction Command
+	
+```yaml
+# Create a Windows junction link between source and target paths
+  - trigger: ":jlink"
+    replace: |-
+      New-Item -ItemType Junction -Path "" -Target ""
 ```

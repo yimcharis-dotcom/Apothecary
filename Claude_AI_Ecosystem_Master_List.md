@@ -4,7 +4,7 @@
 **Last Updated:** 2026-01-31
 **Format:** Canonical table structure (Provider → Product/Plan → Capability → Surface → Connected To → Presence → Auth → Status)
 
-ho---
+---
 
 ## Structure Rationale
 

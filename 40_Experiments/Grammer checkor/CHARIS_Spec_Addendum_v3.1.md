@@ -1,4 +1,4 @@
-# CHARIS — Spec Addendum v3.1
+	# CHARIS — Spec Addendum v3.1
 
 **Additions to Grammar & Naturalness Evaluation Spec v3.0**
 
@@ -287,12 +287,12 @@ Testing Summary:
 
 ### Markup At-a-Glance
 
-| What | Syntax |
-|------|--------|
-| Tier 1 single | `_word_[#.]` |
-| Tier 1 span | `_word word_[#.]` |
-| Tier 2 single | `***word***[#.]` |
-| Tier 2 span | `***word word***[#.]` |
+| What          | Syntax                                |
+| ------------- | ------------------------------------- |
+| Tier 1 single | `_word_[#.]`                          |
+| Tier 1 span   | `_word word_[#.]`                     |
+| Tier 2 single | `***word***[#.]`                      |
+| Tier 2 span   | `***word word***[#.]`                 |
 | Discontinuous | `***word***[#a.] ... ***word***[#b.]` |
 
 ### Tag Format

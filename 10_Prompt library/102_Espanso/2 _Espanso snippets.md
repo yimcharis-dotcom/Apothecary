@@ -23,12 +23,6 @@ C:\Users\YC\AppData\Roaming\espanso\match\
         params:
           default: "llama3.2:3b"   # Change this default if you want
 ```
-
-
-
-
-
-
 ## /tonemid — Restore Concise Prose
 
 ```yaml
@@ -41,7 +35,6 @@ C:\Users\YC\AppData\Roaming\espanso\match\
       Bullet points only if they compress complex information (max four).
       Focus strictly on the current question; omit unnecessary restatement or meta commentary.
 ```
-
 ## /tonefull — Apply Neutral Writing Tone
 
 ```yaml
@@ -61,7 +54,6 @@ C:\Users\YC\AppData\Roaming\espanso\match\
       Ask questions when they materially affect the answer and proceed on reasonable assumptions.
 
 ```
-
 ## ;toesp — Convert Prompt Snippet
 
 ```yaml
@@ -88,7 +80,7 @@ C:\Users\YC\AppData\Roaming\espanso\match\
       ```yaml
         # YAML comment describing what the trigger does
         - trigger: "TRIGGER"
-          replace: |
+          replace: |-
             PROMPT (verbatim, indented under replace)
         ```
 
@@ -99,7 +91,6 @@ C:\Users\YC\AppData\Roaming\espanso\match\
       Prompt:
       <<PROMPT>>
 ```
-
 ## ;gpttone — Set Tone Rules
 
 ```yaml
@@ -115,4 +106,25 @@ C:\Users\YC\AppData\Roaming\espanso\match\
       Do not add summaries or concluding restatements.
 
       Keep explanations direct, neutral, and functional.
+    
 ```
+2026-02-1300:24
+# : slink — Create Windows Symlink Command
+	
+```yaml
+# Create a Windows symbolic link between source and target paths
+  - trigger: ":slink"
+    replace: |
+      New-Item -ItemType SymbolicLink -Path "" -Target ""
+```
+# : jlink — Create Windows junction Command
+	
+```yaml
+# Create a Windows junction link between source and target paths
+  - trigger: ":jlink"
+    replace: |
+      New-Item -ItemType Junction -Path "" -Target ""
+```
+
+
+:slink

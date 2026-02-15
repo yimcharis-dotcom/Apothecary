@@ -1,6 +1,6 @@
 {
   "openBehavior": "",
-  "strictLineBreaks": false,
+  "strictLineBreaks": true,
   "livePreview": true,
   "showLineNumber": true,
   "tabSize": 2,

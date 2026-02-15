@@ -24,12 +24,10 @@
   "nldates-obsidian",
   "darlal-switcher-plus",
   "smart-composer",
-  "paste-reformatter",
   "hyperlink-remover",
   "perplexity-converter",
   "metadata-auto-classifier",
   "obsidian-regex-replace",
-  "tag-buddy",
   "open-vscode",
   "perplexity-chat",
   "obsidian-git",
@@ -43,5 +41,8 @@
   "dataview-properties",
   "obsidian-meta-bind-plugin",
   "opencode-obsidian",
-  "cursor-integration"
+  "metaedit",
+  "various-complements",
+  "pane-relief",
+  "nexus-ai-chat-importer"
 ]
