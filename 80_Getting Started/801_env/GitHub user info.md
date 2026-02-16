@@ -14,8 +14,12 @@ Created: 2026-01-08
 **Token**:
 
 ```
- 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
+ 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
 ```
+```
+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
+```
+
 
 **Scopes**:
 
