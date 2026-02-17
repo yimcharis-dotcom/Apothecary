@@ -1,3 +1,4 @@
+
 ### Key Points
 - Research suggests Obsidian is an effective tool for building a personal wiki focused on AI learning, prompt libraries, and projects like system spec generators or custom GPTs, thanks to its flexible linking and plugin ecosystem.
 - It seems likely that organizing notes atomically—with one idea per note—and using tags, folders, and backlinks will enhance quick retrieval for iterative AI work, though personal experimentation is key to refinement.
