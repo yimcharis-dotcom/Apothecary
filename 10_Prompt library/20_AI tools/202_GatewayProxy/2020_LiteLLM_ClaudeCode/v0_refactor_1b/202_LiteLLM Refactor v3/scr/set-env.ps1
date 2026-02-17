@@ -5,6 +5,10 @@ $env:PERPLEXITY_API_KEY = "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
 # OpenAI (Requires API Key, NOT ChatGPT Plus Subscription)
 # $env:OPENAI_API_KEY = "sk-proj-..."
 
+# ChatGPT (OpenAI ChatGPT) - Uses Access Token from Browser
+# See: https://docs.litellm.ai/docs/providers/chatgpt
+# Note: Token is handled via device flow, no env var needed here.
+
 # Google AI Studio (Gemini)
 $env:GEMINI_API_KEY = "AIzaSyCjYO48hmV10fmQP5y-TNKQp9MT7_tJcJc"
 

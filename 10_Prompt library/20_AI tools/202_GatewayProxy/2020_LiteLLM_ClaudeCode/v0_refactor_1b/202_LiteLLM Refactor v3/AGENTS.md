@@ -83,17 +83,30 @@ This repository contains a PowerShell-based LiteLLM proxy management system. Fol
 - **Always verify config syntax:** Invalid YAML prevents startup
 - **Check proxy health:** Before running complex tests, ensure `/health` returns 200 OK
 
+## Completed
+
+- [x] **Smart Model Discovery:**
+  - Implemented `scr/discovery.py` to fetch Anthropic models from OpenRouter.
+  - Integrated into `scr/start-proxy.ps1`.
+  - Updated `PLAN_Smart_Model_Discovery.md`.
+- [x] **ChatGPT Subscription Support:**
+  - Configured `config.yaml` with `chatgpt/gpt-5.2` (responses mode).
+  - Updated `scr/set-env.ps1` documentation.
+- [x] **MCP Server:**
+  - Installed `upstash/context7-mcp`.
+- [x] **Model Cleanup:**
+  - Removed unstable/preview models (Gemini 2.x).
+  - Updated OpenRouter aliases to stable versions (`claude-3-5-sonnet`).
+
 ## Coming up
 
-- [ ] Refactoring new features:  
-    - [ ]  [[PLAN_Smart_Model_Discovery]] - Architecture for realtime model fetching at startup.      
-    - [ ] Add TUI to select models
-    - [ ] Add switch models mid session 
-- [ ] Delete :
-
-> 	Available models:  
-> 	  🧠 Grok: grok-code-fast-1, grok-4-1-fast-reasoning, ...  
-> 	  🔍 Perplexity: perplexity-sonar-pro, ...
- 	  
-- [ ] Wrap env and launch claude code :
-- [ ] Fix database
+- [ ] 1. API Modernization
+  - [ ] Check how we call the API now. If still using `completion`, update codes to `response` style (LiteLLM native).
+- [ ] 2. Stability: Fix Database
+  - [ ] Fix database issues to ensure reliable cost tracking.
+- [ ] 3. Integration: Seamless "Claude Code" Launch
+  - [ ] Wrap env and launch claude code: Create a wrapper script.
+  - [ ] config.json should point to claude code one (Clarify config integration).
+- [ ] 4. UX: TUI & Interactive Features
+  - [ ] Add TUI to select models (using `rich` library).
+  - [ ] Add switch models mid session.

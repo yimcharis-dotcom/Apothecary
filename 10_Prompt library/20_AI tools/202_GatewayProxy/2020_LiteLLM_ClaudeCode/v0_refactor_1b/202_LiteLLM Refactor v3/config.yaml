@@ -1,5 +1,13 @@
 model_list:
 
+# ========== CHATGPT SUBSCRIPTION MODELS ==========
+
+- model_name: chatgpt/gpt-5.2
+  model_info:
+    mode: responses
+  litellm_params:
+    model: chatgpt/gpt-5.2
+
 # ========== GROK MODELS (X.AI) ==========
   
 # Grok 4.1 - Fast with reasoning
@@ -98,11 +106,6 @@ model_list:
 
 # Free tier available at aistudio.google.com
 
-- model_name: gemini-2.0-flash
-  litellm_params:
-    model: gemini/gemini-2.0-flash
-    api_key: os.environ/GEMINI_API_KEY
-
 - model_name: gemini-1.5-pro
   litellm_params:
     model: gemini/gemini-1.5-pro
@@ -116,9 +119,9 @@ model_list:
     model: "openrouter/*"
     api_key: os.environ/OPENROUTER_API_KEY
 
-- model_name: openrouter-claude-3-7-sonnet
+- model_name: openrouter-claude-3-5-sonnet
   litellm_params:
-    model: openrouter/anthropic/claude-3.7-sonnet
+    model: openrouter/anthropic/claude-3.5-sonnet
     api_key: os.environ/OPENROUTER_API_KEY
 
 - model_name: openrouter-deepseek-r1
@@ -159,7 +162,7 @@ router_settings:
   model_group_alias:
     # Add aliases for easier model access
     "grok": "grok-code-fast-1"
-    "claude": "openrouter-claude-3-7-sonnet"
+    "claude": "openrouter-claude-3-5-sonnet"
     "gpt4": "openrouter-gpt-4o"
     "research": "perplexity-sonar-deep-research"
     "reasoning": "grok-4-1-fast-reasoning"

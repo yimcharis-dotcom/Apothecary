@@ -26,7 +26,10 @@ tags:
 ```text
 AIzaSyCjYO48hmV10fmQP5y-TNKQp9MT7_tJcJc
 ```
-
+New:  
+``` API Key
+AIzaSyB4AgVTfVucGrRbWDA9D8IWhcFFaRBKazM
+```
 - **Base URL:** `https://generativelanguage.googleapis.com`
 
 ## 2. Vertex AI (Enterprise)
