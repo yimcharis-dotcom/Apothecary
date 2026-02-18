@@ -214,5 +214,14 @@
       "modifiers": [],
       "key": "F7"
     }
+  ],
+  "workspace:copy-full-path": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "C"
+    }
   ]
 }

@@ -6,6 +6,10 @@
     "employed date": "datetime",
     "updated": "datetime",
     "index date": "date",
-    "Related": "checkbox"
+    "Related": "checkbox",
+    "created": "datetime",
+    "status": "text",
+    "type": "text",
+    "date": "date"
   }
 }

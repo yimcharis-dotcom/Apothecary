@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Users/YC/MCPs"
+		}
+	],
+	"settings": {
+		"powershell.cwd": "Apothecary"
+	}
+}

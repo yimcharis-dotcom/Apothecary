@@ -1,60 +1,105 @@
-# Test Claude Code with LiteLLM Proxy
-# Run this AFTER starting the proxy in another shell
+param(
+    [string]$Model = "default",
+    [string]$Prompt = "Reply with exactly: OK",
+    [int]$TimeoutSec = 30
+)
 
-Write-Host "`n========================================" -ForegroundColor Cyan
-Write-Host "Testing Claude Code with LiteLLM Proxy" -ForegroundColor Cyan
-Write-Host "========================================`n" -ForegroundColor Cyan
+$ErrorActionPreference = "Stop"
+$ScriptDir = Split-Path $MyInvocation.MyCommand.Path
+. "$ScriptDir\set-env.ps1"
 
-# Load environment variables
-Write-Host "Setting environment variables..." -ForegroundColor Yellow
-$env:XAI_API_KEY = "xai-ap3FR5Oo56oqBOAapUvEmH6XUKwL3bBysMNu5POmqRvkZedTDMMGdUs2KelXRQT43TD0nxRnZeaxRDMk"
-$env:PERPLEXITY_API_KEY = "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"
-$env:ANTHROPIC_BASE_URL = "http://127.0.0.1:4000"
-$env:ANTHROPIC_AUTH_TOKEN = "sk-litellm-master-key-12345"
+$ProxyUrl = "http://127.0.0.1:4000"
+$MasterKey = $env:LITELLM_MASTER_KEY
 
-Write-Host "✓ Environment variables set`n" -ForegroundColor Green
-
-# Display configuration
-Write-Host "Configuration:" -ForegroundColor Yellow
-Write-Host "  XAI_API_KEY: " -NoNewline
-Write-Host $env:XAI_API_KEY.Substring(0, 20) + "..." -ForegroundColor Gray
-Write-Host "  PERPLEXITY_API_KEY: " -NoNewline
-Write-Host $env:PERPLEXITY_API_KEY.Substring(0, 20) + "..." -ForegroundColor Gray
-Write-Host "  ANTHROPIC_BASE_URL: " -NoNewline
-Write-Host $env:ANTHROPIC_BASE_URL -ForegroundColor Gray
-Write-Host "  ANTHROPIC_AUTH_TOKEN: " -NoNewline
-Write-Host $env:ANTHROPIC_AUTH_TOKEN.Substring(0, 20) + "..." -ForegroundColor Gray
-Write-Host ""
-
-# Check if proxy is running
-Write-Host "Checking if proxy is running..." -ForegroundColor Yellow
-try {
-    $health = Invoke-RestMethod -Uri "http://127.0.0.1:4000/health" -Method Get -TimeoutSec 5
-    Write-Host "✓ Proxy is running`n" -ForegroundColor Green
-} catch {
-    Write-Host "✗ Proxy is NOT running!" -ForegroundColor Red
-    Write-Host "  Please start the proxy first with: .\start-proxy.ps1`n" -ForegroundColor Red
+if ([string]::IsNullOrWhiteSpace($MasterKey)) {
+    Write-Host "Missing LITELLM_MASTER_KEY in environment." -ForegroundColor Red
     exit 1
 }
 
-# Test with Perplexity Sonar
-Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "Testing: claude --model perplexity-sonar" -ForegroundColor Cyan
+Write-Host "`n========================================" -ForegroundColor Cyan
+Write-Host "LiteLLM Responses API Smoke Test" -ForegroundColor Cyan
 Write-Host "========================================`n" -ForegroundColor Cyan
 
-Write-Host "Running Claude Code with Perplexity Sonar model..." -ForegroundColor Yellow
-Write-Host "Command: claude --model perplexity-sonar`n" -ForegroundColor Gray
+try {
+    Write-Host "Debug: Starting health check..." -ForegroundColor Gray
+    Invoke-RestMethod `
+        -Uri "$ProxyUrl/health" `
+        -Method Get `
+        -Headers @{ "Authorization" = "Bearer $MasterKey" } `
+        -TimeoutSec 5 | Out-Null
+    Write-Host "✓ Proxy health check passed" -ForegroundColor Green
+} catch {
+    $statusCode = $null
+    try { $statusCode = [int]$_.Exception.Response.StatusCode } catch {}
+    if ($statusCode -eq 401 -or $statusCode -eq 403) {
+        Write-Host "⚠️ /health is protected by auth. Continuing with responses test..." -ForegroundColor DarkYellow
+    } else {
+        Write-Host "⚠️ Health check failed (PowerShell connectivity issue). Trying responses test anyway..." -ForegroundColor DarkYellow
+    }
+}
 
-# Instructions for manual test
-Write-Host "`nREADY TO TEST!" -ForegroundColor Green
-Write-Host "`nNow run this command:" -ForegroundColor Yellow
-Write-Host "  claude --model perplexity-sonar" -ForegroundColor White
-Write-Host "`nOr try other models:" -ForegroundColor Yellow
-Write-Host "  claude --model grok-4-1-fast-reasoning" -ForegroundColor White
-Write-Host "  claude --model grok-code-fast-1" -ForegroundColor White
-Write-Host "  claude --model sonar-deep-research" -ForegroundColor White
-Write-Host ""
+$headers = @{
+    "Authorization" = "Bearer $MasterKey"
+    "Content-Type"  = "application/json"
+}
 
-# Keep environment active
-Write-Host "Environment variables are set in this session." -ForegroundColor Green
-Write-Host "You can now run claude commands with any configured model.`n" -ForegroundColor Green
+$body = @{
+    model = $Model
+    input = @(
+        @{
+            role    = "user"
+            content = @(
+                @{
+                    type = "input_text"
+                    text = $Prompt
+                }
+            )
+        }
+    )
+}
+
+try {
+    Write-Host "Debug: Starting responses test with model $Model..." -ForegroundColor Gray
+    $resp = Invoke-RestMethod `
+        -Uri "$ProxyUrl/v1/responses" `
+        -Method Post `
+        -Headers $headers `
+        -Body ($body | ConvertTo-Json -Depth 8) `
+        -TimeoutSec $TimeoutSec
+
+    $text = $null
+    if ($resp.output_text) {
+        $text = $resp.output_text
+    } elseif ($resp.output -and $resp.output.Count -gt 0 -and $resp.output[0].content -and $resp.output[0].content.Count -gt 0) {
+        $text = $resp.output[0].content[0].text
+    }
+
+    Write-Host "✓ Responses API test passed" -ForegroundColor Green
+    Write-Host "  Model: $Model" -ForegroundColor Gray
+    Write-Host "  Response ID: $($resp.id)" -ForegroundColor Gray
+    if ($text) {
+        Write-Host "  Output: $text" -ForegroundColor White
+    } else {
+        Write-Host "  Output: (no text field found, request still succeeded)" -ForegroundColor DarkYellow
+    }
+} catch {
+    Write-Host "✗ Responses API test failed" -ForegroundColor Red
+    Write-Host "  Error: $($_.Exception.Message)" -ForegroundColor Red
+
+    # Try to extract status code and response body
+    if ($_.Exception.Response) {
+        $statusCode = [int]$_.Exception.Response.StatusCode
+        Write-Host "  Status Code: $statusCode" -ForegroundColor Red
+        
+        try {
+            $stream = $_.Exception.Response.GetResponseStream()
+            $reader = New-Object System.IO.StreamReader($stream)
+            $body = $reader.ReadToEnd()
+            if (-not [string]::IsNullOrWhiteSpace($body)) {
+                Write-Host "  Response Body: $body" -ForegroundColor DarkRed
+            }
+        } catch {}
+    }
+
+    exit 1
+}

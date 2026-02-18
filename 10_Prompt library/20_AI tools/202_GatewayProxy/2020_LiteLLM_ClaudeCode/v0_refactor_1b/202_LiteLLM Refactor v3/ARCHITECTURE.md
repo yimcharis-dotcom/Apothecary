@@ -19,10 +19,13 @@ To prevent configuration drift and "missing file" confusion, we strictly enforce
 
 ### 1. Configuration & Scripts (Source Controlled)
 *Managed in Vault, deployed to Runtime.*
-- `config.yaml`
+- `config.yaml` — written by `discovery-orchestrator.py`; do not hand-edit
+- `profile.yaml` — persists the last user-selected launch model; source-controlled
 - `scr/start-proxy.ps1`
 - `scr/set-env.ps1`
 - `scr/sync-models.ps1`
+- `scr/discovery-orchestrator.py` — TUI discovery launcher; run before starting proxy to refresh model list
+- `scr/providers/*.py` — provider catalog adapters (OpenRouter, xAI, Gemini, Perplexity)
 
 ### 2. Documentation (Vault Only)
 *Never deployed to Runtime.*

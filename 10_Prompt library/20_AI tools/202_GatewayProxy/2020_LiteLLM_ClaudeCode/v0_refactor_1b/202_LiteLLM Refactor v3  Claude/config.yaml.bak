@@ -1,0 +1,76 @@
+model_list:
+  # ========== OPENROUTER CURATED (CLOSED LIST) ==========
+  - model_name: claude-sonnet-4-5
+    litellm_params:
+      model: openrouter/anthropic/claude-sonnet-4.5
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: claude-opus-4-5
+    litellm_params:
+      model: openrouter/anthropic/claude-opus-4.5
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: deepseek-v3-2
+    litellm_params:
+      model: openrouter/deepseek/deepseek-v3.2
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: deepseek-r1-0528
+    litellm_params:
+      model: openrouter/deepseek/deepseek-r1-0528
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: kimi-k2-5
+    litellm_params:
+      model: openrouter/moonshotai/kimi-k2.5
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: glm-5
+    litellm_params:
+      model: openrouter/z-ai/glm-5
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: glm-4-7
+    litellm_params:
+      model: openrouter/z-ai/glm-4.7
+      api_key: os.environ/OPENROUTER_API_KEY
+
+  - model_name: glm-4-7-flash
+    litellm_params:
+      model: openrouter/z-ai/glm-4.7-flash
+      api_key: os.environ/OPENROUTER_API_KEY
+
+# ========== LITELLM SETTINGS ==========
+
+litellm_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  drop_params: true
+  set_verbose: true
+  # Enable automatic cost tracking
+  track_cost: true
+  # Custom headers for spend tracking
+  extra_spend_tag_headers:
+    - "x-custom-header"
+  # Keep user-agent tracking for tool identification (Claude Code, etc.)
+  disable_add_user_agent_to_request_tags: false
+
+# ========== GENERAL SETTINGS ==========
+
+general_settings:
+  # DB intentionally disabled for local proxy stability on current runtime.
+  # Re-enable with a supported Postgres DATABASE_URL when ready.
+  store_model_in_db: false
+  
+# ========== ROUTING SETTINGS ==========
+
+# Optional: Load balancing and failover
+router_settings:
+  model_group_alias:
+    # Friendly aliases for the curated OpenRouter list
+    "default": "claude-sonnet-4-5"
+    "claude": "claude-sonnet-4-5"
+    "claude-strong": "claude-opus-4-5"
+    "reasoning": "deepseek-r1-0528"
+    "cheap": "deepseek-v3-2"
+    "kimi": "kimi-k2-5"
+    "glm": "glm-5"

@@ -16,10 +16,9 @@ openaiUrl completion: https://openrouter.ai/api/v1/chat/completions
 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
 ```
 
-
-
-
-
+```key
+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
+```
 ### Create a Management Key
 
 Your new management key:

@@ -117,7 +117,7 @@ npx skills update -y
 
 ## Related Notes
 
-- [[AI_Ecosystem_Dashboard]]
+- [[99_Archive/ss/AI_Ecosystem_Dashboard]]
 - [[Claude_AI_Ecosystem_Discovery]]
 
 ---

@@ -1,0 +1,24 @@
+Environment variables loaded from SecretStore vault 'LiteLLM'.
+[INFO] DB mode disabled (set LITELLM_ENABLE_DB=1 to enable DB).
+
+=====================================
+   Starting LiteLLM Proxy
+=====================================
+
+[INFO] For model updates, run: .\run-orchestrator-discovery.ps1
+
+Config: C:\Vault\Apothecary\10_Prompt library\20_AI tools\202_GatewayProxy\2020_LiteLLM_ClaudeCode\v0_refactor_1b\202_LiteLLM Refactor v3\config.yaml
+Proxy URL: http://127.0.0.1:4000
+
+Press Ctrl+C to stop the proxy
+=====================================
+
+Runtime: Python 3.12 LiteLLM executable
+
+   ██╗     ██╗████████╗███████╗██╗     ██╗     ███╗   ███╗
+   ██║     ██║╚══██╔══╝██╔════╝██║     ██║     ████╗ ████║
+   ██║     ██║   ██║   █████╗  ██║     ██║     ██╔████╔██║
+   ██║     ██║   ██║   ██╔══╝  ██║     ██║     ██║╚██╔╝██║
+   ███████╗██║   ██║   ███████╗███████╗███████╗██║ ╚═╝ ██║
+   ╚══════╝╚═╝   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝     ╚═╝
+
