@@ -2,7 +2,7 @@ Git Workflow Guide
 ---
 
 updated: 20260204
-created: 20260204
+created: 20260219
 tags: #git, #workflow, #guide, #cheatsheet
 
 ## 1. The Golden Rule: "Pull First"
@@ -32,6 +32,7 @@ If an agent pushes to a new "Branch" (like `claude/...`):
 5. `git switch -c claude-work` (Create a new branch for yourself)
 
 ## 4. Status Symbols (What You
+
 See in `git status -sb`)
 
 `M` = modified file  
@@ -97,4 +98,10 @@ git commit -m "WIP: merge work"
 git switch main
 git merge <your-branch>
 git push origin main
+```
+
+## 10. Fetch + rebase ✅ (recommended)
+
+```bash
+git pull --rebase
 ```
